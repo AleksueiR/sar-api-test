@@ -7,6 +7,7 @@
   "paths" : {
     "/species/searchFilters" : {
       "get" : {
+        "tags" : [ "species" ],
         "description" : "Returns the lists of values for the filters of Species Search page",
         "responses" : {
           "200" : {
@@ -14,25 +15,20 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/qq"
+                  "$ref" : "#/components/schemas/SpeciesSearchFilters"
                 },
                 "examples" : {
-                  "q" : {
-                    "value" : "{\n    \"id\": 56,\n    \"name\": \"some text\",\n    \"price\": 93.98\n}"
-                  }
-                }
-              },
-              "application/xml" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/qq"
-                },
-                "examples" : {
-                  "w" : {
-                    "value" : "{\n    \"id\": 86,\n    \"name\": \"some text\",\n    \"price\": 6.46\n}"
+                  "sample" : {
+                    "summary" : "sample summary",
+                    "description" : "sample description",
+                    "value" : "{\r\n    \"returnStatus\": \"OK\",\r\n    \"taxonomies\": [\r\n        { \"id\": 1, \"name\": \"Amphibians\", \"itemsCount\": -1 },\r\n        { \"id\": 2, \"name\": \"Birds\", \"itemsCount\": -1 }\r\n        \r\n    ],\r\n    \"ranges\": [\r\n        { \"id\": 1, \"name\": \"British Columbia\", \"itemsCount\": -1 },\r\n        { \"id\": 2, \"name\": \"Alberta\", \"itemsCount\": -1 }\r\n    ],\r\n    \"cosewicStatuses\": [\r\n        { \"id\": 1, \"name\": \"Extinct\", \"itemsCount\": -1 },\r\n        { \"id\": 2, \"name\": \"Extirpated\", \"itemsCount\": -1 }\r\n    ],\r\n    \"saraStatuses\": [\r\n        { \"id\": 2, \"name\": \"Extirpated\", \"itemsCount\": -1 },\r\n        { \"id\": 3, \"name\": \"Endangered\", \"itemsCount\": -1 }\r\n    ],\r\n    \"schedules\": [\r\n        { \"id\": 1, \"name\": \"Schedule 1\", \"itemsCount\": -1 },\r\n        { \"id\": 4, \"name\": \"No schedule\", \"itemsCount\": -1 }\r\n    ],\r\n    \"considerations\": [\r\n        { \"id\": 1, \"name\": \"Under consideration\", \"itemsCount\": -1 },\r\n        { \"id\": 4, \"name\": \"Not under consideration\", \"itemsCount\": -1 }\r\n    ],\r\n    \"order\": [\"ranges\", \"taxonomies\", \"cosewicStatuses\", \"saraStatuses\", \"schedules\", \"considerations\"]\r\n}"
                   }
                 }
               }
             }
+          },
+          "400" : {
+            "description" : "Invalid request."
           }
         }
       }
@@ -40,24 +36,73 @@
   },
   "components" : {
     "schemas" : {
-      "qq" : {
-        "title" : "Product",
-        "description" : "A product from Acme's catalog",
-        "required" : [ "id", "name", "price" ],
-        "type" : "object",
+      "SpeciesSearchFilterOption" : {
+        "required" : [ "name", "id" ],
         "properties" : {
           "id" : {
-            "description" : "The unique identifier for a product",
-            "type" : "integer"
+            "description" : "Filter option ID.",
+            "type" : "number"
           },
           "name" : {
-            "description" : "Name of the product",
+            "description" : "Filter option name.",
             "type" : "string"
           },
-          "price" : {
-            "minimum" : 0,
-            "exclusiveMinimum" : true,
+          "itemsCount" : {
+            "description" : "The number of search results valid under this filter option.",
             "type" : "number"
+          }
+        }
+      },
+      "SpeciesSearchFilters" : {
+        "title" : "Root Type for SpeciesSearchFilter",
+        "required" : [ "taxonomies", "considerations", "schedules", "saraStatuses", "ranges", "order", "cosewicStatuses" ],
+        "type" : "object",
+        "properties" : {
+          "returnStatus" : {
+            "type" : "string"
+          },
+          "taxonomies" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SpeciesSearchFilterOption"
+            }
+          },
+          "ranges" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SpeciesSearchFilterOption"
+            }
+          },
+          "cosewicStatuses" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SpeciesSearchFilterOption"
+            }
+          },
+          "saraStatuses" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SpeciesSearchFilterOption"
+            }
+          },
+          "schedules" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SpeciesSearchFilterOption"
+            }
+          },
+          "considerations" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SpeciesSearchFilterOption"
+            }
+          },
+          "order" : {
+            "type" : "array",
+            "items" : {
+              "enum" : [ "ranges", "taxonomies", "cosewicStatuses", "saraStatuses", "schedules", "considerations" ],
+              "type" : "string"
+            }
           }
         }
       }
