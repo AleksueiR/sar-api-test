@@ -16,13 +16,6 @@
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/SpeciesSearchFilters"
-                },
-                "examples" : {
-                  "sample" : {
-                    "summary" : "sample summary",
-                    "description" : "sample description",
-                    "value" : "{\r\n    \"returnStatus\": \"OK\",\r\n    \"taxonomies\": [\r\n        { \"id\": 1, \"name\": \"Amphibians\", \"itemsCount\": -1 },\r\n        { \"id\": 2, \"name\": \"Birds\", \"itemsCount\": -1 }\r\n        \r\n    ],\r\n    \"ranges\": [\r\n        { \"id\": 1, \"name\": \"British Columbia\", \"itemsCount\": -1 },\r\n        { \"id\": 2, \"name\": \"Alberta\", \"itemsCount\": -1 }\r\n    ],\r\n    \"cosewicStatuses\": [\r\n        { \"id\": 1, \"name\": \"Extinct\", \"itemsCount\": -1 },\r\n        { \"id\": 2, \"name\": \"Extirpated\", \"itemsCount\": -1 }\r\n    ],\r\n    \"saraStatuses\": [\r\n        { \"id\": 2, \"name\": \"Extirpated\", \"itemsCount\": -1 },\r\n        { \"id\": 3, \"name\": \"Endangered\", \"itemsCount\": -1 }\r\n    ],\r\n    \"schedules\": [\r\n        { \"id\": 1, \"name\": \"Schedule 1\", \"itemsCount\": -1 },\r\n        { \"id\": 4, \"name\": \"No schedule\", \"itemsCount\": -1 }\r\n    ],\r\n    \"considerations\": [\r\n        { \"id\": 1, \"name\": \"Under consideration\", \"itemsCount\": -1 },\r\n        { \"id\": 4, \"name\": \"Not under consideration\", \"itemsCount\": -1 }\r\n    ],\r\n    \"order\": [\"ranges\", \"taxonomies\", \"cosewicStatuses\", \"saraStatuses\", \"schedules\", \"considerations\"]\r\n}"
-                  }
                 }
               }
             }
