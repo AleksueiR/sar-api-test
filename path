@@ -6,9 +6,12 @@
   },
   "paths" : {
     "/species/searchFilters" : {
+      "summary" : "endpoint summary",
+      "description" : "endpoint description",
       "get" : {
         "tags" : [ "species" ],
-        "description" : "Returns the lists of values for the filters of Species Search page",
+        "summary" : "get command summary",
+        "description" : "get command description\nReturns the lists of values for the filters of Species Search pagege",
         "responses" : {
           "200" : {
             "description" : "Description goes here.",
