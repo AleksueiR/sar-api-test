@@ -40,7 +40,7 @@
         "tags" : [ "species" ],
         "parameters" : [ {
           "name" : "Accept-Language",
-          "in" : "query",
+          "in" : "header",
           "description" : "Specifies the current language.",
           "required" : true,
           "schema" : {
