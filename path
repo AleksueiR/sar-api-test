@@ -16,6 +16,14 @@
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/SpeciesSearchFilters"
+                },
+                "examples" : {
+                  "q" : {
+                    "value" : "{\n    \"returnStatus\": \"some text\",\n    \"taxonomies\": [\n        {\n            \"id\": 25.62,\n            \"name\": \"some text\",\n            \"itemCount\": 54.9\n        },\n        {\n            \"id\": 6.86,\n            \"name\": \"some text\",\n            \"itemCount\": 97.24\n        }\n    ],\n    \"ranges\": [\n        {\n            \"id\": 52.14,\n            \"name\": \"some text\",\n            \"itemCount\": 79.69\n        },\n        {\n            \"id\": 4.15,\n            \"name\": \"some text\",\n            \"itemCount\": 42.49\n        }\n    ],\n    \"cosewicStatuses\": [\n        {\n            \"id\": 81.88,\n            \"name\": \"some text\",\n            \"itemCount\": 49.29\n        },\n        {\n            \"id\": 91.68,\n            \"name\": \"some text\",\n            \"itemCount\": 37.39\n        }\n    ],\n    \"saraStatuses\": [\n        {\n            \"id\": 62.13,\n            \"name\": \"some text\",\n            \"itemCount\": 63.21\n        },\n        {\n            \"id\": 42.26,\n            \"name\": \"some text\",\n            \"itemCount\": 55.55\n        }\n    ],\n    \"schedules\": [\n        {\n            \"id\": 27.99,\n            \"name\": \"some text\",\n            \"itemCount\": 95.47\n        },\n        {\n            \"id\": 72.51,\n            \"name\": \"some text\",\n            \"itemCount\": 40\n        }\n    ],\n    \"considerations\": [\n        {\n            \"id\": 31.98,\n            \"name\": \"some text\",\n            \"itemCount\": 14.58\n        },\n        {\n            \"id\": 76.04,\n            \"name\": \"some text\",\n            \"itemCount\": 52.3\n        }\n    ],\n    \"order\": [\n        \"some text\",\n        \"some text\"\n    ]\n}"
+                  },
+                  "q2" : {
+                    "value" : "{\r\n    \"returnStatus\": \"OK\",\r\n    \"taxonomies\": [\r\n        { \"id\": 1, \"name\": \"Amphibians\", \"itemsCount\": -1 },\r\n        { \"id\": 2, \"name\": \"Birds\", \"itemsCount\": -1 }\r\n        \r\n    ],\r\n    \"ranges\": [\r\n        { \"id\": 1, \"name\": \"British Columbia\", \"itemsCount\": -1 },\r\n        { \"id\": 2, \"name\": \"Alberta\", \"itemsCount\": -1 }\r\n    ],\r\n    \"cosewicStatuses\": [\r\n        { \"id\": 1, \"name\": \"Extinct\", \"itemsCount\": -1 },\r\n        { \"id\": 2, \"name\": \"Extirpated\", \"itemsCount\": -1 }\r\n    ],\r\n    \"saraStatuses\": [\r\n        { \"id\": 2, \"name\": \"Extirpated\", \"itemsCount\": -1 },\r\n        { \"id\": 3, \"name\": \"Endangered\", \"itemsCount\": -1 }\r\n    ],\r\n    \"schedules\": [\r\n        { \"id\": 1, \"name\": \"Schedule 1\", \"itemsCount\": -1 },\r\n        { \"id\": 4, \"name\": \"No schedule\", \"itemsCount\": -1 }\r\n    ],\r\n    \"considerations\": [\r\n        { \"id\": 1, \"name\": \"Under consideration\", \"itemsCount\": -1 },\r\n        { \"id\": 4, \"name\": \"Not under consideration\", \"itemsCount\": -1 }\r\n    ],\r\n    \"order\": [\"ranges\", \"taxonomies\", \"cosewicStatuses\", \"saraStatuses\", \"schedules\", \"considerations\"]\r\n}"
+                  }
                 }
               }
             }
@@ -29,23 +37,6 @@
   },
   "components" : {
     "schemas" : {
-      "SpeciesSearchFilterOption" : {
-        "required" : [ "name", "id" ],
-        "properties" : {
-          "id" : {
-            "description" : "Filter option ID.",
-            "type" : "number"
-          },
-          "name" : {
-            "description" : "Filter option name.",
-            "type" : "string"
-          },
-          "itemsCount" : {
-            "description" : "The number of search results valid under this filter option.",
-            "type" : "number"
-          }
-        }
-      },
       "SpeciesSearchFilters" : {
         "title" : "Root Type for SpeciesSearchFilter",
         "required" : [ "taxonomies", "considerations", "schedules", "saraStatuses", "ranges", "order", "cosewicStatuses" ],
@@ -96,6 +87,23 @@
               "enum" : [ "ranges", "taxonomies", "cosewicStatuses", "saraStatuses", "schedules", "considerations" ],
               "type" : "string"
             }
+          }
+        }
+      },
+      "SpeciesSearchFilterOption" : {
+        "required" : [ "name", "id" ],
+        "properties" : {
+          "id" : {
+            "description" : "Filter option ID.",
+            "type" : "number"
+          },
+          "name" : {
+            "description" : "Filter option name.",
+            "type" : "string"
+          },
+          "itemCount" : {
+            "description" : "The number of search results valid under this filter option.",
+            "type" : "number"
           }
         }
       }
