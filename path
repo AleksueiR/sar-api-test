@@ -1,0 +1,66 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "SAR",
+    "version" : "1.0.0"
+  },
+  "paths" : {
+    "/species/searchFilters" : {
+      "get" : {
+        "description" : "Returns the lists of values for the filters of Species Search page",
+        "responses" : {
+          "200" : {
+            "description" : "Description goes here.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/qq"
+                },
+                "examples" : {
+                  "q" : {
+                    "value" : "{\n    \"id\": 56,\n    \"name\": \"some text\",\n    \"price\": 93.98\n}"
+                  }
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/qq"
+                },
+                "examples" : {
+                  "w" : {
+                    "value" : "{\n    \"id\": 86,\n    \"name\": \"some text\",\n    \"price\": 6.46\n}"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "qq" : {
+        "title" : "Product",
+        "description" : "A product from Acme's catalog",
+        "required" : [ "id", "name", "price" ],
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "description" : "The unique identifier for a product",
+            "type" : "integer"
+          },
+          "name" : {
+            "description" : "Name of the product",
+            "type" : "string"
+          },
+          "price" : {
+            "minimum" : 0,
+            "exclusiveMinimum" : true,
+            "type" : "number"
+          }
+        }
+      }
+    }
+  }
+}
