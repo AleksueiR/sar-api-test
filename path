@@ -1,8 +1,12 @@
 {
   "openapi" : "3.0.2",
   "info" : {
-    "title" : "SAR",
+    "title" : "SAR-CWS",
     "description" : "[ introduction text ]\n\n# Introduction\n\nThis API is documented in OpenAPI format and represent SAR-CWS API.\n\n[ more description text ]",
+    "license" : {
+      "name" : "GNU LGPLv3",
+      "url" : "https://www.gnu.org/licenses/lgpl.txt"
+    },
     "version" : "1.0.0"
   },
   "paths" : {
@@ -40,45 +44,53 @@
         "type" : "object",
         "properties" : {
           "returnStatus" : {
+            "description" : "Status of the request.",
             "type" : "string"
           },
           "taxonomies" : {
+            "description" : "\"Taxonomy\" filter group.",
             "type" : "array",
             "items" : {
               "$ref" : "#/components/schemas/SpeciesSearchFilterOption"
             }
           },
           "ranges" : {
+            "description" : "\"Ranges\" filter group.",
             "type" : "array",
             "items" : {
               "$ref" : "#/components/schemas/SpeciesSearchFilterOption"
             }
           },
           "cosewicStatuses" : {
+            "description" : "\"COSEWIC status\" filter group.",
             "type" : "array",
             "items" : {
               "$ref" : "#/components/schemas/SpeciesSearchFilterOption"
             }
           },
           "saraStatuses" : {
+            "description" : "\"SARA status\" filter group.",
             "type" : "array",
             "items" : {
               "$ref" : "#/components/schemas/SpeciesSearchFilterOption"
             }
           },
           "schedules" : {
+            "description" : "\"SARA schedule\" filter group.",
             "type" : "array",
             "items" : {
               "$ref" : "#/components/schemas/SpeciesSearchFilterOption"
             }
           },
           "considerations" : {
+            "description" : "\"Under consideration\" filter group.",
             "type" : "array",
             "items" : {
               "$ref" : "#/components/schemas/SpeciesSearchFilterOption"
             }
           },
           "order" : {
+            "description" : "A list of filter group names specifying the UI rendering order.",
             "type" : "array",
             "items" : {
               "enum" : [ "ranges", "taxonomies", "cosewicStatuses", "saraStatuses", "schedules", "considerations" ],
