@@ -47,12 +47,6 @@
             "type" : "string"
           },
           "x-example" : "en"
-        }, {
-          "name" : "api_key",
-          "in" : "header",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "Bearer <TOKEN>"
         } ]
       }
     }
