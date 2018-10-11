@@ -46,41 +46,6 @@
         }
       } ]
     },
-    "/species/searchFilters" : {
-      "summary" : "Search filters endpoint.",
-      "get" : {
-        "tags" : [ "species" ],
-        "summary" : "Get Species filters",
-        "description" : "Returns the lists of values for the filters of Species Search page.",
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation.",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/SpeciesFilters"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request / client error."
-          },
-          "500" : {
-            "description" : "Server error."
-          }
-        }
-      },
-      "parameters" : [ {
-        "name" : "Accept-Language",
-        "in" : "header",
-        "description" : "Current page language",
-        "required" : true,
-        "schema" : {
-          "type" : "string"
-        }
-      } ]
-    },
     "/species/searchResults" : {
       "summary" : "Search results endpoint.",
       "get" : {
@@ -127,6 +92,41 @@
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/SpeciesSearchResults"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request / client error."
+          },
+          "500" : {
+            "description" : "Server error."
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "Accept-Language",
+        "in" : "header",
+        "description" : "Current page language. Example: `en`",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    },
+    "/species/searchFilters" : {
+      "summary" : "Search filters endpoint.",
+      "get" : {
+        "tags" : [ "species" ],
+        "summary" : "Get Species filters",
+        "description" : "Returns the lists of values for the filters of Species Search page.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SpeciesFilters"
                 }
               }
             }
