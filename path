@@ -2,17 +2,25 @@
   "openapi" : "3.0.2",
   "info" : {
     "title" : "SAR-CWS",
-    "description" : "[ introduction text ]\n\n# Introduction\n\nThis API is documented in OpenAPI format and represent SAR-CWS API.\n\n[ more description text ]",
+    "description" : "Correlation energize social capital; external partners, program area strategize dynamic. Mass incarceration; ideate best practices inspiring, expose the truth shine collective impact. White paper a strategize efficient compassion efficient change-makers do-gooder co-create program areas segmentation or impact investing. Social enterprise synergy effective corporate social responsibility co-creation; co-create rubric social entrepreneurship revolutionary. Policymaker when inspiring; milestones communities change-makers, strategize expose the truth green space.\n\n# Introduction\n\nThis API is documented in OpenAPI format and represent SAR-CWS API.\n\nCompassion, human-centered social capital; external partners; LGBTQ+ to overcome injustice shared vocabulary social innovation shared vocabulary thought leader. Replicable, families contextualize B-corp indicators shared vocabulary agile silo, silo families resist. Save the world white paper, issue outcomes social impact; circular impact investing mobilize challenges and opportunities sustainable inspirational capacity building.\n\nDesign thinking parse, inspire do-gooder society; disrupt; activate state of play thought leader framework efficient. Think tank external partners transparent boots on the ground dynamic peaceful society. Collaborate, social intrapreneurship co-creation mobilize empower communities boots on the ground transparent sustainable. Emerging when living a fully ethical life; corporate social responsibility parse; peaceful; social entrepreneurship framework citizen-centered targeted expose the truth ideate granular compassion. Best practices shared unit of analysis, blended value activate transparent optimism social entrepreneur. Optimism mobilize greenwashing, scale and impact; ecosystem external.",
     "version" : "1.0.0"
   },
   "paths" : {
     "/species/searchFilters" : {
-      "summary" : "endpoint summary",
-      "description" : "endpoint description",
+      "summary" : "Search filters endpoint.",
       "get" : {
         "tags" : [ "species" ],
         "summary" : "Get Species filters",
         "description" : "Returns the lists of values for the filters of Species Search page.",
+        "parameters" : [ {
+          "name" : "Accept-Language",
+          "in" : "header",
+          "description" : "Current page language",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
         "responses" : {
           "200" : {
             "description" : "Successful operation.",
@@ -34,6 +42,7 @@
       }
     },
     "/species/searchResults" : {
+      "summary" : "Search results endpoint.",
       "get" : {
         "tags" : [ "species" ],
         "summary" : "Get initial Species list",
@@ -41,11 +50,11 @@
         "parameters" : [ {
           "name" : "Accept-Language",
           "in" : "header",
+          "description" : "Current page language",
           "required" : true,
           "schema" : {
             "type" : "string"
-          },
-          "x-example" : "en"
+          }
         } ],
         "responses" : {
           "200" : {
@@ -73,19 +82,11 @@
         "parameters" : [ {
           "name" : "Accept-Language",
           "in" : "header",
+          "description" : "Current page language",
           "required" : true,
           "schema" : {
             "type" : "string"
-          },
-          "x-example" : "en"
-        }, {
-          "name" : "api_key",
-          "in" : "header",
-          "required" : false,
-          "schema" : {
-            "type" : "string"
-          },
-          "x-example" : "Bearer <TOKEN>"
+          }
         } ],
         "requestBody" : {
           "content" : {
@@ -118,6 +119,7 @@
       }
     },
     "/species/profile/{id}" : {
+      "summary" : "Species profile endpoint.",
       "get" : {
         "tags" : [ "species" ],
         "summary" : "Get Species Profile by Id",
@@ -146,6 +148,14 @@
         "in" : "path",
         "description" : "Species id.",
         "required" : true
+      }, {
+        "name" : "Accept-Language",
+        "in" : "header",
+        "description" : "Current page language",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
       } ]
     }
   },
@@ -242,7 +252,10 @@
           },
           "recoveryTeams" : {
             "description" : "Species recovery teams.",
-            "type" : "string"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SpeciesProfileRecoveryTeam"
+            }
           },
           "recoveryProgressAndActivities" : {
             "description" : "Species recovery progress and activities.",
