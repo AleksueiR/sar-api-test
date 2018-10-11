@@ -1,1 +1,1 @@
-# sar-api-test
+# SAR-CWS OpenAPI Specification
