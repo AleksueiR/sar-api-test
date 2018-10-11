@@ -6,83 +6,6 @@
     "version" : "1.0.0"
   },
   "paths" : {
-    "/species/searchResults" : {
-      "summary" : "Search results endpoint.",
-      "get" : {
-        "tags" : [ "species" ],
-        "summary" : "Get initial Species list",
-        "description" : "Returns a list of the first 2000 Species with default ordering. Used when the search page is loaded for the first time. Can be cached.",
-        "parameters" : [ {
-          "name" : "Accept-Language",
-          "in" : "header",
-          "description" : "Current page language",
-          "required" : true,
-          "schema" : {
-            "type" : "string"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation.",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/SpeciesSearchResults"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request / client error."
-          },
-          "500" : {
-            "description" : "Server error."
-          }
-        }
-      },
-      "post" : {
-        "tags" : [ "species" ],
-        "summary" : "Get Species search results",
-        "description" : "Returns a list of Species search results in pages based on the current filter states and user-entered keywords.",
-        "parameters" : [ {
-          "name" : "Accept-Language",
-          "in" : "header",
-          "description" : "Current page language",
-          "required" : true,
-          "schema" : {
-            "type" : "string"
-          }
-        } ],
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/SpeciesSearchRequest"
-              }
-            }
-          },
-          "required" : true
-        },
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation.",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/SpeciesSearchResults"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request / client error."
-          },
-          "500" : {
-            "description" : "Server error."
-          }
-        }
-      }
-    },
     "/species/profile/{id}" : {
       "summary" : "Species profile endpoint.",
       "get" : {
@@ -152,6 +75,74 @@
         "name" : "Accept-Language",
         "in" : "header",
         "description" : "Current page language",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    },
+    "/species/searchResults" : {
+      "summary" : "Search results endpoint.",
+      "get" : {
+        "tags" : [ "species" ],
+        "summary" : "Get initial Species list",
+        "description" : "Returns a list of the first 2000 Species with default ordering. Used when the search page is loaded for the first time. Can be cached.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SpeciesSearchResults"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request / client error."
+          },
+          "500" : {
+            "description" : "Server error."
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "species" ],
+        "summary" : "Get Species search results",
+        "description" : "Returns a list of Species search results in pages based on the current filter states and user-entered keywords.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SpeciesSearchRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SpeciesSearchResults"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request / client error."
+          },
+          "500" : {
+            "description" : "Server error."
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "Accept-Language",
+        "in" : "header",
+        "description" : "Current page language. Example: `en`",
         "required" : true,
         "schema" : {
           "type" : "string"
