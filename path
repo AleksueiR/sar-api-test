@@ -6,41 +6,6 @@
     "version" : "1.0.0"
   },
   "paths" : {
-    "/species/searchFilters" : {
-      "summary" : "Search filters endpoint.",
-      "get" : {
-        "tags" : [ "species" ],
-        "summary" : "Get Species filters",
-        "description" : "Returns the lists of values for the filters of Species Search page.",
-        "parameters" : [ {
-          "name" : "Accept-Language",
-          "in" : "header",
-          "description" : "Current page language",
-          "required" : true,
-          "schema" : {
-            "type" : "string"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation.",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/SpeciesFilters"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request / client error."
-          },
-          "500" : {
-            "description" : "Server error."
-          }
-        }
-      }
-    },
     "/species/searchResults" : {
       "summary" : "Search results endpoint.",
       "get" : {
@@ -149,6 +114,41 @@
         "description" : "Species id.",
         "required" : true
       }, {
+        "name" : "Accept-Language",
+        "in" : "header",
+        "description" : "Current page language. Example: `en`",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    },
+    "/species/searchFilters" : {
+      "summary" : "Search filters endpoint.",
+      "get" : {
+        "tags" : [ "species" ],
+        "summary" : "Get Species filters",
+        "description" : "Returns the lists of values for the filters of Species Search page.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SpeciesFilters"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request / client error."
+          },
+          "500" : {
+            "description" : "Server error."
+          }
+        }
+      },
+      "parameters" : [ {
         "name" : "Accept-Language",
         "in" : "header",
         "description" : "Current page language",
@@ -265,7 +265,7 @@
       },
       "SpeciesFilters" : {
         "description" : "The collection of Species Search Filter groups used to filter search results.",
-        "required" : [ "taxonomies", "considerations", "schedules", "saraStatuses", "ranges", "order", "cosewicStatuses" ],
+        "required" : [ "taxonomies", "considerations", "schedules", "saraStatuses", "ranges", "order", "cosewicStatuses", "returnStatus" ],
         "type" : "object",
         "properties" : {
           "returnStatus" : {
@@ -555,7 +555,7 @@
         }
       },
       "SpeciesSearchResults" : {
-        "required" : [ "species" ],
+        "required" : [ "species", "imageFieldPath", "recordCound", "returnStatus" ],
         "type" : "object",
         "properties" : {
           "returnStatus" : {
@@ -587,7 +587,7 @@
         }
       },
       "SpeciesProfile" : {
-        "required" : [ ],
+        "required" : [ "returnStatus", "speciesAdditionalInfo", "speciesDetails", "speciesRecord" ],
         "type" : "object",
         "properties" : {
           "returnStatus" : {
