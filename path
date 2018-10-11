@@ -37,14 +37,22 @@
       "get" : {
         "tags" : [ "species" ],
         "summary" : "Get initial Species list",
-        "description" : "Returns a list of the first 2000 Species with default ordering."
+        "description" : "Returns a list of the first 2000 Species with default ordering.",
+        "parameters" : [ {
+          "name" : "Accept-Language",
+          "in" : "header",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "x-example" : "en"
+        } ]
       },
       "post" : {
         "tags" : [ "species" ],
         "parameters" : [ {
           "name" : "Accept-Language",
           "in" : "header",
-          "description" : "Specifies the current language.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -354,7 +362,7 @@
       },
       "SpeciesSearchResults" : {
         "title" : "empty object",
-        "required" : [ ],
+        "required" : [ "species" ],
         "type" : "object",
         "properties" : {
           "returnStatus" : {
@@ -370,8 +378,11 @@
             "type" : "string"
           },
           "species" : {
-            "description" : "A list of species results.",
-            "type" : "string"
+            "description" : "A list of species records.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SpeciesSearchRecord"
+            }
           },
           "filterCount" : {
             "description" : "A list of filter counters based on the current search.",
