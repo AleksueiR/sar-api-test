@@ -19,7 +19,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/SpeciesSearchFilters"
+                  "$ref" : "#/components/schemas/SpeciesFilters"
                 }
               }
             }
@@ -47,75 +47,23 @@
             "type" : "string"
           },
           "x-example" : "en"
-        } ]
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SpeciesSearchRequest"
+              }
+            }
+          },
+          "required" : true
+        }
       }
     }
   },
   "components" : {
     "schemas" : {
-      "SpeciesSearchFilters" : {
-        "title" : "Root Type for SpeciesSearchFilter",
-        "description" : "The collection of Species Search Filter groups used to filter search results.",
-        "required" : [ "taxonomies", "considerations", "schedules", "saraStatuses", "ranges", "order", "cosewicStatuses" ],
-        "type" : "object",
-        "properties" : {
-          "returnStatus" : {
-            "description" : "Status of the request.",
-            "type" : "string"
-          },
-          "taxonomies" : {
-            "description" : "\"Taxonomy\" filter group.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/SpeciesSearchFilterOption"
-            }
-          },
-          "ranges" : {
-            "description" : "\"Ranges\" filter group.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/SpeciesSearchFilterOption"
-            }
-          },
-          "cosewicStatuses" : {
-            "description" : "\"COSEWIC status\" filter group.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/SpeciesSearchFilterOption"
-            }
-          },
-          "saraStatuses" : {
-            "description" : "\"SARA status\" filter group.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/SpeciesSearchFilterOption"
-            }
-          },
-          "schedules" : {
-            "description" : "\"SARA schedule\" filter group.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/SpeciesSearchFilterOption"
-            }
-          },
-          "considerations" : {
-            "description" : "\"Under consideration\" filter group.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/SpeciesSearchFilterOption"
-            }
-          },
-          "order" : {
-            "description" : "A list of filter group names specifying the UI rendering order.",
-            "type" : "array",
-            "items" : {
-              "enum" : [ "ranges", "taxonomies", "cosewicStatuses", "saraStatuses", "schedules", "considerations" ],
-              "type" : "string"
-            }
-          }
-        }
-      },
-      "SpeciesSearchFilterOption" : {
+      "SpeciesFilterOption" : {
         "description" : "An option in a Species Search Filter group.",
         "required" : [ "name", "id" ],
         "properties" : {
@@ -129,6 +77,130 @@
           },
           "itemCount" : {
             "description" : "The number of search results valid under this filter option.",
+            "type" : "number"
+          }
+        }
+      },
+      "SpeciesFilters" : {
+        "title" : "Root Type for SpeciesSearchFilter",
+        "description" : "The collection of Species Search Filter groups used to filter search results.",
+        "required" : [ "taxonomies", "considerations", "schedules", "saraStatuses", "ranges", "order", "cosewicStatuses" ],
+        "type" : "object",
+        "properties" : {
+          "returnStatus" : {
+            "description" : "Status of the request.",
+            "type" : "string"
+          },
+          "taxonomies" : {
+            "description" : "\"Taxonomy\" filter group.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SpeciesFilterOption"
+            }
+          },
+          "ranges" : {
+            "description" : "\"Ranges\" filter group.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SpeciesFilterOption"
+            }
+          },
+          "cosewicStatuses" : {
+            "description" : "\"COSEWIC status\" filter group.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SpeciesFilterOption"
+            }
+          },
+          "saraStatuses" : {
+            "description" : "\"SARA status\" filter group.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SpeciesFilterOption"
+            }
+          },
+          "schedules" : {
+            "description" : "\"SARA schedule\" filter group.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SpeciesFilterOption"
+            }
+          },
+          "considerations" : {
+            "description" : "\"Under consideration\" filter group.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SpeciesFilterOption"
+            }
+          },
+          "order" : {
+            "description" : "A list of filter group names specifying the UI rendering order.",
+            "type" : "array",
+            "items" : {
+              "enum" : [ "ranges", "taxonomies", "cosewicStatuses", "saraStatuses", "schedules", "considerations" ],
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "SpeciesSearchRequest" : {
+        "title" : "empty object",
+        "required" : [ "searchAll", "pagingSize", "orderBy", "orderAscending", "pageNo" ],
+        "type" : "object",
+        "properties" : {
+          "keywordText" : {
+            "description" : "User-entered search keywords",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "searchAll" : {
+            "description" : "[ ??? ] what is this for?",
+            "type" : "object"
+          },
+          "speciesList" : {
+            "description" : "[ string = \"C\"/\"L\"/\"G\" ] [???] what is this for?",
+            "type" : "string"
+          },
+          "rangeId" : {
+            "description" : "A comma-separated list of range Ids.",
+            "type" : "string"
+          },
+          "taxonomyId" : {
+            "description" : "A comma-separated list of taxonomy Ids.",
+            "type" : "string"
+          },
+          "cosewicStatusId" : {
+            "description" : "A comma-separated list of COSEWIC status Ids.",
+            "type" : "string"
+          },
+          "saraStatusId" : {
+            "description" : "A comma-separated list of SARA status Ids.",
+            "type" : "string"
+          },
+          "scheduleId" : {
+            "description" : "A comma-separated list of SARA schedule Ids.",
+            "type" : "string"
+          },
+          "considerationId" : {
+            "description" : "A comma-separated list of under-consideration Ids.",
+            "type" : "string"
+          },
+          "pagingSize" : {
+            "description" : "The number of records in server paging. Defaults to 2000.",
+            "type" : "number"
+          },
+          "orderBy" : {
+            "description" : "A field name to order the results by. The second order criterion is is by species name.",
+            "type" : "string"
+          },
+          "orderAscending" : {
+            "description" : "A sort direction. \"true\" - ascending; \"false\" - descending. Defaults to \"true\".",
+            "type" : "boolean"
+          },
+          "pageNo" : {
+            "description" : "The server paging number. Default to 1.",
             "type" : "number"
           }
         }
