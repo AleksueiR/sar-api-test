@@ -78,6 +78,14 @@
             "type" : "string"
           },
           "x-example" : "en"
+        }, {
+          "name" : "api_key",
+          "in" : "header",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "x-example" : "Bearer <TOKEN>"
         } ],
         "requestBody" : {
           "content" : {
@@ -108,30 +116,141 @@
           }
         }
       }
+    },
+    "/species/profile/{id}" : {
+      "get" : {
+        "tags" : [ "species" ],
+        "summary" : "Get Species Profile by Id",
+        "description" : "Returns the profile of the selection species.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SpeciesProfile"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request / client error."
+          },
+          "500" : {
+            "description" : "Server error."
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "description" : "Species id.",
+        "required" : true
+      } ]
     }
   },
   "components" : {
     "schemas" : {
-      "SpeciesFilterOption" : {
-        "description" : "An option in a Species Search Filter group.",
-        "required" : [ "name", "id" ],
+      "SpeciesProfileAdditionalInformation" : {
+        "type" : "object",
         "properties" : {
-          "id" : {
-            "description" : "Filter option ID.",
-            "type" : "number"
+          "cosewicPreviousCommonNames" : {
+            "description" : "COSEWIC previous common names.",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
           },
-          "name" : {
-            "description" : "Filter option name.",
+          "cosewicPreviousScientificNames" : {
+            "description" : "COSEWIC previous scientific names.",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "cosewicStatusCriteria" : {
+            "description" : "COSEWIC status criteria.",
             "type" : "string"
           },
-          "itemCount" : {
-            "description" : "The number of search results valid under this filter option.",
-            "type" : "number"
+          "cosewicDesignationHistory" : {
+            "description" : "COSEWIC status history.",
+            "type" : "string"
+          },
+          "cosewicDesignationReasons" : {
+            "description" : "COSEWIC reasons for designation.",
+            "type" : "string"
+          },
+          "legalPreviousName" : {
+            "description" : "Legal / SARA previous names.",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "SpeciesProfileDetails" : {
+        "type" : "object",
+        "properties" : {
+          "description" : {
+            "description" : "Species description",
+            "type" : "string"
+          },
+          "distributionAndPopulation" : {
+            "description" : "Species distribution and population information.",
+            "type" : "string"
+          },
+          "habitat" : {
+            "description" : "Species habitat.",
+            "type" : "string"
+          },
+          "biology" : {
+            "description" : "Species biology.",
+            "type" : "string"
+          },
+          "threats" : {
+            "description" : "Species threats.",
+            "type" : "string"
+          },
+          "protection" : {
+            "description" : "Species protection.",
+            "type" : "string"
+          },
+          "federalProtection" : {
+            "description" : "Species federal protection.",
+            "type" : "string"
+          },
+          "provincialAndTerritorialProtection" : {
+            "description" : "Species provincial and territorial protection.",
+            "type" : "string"
+          },
+          "otherProtection" : {
+            "description" : "Species other protection.",
+            "type" : "string"
+          },
+          "recovery" : {
+            "description" : "Species recovery information.",
+            "type" : "string"
+          },
+          "recoveryStrategyName" : {
+            "description" : "Species recovery strategy name.",
+            "type" : "string"
+          },
+          "recoveryStrategyStatus" : {
+            "description" : "Species recovery strategy status.",
+            "type" : "string"
+          },
+          "recoveryTeams" : {
+            "description" : "Species recovery teams.",
+            "type" : "string"
+          },
+          "recoveryProgressAndActivities" : {
+            "description" : "Species recovery progress and activities.",
+            "type" : "string"
           }
         }
       },
       "SpeciesFilters" : {
-        "title" : "Root Type for SpeciesSearchFilter",
         "description" : "The collection of Species Search Filter groups used to filter search results.",
         "required" : [ "taxonomies", "considerations", "schedules", "saraStatuses", "ranges", "order", "cosewicStatuses" ],
         "type" : "object",
@@ -192,70 +311,101 @@
           }
         }
       },
-      "SpeciesSearchRequest" : {
-        "title" : "empty object",
-        "required" : [ "searchAll", "pagingSize", "orderBy", "orderAscending", "pageNo" ],
+      "SpeciesProfileRecoveryTeam" : {
+        "required" : [ "users", "name" ],
         "type" : "object",
         "properties" : {
-          "keywordText" : {
-            "description" : "User-entered search keywords",
+          "name" : {
+            "description" : "Recovery team name.",
+            "type" : "string"
+          },
+          "users" : {
+            "description" : "A list of recovery team users.",
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "$ref" : "#/components/schemas/SpeciesProfileRecoveryTeamUser"
+            }
+          }
+        }
+      },
+      "SpeciesProfileRecoveryTeamUser" : {
+        "required" : [ "firstName", "lastName", "position" ],
+        "type" : "object",
+        "properties" : {
+          "firstName" : {
+            "description" : "User first name.",
+            "type" : "string"
+          },
+          "lastName" : {
+            "description" : "User last name.",
+            "type" : "string"
+          },
+          "phone" : {
+            "description" : "User position.",
+            "type" : "string"
+          },
+          "email" : {
+            "description" : "User email.",
+            "type" : "string"
+          },
+          "position" : {
+            "description" : "User phone number.",
+            "type" : "string"
+          },
+          "affiliation" : {
+            "description" : "User affiliations.",
+            "type" : "string"
+          }
+        }
+      },
+      "SpeciesSearchFilterCount" : {
+        "type" : "object",
+        "properties" : {
+          "taxonomies" : {
+            "description" : "\"Taxonomy\" filter group.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SpeciesFilterOption"
             }
           },
-          "searchAll" : {
-            "description" : "[ ??? ] what is this for?",
-            "type" : "object"
+          "ranges" : {
+            "description" : "\"Ranges\" filter group.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SpeciesFilterOption"
+            }
           },
-          "speciesList" : {
-            "description" : "[ string = \"C\"/\"L\"/\"G\" ] [???] what is this for?",
-            "type" : "string"
+          "cosewicStatuses" : {
+            "description" : "\"COSEWIC status\" filter group.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SpeciesFilterOption"
+            }
           },
-          "rangeId" : {
-            "description" : "A comma-separated list of range Ids.",
-            "type" : "string"
+          "saraStatuses" : {
+            "description" : "\"SARA status\" filter group.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SpeciesFilterOption"
+            }
           },
-          "taxonomyId" : {
-            "description" : "A comma-separated list of taxonomy Ids.",
-            "type" : "string"
+          "schedules" : {
+            "description" : "\"SARA schedule\" filter group.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SpeciesFilterOption"
+            }
           },
-          "cosewicStatusId" : {
-            "description" : "A comma-separated list of COSEWIC status Ids.",
-            "type" : "string"
-          },
-          "saraStatusId" : {
-            "description" : "A comma-separated list of SARA status Ids.",
-            "type" : "string"
-          },
-          "scheduleId" : {
-            "description" : "A comma-separated list of SARA schedule Ids.",
-            "type" : "string"
-          },
-          "considerationId" : {
-            "description" : "A comma-separated list of under-consideration Ids.",
-            "type" : "string"
-          },
-          "pagingSize" : {
-            "description" : "The number of records in server paging. Defaults to 2000.",
-            "type" : "number"
-          },
-          "orderBy" : {
-            "description" : "A field name to order the results by. The second order criterion is is by species name.",
-            "type" : "string"
-          },
-          "orderAscending" : {
-            "description" : "A sort direction. \"true\" - ascending; \"false\" - descending. Defaults to \"true\".",
-            "type" : "boolean"
-          },
-          "pageNo" : {
-            "description" : "The server paging number. Default to 1.",
-            "type" : "number"
+          "considerations" : {
+            "description" : "\"Under consideration\" filter group.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SpeciesFilterOption"
+            }
           }
         }
       },
       "SpeciesSearchRecord" : {
-        "title" : "Root Type for SpeciesSearchRecord",
         "required" : [ ],
         "type" : "object",
         "properties" : {
@@ -323,57 +473,75 @@
           "underConsiderationId" : {
             "description" : "Under-consideration Id.",
             "type" : "number"
+          },
+          "legalScientificName" : {
+            "description" : "Legal / SARA scientific name.",
+            "type" : "string"
           }
         }
       },
-      "SpeciesSearchFilterCount" : {
+      "SpeciesSearchRequest" : {
+        "required" : [ "searchAll", "pagingSize", "orderBy", "orderAscending", "pageNo" ],
+        "type" : "object",
         "properties" : {
-          "taxonomies" : {
-            "description" : "\"Taxonomy\" filter group.",
+          "keywordText" : {
+            "description" : "User-entered search keywords",
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/SpeciesFilterOption"
+              "type" : "string"
             }
           },
-          "ranges" : {
-            "description" : "\"Ranges\" filter group.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/SpeciesFilterOption"
-            }
+          "searchAll" : {
+            "description" : "[ ??? ] what is this for?",
+            "type" : "object"
           },
-          "cosewicStatuses" : {
-            "description" : "\"COSEWIC status\" filter group.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/SpeciesFilterOption"
-            }
+          "speciesList" : {
+            "description" : "[ string = \"C\"/\"L\"/\"G\" ] [???] what is this for?",
+            "type" : "string"
           },
-          "saraStatuses" : {
-            "description" : "\"SARA status\" filter group.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/SpeciesFilterOption"
-            }
+          "rangeId" : {
+            "description" : "A comma-separated list of range Ids.",
+            "type" : "string"
           },
-          "schedules" : {
-            "description" : "\"SARA schedule\" filter group.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/SpeciesFilterOption"
-            }
+          "taxonomyId" : {
+            "description" : "A comma-separated list of taxonomy Ids.",
+            "type" : "string"
           },
-          "considerations" : {
-            "description" : "\"Under consideration\" filter group.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/SpeciesFilterOption"
-            }
+          "cosewicStatusId" : {
+            "description" : "A comma-separated list of COSEWIC status Ids.",
+            "type" : "string"
+          },
+          "saraStatusId" : {
+            "description" : "A comma-separated list of SARA status Ids.",
+            "type" : "string"
+          },
+          "scheduleId" : {
+            "description" : "A comma-separated list of SARA schedule Ids.",
+            "type" : "string"
+          },
+          "considerationId" : {
+            "description" : "A comma-separated list of under-consideration Ids.",
+            "type" : "string"
+          },
+          "pagingSize" : {
+            "description" : "The number of records in server paging. Defaults to 2000.",
+            "type" : "number"
+          },
+          "orderBy" : {
+            "description" : "A field name to order the results by. The second order criterion is is by species name.",
+            "type" : "string"
+          },
+          "orderAscending" : {
+            "description" : "A sort direction. \"true\" - ascending; \"false\" - descending. Defaults to \"true\".",
+            "type" : "boolean"
+          },
+          "pageNo" : {
+            "description" : "The server paging number. Default to 1.",
+            "type" : "number"
           }
         }
       },
       "SpeciesSearchResults" : {
-        "title" : "empty object",
         "required" : [ "species" ],
         "type" : "object",
         "properties" : {
@@ -402,6 +570,54 @@
             "items" : {
               "$ref" : "#/components/schemas/SpeciesSearchFilterCount"
             }
+          }
+        }
+      },
+      "SpeciesProfile" : {
+        "required" : [ ],
+        "type" : "object",
+        "properties" : {
+          "returnStatus" : {
+            "description" : "Status of the request.",
+            "type" : "string"
+          },
+          "image" : {
+            "description" : "A list of species image file name.",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "speciesRecord" : {
+            "$ref" : "#/components/schemas/SpeciesSearchRecord",
+            "description" : "Species search record information."
+          },
+          "speciesAdditionalInfo" : {
+            "$ref" : "#/components/schemas/SpeciesProfileAdditionalInformation",
+            "description" : "Species additional information."
+          },
+          "speciesDetails" : {
+            "$ref" : "#/components/schemas/SpeciesProfileDetails",
+            "description" : "Species profile details."
+          }
+        }
+      },
+      "SpeciesFilterOption" : {
+        "description" : "An option in a Species Search Filter group.",
+        "required" : [ "name", "id" ],
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "description" : "Filter option ID.",
+            "type" : "number"
+          },
+          "name" : {
+            "description" : "Filter option name.",
+            "type" : "string"
+          },
+          "itemCount" : {
+            "description" : "The number of search results valid under this filter option.",
+            "type" : "number"
           }
         }
       }
