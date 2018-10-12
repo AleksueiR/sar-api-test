@@ -213,6 +213,16 @@
         "tags" : [ "permits" ],
         "summary" : "Get Permits search results",
         "description" : "Returns the lists of the results for Permits Search page.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/PermitsSearchRequest"
+              }
+            }
+          },
+          "required" : true
+        },
         "responses" : {
           "200" : {
             "description" : "Successful operation.",
