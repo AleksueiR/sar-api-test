@@ -397,15 +397,6 @@
       },
       "PermitsSearchRequest" : {
         "properties" : {
-          "eccc" : {
-            "type" : "boolean"
-          },
-          "dfo" : {
-            "type" : "boolean"
-          },
-          "parks" : {
-            "type" : "boolean"
-          },
           "issuingYears" : {
             "description" : "A comma-separated list of issuing year ids.",
             "type" : "string"
@@ -429,6 +420,10 @@
           "pageSize" : {
             "description" : "The number of records in server paging. Defaults to 2000.",
             "type" : "number"
+          },
+          "issuingAuthorities" : {
+            "description" : "A comma-separated list of issuing athority ids.",
+            "type" : "string"
           }
         }
       },
@@ -601,14 +596,14 @@
             }
           },
           "issuingYears" : {
-            "description" : "\"Issuing years\" filter group.",
+            "description" : "\"Issuing years\" filter group. Year id matches year value for simplicity.",
             "type" : "array",
             "items" : {
               "$ref" : "#/components/schemas/CommonFilterOption"
             }
           },
           "issuingMonths" : {
-            "description" : "\"Issuing months\" filter group.",
+            "description" : "\"Issuing months\" filter group.\nMonths' ids should be from 0 to 11.",
             "type" : "array",
             "items" : {
               "$ref" : "#/components/schemas/CommonFilterOption"
