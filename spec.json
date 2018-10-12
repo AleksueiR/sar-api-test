@@ -6,7 +6,7 @@
     "version" : "1.0.0"
   },
   "paths" : {
-    "/species/profile/{id}" : {
+    "api/species/profile/{id}" : {
       "summary" : "Species profile endpoint.",
       "get" : {
         "tags" : [ "species" ],
@@ -46,7 +46,7 @@
         }
       } ]
     },
-    "/species/searchResults" : {
+    "api/species/searchResults" : {
       "summary" : "Search results endpoint.",
       "get" : {
         "tags" : [ "species" ],
@@ -114,8 +114,8 @@
         }
       } ]
     },
-    "/species/searchFilters" : {
-      "summary" : "Search filters endpoint.",
+    "api/species/searchFilters" : {
+      "summary" : "Species search filters endpoint.",
       "get" : {
         "tags" : [ "species" ],
         "summary" : "Get Species filters",
@@ -136,6 +136,35 @@
           },
           "500" : {
             "description" : "Server error."
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "Accept-Language",
+        "in" : "header",
+        "description" : "Current page language. Example: `en`",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    },
+    "/api/permits/searchFilters" : {
+      "summary" : "Permits search filters endpoint.",
+      "get" : {
+        "tags" : [ "permits" ],
+        "summary" : "Get Permits filters",
+        "description" : "Returns the lists of values for the filters of permits Search page.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PermitsFilters"
+                }
+              }
+            }
           }
         }
       },
@@ -267,42 +296,42 @@
             "description" : "\"Taxonomy\" filter group.",
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/SpeciesFilterOption"
+              "$ref" : "#/components/schemas/CommonFilterOption"
             }
           },
           "ranges" : {
             "description" : "\"Ranges\" filter group.",
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/SpeciesFilterOption"
+              "$ref" : "#/components/schemas/CommonFilterOption"
             }
           },
           "cosewicStatuses" : {
             "description" : "\"COSEWIC status\" filter group.",
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/SpeciesFilterOption"
+              "$ref" : "#/components/schemas/CommonFilterOption"
             }
           },
           "saraStatuses" : {
             "description" : "\"SARA status\" filter group.",
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/SpeciesFilterOption"
+              "$ref" : "#/components/schemas/CommonFilterOption"
             }
           },
           "schedules" : {
             "description" : "\"SARA schedule\" filter group.",
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/SpeciesFilterOption"
+              "$ref" : "#/components/schemas/CommonFilterOption"
             }
           },
           "considerations" : {
             "description" : "\"Under consideration\" filter group.",
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/SpeciesFilterOption"
+              "$ref" : "#/components/schemas/CommonFilterOption"
             }
           },
           "order" : {
@@ -369,42 +398,42 @@
             "description" : "\"Taxonomy\" filter group.",
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/SpeciesFilterOption"
+              "$ref" : "#/components/schemas/CommonFilterOption"
             }
           },
           "ranges" : {
             "description" : "\"Ranges\" filter group.",
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/SpeciesFilterOption"
+              "$ref" : "#/components/schemas/CommonFilterOption"
             }
           },
           "cosewicStatuses" : {
             "description" : "\"COSEWIC status\" filter group.",
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/SpeciesFilterOption"
+              "$ref" : "#/components/schemas/CommonFilterOption"
             }
           },
           "saraStatuses" : {
             "description" : "\"SARA status\" filter group.",
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/SpeciesFilterOption"
+              "$ref" : "#/components/schemas/CommonFilterOption"
             }
           },
           "schedules" : {
             "description" : "\"SARA schedule\" filter group.",
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/SpeciesFilterOption"
+              "$ref" : "#/components/schemas/CommonFilterOption"
             }
           },
           "considerations" : {
             "description" : "\"Under consideration\" filter group.",
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/SpeciesFilterOption"
+              "$ref" : "#/components/schemas/CommonFilterOption"
             }
           }
         }
@@ -606,7 +635,7 @@
           }
         }
       },
-      "SpeciesFilterOption" : {
+      "CommonFilterOption" : {
         "description" : "An option in a Species Search Filter group.",
         "required" : [ "name", "id" ],
         "type" : "object",
@@ -619,9 +648,59 @@
             "description" : "Filter option name.",
             "type" : "string"
           },
-          "itemCount" : {
+          "itemsCount" : {
             "description" : "The number of search results valid under this filter option.",
             "type" : "number"
+          }
+        }
+      },
+      "PermitsFilters" : {
+        "description" : "The collection of Permits Search Filter groups used to filter search results.",
+        "required" : [ "taxonomies", "considerations", "schedules", "saraStatuses", "ranges", "order", "cosewicStatuses", "returnStatus" ],
+        "type" : "object",
+        "properties" : {
+          "returnStatus" : {
+            "description" : "Status of the request.",
+            "type" : "string"
+          },
+          "considerations" : {
+            "$ref" : "#/components/schemas/PermitsFilterCollection",
+            "description" : "A collection of Permit filter groups."
+          },
+          "order" : {
+            "description" : "A list of filter group names specifying the UI rendering order.",
+            "type" : "array",
+            "items" : {
+              "enum" : [ "issuingAuthorities", "issuingMonths", "issuingYears" ],
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "PermitsFilterCollection" : {
+        "description" : "A collection of Permit filter groups.",
+        "required" : [ "issuingAuthorities", "issuingYears", "issuingMonths" ],
+        "properties" : {
+          "issuingAuthorities" : {
+            "description" : "\"Issuing authorities\" filter group.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonFilterOption"
+            }
+          },
+          "issuingYears" : {
+            "description" : "\"Issuing years\" filter group.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonFilterOption"
+            }
+          },
+          "issuingMonths" : {
+            "description" : "\"Issuing months\" filter group.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonFilterOption"
+            }
           }
         }
       }
