@@ -10,7 +10,7 @@
       "summary" : "Permits search filters endpoint.",
       "get" : {
         "tags" : [ "permits" ],
-        "summary" : "Get Permits filters",
+        "summary" : "Get Permits Filters",
         "description" : "Returns the lists of values for the filters of permits Search page.",
         "responses" : {
           "200" : {
@@ -188,7 +188,7 @@
       "summary" : "Permits search results endpoint.",
       "get" : {
         "tags" : [ "permits" ],
-        "summary" : "Get all Permits",
+        "summary" : "Get all Permits by Default",
         "description" : "Returns the list of all available Permits.",
         "responses" : {
           "200" : {
@@ -211,7 +211,7 @@
       },
       "post" : {
         "tags" : [ "permits" ],
-        "summary" : "Get Permits search results",
+        "summary" : "Get Permits by Filters",
         "description" : "Returns the lists of the results for Permits Search page.",
         "requestBody" : {
           "content" : {
