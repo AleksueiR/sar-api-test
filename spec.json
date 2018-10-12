@@ -6,7 +6,36 @@
     "version" : "1.0.0"
   },
   "paths" : {
-    "api/species/profile/{id}" : {
+    "/api/permits/searchFilters" : {
+      "summary" : "Permits search filters endpoint.",
+      "get" : {
+        "tags" : [ "permits" ],
+        "summary" : "Get Permits filters",
+        "description" : "Returns the lists of values for the filters of permits Search page.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PermitsFilters"
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "Accept-Language",
+        "in" : "header",
+        "description" : "Current page language. Example: `en`",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    },
+    "/api/species/profile/{id}" : {
       "summary" : "Species profile endpoint.",
       "get" : {
         "tags" : [ "species" ],
@@ -46,7 +75,42 @@
         }
       } ]
     },
-    "api/species/searchResults" : {
+    "/api/species/searchFilters" : {
+      "summary" : "Species search filters endpoint.",
+      "get" : {
+        "tags" : [ "species" ],
+        "summary" : "Get Species filters",
+        "description" : "Returns the lists of values for the filters of Species Search page.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SpeciesFilters"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request / client error."
+          },
+          "500" : {
+            "description" : "Server error."
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "Accept-Language",
+        "in" : "header",
+        "description" : "Current page language. Example: `en`",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    },
+    "/api/species/searchResults" : {
       "summary" : "Search results endpoint.",
       "get" : {
         "tags" : [ "species" ],
@@ -101,70 +165,6 @@
           },
           "500" : {
             "description" : "Server error."
-          }
-        }
-      },
-      "parameters" : [ {
-        "name" : "Accept-Language",
-        "in" : "header",
-        "description" : "Current page language. Example: `en`",
-        "required" : true,
-        "schema" : {
-          "type" : "string"
-        }
-      } ]
-    },
-    "api/species/searchFilters" : {
-      "summary" : "Species search filters endpoint.",
-      "get" : {
-        "tags" : [ "species" ],
-        "summary" : "Get Species filters",
-        "description" : "Returns the lists of values for the filters of Species Search page.",
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation.",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/SpeciesFilters"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request / client error."
-          },
-          "500" : {
-            "description" : "Server error."
-          }
-        }
-      },
-      "parameters" : [ {
-        "name" : "Accept-Language",
-        "in" : "header",
-        "description" : "Current page language. Example: `en`",
-        "required" : true,
-        "schema" : {
-          "type" : "string"
-        }
-      } ]
-    },
-    "/api/permits/searchFilters" : {
-      "summary" : "Permits search filters endpoint.",
-      "get" : {
-        "tags" : [ "permits" ],
-        "summary" : "Get Permits filters",
-        "description" : "Returns the lists of values for the filters of permits Search page.",
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation.",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/PermitsFilters"
-                }
-              }
-            }
           }
         }
       },
@@ -654,29 +654,6 @@
           }
         }
       },
-      "PermitsFilters" : {
-        "description" : "The collection of Permits Search Filter groups used to filter search results.",
-        "required" : [ "taxonomies", "considerations", "schedules", "saraStatuses", "ranges", "order", "cosewicStatuses", "returnStatus" ],
-        "type" : "object",
-        "properties" : {
-          "returnStatus" : {
-            "description" : "Status of the request.",
-            "type" : "string"
-          },
-          "considerations" : {
-            "$ref" : "#/components/schemas/PermitsFilterCollection",
-            "description" : "A collection of Permit filter groups."
-          },
-          "order" : {
-            "description" : "A list of filter group names specifying the UI rendering order.",
-            "type" : "array",
-            "items" : {
-              "enum" : [ "issuingAuthorities", "issuingMonths", "issuingYears" ],
-              "type" : "string"
-            }
-          }
-        }
-      },
       "PermitsFilterCollection" : {
         "description" : "A collection of Permit filter groups.",
         "required" : [ "issuingAuthorities", "issuingYears", "issuingMonths" ],
@@ -700,6 +677,28 @@
             "type" : "array",
             "items" : {
               "$ref" : "#/components/schemas/CommonFilterOption"
+            }
+          }
+        }
+      },
+      "PermitsFilters" : {
+        "description" : "The collection of Permits Search Filter groups used to filter search results.",
+        "required" : [ "returnStatus", "order", "filters" ],
+        "type" : "object",
+        "properties" : {
+          "returnStatus" : {
+            "description" : "Status of the request.",
+            "type" : "string"
+          },
+          "filters" : {
+            "$ref" : "#/components/schemas/PermitsFilterCollection",
+            "description" : "A collection of Permit filter groups."
+          },
+          "order" : {
+            "description" : "A list of filter group names specifying the UI rendering order.",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
             }
           }
         }
