@@ -187,6 +187,7 @@
     "/api/permits/searchResults" : {
       "summary" : "Permits search results endpoint.",
       "get" : {
+        "tags" : [ "permits" ],
         "summary" : "Get all Permits",
         "description" : "Returns the list of all available Permits.",
         "responses" : {
@@ -209,6 +210,7 @@
         }
       },
       "post" : {
+        "tags" : [ "permits" ],
         "summary" : "Get Permits search results",
         "description" : "Returns the lists of the results for Permits Search page.",
         "responses" : {
@@ -842,5 +844,8 @@
   "tags" : [ {
     "name" : "species",
     "description" : "Everything about species."
+  }, {
+    "name" : "permits",
+    "description" : "Everything about permits."
   } ]
 }
