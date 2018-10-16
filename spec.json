@@ -251,6 +251,9 @@
           "type" : "string"
         }
       } ]
+    },
+    "/api/permits/permitdetails/{id}" : {
+      "summary" : "Permit Details endpoint"
     }
   },
   "components" : {
@@ -840,6 +843,61 @@
           },
           "affiliation" : {
             "description" : "User affiliations.",
+            "type" : "string"
+          }
+        }
+      },
+      "PermitDetails" : {
+        "title" : "Root Type for PermitDetails",
+        "description" : "The root of the PermitDetails type's schema.",
+        "required" : [ ],
+        "type" : "object",
+        "properties" : {
+          "PermitId" : {
+            "type" : "integer"
+          },
+          "ExplanationId" : {
+            "type" : "integer"
+          },
+          "ExplanationName" : {
+            "type" : "string"
+          },
+          "LocalNumber" : {
+            "type" : "string"
+          },
+          "StartDate" : {
+            "format" : "date",
+            "type" : "string"
+          },
+          "EndDate" : {
+            "format" : "date",
+            "type" : "string"
+          },
+          "Description" : {
+            "type" : "string"
+          },
+          "IssuerId" : {
+            "type" : "integer"
+          },
+          "IssuerName" : {
+            "type" : "string"
+          },
+          "AuthorityId" : {
+            "type" : "integer"
+          },
+          "PurposeId" : {
+            "type" : "integer"
+          },
+          "PurposeName" : {
+            "type" : "string"
+          },
+          "PreConditions" : {
+            "type" : "string"
+          },
+          "Terms" : {
+            "type" : "string"
+          },
+          "Relevant" : {
             "type" : "string"
           }
         }
