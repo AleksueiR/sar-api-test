@@ -253,7 +253,21 @@
       } ]
     },
     "/api/permits/permitdetails/{id}" : {
-      "summary" : "Permit Details endpoint"
+      "summary" : "Permit Details endpoint",
+      "get" : {
+        "tags" : [ "permits" ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PermitDetails"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components" : {
