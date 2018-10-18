@@ -2,7 +2,7 @@
   "openapi" : "3.0.2",
   "info" : {
     "title" : "SAR-CWS",
-    "description" : "Correlation energize social capital; external partners, program area strategize dynamic. Mass incarceration; ideate best practices inspiring, expose the truth shine collective impact. White paper a strategize efficient compassion efficient change-makers do-gooder co-create program areas segmentation or impact investing. Social enterprise synergy effective corporate social responsibility co-creation; co-create rubric social entrepreneurship revolutionary. Policymaker when inspiring; milestones communities change-makers, strategize expose the truth green space.\n\n# Introduction\n\nThis API is documented in OpenAPI format and represent SAR-CWS API.\n\nCompassion, human-centered social capital; external partners; LGBTQ+ to overcome injustice shared vocabulary social innovation shared vocabulary thought leader. Replicable, families contextualize B-corp indicators shared vocabulary agile silo, silo families resist. Save the world white paper, issue outcomes social impact; circular impact investing mobilize challenges and opportunities sustainable inspirational capacity building.\n\nDesign thinking parse, inspire do-gooder society; disrupt; activate state of play thought leader framework efficient. Think tank external partners transparent boots on the ground dynamic peaceful society. Collaborate, social intrapreneurship co-creation mobilize empower communities boots on the ground transparent sustainable. Emerging when living a fully ethical life; corporate social responsibility parse; peaceful; social entrepreneurship framework citizen-centered targeted expose the truth ideate granular compassion. Best practices shared unit of analysis, blended value activate transparent optimism social entrepreneur. Optimism mobilize greenwashing, scale and impact; ecosystem external.",
+    "description" : "[ Description goes here ]\n\n# Introduction\n\nThis API is documented in OpenAPI format and represent SAR-CWS API.\n\n[ More introduction text goes here ]",
     "version" : "1.0.0"
   },
   "paths" : {
@@ -53,7 +53,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/SpeciesProfile"
+                  "$ref" : "#/components/schemas/SpeciesProfileResponse"
                 }
               }
             }
@@ -70,7 +70,10 @@
         "name" : "id",
         "in" : "path",
         "description" : "Species id.",
-        "required" : true
+        "required" : true,
+        "schema" : {
+          "type" : "number"
+        }
       }, {
         "name" : "Accept-Language",
         "in" : "header",
@@ -256,18 +259,44 @@
       "summary" : "Permit Details endpoint",
       "get" : {
         "tags" : [ "permits" ],
+        "summary" : "Get Permit by Id",
+        "description" : "Returns the detailed permit information.",
         "responses" : {
           "200" : {
+            "description" : "Successful operation.",
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/PermitDetails"
+                  "$ref" : "#/components/schemas/PermitDetailsResponse"
                 }
               }
             }
+          },
+          "400" : {
+            "description" : "Invalid request / client error."
+          },
+          "500" : {
+            "description" : "Server error."
           }
         }
-      }
+      },
+      "parameters" : [ {
+        "name" : "Accept-Language",
+        "in" : "header",
+        "description" : "Current page language. Example: `en`",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "id",
+        "in" : "path",
+        "description" : "Permit id.",
+        "required" : true,
+        "schema" : {
+          "type" : "number"
+        }
+      } ]
     }
   },
   "components" : {
@@ -371,35 +400,6 @@
           "recoveryProgressAndActivities" : {
             "description" : "Species recovery progress and activities.",
             "type" : "string"
-          }
-        }
-      },
-      "SpeciesProfile" : {
-        "required" : [ "returnStatus", "speciesAdditionalInfo", "speciesDetails", "speciesRecord" ],
-        "type" : "object",
-        "properties" : {
-          "returnStatus" : {
-            "description" : "Status of the request.",
-            "type" : "string"
-          },
-          "image" : {
-            "description" : "A list of species image file name.",
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          },
-          "speciesRecord" : {
-            "$ref" : "#/components/schemas/SpeciesRecord",
-            "description" : "Species search record information."
-          },
-          "speciesAdditionalInfo" : {
-            "$ref" : "#/components/schemas/SpeciesProfileAdditionalInformation",
-            "description" : "Species additional information."
-          },
-          "speciesDetails" : {
-            "$ref" : "#/components/schemas/SpeciesProfileDetails",
-            "description" : "Species profile details."
           }
         }
       },
@@ -861,57 +861,202 @@
           }
         }
       },
-      "PermitDetails" : {
+      "SpeciesProfileResponse" : {
+        "required" : [ "returnStatus", "speciesAdditionalInfo", "speciesDetails", "speciesRecord" ],
+        "type" : "object",
+        "properties" : {
+          "returnStatus" : {
+            "description" : "Status of the request.",
+            "type" : "string"
+          },
+          "image" : {
+            "description" : "A list of species image file name.",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "speciesRecord" : {
+            "$ref" : "#/components/schemas/SpeciesRecord",
+            "description" : "Species search record information."
+          },
+          "speciesAdditionalInfo" : {
+            "$ref" : "#/components/schemas/SpeciesProfileAdditionalInformation",
+            "description" : "Species additional information."
+          },
+          "speciesDetails" : {
+            "$ref" : "#/components/schemas/SpeciesProfileDetails",
+            "description" : "Species profile details."
+          }
+        }
+      },
+      "PermitDetailsResponse" : {
         "title" : "Root Type for PermitDetails",
         "description" : "The root of the PermitDetails type's schema.",
         "required" : [ ],
         "type" : "object",
         "properties" : {
-          "PermitId" : {
+          "permitId" : {
             "type" : "integer"
           },
-          "ExplanationId" : {
+          "explanationId" : {
             "type" : "integer"
           },
-          "ExplanationName" : {
+          "explanationName" : {
             "type" : "string"
           },
-          "LocalNumber" : {
+          "localNumber" : {
             "type" : "string"
           },
-          "StartDate" : {
+          "startDate" : {
             "format" : "date",
             "type" : "string"
           },
-          "EndDate" : {
+          "endDate" : {
             "format" : "date",
             "type" : "string"
           },
-          "Description" : {
+          "description" : {
             "type" : "string"
           },
-          "IssuerId" : {
+          "issuerId" : {
             "type" : "integer"
           },
-          "IssuerName" : {
+          "issuerName" : {
             "type" : "string"
           },
-          "AuthorityId" : {
+          "authorityId" : {
             "type" : "integer"
           },
-          "PurposeId" : {
+          "purposeId" : {
             "type" : "integer"
           },
-          "PurposeName" : {
+          "purposeName" : {
             "type" : "string"
           },
-          "PreConditions" : {
+          "preConditions" : {
             "type" : "string"
           },
-          "Terms" : {
+          "terms" : {
             "type" : "string"
           },
-          "Relevant" : {
+          "relevant" : {
+            "type" : "string"
+          },
+          "relatedSpecies" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitRelatedSpecies"
+            }
+          },
+          "authorities" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitAuthorities"
+            }
+          },
+          "contactPersons" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitContactPersons"
+            }
+          },
+          "locations" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitLocations"
+            }
+          },
+          "purposes" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitPurposes"
+            }
+          }
+        }
+      },
+      "PermitAuthorities" : {
+        "properties" : {
+          "authorityId" : {
+            "type" : "integer"
+          },
+          "authorityName" : {
+            "type" : "string"
+          }
+        }
+      },
+      "PermitRelatedSpecies" : {
+        "properties" : {
+          "specieId" : {
+            "type" : "integer"
+          },
+          "cosewicName" : {
+            "type" : "string"
+          }
+        }
+      },
+      "PermitContactPersons" : {
+        "properties" : {
+          "personId" : {
+            "type" : "integer"
+          },
+          "firstName" : {
+            "type" : "string"
+          },
+          "lastName" : {
+            "type" : "string"
+          },
+          "address" : {
+            "type" : "string"
+          },
+          "city" : {
+            "type" : "string"
+          },
+          "provinceState" : {
+            "type" : "string"
+          },
+          "postalCode" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "phone" : {
+            "type" : "string"
+          },
+          "fax" : {
+            "type" : "string"
+          },
+          "salutationId" : {
+            "type" : "string"
+          },
+          "salutation" : {
+            "type" : "string"
+          },
+          "title" : {
+            "type" : "string"
+          },
+          "organization" : {
+            "type" : "string"
+          }
+        }
+      },
+      "PermitLocations" : {
+        "properties" : {
+          "rangeId" : {
+            "type" : "integer"
+          },
+          "locationName" : {
+            "type" : "string"
+          }
+        }
+      },
+      "PermitPurposes" : {
+        "properties" : {
+          "purposeId" : {
+            "type" : "integer"
+          },
+          "purposeName" : {
             "type" : "string"
           }
         }
