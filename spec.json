@@ -199,7 +199,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/PermitsSearchResponse"
+                  "$ref" : "#/components/schemas/PermitsSearchGetResponse"
                 }
               }
             }
@@ -232,7 +232,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/PermitsSearchResponse"
+                  "$ref" : "#/components/schemas/PermitsSearchPostResponse"
                 }
               }
             }
@@ -255,7 +255,18 @@
         }
       } ]
     },
-    "/api/permits/permitdetails/{id}" : {
+    "/api/schedule-1/searchResults" : {
+      "summary" : "Schedule-1 results endpoint.",
+      "get" : {
+        "tags" : [ "schedule-1" ]
+      }
+    },
+    "/api/schedule-1/{id}" : {
+      "get" : {
+        "tags" : [ "schedule-1" ]
+      }
+    },
+    "/api/permits/details/{id}" : {
       "summary" : "Permit Details endpoint",
       "get" : {
         "tags" : [ "permits" ],
@@ -403,25 +414,6 @@
           }
         }
       },
-      "CommonFilterOption" : {
-        "description" : "An option in a Species Search Filter group.",
-        "required" : [ "name", "id" ],
-        "type" : "object",
-        "properties" : {
-          "id" : {
-            "description" : "Filter option ID.",
-            "type" : "number"
-          },
-          "name" : {
-            "description" : "Filter option name.",
-            "type" : "string"
-          },
-          "itemsCount" : {
-            "description" : "The number of search results valid under this filter option.",
-            "type" : "number"
-          }
-        }
-      },
       "PermitsSearchRequest" : {
         "properties" : {
           "issuingYears" : {
@@ -547,44 +539,9 @@
             "description" : "Permit expirty date.",
             "type" : "string"
           },
-          "issueYear" : {
-            "description" : "Permit issue year.",
-            "type" : "number"
-          },
-          "issueMonth" : {
-            "description" : "Permit issue month.",
-            "type" : "number"
-          },
-          "issueMonthAbbreviation" : {
-            "description" : "Permit issue month abbreviation.",
-            "type" : "string"
-          },
           "permitStatus" : {
             "description" : "Permit status.",
             "type" : "string"
-          }
-        }
-      },
-      "PermitsSearchResponse" : {
-        "properties" : {
-          "filters" : {
-            "$ref" : "#/components/schemas/PermitsFilters",
-            "description" : "A list of filter counters based on the current search."
-          },
-          "returnStatus" : {
-            "description" : "Status of the request.",
-            "type" : "string"
-          },
-          "recordsCount" : {
-            "description" : "'The total number of records returned by the search. '",
-            "type" : "number"
-          },
-          "permits" : {
-            "description" : "A list of permit records.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/PermitRecord"
-            }
           }
         }
       },
@@ -985,16 +942,6 @@
           }
         }
       },
-      "PermitRelatedSpecies" : {
-        "properties" : {
-          "specieId" : {
-            "type" : "integer"
-          },
-          "cosewicName" : {
-            "type" : "string"
-          }
-        }
-      },
       "PermitContactPersons" : {
         "properties" : {
           "personId" : {
@@ -1060,6 +1007,77 @@
             "type" : "string"
           }
         }
+      },
+      "PermitRelatedSpecies" : {
+        "properties" : {
+          "speciesId" : {
+            "type" : "integer"
+          },
+          "cosewicName" : {
+            "type" : "string"
+          }
+        }
+      },
+      "CommonFilterOption" : {
+        "description" : "An option in a Species Search Filter group.",
+        "required" : [ "name", "id" ],
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "description" : "Filter option ID.",
+            "type" : "number"
+          },
+          "name" : {
+            "description" : "Filter option name.",
+            "type" : "string"
+          },
+          "itemCount" : {
+            "description" : "The number of search results valid under this filter option.",
+            "type" : "number"
+          }
+        }
+      },
+      "PermitsSearchPostResponse" : {
+        "properties" : {
+          "filters" : {
+            "$ref" : "#/components/schemas/PermitsFilters",
+            "description" : "A list of filter counters based on the current search."
+          },
+          "returnStatus" : {
+            "description" : "Status of the request.",
+            "type" : "string"
+          },
+          "recordCount" : {
+            "description" : "'The total number of records returned by the search. '",
+            "type" : "number"
+          },
+          "permits" : {
+            "description" : "A list of permit records.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitRecord"
+            }
+          }
+        }
+      },
+      "PermitsSearchGetResponse" : {
+        "properties" : {
+          "returnStatus" : {
+            "description" : "Status of the request.",
+            "type" : "string"
+          },
+          "recordCount" : {
+            "description" : "'The total number of records returned by the search. '",
+            "type" : "number"
+          },
+          "permits" : {
+            "description" : "A list of permit records.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitRecord"
+            }
+          }
+        }
       }
     }
   },
@@ -1069,5 +1087,14 @@
   }, {
     "name" : "permits",
     "description" : "Everything about permits."
+  }, {
+    "name" : "schedule-1",
+    "description" : "Everything about schedule-1 documents."
+  }, {
+    "name" : "migratory-birds",
+    "description" : "Everything about migratory birds."
+  }, {
+    "name" : "documents",
+    "description" : "Everything about documents."
   } ]
 }
