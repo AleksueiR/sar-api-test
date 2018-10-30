@@ -298,41 +298,6 @@
         }
       } ]
     },
-    "/api/schedule-1/searchResults" : {
-      "summary" : "Schedule-1 results endpoint.",
-      "get" : {
-        "tags" : [ "schedule-1" ],
-        "summary" : "Get all Schedule 1 Species",
-        "description" : "Returns the list of all Schedule 1 species.",
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation.",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/Schedule1SearchResponse"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request / client error."
-          },
-          "500" : {
-            "description" : "Server error."
-          }
-        }
-      },
-      "parameters" : [ {
-        "name" : "Accept-Language",
-        "in" : "header",
-        "description" : "Current page language. Example: `en`",
-        "required" : true,
-        "schema" : {
-          "type" : "string"
-        }
-      } ]
-    },
     "/api/schedule-1/{id}" : {
       "get" : {
         "tags" : [ "schedule-1" ]
@@ -346,6 +311,41 @@
           "type" : "number"
         }
       }, {
+        "name" : "Accept-Language",
+        "in" : "header",
+        "description" : "Current page language. Example: `en`",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    },
+    "/api/species/schedule1search" : {
+      "summary" : "Schedule-1 results endpoint.",
+      "get" : {
+        "tags" : [ "schedule-1" ],
+        "summary" : "Get all Schedule 1 Species",
+        "description" : "Returns the list of all Schedule 1 species.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SpeciesSchedule1SearchResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request / client error."
+          },
+          "500" : {
+            "description" : "Server error."
+          }
+        }
+      },
+      "parameters" : [ {
         "name" : "Accept-Language",
         "in" : "header",
         "description" : "Current page language. Example: `en`",
@@ -1125,7 +1125,7 @@
           }
         }
       },
-      "Schedule1Record" : {
+      "SpeciesSchedule1Record" : {
         "title" : "Root Type for Schedule1Record",
         "description" : "The root of the Schedule1Record type's schema.",
         "type" : "object",
@@ -1177,7 +1177,7 @@
         },
         "example" : "{\r\n    \"legalId\": 123,\r\n    \"legalNameCommaEn\": \"Bear, Grizzly\",\r\n    \"legalCommonNameFr\": \"Ours grizzli\",\r\n    \"cosewicScientificName\": \"<i>Ursus</i> <i>arctos</i> \",\r\n    \"legalScientificName\": \"\",\r\n    \"legalPopulation\": \"Prairie population\",\r\n    \"legalStatusId\": 2,\r\n    \"legalStatus\": \"Extirpated\",\r\n    \"taxonomySortId\": 10,\r\n    \"taxonomyName\": \"Mammals\"\r\n}"
       },
-      "Schedule1SearchResponse" : {
+      "SpeciesSchedule1SearchResponse" : {
         "title" : "Root Type for Schedule1SearchResponse",
         "description" : "The root of the Schedule1SearchResponse type's schema.",
         "type" : "object",
@@ -1194,7 +1194,7 @@
             "description" : "A list of Schedule 1 species.",
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/Schedule1Record"
+              "$ref" : "#/components/schemas/SpeciesSchedule1Record"
             }
           }
         },
