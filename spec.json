@@ -255,17 +255,6 @@
         }
       } ]
     },
-    "/api/schedule-1/searchResults" : {
-      "summary" : "Schedule-1 results endpoint.",
-      "get" : {
-        "tags" : [ "schedule-1" ]
-      }
-    },
-    "/api/schedule-1/{id}" : {
-      "get" : {
-        "tags" : [ "schedule-1" ]
-      }
-    },
     "/api/permits/details/{id}" : {
       "summary" : "Permit Details endpoint",
       "get" : {
@@ -306,6 +295,63 @@
         "required" : true,
         "schema" : {
           "type" : "number"
+        }
+      } ]
+    },
+    "/api/schedule-1/searchResults" : {
+      "summary" : "Schedule-1 results endpoint.",
+      "get" : {
+        "tags" : [ "schedule-1" ],
+        "summary" : "Get all Schedule 1 Species",
+        "description" : "Returns the list of all Schedule 1 species.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Schedule1SearchResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request / client error."
+          },
+          "500" : {
+            "description" : "Server error."
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "Accept-Language",
+        "in" : "header",
+        "description" : "Current page language. Example: `en`",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    },
+    "/api/schedule-1/{id}" : {
+      "get" : {
+        "tags" : [ "schedule-1" ]
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "description" : "Schedule 1 species id.",
+        "required" : true,
+        "schema" : {
+          "type" : "number"
+        }
+      }, {
+        "name" : "Accept-Language",
+        "in" : "header",
+        "description" : "Current page language. Example: `en`",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
         }
       } ]
     }
@@ -458,8 +504,8 @@
             }
           },
           "searchAll" : {
-            "description" : "[ ??? ] what is this for?",
-            "type" : "object"
+            "description" : "A flag indicating if all the keywords should be present in each of the search results.",
+            "type" : "boolean"
           },
           "speciesList" : {
             "description" : "[ string = \"C\"/\"L\"/\"G\" ] [???] what is this for?",
@@ -1048,7 +1094,7 @@
             "type" : "string"
           },
           "recordCount" : {
-            "description" : "'The total number of records returned by the search. '",
+            "description" : "'The total number of records returned by the search.",
             "type" : "number"
           },
           "permits" : {
@@ -1078,6 +1124,81 @@
             }
           }
         }
+      },
+      "Schedule1Record" : {
+        "title" : "Root Type for Schedule1Record",
+        "description" : "The root of the Schedule1Record type's schema.",
+        "type" : "object",
+        "properties" : {
+          "legalId" : {
+            "description" : "Legal id.",
+            "type" : "number"
+          },
+          "legalNameCommaEn" : {
+            "description" : "Legal name with the taxonomy terms reverse and separated by a comma (\"Bear, Grizzly\" as opposed to \"Grizzly Bear\"). English only.",
+            "type" : "string"
+          },
+          "legalCommonNameFr" : {
+            "description" : "Legal common name in French.",
+            "type" : "string"
+          },
+          "cosewicScientificName" : {
+            "description" : "COSEWIC scientific name.",
+            "type" : "string"
+          },
+          "legalScientificName" : {
+            "description" : "Legal scientific name.",
+            "type" : "string"
+          },
+          "legalPopulationEn" : {
+            "description" : "Legal population name in English.",
+            "type" : "string"
+          },
+          "legalPopulationFr" : {
+            "description" : "Legal population name in French.",
+            "type" : "string"
+          },
+          "legalStatusId" : {
+            "description" : "Legal status id.",
+            "type" : "number"
+          },
+          "legalStatus" : {
+            "description" : "Legal status name.",
+            "type" : "string"
+          },
+          "taxonomySortId" : {
+            "description" : "Taxonomy sort id. Used to sort taxonomic groups; not related to taxonomy ids.",
+            "type" : "number"
+          },
+          "taxonomyName" : {
+            "description" : "Taxonomy name.",
+            "type" : "string"
+          }
+        },
+        "example" : "{\r\n    \"legalId\": 123,\r\n    \"legalNameCommaEn\": \"Bear, Grizzly\",\r\n    \"legalCommonNameFr\": \"Ours grizzli\",\r\n    \"cosewicScientificName\": \"<i>Ursus</i> <i>arctos</i> \",\r\n    \"legalScientificName\": \"\",\r\n    \"legalPopulation\": \"Prairie population\",\r\n    \"legalStatusId\": 2,\r\n    \"legalStatus\": \"Extirpated\",\r\n    \"taxonomySortId\": 10,\r\n    \"taxonomyName\": \"Mammals\"\r\n}"
+      },
+      "Schedule1SearchResponse" : {
+        "title" : "Root Type for Schedule1SearchResponse",
+        "description" : "The root of the Schedule1SearchResponse type's schema.",
+        "type" : "object",
+        "properties" : {
+          "returnStatus" : {
+            "description" : "The status of the request.",
+            "type" : "string"
+          },
+          "recordCounts" : {
+            "description" : "The total number of Schedule 1 species records returned by the search.",
+            "type" : "number"
+          },
+          "records" : {
+            "description" : "A list of Schedule 1 species.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Schedule1Record"
+            }
+          }
+        },
+        "example" : "{\r\n    \"returnStatus\": \"OK\",\r\n    \"recordCounts\": 596,\r\n    \"schedule1Species\": [\r\n        {\r\n            \"legalId\": 123,\r\n            \"legalNameCommaEn\": \"Bear, Grizzly\",\r\n            \"legalCommonNameFr\": \"Ours grizzli\",\r\n            \"cosewicScientificName\": \"<i>Ursus</i> <i>arctos</i> \",\r\n            \"legalScientificName\": \"\",\r\n            \"legalPopulation\": \"Prairie population\",\r\n            \"legalStatusId\": 2,\r\n            \"legalStatus\": \"Extirpated\",\r\n            \"taxonomySortId\": 10,\r\n            \"taxonomyName\": \"Mammals\"\r\n        }\r\n    ]\r\n}"
       }
     }
   },
