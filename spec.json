@@ -298,28 +298,6 @@
         }
       } ]
     },
-    "/api/schedule-1/{id}" : {
-      "get" : {
-        "tags" : [ "schedule-1" ]
-      },
-      "parameters" : [ {
-        "name" : "id",
-        "in" : "path",
-        "description" : "Schedule 1 species id.",
-        "required" : true,
-        "schema" : {
-          "type" : "number"
-        }
-      }, {
-        "name" : "Accept-Language",
-        "in" : "header",
-        "description" : "Current page language. Example: `en`",
-        "required" : true,
-        "schema" : {
-          "type" : "string"
-        }
-      } ]
-    },
     "/api/species/schedule1search" : {
       "summary" : "Schedule-1 results endpoint.",
       "get" : {
@@ -333,6 +311,41 @@
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/SpeciesSchedule1SearchResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request / client error."
+          },
+          "500" : {
+            "description" : "Server error."
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "Accept-Language",
+        "in" : "header",
+        "description" : "Current page language. Example: `en`",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    },
+    "/api/species/migratoryBirdsList" : {
+      "summary" : "Migratory birds search results endpoint.",
+      "get" : {
+        "tags" : [ "migratory-birds" ],
+        "summary" : "Get all Migratory Birds Species",
+        "description" : "Returns the list of all Migratory Birds species.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SpeciesMigratoryBirdsSearchResponse"
                 }
               }
             }
@@ -1127,7 +1140,6 @@
       },
       "SpeciesSchedule1Record" : {
         "title" : "Root Type for Schedule1Record",
-        "description" : "The root of the Schedule1Record type's schema.",
         "type" : "object",
         "properties" : {
           "legalId" : {
@@ -1175,11 +1187,10 @@
             "type" : "string"
           }
         },
-        "example" : "{\r\n    \"legalId\": 123,\r\n    \"legalNameCommaEn\": \"Bear, Grizzly\",\r\n    \"legalCommonNameFr\": \"Ours grizzli\",\r\n    \"cosewicScientificName\": \"<i>Ursus</i> <i>arctos</i> \",\r\n    \"legalScientificName\": \"\",\r\n    \"legalPopulation\": \"Prairie population\",\r\n    \"legalStatusId\": 2,\r\n    \"legalStatus\": \"Extirpated\",\r\n    \"taxonomySortId\": 10,\r\n    \"taxonomyName\": \"Mammals\"\r\n}"
+        "example" : "{\r\n    \"legalId\": 123,\r\n    \"legalNameCommaEn\": \"Bear, Grizzly\",\r\n    \"legalCommonNameFr\": \"Ours grizzli\",\r\n    \"cosewicScientificName\": \"<i>Ursus</i> <i>arctos</i> \",\r\n    \"legalScientificName\": \"\",\r\n    \"legalPopulationEn\": \"Prairie population\",\r\n    \"legalPopulationFr\": \"Population des Prairies à\",\r\n    \"legalStatusId\": 2,\r\n    \"legalStatus\": \"Extirpated\",\r\n    \"taxonomySortId\": 10,\r\n    \"taxonomyName\": \"Mammals\"\r\n}"
       },
       "SpeciesSchedule1SearchResponse" : {
         "title" : "Root Type for Schedule1SearchResponse",
-        "description" : "The root of the Schedule1SearchResponse type's schema.",
         "type" : "object",
         "properties" : {
           "returnStatus" : {
@@ -1198,7 +1209,56 @@
             }
           }
         },
-        "example" : "{\r\n    \"returnStatus\": \"OK\",\r\n    \"recordCounts\": 596,\r\n    \"schedule1Species\": [\r\n        {\r\n            \"legalId\": 123,\r\n            \"legalNameCommaEn\": \"Bear, Grizzly\",\r\n            \"legalCommonNameFr\": \"Ours grizzli\",\r\n            \"cosewicScientificName\": \"<i>Ursus</i> <i>arctos</i> \",\r\n            \"legalScientificName\": \"\",\r\n            \"legalPopulation\": \"Prairie population\",\r\n            \"legalStatusId\": 2,\r\n            \"legalStatus\": \"Extirpated\",\r\n            \"taxonomySortId\": 10,\r\n            \"taxonomyName\": \"Mammals\"\r\n        }\r\n    ]\r\n}"
+        "example" : "{\r\n    \"returnStatus\": \"OK\",\r\n    \"recordCounts\": 596,\r\n    \"records\": [\r\n        {\r\n            \"legalId\": 123,\r\n            \"legalNameCommaEn\": \"Bear, Grizzly\",\r\n            \"legalCommonNameFr\": \"Ours grizzli\",\r\n            \"cosewicScientificName\": \"<i>Ursus</i> <i>arctos</i> \",\r\n            \"legalScientificName\": \"\",\r\n            \"legalPopulationEn\": \"Prairie population\",\r\n            \"legalPopulationFr\": \"Population des Prairies à\",\r\n            \"legalStatusId\": 2,\r\n            \"legalStatus\": \"Extirpated\",\r\n            \"taxonomySortId\": 10,\r\n            \"taxonomyName\": \"Mammals\"\r\n        }\r\n    ]\r\n}"
+      },
+      "SpeciesMigratoryBirdsSearchResponse" : {
+        "title" : "Root Type for SpeciesMigratoryBirdsSearchResponse",
+        "type" : "object",
+        "properties" : {
+          "returnStatus" : {
+            "description" : "The status of the request.",
+            "type" : "string"
+          },
+          "recordCounts" : {
+            "description" : "The total number of Migratory Birds species records returned by the search.",
+            "type" : "number"
+          },
+          "records" : {
+            "description" : "A list of Schedule 1 species.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SpeciesMigratoryBirdsRecord"
+            }
+          }
+        },
+        "example" : "{\r\n    \"returnStatus\": \"OK\",\r\n    \"recordCounts\": 47,\r\n    \"records\": [\r\n        {\r\n            \"legalId\": 17,\r\n            \"legalCommonName\": \"Acadian Flycatcher\",\r\n            \"cosewicScientificName\": \"<i>Empidonax</i> <i>virescens</i> \",\r\n            \"legalScientificName\": \"Vpdocens emiresnax\",\r\n            \"legalPopulation\": \"Prairie population\"\r\n        }\r\n    ]\r\n}"
+      },
+      "SpeciesMigratoryBirdsRecord" : {
+        "title" : "Root Type for SpeciesMigratoryBirdsRecord",
+        "type" : "object",
+        "properties" : {
+          "legalId" : {
+            "description" : "Legal id.",
+            "type" : "number"
+          },
+          "legalCommonName" : {
+            "description" : "Legal common name in the current language.",
+            "type" : "string"
+          },
+          "cosewicScientificName" : {
+            "description" : "COSEWIC scientific name in the current language.",
+            "type" : "string"
+          },
+          "legalScientificName" : {
+            "description" : "Legal scientific name in the current language.",
+            "type" : "string"
+          },
+          "legalPopulation" : {
+            "description" : "Legal population name in the current language.",
+            "type" : "string"
+          }
+        },
+        "example" : "{\n    \"legalId\": 44,\n    \"legalCommonName\": \"some text\",\n    \"cosewicScientificName\": \"some text\",\n    \"legalScientificName\": \"some text\",\n    \"legalPopulation\": \"some text\"\n}"
       }
     }
   },
