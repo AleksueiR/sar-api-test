@@ -801,35 +801,6 @@
           }
         }
       },
-      "SpeciesSearchResponse" : {
-        "required" : [ "species", "imageFieldPath", "recordCound", "returnStatus" ],
-        "type" : "object",
-        "properties" : {
-          "returnStatus" : {
-            "description" : "Status of the request.",
-            "type" : "string"
-          },
-          "recordCound" : {
-            "description" : "The total number of records returned by the search. ",
-            "type" : "number"
-          },
-          "imageFieldPath" : {
-            "description" : "The path to the species image folder.",
-            "type" : "string"
-          },
-          "species" : {
-            "description" : "A list of species records.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/SpeciesRecord"
-            }
-          },
-          "filters" : {
-            "$ref" : "#/components/schemas/SpeciesFilters",
-            "description" : "A list of filter counters based on the current search."
-          }
-        }
-      },
       "RecoveryTeam" : {
         "required" : [ "users", "name" ],
         "type" : "object",
@@ -916,6 +887,7 @@
             "type" : "integer"
           },
           "explanationId" : {
+            "description" : "Explanation ID",
             "type" : "integer"
           },
           "explanationName" : {
@@ -926,13 +898,16 @@
           },
           "startDate" : {
             "format" : "date",
+            "description" : "Permit Start Date",
             "type" : "string"
           },
           "endDate" : {
             "format" : "date",
+            "description" : "Permit End Date",
             "type" : "string"
           },
           "description" : {
+            "description" : "Permit Description",
             "type" : "string"
           },
           "issuerId" : {
@@ -942,36 +917,43 @@
             "type" : "string"
           },
           "authorityId" : {
+            "description" : "Authority ID",
             "type" : "integer"
           },
           "purposeId" : {
             "type" : "integer"
           },
           "purposeName" : {
+            "description" : "Purpose Name",
             "type" : "string"
           },
           "preConditions" : {
             "type" : "string"
           },
           "terms" : {
+            "description" : "Permit Terms",
             "type" : "string"
           },
           "relevant" : {
+            "description" : "Relevant information about the Permit",
             "type" : "string"
           },
           "relatedSpecies" : {
+            "description" : "List of species related to the permit",
             "type" : "array",
             "items" : {
               "$ref" : "#/components/schemas/PermitRelatedSpecies"
             }
           },
           "authorities" : {
+            "description" : "List of Permit authorities",
             "type" : "array",
             "items" : {
               "$ref" : "#/components/schemas/PermitAuthorities"
             }
           },
           "contactPersons" : {
+            "description" : "List of Contact Persons",
             "type" : "array",
             "items" : {
               "$ref" : "#/components/schemas/PermitContactPersons"
@@ -984,6 +966,7 @@
             }
           },
           "purposes" : {
+            "description" : "List of purposes related to permit",
             "type" : "array",
             "items" : {
               "$ref" : "#/components/schemas/PermitPurposes"
@@ -994,9 +977,11 @@
       "PermitAuthorities" : {
         "properties" : {
           "authorityId" : {
+            "description" : "Permit authority ID",
             "type" : "integer"
           },
           "authorityName" : {
+            "description" : "Permit authority name",
             "type" : "string"
           }
         }
@@ -1004,45 +989,59 @@
       "PermitContactPersons" : {
         "properties" : {
           "personId" : {
+            "description" : "Contact person ID",
             "type" : "integer"
           },
           "firstName" : {
+            "description" : "Contact person First Name",
             "type" : "string"
           },
           "lastName" : {
+            "description" : "Contact person Last Name",
             "type" : "string"
           },
           "address" : {
+            "description" : "Contact person address",
             "type" : "string"
           },
           "city" : {
+            "description" : "Contact person city",
             "type" : "string"
           },
           "provinceState" : {
+            "description" : "Province or State",
             "type" : "string"
           },
           "postalCode" : {
+            "description" : "Postal Code",
             "type" : "string"
           },
           "email" : {
+            "description" : "Contact person email",
             "type" : "string"
           },
           "phone" : {
+            "description" : "Phone number",
             "type" : "string"
           },
           "fax" : {
+            "description" : "Contact person fax",
             "type" : "string"
           },
           "salutationId" : {
+            "description" : "Salutation ID",
             "type" : "string"
           },
           "salutation" : {
+            "description" : "Contact person salutation",
             "type" : "string"
           },
           "title" : {
+            "description" : "Contact person Title",
             "type" : "string"
           },
           "organization" : {
+            "description" : "Contact Person Organization",
             "type" : "string"
           }
         }
@@ -1050,9 +1049,11 @@
       "PermitLocations" : {
         "properties" : {
           "rangeId" : {
+            "description" : "Locaion Range ID",
             "type" : "integer"
           },
           "locationName" : {
+            "description" : "Permit Location Name",
             "type" : "string"
           }
         }
@@ -1060,9 +1061,11 @@
       "PermitPurposes" : {
         "properties" : {
           "purposeId" : {
+            "description" : "Permit Purpose ID",
             "type" : "integer"
           },
           "purposeName" : {
+            "description" : "Permit Purpose Name",
             "type" : "string"
           }
         }
@@ -1070,9 +1073,11 @@
       "PermitRelatedSpecies" : {
         "properties" : {
           "speciesId" : {
+            "description" : "Species ID",
             "type" : "integer"
           },
           "cosewicName" : {
+            "description" : "COSEWIC Name",
             "type" : "string"
           }
         }
@@ -1093,48 +1098,6 @@
           "itemCount" : {
             "description" : "The number of search results valid under this filter option.",
             "type" : "number"
-          }
-        }
-      },
-      "PermitsSearchPostResponse" : {
-        "properties" : {
-          "filters" : {
-            "$ref" : "#/components/schemas/PermitsFilters",
-            "description" : "A list of filter counters based on the current search."
-          },
-          "returnStatus" : {
-            "description" : "Status of the request.",
-            "type" : "string"
-          },
-          "recordCount" : {
-            "description" : "'The total number of records returned by the search.",
-            "type" : "number"
-          },
-          "permits" : {
-            "description" : "A list of permit records.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/PermitRecord"
-            }
-          }
-        }
-      },
-      "PermitsSearchGetResponse" : {
-        "properties" : {
-          "returnStatus" : {
-            "description" : "Status of the request.",
-            "type" : "string"
-          },
-          "recordCount" : {
-            "description" : "'The total number of records returned by the search. '",
-            "type" : "number"
-          },
-          "permits" : {
-            "description" : "A list of permit records.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/PermitRecord"
-            }
           }
         }
       },
@@ -1259,6 +1222,77 @@
           }
         },
         "example" : "{\n    \"legalId\": 44,\n    \"legalCommonName\": \"some text\",\n    \"cosewicScientificName\": \"some text\",\n    \"legalScientificName\": \"some text\",\n    \"legalPopulation\": \"some text\"\n}"
+      },
+      "SpeciesSearchResponse" : {
+        "required" : [ "species", "imageFieldPath", "recordCound", "returnStatus" ],
+        "type" : "object",
+        "properties" : {
+          "returnStatus" : {
+            "description" : "Status of the request.",
+            "type" : "string"
+          },
+          "recordCound" : {
+            "description" : "The total number of records returned by the search. ",
+            "type" : "number"
+          },
+          "imageFieldPath" : {
+            "description" : "The path to the species image folder.",
+            "type" : "string"
+          },
+          "records" : {
+            "description" : "A list of species records.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SpeciesRecord"
+            }
+          },
+          "filters" : {
+            "$ref" : "#/components/schemas/SpeciesFilters",
+            "description" : "A list of filter counters based on the current search."
+          }
+        }
+      },
+      "PermitsSearchPostResponse" : {
+        "properties" : {
+          "filters" : {
+            "$ref" : "#/components/schemas/PermitsFilters",
+            "description" : "A list of filter counters based on the current search."
+          },
+          "returnStatus" : {
+            "description" : "Status of the request.",
+            "type" : "string"
+          },
+          "recordCount" : {
+            "description" : "'The total number of records returned by the search.",
+            "type" : "number"
+          },
+          "records" : {
+            "description" : "A list of permit records.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitRecord"
+            }
+          }
+        }
+      },
+      "PermitsSearchGetResponse" : {
+        "properties" : {
+          "returnStatus" : {
+            "description" : "Status of the request.",
+            "type" : "string"
+          },
+          "recordCount" : {
+            "description" : "'The total number of records returned by the search. '",
+            "type" : "number"
+          },
+          "records" : {
+            "description" : "A list of permit records.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitRecord"
+            }
+          }
+        }
       }
     }
   },
