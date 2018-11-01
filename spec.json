@@ -473,99 +473,6 @@
           }
         }
       },
-      "PermitsSearchRequest" : {
-        "properties" : {
-          "issuingYears" : {
-            "description" : "A comma-separated list of issuing year ids.",
-            "type" : "string"
-          },
-          "issuingMonths" : {
-            "description" : "A comma-separated list of issuing month ids.",
-            "type" : "string"
-          },
-          "orderField" : {
-            "description" : "A first field to order the results by.",
-            "type" : "string"
-          },
-          "orderDirection" : {
-            "description" : "A sort direction. \"A\" - ascending; \"D\" - descending. Defaults to \"A\".",
-            "type" : "string"
-          },
-          "pageNumber" : {
-            "description" : "The server paging number. Default to 1.",
-            "type" : "number"
-          },
-          "pageSize" : {
-            "description" : "The number of records in server paging. Defaults to 2000.",
-            "type" : "number"
-          },
-          "issuingAuthorities" : {
-            "description" : "A comma-separated list of issuing athority ids.",
-            "type" : "string"
-          }
-        }
-      },
-      "SpeciesSearchRequest" : {
-        "required" : [ ],
-        "type" : "object",
-        "properties" : {
-          "keywordText" : {
-            "description" : "User-entered search keywords",
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          },
-          "searchAll" : {
-            "description" : "A flag indicating if all the keywords should be present in each of the search results.",
-            "type" : "boolean"
-          },
-          "speciesList" : {
-            "description" : "[ string = \"C\"/\"L\"/\"G\" ] [???] what is this for?",
-            "type" : "string"
-          },
-          "rangeId" : {
-            "description" : "A comma-separated list of range Ids.",
-            "type" : "string"
-          },
-          "taxonomyId" : {
-            "description" : "A comma-separated list of taxonomy Ids.",
-            "type" : "string"
-          },
-          "cosewicStatusId" : {
-            "description" : "A comma-separated list of COSEWIC status Ids.",
-            "type" : "string"
-          },
-          "saraStatusId" : {
-            "description" : "A comma-separated list of SARA status Ids.",
-            "type" : "string"
-          },
-          "scheduleId" : {
-            "description" : "A comma-separated list of SARA schedule Ids.",
-            "type" : "string"
-          },
-          "considerationId" : {
-            "description" : "A comma-separated list of under-consideration Ids.",
-            "type" : "string"
-          },
-          "pagingSize" : {
-            "description" : "The number of records in server paging. Defaults to 2000.",
-            "type" : "number"
-          },
-          "orderBy" : {
-            "description" : "A field name to order the results by. The second order criterion is is by species name.",
-            "type" : "string"
-          },
-          "orderDirection" : {
-            "description" : "A sort direction. \"A\" - ascending; \"D\" - descending. Defaults to \"A\".",
-            "type" : "string"
-          },
-          "pageNo" : {
-            "description" : "The server paging number. Default to 1.",
-            "type" : "number"
-          }
-        }
-      },
       "PermitRecord" : {
         "properties" : {
           "permitId" : {
@@ -647,78 +554,6 @@
           },
           "issuingMonths" : {
             "description" : "\"Issuing months\" filter group.\nMonths' ids should be from 0 to 11.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/CommonFilterOption"
-            }
-          }
-        }
-      },
-      "SpeciesFiltersResponse" : {
-        "description" : "The collection of Species Search Filter groups used to filter search results.",
-        "required" : [ "taxonomies", "considerations", "schedules", "saraStatuses", "ranges", "order", "cosewicStatuses", "returnStatus", "filters" ],
-        "type" : "object",
-        "properties" : {
-          "returnStatus" : {
-            "description" : "Status of the request.",
-            "type" : "string"
-          },
-          "order" : {
-            "description" : "A list of filter group names specifying the UI rendering order.",
-            "type" : "array",
-            "items" : {
-              "enum" : [ "ranges", "taxonomies", "cosewicStatuses", "saraStatuses", "schedules", "considerations" ],
-              "type" : "string"
-            }
-          },
-          "filters" : {
-            "$ref" : "#/components/schemas/SpeciesFilters",
-            "description" : "A collection of Species filter groups."
-          }
-        }
-      },
-      "SpeciesFilters" : {
-        "description" : "The collection of Species Search Filter groups used to filter search results.",
-        "required" : [ "taxonomies", "considerations", "schedules", "saraStatuses", "ranges", "order", "cosewicStatuses", "returnStatus" ],
-        "type" : "object",
-        "properties" : {
-          "taxonomies" : {
-            "description" : "\"Taxonomy\" filter group.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/CommonFilterOption"
-            }
-          },
-          "ranges" : {
-            "description" : "\"Ranges\" filter group.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/CommonFilterOption"
-            }
-          },
-          "cosewicStatuses" : {
-            "description" : "\"COSEWIC status\" filter group.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/CommonFilterOption"
-            }
-          },
-          "saraStatuses" : {
-            "description" : "\"SARA status\" filter group.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/CommonFilterOption"
-            }
-          },
-          "schedules" : {
-            "description" : "\"SARA schedule\" filter group.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/CommonFilterOption"
-            }
-          },
-          "considerations" : {
-            "description" : "\"Under consideration\" filter group.",
             "type" : "array",
             "items" : {
               "$ref" : "#/components/schemas/CommonFilterOption"
@@ -1223,8 +1058,170 @@
         },
         "example" : "{\n    \"legalId\": 44,\n    \"legalCommonName\": \"some text\",\n    \"cosewicScientificName\": \"some text\",\n    \"legalScientificName\": \"some text\",\n    \"legalPopulation\": \"some text\"\n}"
       },
+      "PermitsSearchPostResponse" : {
+        "properties" : {
+          "filters" : {
+            "$ref" : "#/components/schemas/PermitsFilters",
+            "description" : "A list of filter counters based on the current search."
+          },
+          "returnStatus" : {
+            "description" : "Status of the request.",
+            "type" : "string"
+          },
+          "recordCount" : {
+            "description" : "'The total number of records returned by the search.",
+            "type" : "number"
+          },
+          "records" : {
+            "description" : "A list of permit records.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitRecord"
+            }
+          }
+        }
+      },
+      "PermitsSearchGetResponse" : {
+        "properties" : {
+          "filters" : {
+            "$ref" : "#/components/schemas/PermitsFilters",
+            "description" : "A list of filter counters based on the current search."
+          },
+          "returnStatus" : {
+            "description" : "Status of the request.",
+            "type" : "string"
+          },
+          "recordCount" : {
+            "description" : "'The total number of records returned by the search. '",
+            "type" : "number"
+          },
+          "records" : {
+            "description" : "A list of permit records.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitRecord"
+            }
+          }
+        }
+      },
+      "PermitsSearchRequest" : {
+        "properties" : {
+          "issuingYears" : {
+            "description" : "A list of issuing year ids as strings.",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "issuingMonths" : {
+            "description" : "A list of issuing month ids as strings.",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "orderField" : {
+            "description" : "A first field to order the results by.",
+            "type" : "string"
+          },
+          "orderDirection" : {
+            "description" : "A sort direction. \"A\" - ascending; \"D\" - descending. Defaults to \"A\".",
+            "type" : "string"
+          },
+          "pageNumber" : {
+            "description" : "The server paging number. Default to 1.",
+            "type" : "number"
+          },
+          "pageSize" : {
+            "description" : "The number of records in server paging. Defaults to 2000.",
+            "type" : "number"
+          },
+          "issuingAuthorities" : {
+            "description" : "A list of issuing athority ids as strings.",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "SpeciesSearchRequest" : {
+        "required" : [ ],
+        "type" : "object",
+        "properties" : {
+          "keywordText" : {
+            "description" : "User-entered search keywords",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "searchAll" : {
+            "description" : "A flag indicating if all the keywords should be present in each of the search results.",
+            "type" : "boolean"
+          },
+          "rangeId" : {
+            "description" : "A list of range Ids as strings.",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "taxonomyId" : {
+            "description" : "A list of taxonomy Ids as strings.",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "cosewicStatusId" : {
+            "description" : "A list of COSEWIC status Ids as strings.",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "saraStatusId" : {
+            "description" : "A list of SARA status Ids as strings.",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "scheduleId" : {
+            "description" : "A list of SARA schedule Ids as strings.",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "considerationId" : {
+            "description" : "A list of under-consideration Ids as strings.",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "pagingSize" : {
+            "description" : "The number of records in server paging. Defaults to 2000.",
+            "type" : "number"
+          },
+          "orderBy" : {
+            "description" : "A field name to order the results by. The second order criterion is is by species name.",
+            "type" : "string"
+          },
+          "orderDirection" : {
+            "description" : "A sort direction. \"A\" - ascending; \"D\" - descending. Defaults to \"A\".",
+            "type" : "string"
+          },
+          "pageNo" : {
+            "description" : "The server paging number. Default to 1.",
+            "type" : "number"
+          }
+        }
+      },
       "SpeciesSearchResponse" : {
-        "required" : [ "species", "imageFieldPath", "recordCound", "returnStatus" ],
+        "required" : [ "records", "imageFieldPath", "recordCound", "returnStatus" ],
         "type" : "object",
         "properties" : {
           "returnStatus" : {
@@ -1252,45 +1249,75 @@
           }
         }
       },
-      "PermitsSearchPostResponse" : {
+      "SpeciesFilters" : {
+        "description" : "The collection of Species Search Filter groups used to filter search results.",
+        "required" : [ "taxonomies", "considerations", "schedules", "saraStatuses", "ranges", "cosewicStatuses" ],
+        "type" : "object",
         "properties" : {
-          "filters" : {
-            "$ref" : "#/components/schemas/PermitsFilters",
-            "description" : "A list of filter counters based on the current search."
-          },
-          "returnStatus" : {
-            "description" : "Status of the request.",
-            "type" : "string"
-          },
-          "recordCount" : {
-            "description" : "'The total number of records returned by the search.",
-            "type" : "number"
-          },
-          "records" : {
-            "description" : "A list of permit records.",
+          "taxonomies" : {
+            "description" : "\"Taxonomy\" filter group.",
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/PermitRecord"
+              "$ref" : "#/components/schemas/CommonFilterOption"
+            }
+          },
+          "ranges" : {
+            "description" : "\"Ranges\" filter group.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonFilterOption"
+            }
+          },
+          "cosewicStatuses" : {
+            "description" : "\"COSEWIC status\" filter group.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonFilterOption"
+            }
+          },
+          "saraStatuses" : {
+            "description" : "\"SARA status\" filter group.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonFilterOption"
+            }
+          },
+          "schedules" : {
+            "description" : "\"SARA schedule\" filter group.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonFilterOption"
+            }
+          },
+          "considerations" : {
+            "description" : "\"Under consideration\" filter group.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonFilterOption"
             }
           }
         }
       },
-      "PermitsSearchGetResponse" : {
+      "SpeciesFiltersResponse" : {
+        "description" : "The collection of Species Search Filter groups used to filter search results.",
+        "required" : [ "order", "returnStatus", "filters" ],
+        "type" : "object",
         "properties" : {
           "returnStatus" : {
             "description" : "Status of the request.",
             "type" : "string"
           },
-          "recordCount" : {
-            "description" : "'The total number of records returned by the search. '",
-            "type" : "number"
-          },
-          "records" : {
-            "description" : "A list of permit records.",
+          "order" : {
+            "description" : "A list of filter group names specifying the UI rendering order.",
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/PermitRecord"
+              "enum" : [ "ranges", "taxonomies", "cosewicStatuses", "saraStatuses", "schedules", "considerations" ],
+              "type" : "string"
             }
+          },
+          "filters" : {
+            "$ref" : "#/components/schemas/SpeciesFilters",
+            "description" : "A collection of Species filter groups."
           }
         }
       }
