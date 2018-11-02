@@ -367,6 +367,88 @@
           "type" : "string"
         }
       } ]
+    },
+    "/api/consultations/{id}" : {
+      "parameters" : [ {
+        "name" : "Accept-Language",
+        "in" : "header",
+        "description" : "Current page language. Example: `en`",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "id",
+        "in" : "path",
+        "description" : "Public consultation id.",
+        "required" : true,
+        "schema" : {
+          "type" : "number"
+        }
+      } ]
+    },
+    "/api/consultations/searchFilters" : {
+      "parameters" : [ {
+        "name" : "Accept-Language",
+        "in" : "header",
+        "description" : "Current page language. Example: `en`",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    },
+    "/api/consultations/searchResults" : {
+      "parameters" : [ {
+        "name" : "Accept-Language",
+        "in" : "header",
+        "description" : "Current page language. Example: `en`",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    },
+    "/api/documents/{id}" : {
+      "parameters" : [ {
+        "name" : "Accept-Language",
+        "in" : "header",
+        "description" : "Current page language. Example: `en`",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "id",
+        "in" : "path",
+        "description" : "Document id.",
+        "required" : true,
+        "schema" : {
+          "type" : "number"
+        }
+      } ]
+    },
+    "/api/documents/searchFilters" : {
+      "parameters" : [ {
+        "name" : "Accept-Language",
+        "in" : "header",
+        "description" : "Current page language. Example: `en`",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    },
+    "/api/documents/searchResults" : {
+      "parameters" : [ {
+        "name" : "Accept-Language",
+        "in" : "header",
+        "description" : "Current page language. Example: `en`",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
     }
   },
   "components" : {
@@ -532,43 +614,16 @@
               "type" : "string"
             }
           }
-        }
-      },
-      "PermitsFilters" : {
-        "description" : "A collection of Permit filter groups.",
-        "required" : [ "issuingAuthorities", "issuingYears", "issuingMonths" ],
-        "properties" : {
-          "issuingAuthorities" : {
-            "description" : "\"Issuing authorities\" filter group.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/CommonFilterOption"
-            }
-          },
-          "issuingYears" : {
-            "description" : "\"Issuing years\" filter group. Year id matches year value for simplicity.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/CommonFilterOption"
-            }
-          },
-          "issuingMonths" : {
-            "description" : "\"Issuing months\" filter group.\nMonths' ids should be from 0 to 11.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/CommonFilterOption"
-            }
-          }
-        }
+        },
+        "example" : "{\r\n    \"returnStatus\": \"ok\",\r\n    \"order\": [\"issuingAuthorities\", \"issuingYears\", \"issuingMonths\"],\r\n    \"filters\": {\r\n        \"issuingAuthorities\": [\r\n            { \r\n                \"id\": 2, \r\n                \"name\": \"Environment Canada\", \r\n                \"itemCount\": null \r\n            },\r\n            { \r\n                \"id\": 3, \r\n                \"name\": \"Department of Fisheries and Oceans\", \r\n                \"itemCount\": null \r\n            },\r\n            { \r\n                \"id\": 4, \r\n                \"name\": \"Parks Canada Agency\", \r\n                \"itemCount\": null \r\n            }\r\n        ],\r\n        \"issuingYears\": [\r\n            { \"id\": 2000, \"name\": \"2000\", \"itemCount\": null },\r\n            { \"id\": 2001, \"name\": \"2001\", \"itemCount\": null },\r\n            { \"id\": 2002, \"name\": \"2002\", \"itemCount\": null },\r\n            { \"id\": 2003, \"name\": \"2003\", \"itemCount\": null },\r\n            { \"id\": 2004, \"name\": \"2004\", \"itemCount\": null },\r\n            { \"id\": 2005, \"name\": \"2005\", \"itemCount\": null },\r\n            { \"id\": 2006, \"name\": \"2006\", \"itemCount\": null },\r\n            { \"id\": 2007, \"name\": \"2007\", \"itemCount\": null },\r\n            { \"id\": 2008, \"name\": \"2008\", \"itemCount\": null },\r\n            { \"id\": 2009, \"name\": \"2009\", \"itemCount\": null },\r\n            { \"id\": 2010, \"name\": \"2010\", \"itemCount\": null },\r\n            { \"id\": 2011, \"name\": \"2011\", \"itemCount\": null },\r\n            { \"id\": 2012, \"name\": \"2012\", \"itemCount\": null },\r\n            { \"id\": 2013, \"name\": \"2013\", \"itemCount\": null },\r\n            { \"id\": 2014, \"name\": \"2014\", \"itemCount\": null },\r\n            { \"id\": 2015, \"name\": \"2015\", \"itemCount\": null },\r\n            { \"id\": 2016, \"name\": \"2016\", \"itemCount\": null },\r\n            { \"id\": 2017, \"name\": \"2017\", \"itemCount\": null },\r\n            { \"id\": 2018, \"name\": \"2018\", \"itemCount\": null },\r\n            { \"id\": 2019, \"name\": \"2019\", \"itemCount\": null }\r\n        ],\r\n        \"issuingMonths\": [\r\n            { \"id\": 0, \"name\": \"0\", \"itemCount\": null },\r\n            { \"id\": 1, \"name\": \"1\", \"itemCount\": null },\r\n            { \"id\": 2, \"name\": \"2\", \"itemCount\": null },\r\n            { \"id\": 3, \"name\": \"3\", \"itemCount\": null },\r\n            { \"id\": 4, \"name\": \"4\", \"itemCount\": null },\r\n            { \"id\": 5, \"name\": \"5\", \"itemCount\": null },\r\n            { \"id\": 6, \"name\": \"6\", \"itemCount\": null },\r\n            { \"id\": 7, \"name\": \"7\", \"itemCount\": null },\r\n            { \"id\": 8, \"name\": \"8\", \"itemCount\": null },\r\n            { \"id\": 9, \"name\": \"9\", \"itemCount\": null },\r\n            { \"id\": 10, \"name\": \"10\", \"itemCount\": null },\r\n            { \"id\": 11, \"name\": \"11\", \"itemCount\": null }\r\n        ]\r\n    }\r\n}"
       },
       "SpeciesRecord" : {
         "required" : [ ],
         "type" : "object",
         "properties" : {
           "cosewicId" : {
-            "format" : "int32",
             "description" : "COSEWIC Id.",
-            "type" : "integer"
+            "type" : "number"
           },
           "cosewicCommonName" : {
             "description" : "COSEWIC common name.",
@@ -784,124 +839,28 @@
             "description" : "List of Permit authorities",
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/PermitAuthorities"
+              "$ref" : "#/components/schemas/PermitAuthority"
             }
           },
           "contactPersons" : {
             "description" : "List of Contact Persons",
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/PermitContactPersons"
+              "$ref" : "#/components/schemas/PermitContactPerson"
             }
           },
           "locations" : {
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/PermitLocations"
+              "$ref" : "#/components/schemas/PermitLocation"
             }
           },
           "purposes" : {
             "description" : "List of purposes related to permit",
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/PermitPurposes"
+              "$ref" : "#/components/schemas/PermitPurpose"
             }
-          }
-        }
-      },
-      "PermitAuthorities" : {
-        "properties" : {
-          "authorityId" : {
-            "description" : "Permit authority ID",
-            "type" : "integer"
-          },
-          "authorityName" : {
-            "description" : "Permit authority name",
-            "type" : "string"
-          }
-        }
-      },
-      "PermitContactPersons" : {
-        "properties" : {
-          "personId" : {
-            "description" : "Contact person ID",
-            "type" : "integer"
-          },
-          "firstName" : {
-            "description" : "Contact person First Name",
-            "type" : "string"
-          },
-          "lastName" : {
-            "description" : "Contact person Last Name",
-            "type" : "string"
-          },
-          "address" : {
-            "description" : "Contact person address",
-            "type" : "string"
-          },
-          "city" : {
-            "description" : "Contact person city",
-            "type" : "string"
-          },
-          "provinceState" : {
-            "description" : "Province or State",
-            "type" : "string"
-          },
-          "postalCode" : {
-            "description" : "Postal Code",
-            "type" : "string"
-          },
-          "email" : {
-            "description" : "Contact person email",
-            "type" : "string"
-          },
-          "phone" : {
-            "description" : "Phone number",
-            "type" : "string"
-          },
-          "fax" : {
-            "description" : "Contact person fax",
-            "type" : "string"
-          },
-          "salutationId" : {
-            "description" : "Salutation ID",
-            "type" : "string"
-          },
-          "salutation" : {
-            "description" : "Contact person salutation",
-            "type" : "string"
-          },
-          "title" : {
-            "description" : "Contact person Title",
-            "type" : "string"
-          },
-          "organization" : {
-            "description" : "Contact Person Organization",
-            "type" : "string"
-          }
-        }
-      },
-      "PermitLocations" : {
-        "properties" : {
-          "rangeId" : {
-            "description" : "Locaion Range ID",
-            "type" : "integer"
-          },
-          "locationName" : {
-            "description" : "Permit Location Name",
-            "type" : "string"
-          }
-        }
-      },
-      "PermitPurposes" : {
-        "properties" : {
-          "purposeId" : {
-            "description" : "Permit Purpose ID",
-            "type" : "integer"
-          },
-          "purposeName" : {
-            "description" : "Permit Purpose Name",
-            "type" : "string"
           }
         }
       },
@@ -1079,9 +1038,11 @@
               "$ref" : "#/components/schemas/PermitRecord"
             }
           }
-        }
+        },
+        "example" : "{\r\n    \"returnStatus\": \"ok\",\r\n    \"recordsCount\": 214,\r\n    \"records\": [\r\n        {\r\n            \"permitId\": 309,\r\n            \"permitTitle\": \"Explanation for issuing ...\",\r\n            \"typeId\": 3,\r\n            \"issuingAuthorityId\": 2,\r\n            \"issuingAuthority\": \"Environment Canada\",\r\n            \"issueDate\": \"2011-Jan-19\",\r\n            \"expiryDate\": \"2014-01-18\",\r\n            \"issueYear\": 2011,\r\n            \"issueMonth\": 1,\r\n            \"permitStatus\": 50\r\n        }\r\n    ],\r\n    \"filters\": {\r\n        \"issuingAuthorities\": [],\r\n        \"issuingYears\": [{ \r\n            \"id\": 2011, \r\n            \"name\": \"2011\",\r\n            \"itemCount\": 214 \r\n        }],\r\n        \"issuingMonths\": []\r\n    }\r\n}"
       },
       "PermitsSearchGetResponse" : {
+        "description" : "Returns the default first batch of permit results assuming all the default filter settings.\nReturns filter counts for all filter options.",
         "properties" : {
           "filters" : {
             "$ref" : "#/components/schemas/PermitsFilters",
@@ -1102,7 +1063,8 @@
               "$ref" : "#/components/schemas/PermitRecord"
             }
           }
-        }
+        },
+        "example" : "{\r\n    \"returnStatus\": \"ok\",\r\n    \"recordsCount\": 214,\r\n    \"records\": [\r\n        {\r\n            \"permitId\": 309,\r\n            \"permitTitle\": \"Explanation for issuing ...\",\r\n            \"typeId\": 3,\r\n            \"issuingAuthorityId\": 2,\r\n            \"issuingAuthority\": \"Environment Canada\",\r\n            \"issueDate\": \"2011-Jan-19\",\r\n            \"expiryDate\": \"2014-01-18\",\r\n            \"issueYear\": 2011,\r\n            \"issueMonth\": 1,\r\n            \"permitStatus\": 50\r\n        }\r\n    ],\r\n    \"filters\": {\r\n        \"issuingAuthorities\": [\r\n            { \r\n                \"id\": 2, \r\n                \"name\": \"Environment Canada\", \r\n                \"itemCount\": 19 \r\n            },\r\n            { \r\n                \"id\": 3, \r\n                \"name\": \"Department of Fisheries and Oceans\", \r\n                \"itemCount\": 342 \r\n            },\r\n            { \r\n                \"id\": 4, \r\n                \"name\": \"Parks Canada Agency\", \r\n                \"itemCount\": 24 \r\n            }\r\n        ],\r\n        \"issuingYears\": [\r\n            { \"id\": 2000, \"name\": \"2000\", \"itemCount\": 18 },\r\n            { \"id\": 2001, \"name\": \"2001\", \"itemCount\": 88 },\r\n            { \"id\": 2002, \"name\": \"2002\", \"itemCount\": 62 },\r\n            { \"id\": 2003, \"name\": \"2003\", \"itemCount\": 4 },\r\n            { \"id\": 2004, \"name\": \"2004\", \"itemCount\": 48 },\r\n            { \"id\": 2005, \"name\": \"2005\", \"itemCount\": 11 },\r\n            { \"id\": 2006, \"name\": \"2006\", \"itemCount\": 57 },\r\n            { \"id\": 2007, \"name\": \"2007\", \"itemCount\": 26 },\r\n            { \"id\": 2008, \"name\": \"2008\", \"itemCount\": 44 },\r\n            { \"id\": 2009, \"name\": \"2009\", \"itemCount\": 93 },\r\n            { \"id\": 2010, \"name\": \"2010\", \"itemCount\": 69 },\r\n            { \"id\": 2011, \"name\": \"2011\", \"itemCount\": 93 },\r\n            { \"id\": 2012, \"name\": \"2012\", \"itemCount\": 24 },\r\n            { \"id\": 2013, \"name\": \"2013\", \"itemCount\": 61 },\r\n            { \"id\": 2014, \"name\": \"2014\", \"itemCount\": 47 },\r\n            { \"id\": 2015, \"name\": \"2015\", \"itemCount\": 45 },\r\n            { \"id\": 2016, \"name\": \"2016\", \"itemCount\": 94 },\r\n            { \"id\": 2017, \"name\": \"2017\", \"itemCount\": 37 },\r\n            { \"id\": 2018, \"name\": \"2018\", \"itemCount\": 38 },\r\n            { \"id\": 2019, \"name\": \"2019\", \"itemCount\": 89 }\r\n        ],\r\n        \"issuingMonths\": [\r\n            { \"id\": 0, \"name\": \"0\", \"itemCount\": 40 },\r\n            { \"id\": 1, \"name\": \"1\", \"itemCount\": 54 },\r\n            { \"id\": 2, \"name\": \"2\", \"itemCount\": 89 },\r\n            { \"id\": 3, \"name\": \"3\", \"itemCount\": 55 },\r\n            { \"id\": 4, \"name\": \"4\", \"itemCount\": 78 },\r\n            { \"id\": 5, \"name\": \"5\", \"itemCount\": 5 },\r\n            { \"id\": 6, \"name\": \"6\", \"itemCount\": 40 },\r\n            { \"id\": 7, \"name\": \"7\", \"itemCount\": 54 },\r\n            { \"id\": 8, \"name\": \"8\", \"itemCount\": 89 },\r\n            { \"id\": 9, \"name\": \"9\", \"itemCount\": 55 },\r\n            { \"id\": 10, \"name\": \"10\", \"itemCount\": 78 },\r\n            { \"id\": 11, \"name\": \"11\", \"itemCount\": 5 }\r\n        ]\r\n    }\r\n}"
       },
       "PermitsSearchRequest" : {
         "properties" : {
@@ -1249,6 +1211,152 @@
           }
         }
       },
+      "SpeciesFiltersResponse" : {
+        "description" : "The collection of Species Search Filter groups used to filter search results.",
+        "required" : [ "order", "returnStatus", "filters" ],
+        "type" : "object",
+        "properties" : {
+          "returnStatus" : {
+            "description" : "Status of the request.",
+            "type" : "string"
+          },
+          "order" : {
+            "description" : "A list of filter group names specifying the UI rendering order.",
+            "type" : "array",
+            "items" : {
+              "enum" : [ "ranges", "taxonomies", "cosewicStatuses", "saraStatuses", "schedules", "considerations" ],
+              "type" : "string"
+            }
+          },
+          "filters" : {
+            "$ref" : "#/components/schemas/SpeciesFilters",
+            "description" : "A collection of Species filter groups."
+          }
+        }
+      },
+      "PermitPurpose" : {
+        "properties" : {
+          "purposeId" : {
+            "description" : "Permit Purpose ID",
+            "type" : "integer"
+          },
+          "purposeName" : {
+            "description" : "Permit Purpose Name",
+            "type" : "string"
+          }
+        }
+      },
+      "PermitLocation" : {
+        "properties" : {
+          "rangeId" : {
+            "description" : "Locaion Range ID",
+            "type" : "integer"
+          },
+          "locationName" : {
+            "description" : "Permit Location Name",
+            "type" : "string"
+          }
+        }
+      },
+      "PermitContactPerson" : {
+        "properties" : {
+          "personId" : {
+            "description" : "Contact person ID",
+            "type" : "integer"
+          },
+          "firstName" : {
+            "description" : "Contact person First Name",
+            "type" : "string"
+          },
+          "lastName" : {
+            "description" : "Contact person Last Name",
+            "type" : "string"
+          },
+          "address" : {
+            "description" : "Contact person address",
+            "type" : "string"
+          },
+          "city" : {
+            "description" : "Contact person city",
+            "type" : "string"
+          },
+          "provinceState" : {
+            "description" : "Province or State",
+            "type" : "string"
+          },
+          "postalCode" : {
+            "description" : "Postal Code",
+            "type" : "string"
+          },
+          "email" : {
+            "description" : "Contact person email",
+            "type" : "string"
+          },
+          "phone" : {
+            "description" : "Phone number",
+            "type" : "string"
+          },
+          "fax" : {
+            "description" : "Contact person fax",
+            "type" : "string"
+          },
+          "salutationId" : {
+            "description" : "Salutation ID",
+            "type" : "string"
+          },
+          "salutation" : {
+            "description" : "Contact person salutation",
+            "type" : "string"
+          },
+          "title" : {
+            "description" : "Contact person Title",
+            "type" : "string"
+          },
+          "organization" : {
+            "description" : "Contact Person Organization",
+            "type" : "string"
+          }
+        }
+      },
+      "PermitAuthority" : {
+        "properties" : {
+          "authorityId" : {
+            "description" : "Permit authority ID",
+            "type" : "integer"
+          },
+          "authorityName" : {
+            "description" : "Permit authority name",
+            "type" : "string"
+          }
+        }
+      },
+      "PermitsFilters" : {
+        "description" : "A collection of Permit filter groups.",
+        "required" : [ "issuingAuthorities", "issuingYears", "issuingMonths" ],
+        "properties" : {
+          "issuingAuthorities" : {
+            "description" : "\"Issuing authorities\" filter group.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonFilterOption"
+            }
+          },
+          "issuingYears" : {
+            "description" : "\"Issuing years\" filter group. Year id matches year value for simplicity.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonFilterOption"
+            }
+          },
+          "issuingMonths" : {
+            "description" : "\"Issuing months\" filter group.\nMonths' ids should be from 0 to 11.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonFilterOption"
+            }
+          }
+        }
+      },
       "SpeciesFilters" : {
         "description" : "The collection of Species Search Filter groups used to filter search results.",
         "required" : [ "taxonomies", "considerations", "schedules", "saraStatuses", "ranges", "cosewicStatuses" ],
@@ -1297,29 +1405,6 @@
             }
           }
         }
-      },
-      "SpeciesFiltersResponse" : {
-        "description" : "The collection of Species Search Filter groups used to filter search results.",
-        "required" : [ "order", "returnStatus", "filters" ],
-        "type" : "object",
-        "properties" : {
-          "returnStatus" : {
-            "description" : "Status of the request.",
-            "type" : "string"
-          },
-          "order" : {
-            "description" : "A list of filter group names specifying the UI rendering order.",
-            "type" : "array",
-            "items" : {
-              "enum" : [ "ranges", "taxonomies", "cosewicStatuses", "saraStatuses", "schedules", "considerations" ],
-              "type" : "string"
-            }
-          },
-          "filters" : {
-            "$ref" : "#/components/schemas/SpeciesFilters",
-            "description" : "A collection of Species filter groups."
-          }
-        }
       }
     }
   },
@@ -1338,5 +1423,8 @@
   }, {
     "name" : "documents",
     "description" : "Everything about documents."
+  }, {
+    "name" : "consultations",
+    "description" : "Everything about public consultations."
   } ]
 }
