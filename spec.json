@@ -2,7 +2,7 @@
   "openapi" : "3.0.2",
   "info" : {
     "title" : "SAR-CWS",
-    "description" : "[ Description goes here ]\n\n# Introduction\n\nThis API is documented in OpenAPI format and represent SAR-CWS API.\n\n[ More introduction text goes here ]",
+    "description" : "[ Description goes here ]\n\n# Introduction\n\nThis API is documented in OpenAPI format and represent SAR-CWS API.\n\n[ More introduction text goes here ]\n\n### Notes\n\nUse plurals for `Species/Documents/Permits/Consultations` filter names. For example, `Permits` use the following filter names: `issuingAuthorities`, `issuingYears`, and `issuingMonths`.\n```json\n// /api/permits/searchFilters\n{\n    \"returnStatus\": \"ok\",\n    \"order\": [\"issuingAuthorities\", \"issuingYears\", \"issuingMonths\"],\n    \"filters\": {\n        \"issuingAuthorities\": [\n            { \"id\": 2, \"name\": \"Environment Canada\" },\n            { \"id\": 3, \"name\": \"Department of Fisheries and Oceans\" },\n            { \"id\": 4, \"name\": \"Parks Canada Agency\" }\n        ],\n        \"issuingYears\": [\n            { \"id\": 2000, \"name\": \"2000\" },\n            { \"id\": 2001, \"name\": \"2001\" },\n            { \"id\": 2002, \"name\": \"2002\" }\n        ],\n        \"issuingMonths\": [\n            { \"id\": 0, \"name\": \"0\" },\n            { \"id\": 1, \"name\": \"1\" },\n            { \"id\": 2, \"name\": \"2\" }            \n        ]\n    }\n}\n```",
     "version" : "1.0.0"
   },
   "paths" : {
@@ -255,119 +255,6 @@
         }
       } ]
     },
-    "/api/permits/details/{id}" : {
-      "summary" : "Permit Details endpoint",
-      "get" : {
-        "tags" : [ "permits" ],
-        "summary" : "Get Permit by Id",
-        "description" : "Returns the detailed permit information.",
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation.",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/PermitDetailsResponse"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request / client error."
-          },
-          "500" : {
-            "description" : "Server error."
-          }
-        }
-      },
-      "parameters" : [ {
-        "name" : "Accept-Language",
-        "in" : "header",
-        "description" : "Current page language. Example: `en`",
-        "required" : true,
-        "schema" : {
-          "type" : "string"
-        }
-      }, {
-        "name" : "id",
-        "in" : "path",
-        "description" : "Permit id.",
-        "required" : true,
-        "schema" : {
-          "type" : "number"
-        }
-      } ]
-    },
-    "/api/species/schedule1search" : {
-      "summary" : "Schedule-1 results endpoint.",
-      "get" : {
-        "tags" : [ "schedule-1" ],
-        "summary" : "Get all Schedule 1 Species",
-        "description" : "Returns the list of all Schedule 1 species.",
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation.",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/SpeciesSchedule1SearchResponse"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request / client error."
-          },
-          "500" : {
-            "description" : "Server error."
-          }
-        }
-      },
-      "parameters" : [ {
-        "name" : "Accept-Language",
-        "in" : "header",
-        "description" : "Current page language. Example: `en`",
-        "required" : true,
-        "schema" : {
-          "type" : "string"
-        }
-      } ]
-    },
-    "/api/species/migratoryBirdsList" : {
-      "summary" : "Migratory birds search results endpoint.",
-      "get" : {
-        "tags" : [ "migratory-birds" ],
-        "summary" : "Get all Migratory Birds Species",
-        "description" : "Returns the list of all Migratory Birds species.",
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation.",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/SpeciesMigratoryBirdsSearchResponse"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request / client error."
-          },
-          "500" : {
-            "description" : "Server error."
-          }
-        }
-      },
-      "parameters" : [ {
-        "name" : "Accept-Language",
-        "in" : "header",
-        "description" : "Current page language. Example: `en`",
-        "required" : true,
-        "schema" : {
-          "type" : "string"
-        }
-      } ]
-    },
     "/api/consultations/{id}" : {
       "parameters" : [ {
         "name" : "Accept-Language",
@@ -440,6 +327,119 @@
       } ]
     },
     "/api/documents/searchResults" : {
+      "parameters" : [ {
+        "name" : "Accept-Language",
+        "in" : "header",
+        "description" : "Current page language. Example: `en`",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    },
+    "/api/permits/{id}" : {
+      "summary" : "Permit Details endpoint",
+      "get" : {
+        "tags" : [ "permits" ],
+        "summary" : "Get Permit by Id",
+        "description" : "Returns the detailed permit information.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PermitDetailsResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request / client error."
+          },
+          "500" : {
+            "description" : "Server error."
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "Accept-Language",
+        "in" : "header",
+        "description" : "Current page language. Example: `en`",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "id",
+        "in" : "path",
+        "description" : "Permit id.",
+        "required" : true,
+        "schema" : {
+          "type" : "number"
+        }
+      } ]
+    },
+    "/api/schedule1/speciesList" : {
+      "summary" : "Schedule-1 results endpoint.",
+      "get" : {
+        "tags" : [ "schedule-1" ],
+        "summary" : "Get all Schedule 1 Species",
+        "description" : "Returns the list of all Schedule 1 species.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SpeciesSchedule1SearchResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request / client error."
+          },
+          "500" : {
+            "description" : "Server error."
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "Accept-Language",
+        "in" : "header",
+        "description" : "Current page language. Example: `en`",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    },
+    "/api/migratoryBirds/speciesList" : {
+      "summary" : "Migratory birds search results endpoint.",
+      "get" : {
+        "tags" : [ "migratory-birds" ],
+        "summary" : "Get all Migratory Birds Species",
+        "description" : "Returns the list of all Migratory Birds species.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SpeciesMigratoryBirdsSearchResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request / client error."
+          },
+          "500" : {
+            "description" : "Server error."
+          }
+        }
+      },
       "parameters" : [ {
         "name" : "Accept-Language",
         "in" : "header",
@@ -948,13 +948,10 @@
       },
       "SpeciesSchedule1SearchResponse" : {
         "title" : "Root Type for Schedule1SearchResponse",
+        "required" : [ ],
         "type" : "object",
         "properties" : {
-          "returnStatus" : {
-            "description" : "The status of the request.",
-            "type" : "string"
-          },
-          "recordCounts" : {
+          "recordCount" : {
             "description" : "The total number of Schedule 1 species records returned by the search.",
             "type" : "number"
           },
@@ -964,6 +961,10 @@
             "items" : {
               "$ref" : "#/components/schemas/SpeciesSchedule1Record"
             }
+          },
+          "returnStatus" : {
+            "description" : "The status of the request.",
+            "type" : "string"
           }
         },
         "example" : "{\r\n    \"returnStatus\": \"OK\",\r\n    \"recordCounts\": 596,\r\n    \"records\": [\r\n        {\r\n            \"legalId\": 123,\r\n            \"legalNameCommaEn\": \"Bear, Grizzly\",\r\n            \"legalCommonNameFr\": \"Ours grizzli\",\r\n            \"cosewicScientificName\": \"<i>Ursus</i> <i>arctos</i> \",\r\n            \"legalScientificName\": \"\",\r\n            \"legalPopulationEn\": \"Prairie population\",\r\n            \"legalPopulationFr\": \"Population des Prairies à\",\r\n            \"legalStatusId\": 2,\r\n            \"legalStatus\": \"Extirpated\",\r\n            \"taxonomySortId\": 10,\r\n            \"taxonomyName\": \"Mammals\"\r\n        }\r\n    ]\r\n}"
@@ -976,16 +977,16 @@
             "description" : "The status of the request.",
             "type" : "string"
           },
-          "recordCounts" : {
-            "description" : "The total number of Migratory Birds species records returned by the search.",
-            "type" : "number"
-          },
           "records" : {
             "description" : "A list of Schedule 1 species.",
             "type" : "array",
             "items" : {
               "$ref" : "#/components/schemas/SpeciesMigratoryBirdsRecord"
             }
+          },
+          "recordCount" : {
+            "description" : "The total number of Migratory Birds records returned by the search.",
+            "type" : "number"
           }
         },
         "example" : "{\r\n    \"returnStatus\": \"OK\",\r\n    \"recordCounts\": 47,\r\n    \"records\": [\r\n        {\r\n            \"legalId\": 17,\r\n            \"legalCommonName\": \"Acadian Flycatcher\",\r\n            \"cosewicScientificName\": \"<i>Empidonax</i>\",\r\n            \"legalScientificName\": \"Vpdocens emiresnax\",\r\n            \"legalPopulation\": \"Prairie population\"\r\n        }\r\n    ]\r\n}"
@@ -1182,35 +1183,6 @@
           }
         }
       },
-      "SpeciesSearchResponse" : {
-        "required" : [ "records", "imageFieldPath", "recordCound", "returnStatus" ],
-        "type" : "object",
-        "properties" : {
-          "returnStatus" : {
-            "description" : "Status of the request.",
-            "type" : "string"
-          },
-          "recordCound" : {
-            "description" : "The total number of records returned by the search. ",
-            "type" : "number"
-          },
-          "imageFieldPath" : {
-            "description" : "The path to the species image folder.",
-            "type" : "string"
-          },
-          "records" : {
-            "description" : "A list of species records.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/SpeciesRecord"
-            }
-          },
-          "filters" : {
-            "$ref" : "#/components/schemas/SpeciesFilters",
-            "description" : "A list of filter counters based on the current search."
-          }
-        }
-      },
       "SpeciesFiltersResponse" : {
         "description" : "The collection of Species Search Filter groups used to filter search results.",
         "required" : [ "order", "returnStatus", "filters" ],
@@ -1403,6 +1375,35 @@
             "items" : {
               "$ref" : "#/components/schemas/CommonFilterOption"
             }
+          }
+        }
+      },
+      "SpeciesSearchResponse" : {
+        "required" : [ "records", "imageFieldPath", "recordCound", "returnStatus" ],
+        "type" : "object",
+        "properties" : {
+          "returnStatus" : {
+            "description" : "Status of the request.",
+            "type" : "string"
+          },
+          "recordCount" : {
+            "description" : "The total number of records returned by the search. ",
+            "type" : "number"
+          },
+          "imageFieldPath" : {
+            "description" : "The path to the species image folder.",
+            "type" : "string"
+          },
+          "records" : {
+            "description" : "A list of species records.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SpeciesRecord"
+            }
+          },
+          "filters" : {
+            "$ref" : "#/components/schemas/SpeciesFilters",
+            "description" : "A list of filter counters based on the current search."
           }
         }
       }
