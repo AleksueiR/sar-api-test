@@ -124,7 +124,7 @@
       "get" : {
         "tags" : [ "species" ],
         "summary" : "Get initial Species list",
-        "description" : "Returns a list of the first 2000 Species with default ordering. Used when the search page is loaded for the first time. Can be cached.",
+        "description" : "Returns a list of the first 2000 Species with default ordering and filter counts for all options. Used when the search page is loaded for the first time. Can be cached.",
         "responses" : {
           "200" : {
             "description" : "Successful operation.",
@@ -988,7 +988,7 @@
             }
           }
         },
-        "example" : "{\r\n    \"returnStatus\": \"OK\",\r\n    \"recordCounts\": 47,\r\n    \"records\": [\r\n        {\r\n            \"legalId\": 17,\r\n            \"legalCommonName\": \"Acadian Flycatcher\",\r\n            \"cosewicScientificName\": \"<i>Empidonax</i> <i>virescens</i> \",\r\n            \"legalScientificName\": \"Vpdocens emiresnax\",\r\n            \"legalPopulation\": \"Prairie population\"\r\n        }\r\n    ]\r\n}"
+        "example" : "{\r\n    \"returnStatus\": \"OK\",\r\n    \"recordCounts\": 47,\r\n    \"records\": [\r\n        {\r\n            \"legalId\": 17,\r\n            \"legalCommonName\": \"Acadian Flycatcher\",\r\n            \"cosewicScientificName\": \"<i>Empidonax</i>\",\r\n            \"legalScientificName\": \"Vpdocens emiresnax\",\r\n            \"legalPopulation\": \"Prairie population\"\r\n        }\r\n    ]\r\n}"
       },
       "SpeciesMigratoryBirdsRecord" : {
         "title" : "Root Type for SpeciesMigratoryBirdsRecord",
@@ -1003,7 +1003,7 @@
             "type" : "string"
           },
           "cosewicScientificName" : {
-            "description" : "COSEWIC scientific name in the current language.",
+            "description" : "COSEWIC scientific name in the current language. Might contain HTML markup which needs to be stripped.",
             "type" : "string"
           },
           "legalScientificName" : {
