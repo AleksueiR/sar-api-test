@@ -558,7 +558,7 @@
       "PermitRecord" : {
         "properties" : {
           "permitId" : {
-            "description" : "Permit id.",
+            "description" : "Permit ID.",
             "type" : "number"
           },
           "permitTitle" : {
@@ -1237,11 +1237,11 @@
       "PermitPurpose" : {
         "properties" : {
           "purposeId" : {
-            "description" : "Permit Purpose ID",
+            "description" : "Purpose ID",
             "type" : "integer"
           },
           "purposeName" : {
-            "description" : "Permit Purpose Name",
+            "description" : "Purpose Name",
             "type" : "string"
           }
         }
