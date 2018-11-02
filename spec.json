@@ -41,49 +41,6 @@
         }
       } ]
     },
-    "/api/species/profile/{id}" : {
-      "summary" : "Species profile endpoint.",
-      "get" : {
-        "tags" : [ "species" ],
-        "summary" : "Get Species Profile by Id",
-        "description" : "Returns the profile of the selection species.",
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation.",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/SpeciesProfileResponse"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request / client error."
-          },
-          "500" : {
-            "description" : "Server error."
-          }
-        }
-      },
-      "parameters" : [ {
-        "name" : "id",
-        "in" : "path",
-        "description" : "Species id.",
-        "required" : true,
-        "schema" : {
-          "type" : "number"
-        }
-      }, {
-        "name" : "Accept-Language",
-        "in" : "header",
-        "description" : "Current page language. Example: `en`",
-        "required" : true,
-        "schema" : {
-          "type" : "string"
-        }
-      } ]
-    },
     "/api/species/searchFilters" : {
       "summary" : "Species search filters endpoint.",
       "get" : {
@@ -256,6 +213,9 @@
       } ]
     },
     "/api/consultations/{id}" : {
+      "get" : {
+        "summary" : "Get Consultation by Id"
+      },
       "parameters" : [ {
         "name" : "Accept-Language",
         "in" : "header",
@@ -275,6 +235,26 @@
       } ]
     },
     "/api/consultations/searchFilters" : {
+      "summary" : "Public Consultation filter endpoint",
+      "get" : {
+        "tags" : [ "consultations" ],
+        "summary" : "Get Public Consultation Filters",
+        "description" : "Returns the list of values for the filters of Public Consultations.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request / client error."
+          },
+          "500" : {
+            "description" : "Server error."
+          }
+        }
+      },
       "parameters" : [ {
         "name" : "Accept-Language",
         "in" : "header",
@@ -286,6 +266,26 @@
       } ]
     },
     "/api/consultations/searchResults" : {
+      "summary" : "Public Consultation results endpoint",
+      "get" : {
+        "tags" : [ "consultations" ],
+        "summary" : "Get all Public Consultations",
+        "description" : "Returns the list of all public consultations.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request / client error."
+          },
+          "500" : {
+            "description" : "Server error."
+          }
+        }
+      },
       "parameters" : [ {
         "name" : "Accept-Language",
         "in" : "header",
@@ -392,7 +392,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/SpeciesSchedule1SearchResponse"
+                  "$ref" : "#/components/schemas/Schedule1SearchResponse"
                 }
               }
             }
@@ -427,7 +427,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/SpeciesMigratoryBirdsSearchResponse"
+                  "$ref" : "#/components/schemas/MigratoryBirdsSearchResponse"
                 }
               }
             }
@@ -441,6 +441,49 @@
         }
       },
       "parameters" : [ {
+        "name" : "Accept-Language",
+        "in" : "header",
+        "description" : "Current page language. Example: `en`",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    },
+    "/api/species/{id}" : {
+      "summary" : "Species profile endpoint.",
+      "get" : {
+        "tags" : [ "species" ],
+        "summary" : "Get Species Profile by Id",
+        "description" : "Returns the profile of the selection species.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SpeciesProfileResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request / client error."
+          },
+          "500" : {
+            "description" : "Server error."
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "description" : "Species id.",
+        "required" : true,
+        "schema" : {
+          "type" : "number"
+        }
+      }, {
         "name" : "Accept-Language",
         "in" : "header",
         "description" : "Current page language. Example: `en`",
@@ -895,129 +938,6 @@
           }
         }
       },
-      "SpeciesSchedule1Record" : {
-        "title" : "Root Type for Schedule1Record",
-        "type" : "object",
-        "properties" : {
-          "legalId" : {
-            "description" : "Legal id.",
-            "type" : "number"
-          },
-          "legalNameCommaEn" : {
-            "description" : "Legal name with the taxonomy terms reverse and separated by a comma (\"Bear, Grizzly\" as opposed to \"Grizzly Bear\"). English only.",
-            "type" : "string"
-          },
-          "legalCommonNameFr" : {
-            "description" : "Legal common name in French.",
-            "type" : "string"
-          },
-          "cosewicScientificName" : {
-            "description" : "COSEWIC scientific name.",
-            "type" : "string"
-          },
-          "legalScientificName" : {
-            "description" : "Legal scientific name.",
-            "type" : "string"
-          },
-          "legalPopulationEn" : {
-            "description" : "Legal population name in English.",
-            "type" : "string"
-          },
-          "legalPopulationFr" : {
-            "description" : "Legal population name in French.",
-            "type" : "string"
-          },
-          "legalStatusId" : {
-            "description" : "Legal status id.",
-            "type" : "number"
-          },
-          "legalStatus" : {
-            "description" : "Legal status name.",
-            "type" : "string"
-          },
-          "taxonomySortId" : {
-            "description" : "Taxonomy sort id. Used to sort taxonomic groups; not related to taxonomy ids.",
-            "type" : "number"
-          },
-          "taxonomyName" : {
-            "description" : "Taxonomy name.",
-            "type" : "string"
-          }
-        },
-        "example" : "{\r\n    \"legalId\": 123,\r\n    \"legalNameCommaEn\": \"Bear, Grizzly\",\r\n    \"legalCommonNameFr\": \"Ours grizzli\",\r\n    \"cosewicScientificName\": \"<i>Ursus</i> <i>arctos</i> \",\r\n    \"legalScientificName\": \"\",\r\n    \"legalPopulationEn\": \"Prairie population\",\r\n    \"legalPopulationFr\": \"Population des Prairies à\",\r\n    \"legalStatusId\": 2,\r\n    \"legalStatus\": \"Extirpated\",\r\n    \"taxonomySortId\": 10,\r\n    \"taxonomyName\": \"Mammals\"\r\n}"
-      },
-      "SpeciesSchedule1SearchResponse" : {
-        "title" : "Root Type for Schedule1SearchResponse",
-        "required" : [ ],
-        "type" : "object",
-        "properties" : {
-          "recordCount" : {
-            "description" : "The total number of Schedule 1 species records returned by the search.",
-            "type" : "number"
-          },
-          "records" : {
-            "description" : "A list of Schedule 1 species.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/SpeciesSchedule1Record"
-            }
-          },
-          "returnStatus" : {
-            "description" : "The status of the request.",
-            "type" : "string"
-          }
-        },
-        "example" : "{\r\n    \"returnStatus\": \"OK\",\r\n    \"recordCounts\": 596,\r\n    \"records\": [\r\n        {\r\n            \"legalId\": 123,\r\n            \"legalNameCommaEn\": \"Bear, Grizzly\",\r\n            \"legalCommonNameFr\": \"Ours grizzli\",\r\n            \"cosewicScientificName\": \"<i>Ursus</i> <i>arctos</i> \",\r\n            \"legalScientificName\": \"\",\r\n            \"legalPopulationEn\": \"Prairie population\",\r\n            \"legalPopulationFr\": \"Population des Prairies à\",\r\n            \"legalStatusId\": 2,\r\n            \"legalStatus\": \"Extirpated\",\r\n            \"taxonomySortId\": 10,\r\n            \"taxonomyName\": \"Mammals\"\r\n        }\r\n    ]\r\n}"
-      },
-      "SpeciesMigratoryBirdsSearchResponse" : {
-        "title" : "Root Type for SpeciesMigratoryBirdsSearchResponse",
-        "type" : "object",
-        "properties" : {
-          "returnStatus" : {
-            "description" : "The status of the request.",
-            "type" : "string"
-          },
-          "records" : {
-            "description" : "A list of Schedule 1 species.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/SpeciesMigratoryBirdsRecord"
-            }
-          },
-          "recordCount" : {
-            "description" : "The total number of Migratory Birds records returned by the search.",
-            "type" : "number"
-          }
-        },
-        "example" : "{\r\n    \"returnStatus\": \"OK\",\r\n    \"recordCounts\": 47,\r\n    \"records\": [\r\n        {\r\n            \"legalId\": 17,\r\n            \"legalCommonName\": \"Acadian Flycatcher\",\r\n            \"cosewicScientificName\": \"<i>Empidonax</i>\",\r\n            \"legalScientificName\": \"Vpdocens emiresnax\",\r\n            \"legalPopulation\": \"Prairie population\"\r\n        }\r\n    ]\r\n}"
-      },
-      "SpeciesMigratoryBirdsRecord" : {
-        "title" : "Root Type for SpeciesMigratoryBirdsRecord",
-        "type" : "object",
-        "properties" : {
-          "legalId" : {
-            "description" : "Legal id.",
-            "type" : "number"
-          },
-          "legalCommonName" : {
-            "description" : "Legal common name in the current language.",
-            "type" : "string"
-          },
-          "cosewicScientificName" : {
-            "description" : "COSEWIC scientific name in the current language. Might contain HTML markup which needs to be stripped.",
-            "type" : "string"
-          },
-          "legalScientificName" : {
-            "description" : "Legal scientific name in the current language.",
-            "type" : "string"
-          },
-          "legalPopulation" : {
-            "description" : "Legal population name in the current language.",
-            "type" : "string"
-          }
-        },
-        "example" : "{\n    \"legalId\": 44,\n    \"legalCommonName\": \"some text\",\n    \"cosewicScientificName\": \"some text\",\n    \"legalScientificName\": \"some text\",\n    \"legalPopulation\": \"some text\"\n}"
-      },
       "PermitsSearchPostResponse" : {
         "properties" : {
           "filters" : {
@@ -1040,7 +960,7 @@
             }
           }
         },
-        "example" : "{\r\n    \"returnStatus\": \"ok\",\r\n    \"recordsCount\": 214,\r\n    \"records\": [\r\n        {\r\n            \"permitId\": 309,\r\n            \"permitTitle\": \"Explanation for issuing ...\",\r\n            \"typeId\": 3,\r\n            \"issuingAuthorityId\": 2,\r\n            \"issuingAuthority\": \"Environment Canada\",\r\n            \"issueDate\": \"2011-Jan-19\",\r\n            \"expiryDate\": \"2014-01-18\",\r\n            \"issueYear\": 2011,\r\n            \"issueMonth\": 1,\r\n            \"permitStatus\": 50\r\n        }\r\n    ],\r\n    \"filters\": {\r\n        \"issuingAuthorities\": [],\r\n        \"issuingYears\": [{ \r\n            \"id\": 2011, \r\n            \"name\": \"2011\",\r\n            \"itemCount\": 214 \r\n        }],\r\n        \"issuingMonths\": []\r\n    }\r\n}"
+        "example" : "{\r\n    \"returnStatus\": \"ok\",\r\n    \"recordCount\": 214,\r\n    \"records\": [\r\n        {\r\n            \"permitId\": 309,\r\n            \"permitTitle\": \"Explanation for issuing ...\",\r\n            \"typeId\": 3,\r\n            \"issuingAuthorityId\": 2,\r\n            \"issuingAuthority\": \"Environment Canada\",\r\n            \"issueDate\": \"2011-Jan-19\",\r\n            \"expiryDate\": \"2014-01-18\",\r\n            \"issueYear\": 2011,\r\n            \"issueMonth\": 1,\r\n            \"permitStatus\": 50\r\n        }\r\n    ],\r\n    \"filters\": {\r\n        \"issuingAuthorities\": [],\r\n        \"issuingYears\": [{ \r\n            \"id\": 2011, \r\n            \"name\": \"2011\",\r\n            \"itemCount\": 214 \r\n        }],\r\n        \"issuingMonths\": []\r\n    }\r\n}"
       },
       "PermitsSearchGetResponse" : {
         "description" : "Returns the default first batch of permit results assuming all the default filter settings.\nReturns filter counts for all filter options.",
@@ -1065,7 +985,7 @@
             }
           }
         },
-        "example" : "{\r\n    \"returnStatus\": \"ok\",\r\n    \"recordsCount\": 214,\r\n    \"records\": [\r\n        {\r\n            \"permitId\": 309,\r\n            \"permitTitle\": \"Explanation for issuing ...\",\r\n            \"typeId\": 3,\r\n            \"issuingAuthorityId\": 2,\r\n            \"issuingAuthority\": \"Environment Canada\",\r\n            \"issueDate\": \"2011-Jan-19\",\r\n            \"expiryDate\": \"2014-01-18\",\r\n            \"issueYear\": 2011,\r\n            \"issueMonth\": 1,\r\n            \"permitStatus\": 50\r\n        }\r\n    ],\r\n    \"filters\": {\r\n        \"issuingAuthorities\": [\r\n            { \r\n                \"id\": 2, \r\n                \"name\": \"Environment Canada\", \r\n                \"itemCount\": 19 \r\n            },\r\n            { \r\n                \"id\": 3, \r\n                \"name\": \"Department of Fisheries and Oceans\", \r\n                \"itemCount\": 342 \r\n            },\r\n            { \r\n                \"id\": 4, \r\n                \"name\": \"Parks Canada Agency\", \r\n                \"itemCount\": 24 \r\n            }\r\n        ],\r\n        \"issuingYears\": [\r\n            { \"id\": 2000, \"name\": \"2000\", \"itemCount\": 18 },\r\n            { \"id\": 2001, \"name\": \"2001\", \"itemCount\": 88 },\r\n            { \"id\": 2002, \"name\": \"2002\", \"itemCount\": 62 },\r\n            { \"id\": 2003, \"name\": \"2003\", \"itemCount\": 4 },\r\n            { \"id\": 2004, \"name\": \"2004\", \"itemCount\": 48 },\r\n            { \"id\": 2005, \"name\": \"2005\", \"itemCount\": 11 },\r\n            { \"id\": 2006, \"name\": \"2006\", \"itemCount\": 57 },\r\n            { \"id\": 2007, \"name\": \"2007\", \"itemCount\": 26 },\r\n            { \"id\": 2008, \"name\": \"2008\", \"itemCount\": 44 },\r\n            { \"id\": 2009, \"name\": \"2009\", \"itemCount\": 93 },\r\n            { \"id\": 2010, \"name\": \"2010\", \"itemCount\": 69 },\r\n            { \"id\": 2011, \"name\": \"2011\", \"itemCount\": 93 },\r\n            { \"id\": 2012, \"name\": \"2012\", \"itemCount\": 24 },\r\n            { \"id\": 2013, \"name\": \"2013\", \"itemCount\": 61 },\r\n            { \"id\": 2014, \"name\": \"2014\", \"itemCount\": 47 },\r\n            { \"id\": 2015, \"name\": \"2015\", \"itemCount\": 45 },\r\n            { \"id\": 2016, \"name\": \"2016\", \"itemCount\": 94 },\r\n            { \"id\": 2017, \"name\": \"2017\", \"itemCount\": 37 },\r\n            { \"id\": 2018, \"name\": \"2018\", \"itemCount\": 38 },\r\n            { \"id\": 2019, \"name\": \"2019\", \"itemCount\": 89 }\r\n        ],\r\n        \"issuingMonths\": [\r\n            { \"id\": 0, \"name\": \"0\", \"itemCount\": 40 },\r\n            { \"id\": 1, \"name\": \"1\", \"itemCount\": 54 },\r\n            { \"id\": 2, \"name\": \"2\", \"itemCount\": 89 },\r\n            { \"id\": 3, \"name\": \"3\", \"itemCount\": 55 },\r\n            { \"id\": 4, \"name\": \"4\", \"itemCount\": 78 },\r\n            { \"id\": 5, \"name\": \"5\", \"itemCount\": 5 },\r\n            { \"id\": 6, \"name\": \"6\", \"itemCount\": 40 },\r\n            { \"id\": 7, \"name\": \"7\", \"itemCount\": 54 },\r\n            { \"id\": 8, \"name\": \"8\", \"itemCount\": 89 },\r\n            { \"id\": 9, \"name\": \"9\", \"itemCount\": 55 },\r\n            { \"id\": 10, \"name\": \"10\", \"itemCount\": 78 },\r\n            { \"id\": 11, \"name\": \"11\", \"itemCount\": 5 }\r\n        ]\r\n    }\r\n}"
+        "example" : "{\r\n    \"returnStatus\": \"ok\",\r\n    \"recordCount\": 214,\r\n    \"records\": [\r\n        {\r\n            \"permitId\": 309,\r\n            \"permitTitle\": \"Explanation for issuing ...\",\r\n            \"typeId\": 3,\r\n            \"issuingAuthorityId\": 2,\r\n            \"issuingAuthority\": \"Environment Canada\",\r\n            \"issueDate\": \"2011-Jan-19\",\r\n            \"expiryDate\": \"2014-01-18\",\r\n            \"issueYear\": 2011,\r\n            \"issueMonth\": 1,\r\n            \"permitStatus\": 50\r\n        }\r\n    ],\r\n    \"filters\": {\r\n        \"issuingAuthorities\": [\r\n            { \r\n                \"id\": 2, \r\n                \"name\": \"Environment Canada\", \r\n                \"itemCount\": 19 \r\n            },\r\n            { \r\n                \"id\": 3, \r\n                \"name\": \"Department of Fisheries and Oceans\", \r\n                \"itemCount\": 342 \r\n            },\r\n            { \r\n                \"id\": 4, \r\n                \"name\": \"Parks Canada Agency\", \r\n                \"itemCount\": 24 \r\n            }\r\n        ],\r\n        \"issuingYears\": [\r\n            { \"id\": 2000, \"name\": \"2000\", \"itemCount\": 18 },\r\n            { \"id\": 2001, \"name\": \"2001\", \"itemCount\": 88 },\r\n            { \"id\": 2002, \"name\": \"2002\", \"itemCount\": 62 },\r\n            { \"id\": 2003, \"name\": \"2003\", \"itemCount\": 4 },\r\n            { \"id\": 2004, \"name\": \"2004\", \"itemCount\": 48 },\r\n            { \"id\": 2005, \"name\": \"2005\", \"itemCount\": 11 },\r\n            { \"id\": 2006, \"name\": \"2006\", \"itemCount\": 57 },\r\n            { \"id\": 2007, \"name\": \"2007\", \"itemCount\": 26 },\r\n            { \"id\": 2008, \"name\": \"2008\", \"itemCount\": 44 },\r\n            { \"id\": 2009, \"name\": \"2009\", \"itemCount\": 93 },\r\n            { \"id\": 2010, \"name\": \"2010\", \"itemCount\": 69 },\r\n            { \"id\": 2011, \"name\": \"2011\", \"itemCount\": 93 },\r\n            { \"id\": 2012, \"name\": \"2012\", \"itemCount\": 24 },\r\n            { \"id\": 2013, \"name\": \"2013\", \"itemCount\": 61 },\r\n            { \"id\": 2014, \"name\": \"2014\", \"itemCount\": 47 },\r\n            { \"id\": 2015, \"name\": \"2015\", \"itemCount\": 45 },\r\n            { \"id\": 2016, \"name\": \"2016\", \"itemCount\": 94 },\r\n            { \"id\": 2017, \"name\": \"2017\", \"itemCount\": 37 },\r\n            { \"id\": 2018, \"name\": \"2018\", \"itemCount\": 38 },\r\n            { \"id\": 2019, \"name\": \"2019\", \"itemCount\": 89 }\r\n        ],\r\n        \"issuingMonths\": [\r\n            { \"id\": 0, \"name\": \"0\", \"itemCount\": 40 },\r\n            { \"id\": 1, \"name\": \"1\", \"itemCount\": 54 },\r\n            { \"id\": 2, \"name\": \"2\", \"itemCount\": 89 },\r\n            { \"id\": 3, \"name\": \"3\", \"itemCount\": 55 },\r\n            { \"id\": 4, \"name\": \"4\", \"itemCount\": 78 },\r\n            { \"id\": 5, \"name\": \"5\", \"itemCount\": 5 },\r\n            { \"id\": 6, \"name\": \"6\", \"itemCount\": 40 },\r\n            { \"id\": 7, \"name\": \"7\", \"itemCount\": 54 },\r\n            { \"id\": 8, \"name\": \"8\", \"itemCount\": 89 },\r\n            { \"id\": 9, \"name\": \"9\", \"itemCount\": 55 },\r\n            { \"id\": 10, \"name\": \"10\", \"itemCount\": 78 },\r\n            { \"id\": 11, \"name\": \"11\", \"itemCount\": 5 }\r\n        ]\r\n    }\r\n}"
       },
       "PermitsSearchRequest" : {
         "properties" : {
@@ -1378,8 +1298,82 @@
           }
         }
       },
+      "Schedule1SearchResponse" : {
+        "title" : "Root Type for Schedule1SearchResponse",
+        "required" : [ ],
+        "type" : "object",
+        "properties" : {
+          "recordCount" : {
+            "description" : "The total number of Schedule 1 species records returned by the search.",
+            "type" : "number"
+          },
+          "records" : {
+            "description" : "A list of Schedule 1 species.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Schedule1Record"
+            }
+          },
+          "returnStatus" : {
+            "description" : "The status of the request.",
+            "type" : "string"
+          }
+        },
+        "example" : "{\r\n    \"returnStatus\": \"OK\",\r\n    \"recordCount\": 596,\r\n    \"records\": [\r\n        {\r\n            \"legalId\": 123,\r\n            \"legalNameCommaEn\": \"Bear, Grizzly\",\r\n            \"legalCommonNameFr\": \"Ours grizzli\",\r\n            \"cosewicScientificName\": \"<i>Ursus</i> <i>arctos</i> \",\r\n            \"legalScientificName\": \"\",\r\n            \"legalPopulationEn\": \"Prairie population\",\r\n            \"legalPopulationFr\": \"Population des Prairies à\",\r\n            \"legalStatusId\": 2,\r\n            \"legalStatus\": \"Extirpated\",\r\n            \"taxonomySortId\": 10,\r\n            \"taxonomyName\": \"Mammals\"\r\n        }\r\n    ]\r\n}"
+      },
+      "Schedule1Record" : {
+        "title" : "Root Type for Schedule1Record",
+        "type" : "object",
+        "properties" : {
+          "legalId" : {
+            "description" : "Legal id.",
+            "type" : "number"
+          },
+          "legalNameCommaEn" : {
+            "description" : "Legal name with the taxonomy terms reverse and separated by a comma (\"Bear, Grizzly\" as opposed to \"Grizzly Bear\"). English only.",
+            "type" : "string"
+          },
+          "legalCommonNameFr" : {
+            "description" : "Legal common name in French.",
+            "type" : "string"
+          },
+          "cosewicScientificName" : {
+            "description" : "COSEWIC scientific name.",
+            "type" : "string"
+          },
+          "legalScientificName" : {
+            "description" : "Legal scientific name.",
+            "type" : "string"
+          },
+          "legalPopulationEn" : {
+            "description" : "Legal population name in English.",
+            "type" : "string"
+          },
+          "legalPopulationFr" : {
+            "description" : "Legal population name in French.",
+            "type" : "string"
+          },
+          "legalStatusId" : {
+            "description" : "Legal status id.",
+            "type" : "number"
+          },
+          "legalStatus" : {
+            "description" : "Legal status name.",
+            "type" : "string"
+          },
+          "taxonomySortId" : {
+            "description" : "Taxonomy sort id. Used to sort taxonomic groups; not related to taxonomy ids.",
+            "type" : "number"
+          },
+          "taxonomyName" : {
+            "description" : "Taxonomy name.",
+            "type" : "string"
+          }
+        },
+        "example" : "{\r\n    \"legalId\": 123,\r\n    \"legalNameCommaEn\": \"Bear, Grizzly\",\r\n    \"legalCommonNameFr\": \"Ours grizzli\",\r\n    \"cosewicScientificName\": \"<i>Ursus</i> <i>arctos</i> \",\r\n    \"legalScientificName\": \"\",\r\n    \"legalPopulationEn\": \"Prairie population\",\r\n    \"legalPopulationFr\": \"Population des Prairies à\",\r\n    \"legalStatusId\": 2,\r\n    \"legalStatus\": \"Extirpated\",\r\n    \"taxonomySortId\": 10,\r\n    \"taxonomyName\": \"Mammals\"\r\n}"
+      },
       "SpeciesSearchResponse" : {
-        "required" : [ "records", "imageFieldPath", "recordCound", "returnStatus" ],
+        "required" : [ "records", "imageFieldPath", "recordCount", "returnStatus" ],
         "type" : "object",
         "properties" : {
           "returnStatus" : {
@@ -1404,6 +1398,97 @@
           "filters" : {
             "$ref" : "#/components/schemas/SpeciesFilters",
             "description" : "A list of filter counters based on the current search."
+          }
+        }
+      },
+      "ConsultationsFiltersResponse" : {
+        "description" : "The collection of Public Consultation Search Filter groups used to filter search results.",
+        "required" : [ "filters", "order", "returnStatus" ],
+        "properties" : {
+          "filters" : {
+            "$ref" : "#/components/schemas/ConsultationsFilters",
+            "description" : "A collection of Public Consultation filter groups."
+          },
+          "order" : {
+            "description" : "A list of filter group names specifying the UI rendering order.",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "returnStatus" : {
+            "description" : "Status of the request.",
+            "type" : "string"
+          }
+        },
+        "example" : "{\n    \"filters\": {\n        \"consultationStatus\": [\n            {\n                \"id\": -1,\n                \"name\": \"Current\",\n                \"itemCount\": 0\n            },\n            {\n                \"id\": -1,\n                \"name\": \"Completed\",\n                \"itemCount\": 744\n            }\n        ],\n        \"consultationYear\": [\n            {\n                \"id\":2003,\n                \"name\":\"2003\",\n                \"itemCount\":1\n                \n            },\n            {\n                \"id\":2004,\n                \"name\":\"2004\",\n                \"itemCount\":23\n                \n            },\n            {\n                \"id\":2005,\n                \"name\":\"2005\",\n                \"itemCount\":31\n            },\n            {\n                \"id\":2006,\n                \"name\":\"2006\",\n                \"itemCount\":66\n            },\n            {\n                \"id\":2007,\n                \"name\":\"2007\",\n                \"itemCount\":51\n            },\n            {\n                \"id\":2008,\n                \"name\":\"2008\",\n                \"itemCount\":17\n            },\n            {\n                \"id\":2009,\n                \"name\":\"2009\",\n                \"itemCount\":30\n            },\n            {\n                \"id\":2010,\n                \"name\":\"2010\",\n                \"itemCount\":57\n            },\n            {\n                \"id\":2011,\n                \"name\":\"2011\",\n                \"itemCount\":78\n            },\n            {\n                \"id\":2012,\n                \"name\":\"2012\",\n                \"itemCount\":75\n            },\n            {\n                \"id\":2013,\n                \"name\":\"2013\",\n                \"itemCount\":60\n            },\n            {\n                \"id\":2014,\n                \"name\":\"2014\",\n                \"itemCount\":79\n            },\n            {\n                \"id\":2015,\n                \"name\":\"2015\",\n                \"itemCount\":92\n            },\n            {\n                \"id\":2016,\n                \"name\":\"2016\",\n                \"itemCount\":82\n            },\n            {\n                \"id\":2017,\n                \"name\":\"2017\",\n                \"itemCount\":1\n            },\n            {\n                \"id\":2018,\n                \"name\":\"2018\",\n                \"itemCount\":1\n            }\n        ]\n    },\n    \"order\": [\n        \"Current\",\n        \"Completed\"\n    ],\n    \"returnStatus\": \"OK\"\n}"
+      },
+      "MigratoryBirdsRecord" : {
+        "title" : "Root Type for SpeciesMigratoryBirdsRecord",
+        "type" : "object",
+        "properties" : {
+          "legalId" : {
+            "description" : "Legal id.",
+            "type" : "number"
+          },
+          "legalCommonName" : {
+            "description" : "Legal common name in the current language.",
+            "type" : "string"
+          },
+          "cosewicScientificName" : {
+            "description" : "COSEWIC scientific name in the current language. Might contain HTML markup which needs to be stripped.",
+            "type" : "string"
+          },
+          "legalScientificName" : {
+            "description" : "Legal scientific name in the current language.",
+            "type" : "string"
+          },
+          "legalPopulation" : {
+            "description" : "Legal population name in the current language.",
+            "type" : "string"
+          }
+        },
+        "example" : "{\n    \"legalId\": 44,\n    \"legalCommonName\": \"some text\",\n    \"cosewicScientificName\": \"some text\",\n    \"legalScientificName\": \"some text\",\n    \"legalPopulation\": \"some text\"\n}"
+      },
+      "MigratoryBirdsSearchResponse" : {
+        "title" : "Root Type for SpeciesMigratoryBirdsSearchResponse",
+        "type" : "object",
+        "properties" : {
+          "returnStatus" : {
+            "description" : "The status of the request.",
+            "type" : "string"
+          },
+          "records" : {
+            "description" : "A list of Schedule 1 species.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/MigratoryBirdsRecord"
+            }
+          },
+          "recordCount" : {
+            "description" : "The total number of Migratory Birds records returned by the search.",
+            "type" : "number"
+          }
+        },
+        "example" : "{\r\n    \"returnStatus\": \"OK\",\r\n    \"recordCount\": 47,\r\n    \"records\": [\r\n        {\r\n            \"legalId\": 17,\r\n            \"legalCommonName\": \"Acadian Flycatcher\",\r\n            \"cosewicScientificName\": \"<i>Empidonax</i>\",\r\n            \"legalScientificName\": \"Vpdocens emiresnax\",\r\n            \"legalPopulation\": \"Prairie population\"\r\n        }\r\n    ]\r\n}"
+      },
+      "ConsultationsFilters" : {
+        "description" : "A collection of Public Consultation filter groups.",
+        "required" : [ "consultationStatus", "consultationYear" ],
+        "properties" : {
+          "consultationStatus" : {
+            "description" : "Filter group of \"Current\" or \"Completed\".",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonFilterOption"
+            }
+          },
+          "consultationYear" : {
+            "description" : "Filter group of Public Consultation years, where id is year.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonFilterOption"
+            }
           }
         }
       }
