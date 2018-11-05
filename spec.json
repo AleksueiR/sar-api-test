@@ -279,7 +279,44 @@
           "200" : {
             "description" : "Successful operation.",
             "content" : {
-              "application/json" : { }
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ConsultationsSearchGetResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request / client error."
+          },
+          "500" : {
+            "description" : "Server error."
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "consultations" ],
+        "summary" : "Get Consultations by Filters",
+        "description" : "Returns the list of the results for Public Consultations search page.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ConsultationsSearchRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ConsultationsSearchPostResponse"
+                }
+              }
             }
           },
           "400" : {
@@ -1495,6 +1532,150 @@
             }
           }
         }
+      },
+      "ConsultationsSearchGetResponse" : {
+        "description" : "Returns the default public consultation results with default filter settings.",
+        "properties" : {
+          "recordCount" : {
+            "description" : "The total number of records returned by the search.",
+            "type" : "number"
+          },
+          "returnStatus" : {
+            "description" : "Status of the request.",
+            "type" : "string"
+          },
+          "records" : {
+            "description" : "A list of public consultation records.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ConsultationRecord"
+            }
+          }
+        },
+        "example" : "{\n    \"recordCount\": 774,\n    \"returnStatus\": \"OK\",\n    \"records\": [\n        {\n            \"attachments\": [\n                {\n                    \"attachmentId\": 157,\n                    \"attachmentLanguage\": \"E\",\n                    \"attachmentPublicationDate\": \"2003-05-03T00:00:00\",\n                    \"attachmentTitle\": \"Order Extending The Time for the Assessment of the Status of Wildlife Species, Vol. 137, No. 18\",\n                    \"documentID\": 43,\n                    \"html\": null,\n                    \"pdf\": \"g1-13718_o1_e.pdf\"\n                },\n                {\n                    \"attachmentId\": 158,\n                    \"attachmentLanguage\": \"F\",\n                    \"attachmentPublicationDate\": \"2003-05-03T00:00:00\",\n                    \"attachmentTitle\": \"D&eacute;cret de prorogation du d&eacute;lai d'&eacute;valuation de la situation d'esp&egrave;ces sauvages, Vol. 137, n<sup>o</sup> 18\",\n                    \"documentID\": 43,\n                    \"html\": null,\n                    \"pdf\": \"g1-13718_o1_f.pdf\"\n                }\n            ],\n            \"consultationEndDate\": \"2003-05-18T00:00:00\",\n            \"consultationStartDate\": \"2003-05-03T00:00:00\",\n            \"consultationStatus\": \"Completed\",\n            \"consultationYear\": 2003,\n            \"documentCreateDate\": \"2003-05-05T10:26:57\",\n            \"documentId\": 43,\n            \"documentTitle\": \"Order Extending the Time for the Assessment of the Status of Wildlife Species\",\n            \"documentType\": \"Orders\",\n            \"documentVersion\": null\n        }\n    ]\n}"
+      },
+      "ConsultationRecord" : {
+        "description" : "A record of a public consultation.",
+        "properties" : {
+          "attachments" : {
+            "description" : "List of document attachments.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/DocumentAttachment"
+            }
+          },
+          "consultationEndDate" : {
+            "format" : "date-time",
+            "description" : "Public consultation end date.",
+            "type" : "string"
+          },
+          "consultationStartDate" : {
+            "format" : "date-time",
+            "description" : "Public consultation start date.",
+            "type" : "string"
+          },
+          "consultationStatus" : {
+            "description" : "Public consultation status.",
+            "type" : "string"
+          },
+          "consultationYear" : {
+            "description" : "Public consultation year.",
+            "type" : "number"
+          },
+          "documentCreateDate" : {
+            "format" : "date-time",
+            "description" : "Document creation date.",
+            "type" : "string"
+          },
+          "documentId" : {
+            "description" : "Document ID.",
+            "type" : "number"
+          },
+          "documentTitle" : {
+            "description" : "Document title.",
+            "type" : "string"
+          },
+          "documentType" : {
+            "description" : "Document type.",
+            "type" : "string"
+          },
+          "documentVersion" : {
+            "description" : "Recovery document status (version).",
+            "type" : "string"
+          }
+        }
+      },
+      "DocumentAttachment" : {
+        "description" : "A document file attachment.",
+        "properties" : {
+          "attachmentId" : {
+            "description" : "Attachment ID.",
+            "type" : "number"
+          },
+          "attachmentLanguage" : {
+            "description" : "Attachment language in English or French.",
+            "type" : "string"
+          },
+          "attachmentPublicationDate" : {
+            "format" : "date-time",
+            "description" : "Attachment publication date.",
+            "type" : "string"
+          },
+          "attachmentTitle" : {
+            "description" : "Attachment title.",
+            "type" : "string"
+          },
+          "documentID" : {
+            "description" : "Document ID.",
+            "type" : "number"
+          },
+          "html" : {
+            "description" : "HTML link to attachment.",
+            "type" : "string"
+          },
+          "pdf" : {
+            "description" : "PDF link to attachment.",
+            "type" : "string"
+          }
+        }
+      },
+      "ConsultationsSearchPostResponse" : {
+        "description" : "Return the filtered public consultation results.",
+        "properties" : {
+          "recordCount" : {
+            "description" : "The total number of records returned by the search.",
+            "type" : "number"
+          },
+          "records" : {
+            "description" : "A list of public consultation records.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ConsultationRecord"
+            }
+          },
+          "returnStatus" : {
+            "description" : "Status of the request.",
+            "type" : "string"
+          }
+        },
+        "example" : "{\n    \"recordCount\": 774,\n    \"returnStatus\": \"OK\",\n    \"records\": [\n        {\n            \"attachments\": [\n                {\n                    \"attachmentId\": 157,\n                    \"attachmentLanguage\": \"E\",\n                    \"attachmentPublicationDate\": \"2003-05-03T00:00:00\",\n                    \"attachmentTitle\": \"Order Extending The Time for the Assessment of the Status of Wildlife Species, Vol. 137, No. 18\",\n                    \"documentID\": 43,\n                    \"html\": null,\n                    \"pdf\": \"g1-13718_o1_e.pdf\"\n                },\n                {\n                    \"attachmentId\": 158,\n                    \"attachmentLanguage\": \"F\",\n                    \"attachmentPublicationDate\": \"2003-05-03T00:00:00\",\n                    \"attachmentTitle\": \"D&eacute;cret de prorogation du d&eacute;lai d'&eacute;valuation de la situation d'esp&egrave;ces sauvages, Vol. 137, n<sup>o</sup> 18\",\n                    \"documentID\": 43,\n                    \"html\": null,\n                    \"pdf\": \"g1-13718_o1_f.pdf\"\n                }\n            ],\n            \"consultationEndDate\": \"2003-05-18T00:00:00\",\n            \"consultationStartDate\": \"2003-05-03T00:00:00\",\n            \"consultationStatus\": \"Completed\",\n            \"consultationYear\": 2003,\n            \"documentCreateDate\": \"2003-05-05T10:26:57\",\n            \"documentId\": 43,\n            \"documentTitle\": \"Order Extending the Time for the Assessment of the Status of Wildlife Species\",\n            \"documentType\": \"Orders\",\n            \"documentVersion\": null\n        }\n    ]\n}"
+      },
+      "ConsultationsSearchRequest" : {
+        "description" : "The request body to a POST request for Public Consultation filtering.",
+        "properties" : {
+          "consultationStatus" : {
+            "description" : "Public Consultation status. (\"Current\" or \"Completed\")",
+            "type" : "string"
+          },
+          "years" : {
+            "description" : "List of years of Public Consultations.",
+            "type" : "array",
+            "items" : {
+              "type" : "number"
+            }
+          }
+        },
+        "example" : "{\n    \"consultationStatus\": \"Completed\",\n    \"years\": [\n        2003,\n        2018\n    ]\n}"
       }
     }
   },
