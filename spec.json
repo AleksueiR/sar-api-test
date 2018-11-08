@@ -858,6 +858,7 @@
         "type" : "object",
         "properties" : {
           "permitId" : {
+            "description" : "Permit ID",
             "type" : "integer"
           },
           "explanationId" : {
@@ -865,9 +866,11 @@
             "type" : "integer"
           },
           "explanationName" : {
+            "description" : "Explanation Name",
             "type" : "string"
           },
           "localNumber" : {
+            "description" : "Local Number",
             "type" : "string"
           },
           "startDate" : {
@@ -885,9 +888,11 @@
             "type" : "string"
           },
           "issuerId" : {
+            "description" : "Issuer ID",
             "type" : "integer"
           },
           "issuerName" : {
+            "description" : "Issuer Name",
             "type" : "string"
           },
           "authorityId" : {
@@ -895,6 +900,7 @@
             "type" : "integer"
           },
           "purposeId" : {
+            "description" : "Purpose ID",
             "type" : "integer"
           },
           "purposeName" : {
@@ -902,6 +908,7 @@
             "type" : "string"
           },
           "preConditions" : {
+            "description" : "Pre Conditions",
             "type" : "string"
           },
           "terms" : {
@@ -934,6 +941,7 @@
             }
           },
           "locations" : {
+            "description" : "Locations",
             "type" : "array",
             "items" : {
               "$ref" : "#/components/schemas/PermitLocation"
@@ -1180,6 +1188,7 @@
         }
       },
       "PermitLocation" : {
+        "description" : "Permit Location",
         "properties" : {
           "rangeId" : {
             "description" : "Locaion Range ID",
