@@ -338,6 +338,30 @@
       } ]
     },
     "/api/documents/{id}" : {
+      "summary" : "Document details endpoint.",
+      "get" : {
+        "tags" : [ "documents" ],
+        "summary" : "Get Document by id",
+        "description" : "Returns the detailed document information.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/DocumentDetailsResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request / client error."
+          },
+          "500" : {
+            "description" : "Server error."
+          }
+        }
+      },
       "parameters" : [ {
         "name" : "Accept-Language",
         "in" : "header",
@@ -368,6 +392,30 @@
       } ]
     },
     "/api/documents/searchResults" : {
+      "summary" : "Document result endpoint.",
+      "get" : {
+        "tags" : [ "documents" ],
+        "summary" : "Get all Documents",
+        "description" : "Returns the list of all documents.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/DocumentsSearchGetResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request / client error."
+          },
+          "500" : {
+            "description" : "Server error."
+          }
+        }
+      },
       "parameters" : [ {
         "name" : "Accept-Language",
         "in" : "header",
@@ -1561,7 +1609,7 @@
             }
           }
         },
-        "example" : "{\n    \"recordCount\": 774,\n    \"returnStatus\": \"OK\",\n    \"records\": [\n        {\n            \"attachments\": [\n                {\n                    \"attachmentId\": 157,\n                    \"attachmentLanguage\": \"E\",\n                    \"attachmentPublicationDate\": \"2003-05-03T00:00:00\",\n                    \"attachmentTitle\": \"Order Extending The Time for the Assessment of the Status of Wildlife Species, Vol. 137, No. 18\",\n                    \"documentID\": 43,\n                    \"html\": null,\n                    \"pdf\": \"g1-13718_o1_e.pdf\"\n                },\n                {\n                    \"attachmentId\": 158,\n                    \"attachmentLanguage\": \"F\",\n                    \"attachmentPublicationDate\": \"2003-05-03T00:00:00\",\n                    \"attachmentTitle\": \"D&eacute;cret de prorogation du d&eacute;lai d'&eacute;valuation de la situation d'esp&egrave;ces sauvages, Vol. 137, n<sup>o</sup> 18\",\n                    \"documentID\": 43,\n                    \"html\": null,\n                    \"pdf\": \"g1-13718_o1_f.pdf\"\n                }\n            ],\n            \"consultationEndDate\": \"2003-05-18T00:00:00\",\n            \"consultationStartDate\": \"2003-05-03T00:00:00\",\n            \"consultationStatus\": \"Completed\",\n            \"consultationYear\": 2003,\n            \"documentCreateDate\": \"2003-05-05T10:26:57\",\n            \"documentId\": 43,\n            \"documentTitle\": \"Order Extending the Time for the Assessment of the Status of Wildlife Species\",\n            \"documentType\": \"Orders\",\n            \"documentVersion\": null\n        }\n    ]\n}"
+        "example" : "{\n    \"recordCount\": 774,\n    \"returnStatus\": \"OK\",\n    \"records\": [\n        {\n            \"attachments\": [\n                {\n                    \"attachmentId\": 157,\n                    \"attachmentLanguage\": \"E\",\n                    \"attachmentPublicationDate\": \"2003-05-03T00:00:00\",\n                    \"attachmentTitle\": \"Order Extending The Time for the Assessment of the Status of Wildlife Species, Vol. 137, No. 18\",\n                    \"documentID\": 43,\n                    \"html\": null,\n                    \"pdf\": \"g1-13718_o1_e.pdf\"\n                },\n                {\n                    \"attachmentId\": 158,\n                    \"attachmentLanguage\": \"F\",\n                    \"attachmentPublicationDate\": \"2003-05-03T00:00:00\",\n                    \"attachmentTitle\": \"D&eacute;cret de prorogation du d&eacute;lai d'&eacute;valuation de la situation d'esp&egrave;ces sauvages, Vol. 137, n<sup>o</sup> 18\",\n                    \"documentID\": 43,\n                    \"html\": null,\n                    \"pdf\": \"g1-13718_o1_f.pdf\"\n                }\n            ],\n            \"consultationEndDate\": \"2003-05-18T00:00:00\",\n            \"consultationStartDate\": \"2003-05-03T00:00:00\",\n            \"consultationStatus\": \"Completed\",\n            \"consultationYear\": 2003,\n            \"documentCreateDate\": \"2003-05-05T10:26:57\",\n            \"documentId\": 43,\n            \"documentTitle\": \"Order Extending the Time for the Assessment of the Status of Wildlife Species\",\n            \"documentType\": \"Orders\",\n            \"recoveryDocumentStatus\": null\n        }\n    ]\n}"
       },
       "ConsultationRecord" : {
         "description" : "A record of a public consultation.",
@@ -1608,8 +1656,8 @@
             "description" : "Document type.",
             "type" : "string"
           },
-          "documentVersion" : {
-            "description" : "Recovery document status (version).",
+          "recoveryDocumentStatus" : {
+            "description" : "Recovery document status (document version).",
             "type" : "string"
           }
         }
@@ -1667,7 +1715,7 @@
             "type" : "string"
           }
         },
-        "example" : "{\n    \"recordCount\": 774,\n    \"returnStatus\": \"OK\",\n    \"records\": [\n        {\n            \"attachments\": [\n                {\n                    \"attachmentId\": 157,\n                    \"attachmentLanguage\": \"E\",\n                    \"attachmentPublicationDate\": \"2003-05-03T00:00:00\",\n                    \"attachmentTitle\": \"Order Extending The Time for the Assessment of the Status of Wildlife Species, Vol. 137, No. 18\",\n                    \"documentID\": 43,\n                    \"html\": null,\n                    \"pdf\": \"g1-13718_o1_e.pdf\"\n                },\n                {\n                    \"attachmentId\": 158,\n                    \"attachmentLanguage\": \"F\",\n                    \"attachmentPublicationDate\": \"2003-05-03T00:00:00\",\n                    \"attachmentTitle\": \"D&eacute;cret de prorogation du d&eacute;lai d'&eacute;valuation de la situation d'esp&egrave;ces sauvages, Vol. 137, n<sup>o</sup> 18\",\n                    \"documentID\": 43,\n                    \"html\": null,\n                    \"pdf\": \"g1-13718_o1_f.pdf\"\n                }\n            ],\n            \"consultationEndDate\": \"2003-05-18T00:00:00\",\n            \"consultationStartDate\": \"2003-05-03T00:00:00\",\n            \"consultationStatus\": \"Completed\",\n            \"consultationYear\": 2003,\n            \"documentCreateDate\": \"2003-05-05T10:26:57\",\n            \"documentId\": 43,\n            \"documentTitle\": \"Order Extending the Time for the Assessment of the Status of Wildlife Species\",\n            \"documentType\": \"Orders\",\n            \"documentVersion\": null\n        }\n    ]\n}"
+        "example" : "{\n    \"recordCount\": 774,\n    \"returnStatus\": \"OK\",\n    \"records\": [\n        {\n            \"attachments\": [\n                {\n                    \"attachmentId\": 157,\n                    \"attachmentLanguage\": \"E\",\n                    \"attachmentPublicationDate\": \"2003-05-03T00:00:00\",\n                    \"attachmentTitle\": \"Order Extending The Time for the Assessment of the Status of Wildlife Species, Vol. 137, No. 18\",\n                    \"documentID\": 43,\n                    \"html\": null,\n                    \"pdf\": \"g1-13718_o1_e.pdf\"\n                },\n                {\n                    \"attachmentId\": 158,\n                    \"attachmentLanguage\": \"F\",\n                    \"attachmentPublicationDate\": \"2003-05-03T00:00:00\",\n                    \"attachmentTitle\": \"D&eacute;cret de prorogation du d&eacute;lai d'&eacute;valuation de la situation d'esp&egrave;ces sauvages, Vol. 137, n<sup>o</sup> 18\",\n                    \"documentID\": 43,\n                    \"html\": null,\n                    \"pdf\": \"g1-13718_o1_f.pdf\"\n                }\n            ],\n            \"consultationEndDate\": \"2003-05-18T00:00:00\",\n            \"consultationStartDate\": \"2003-05-03T00:00:00\",\n            \"consultationStatus\": \"Completed\",\n            \"consultationYear\": 2003,\n            \"documentCreateDate\": \"2003-05-05T10:26:57\",\n            \"documentId\": 43,\n            \"documentTitle\": \"Order Extending the Time for the Assessment of the Status of Wildlife Species\",\n            \"documentType\": \"Orders\",\n            \"recoveryDocumentStatus\": null\n        }\n    ]\n}"
       },
       "ConsultationsSearchRequest" : {
         "description" : "The request body to a POST request for Public Consultation filtering.",
@@ -1685,6 +1733,234 @@
           }
         },
         "example" : "{\n    \"consultationStatus\": \"Completed\",\n    \"years\": [\n        2003,\n        2018\n    ]\n}"
+      },
+      "DocumentsSearchGetResponse" : {
+        "description" : "Returns the default document results with default filter settings.",
+        "properties" : {
+          "recordCount" : {
+            "description" : "The total number of records returned by the search.",
+            "type" : "number"
+          },
+          "records" : {
+            "description" : "A list of document records.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/DocumentRecord"
+            }
+          },
+          "returnStatus" : {
+            "description" : "Status of the request.",
+            "type" : "string"
+          }
+        },
+        "example" : "{\n    \"recordCount\": 47.21,\n    \"records\": [\n        {\n            \"documentId\": 64.32,\n            \"documentTitle\": \"some text\",\n            \"documentCreateDate\": \"2018-02-10T09:30Z\",\n            \"documentDescription\": \"some text\",\n            \"recoveryDocumentStatus\": \"some text\",\n            \"consultationStartDate\": \"2018-02-10T09:30Z\",\n            \"consultationEndDate\": \"2018-02-10T09:30Z\",\n            \"consultationStatus\": \"some text\",\n            \"attachments\": [\n                {\n                    \"attachmentId\": 78.62,\n                    \"attachmentLanguage\": \"some text\",\n                    \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n                    \"attachmentTitle\": \"some text\",\n                    \"documentID\": 45.38,\n                    \"html\": \"some text\",\n                    \"pdf\": \"some text\"\n                },\n                {\n                    \"attachmentId\": 59.78,\n                    \"attachmentLanguage\": \"some text\",\n                    \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n                    \"attachmentTitle\": \"some text\",\n                    \"documentID\": 9.58,\n                    \"html\": \"some text\",\n                    \"pdf\": \"some text\"\n                }\n            ],\n            \"ranges\": [\n                71.61,\n                81.97\n            ],\n            \"taxonomies\": [\n                7.63,\n                22.48\n            ],\n            \"documentTypeId\": 84.33\n        },\n        {\n            \"documentId\": 11.55,\n            \"documentTitle\": \"some text\",\n            \"documentCreateDate\": \"2018-02-10T09:30Z\",\n            \"documentDescription\": \"some text\",\n            \"recoveryDocumentStatus\": \"some text\",\n            \"consultationStartDate\": \"2018-02-10T09:30Z\",\n            \"consultationEndDate\": \"2018-02-10T09:30Z\",\n            \"consultationStatus\": \"some text\",\n            \"attachments\": [\n                {\n                    \"attachmentId\": 98.07,\n                    \"attachmentLanguage\": \"some text\",\n                    \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n                    \"attachmentTitle\": \"some text\",\n                    \"documentID\": 98.34,\n                    \"html\": \"some text\",\n                    \"pdf\": \"some text\"\n                },\n                {\n                    \"attachmentId\": 68.67,\n                    \"attachmentLanguage\": \"some text\",\n                    \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n                    \"attachmentTitle\": \"some text\",\n                    \"documentID\": 1.04,\n                    \"html\": \"some text\",\n                    \"pdf\": \"some text\"\n                }\n            ],\n            \"ranges\": [\n                52.98,\n                33.75\n            ],\n            \"taxonomies\": [\n                92.44,\n                98.39\n            ],\n            \"documentTypeId\": 80\n        }\n    ],\n    \"returnStatus\": \"some text\"\n}"
+      },
+      "DocumentRecord" : {
+        "description" : "A record of a document.",
+        "properties" : {
+          "documentId" : {
+            "description" : "Document ID.",
+            "type" : "number"
+          },
+          "documentTitle" : {
+            "description" : "Document Title.",
+            "type" : "string"
+          },
+          "documentCreateDate" : {
+            "format" : "date-time",
+            "description" : "Document creation date.",
+            "type" : "string"
+          },
+          "documentDescription" : {
+            "description" : "Document description.",
+            "type" : "string"
+          },
+          "recoveryDocumentStatus" : {
+            "description" : "Recovery document status (document version).",
+            "type" : "string"
+          },
+          "consultationStartDate" : {
+            "format" : "date-time",
+            "description" : "Consultation start date.",
+            "type" : "string"
+          },
+          "consultationEndDate" : {
+            "format" : "date-time",
+            "description" : "Consultation end date.",
+            "type" : "string"
+          },
+          "consultationStatus" : {
+            "description" : "Consultation Status",
+            "type" : "string"
+          },
+          "attachments" : {
+            "description" : "Document attachments.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/DocumentAttachment"
+            }
+          },
+          "ranges" : {
+            "description" : "Ranges.",
+            "type" : "array",
+            "items" : {
+              "type" : "number"
+            }
+          },
+          "taxonomies" : {
+            "description" : "Taxonomies.",
+            "type" : "array",
+            "items" : {
+              "type" : "number"
+            }
+          },
+          "documentTypeId" : {
+            "description" : "Document type ID.",
+            "type" : "number"
+          }
+        }
+      },
+      "DocumentDetailsResponse" : {
+        "description" : "Returns the document detail.",
+        "properties" : {
+          "documentId" : {
+            "description" : "Document ID.",
+            "type" : "number"
+          },
+          "documentTitle" : {
+            "description" : "Document title.",
+            "type" : "string"
+          },
+          "documentDescription" : {
+            "description" : "Document description.",
+            "type" : "string"
+          },
+          "documentType" : {
+            "description" : "Document type.",
+            "type" : "string"
+          },
+          "consultationStartDate" : {
+            "format" : "date-time",
+            "description" : "Consultation start date.",
+            "type" : "string"
+          },
+          "consultationEndDate" : {
+            "format" : "date-time",
+            "description" : "Consultation end date.",
+            "type" : "string"
+          },
+          "consultationStatus" : {
+            "description" : "Consultation status.",
+            "type" : "string"
+          },
+          "attachments" : {
+            "description" : "Document attachments.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/DocumentAttachment"
+            }
+          },
+          "contacts" : {
+            "description" : "Document contacts.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/DocumentContact"
+            }
+          },
+          "links" : {
+            "description" : "Document links.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/DocumentLink"
+            }
+          },
+          "species" : {
+            "description" : "List of related species.",
+            "type" : "array",
+            "items" : {
+              "type" : "number"
+            }
+          }
+        },
+        "example" : "{\n    \"documentId\": 63.1,\n    \"documentTitle\": \"some text\",\n    \"documentDescription\": \"some text\",\n    \"documentType\": \"some text\",\n    \"consultationStartDate\": \"2018-02-10T09:30Z\",\n    \"consultationEndDate\": \"2018-02-10T09:30Z\",\n    \"consultationStatus\": \"some text\",\n    \"attachments\": [\n        {\n            \"attachmentId\": 43.33,\n            \"attachmentLanguage\": \"some text\",\n            \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n            \"attachmentTitle\": \"some text\",\n            \"documentID\": 78.89,\n            \"html\": \"some text\",\n            \"pdf\": \"some text\"\n        },\n        {\n            \"attachmentId\": 13.91,\n            \"attachmentLanguage\": \"some text\",\n            \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n            \"attachmentTitle\": \"some text\",\n            \"documentID\": 1.49,\n            \"html\": \"some text\",\n            \"pdf\": \"some text\"\n        }\n    ],\n    \"contacts\": [\n        {\n            \"contactId\": 61.29,\n            \"salutation\": \"some text\",\n            \"firstName\": \"some text\",\n            \"lastName\": \"some text\",\n            \"address\": \"some text\",\n            \"city\": \"some text\",\n            \"provinceState\": \"some text\",\n            \"postalCode\": \"some text\",\n            \"email\": \"some text\",\n            \"phone\": \"some text\",\n            \"fax\": \"some text\",\n            \"title\": \"some text\",\n            \"organization\": \"some text\"\n        },\n        {\n            \"contactId\": 80.8,\n            \"salutation\": \"some text\",\n            \"firstName\": \"some text\",\n            \"lastName\": \"some text\",\n            \"address\": \"some text\",\n            \"city\": \"some text\",\n            \"provinceState\": \"some text\",\n            \"postalCode\": \"some text\",\n            \"email\": \"some text\",\n            \"phone\": \"some text\",\n            \"fax\": \"some text\",\n            \"title\": \"some text\",\n            \"organization\": \"some text\"\n        }\n    ],\n    \"links\": [\n        {\n            \"linkId\": 33.09,\n            \"documentId\": 1.4,\n            \"url\": \"some text\",\n            \"description\": \"some text\"\n        },\n        {\n            \"linkId\": 8.92,\n            \"documentId\": 78.69,\n            \"url\": \"some text\",\n            \"description\": \"some text\"\n        }\n    ],\n    \"species\": [\n        35.12,\n        87.28\n    ]\n}"
+      },
+      "DocumentContact" : {
+        "description" : "A document contact.",
+        "properties" : {
+          "contactId" : {
+            "description" : "Contact ID.",
+            "type" : "number"
+          },
+          "salutation" : {
+            "description" : "Contact Salutation.",
+            "type" : "string"
+          },
+          "firstName" : {
+            "description" : "Contact first name.",
+            "type" : "string"
+          },
+          "lastName" : {
+            "description" : "Contact last name.",
+            "type" : "string"
+          },
+          "address" : {
+            "description" : "Contact address.",
+            "type" : "string"
+          },
+          "city" : {
+            "description" : "Contact city.",
+            "type" : "string"
+          },
+          "provinceState" : {
+            "description" : "Contact province/state.",
+            "type" : "string"
+          },
+          "postalCode" : {
+            "description" : "Contact postal code.",
+            "type" : "string"
+          },
+          "email" : {
+            "description" : "Contact email.",
+            "type" : "string"
+          },
+          "phone" : {
+            "description" : "Contact phone number.",
+            "type" : "string"
+          },
+          "fax" : {
+            "description" : "Contact fax number.",
+            "type" : "string"
+          },
+          "title" : {
+            "description" : "Contact title.",
+            "type" : "string"
+          },
+          "organization" : {
+            "description" : "Contact organization.",
+            "type" : "string"
+          }
+        }
+      },
+      "DocumentLink" : {
+        "description" : "A document link.",
+        "properties" : {
+          "linkId" : {
+            "description" : "Link ID.",
+            "type" : "number"
+          },
+          "documentId" : {
+            "description" : "Document ID.",
+            "type" : "number"
+          },
+          "url" : {
+            "description" : "Link URL.",
+            "type" : "string"
+          },
+          "description" : {
+            "description" : "Link description.",
+            "type" : "string"
+          }
+        }
       }
     }
   },
