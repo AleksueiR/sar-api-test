@@ -2068,6 +2068,10 @@
           "permitTitle" : {
             "description" : "permitTitle",
             "type" : "string"
+          },
+          "typeId" : {
+            "description" : "typeId",
+            "type" : "integer"
           }
         }
       }
