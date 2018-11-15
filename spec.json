@@ -1961,6 +1961,115 @@
             "type" : "string"
           }
         }
+      },
+      "Permits" : {
+        "title" : "Root Type for PermitDetails",
+        "description" : "The root of the PermitDetails type's schema.",
+        "required" : [ ],
+        "type" : "object",
+        "properties" : {
+          "permitId" : {
+            "description" : "Permit ID",
+            "type" : "integer"
+          },
+          "explanationId" : {
+            "description" : "Explanation ID",
+            "type" : "integer"
+          },
+          "explanationName" : {
+            "description" : "Explanation Name",
+            "type" : "string"
+          },
+          "localNumber" : {
+            "description" : "Local Number",
+            "type" : "string"
+          },
+          "startDate" : {
+            "format" : "date",
+            "description" : "Permit Start Date",
+            "type" : "string"
+          },
+          "endDate" : {
+            "format" : "date",
+            "description" : "Permit End Date",
+            "type" : "string"
+          },
+          "description" : {
+            "description" : "Permit Description",
+            "type" : "string"
+          },
+          "issuerId" : {
+            "description" : "Issuer ID",
+            "type" : "integer"
+          },
+          "issuerName" : {
+            "description" : "Issuer Name",
+            "type" : "string"
+          },
+          "authorityId" : {
+            "description" : "Authority ID",
+            "type" : "integer"
+          },
+          "purposeId" : {
+            "description" : "Purpose ID",
+            "type" : "integer"
+          },
+          "purposeName" : {
+            "description" : "Purpose Name",
+            "type" : "string"
+          },
+          "preConditions" : {
+            "description" : "Pre Conditions",
+            "type" : "string"
+          },
+          "terms" : {
+            "description" : "Permit Terms",
+            "type" : "string"
+          },
+          "relevant" : {
+            "description" : "Relevant information about the Permit",
+            "type" : "string"
+          },
+          "relatedSpecies" : {
+            "description" : "List of species related to the permit",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitRelatedSpecies"
+            }
+          },
+          "authorities" : {
+            "description" : "List of Permit authorities",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitAuthority"
+            }
+          },
+          "contactPersons" : {
+            "description" : "List of Contact Persons",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitContactPerson"
+            }
+          },
+          "locations" : {
+            "description" : "Locations",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitLocation"
+            }
+          },
+          "purposes" : {
+            "description" : "List of purposes related to permit",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitPurpose"
+            }
+          },
+          "permitTitle" : {
+            "description" : "permitTitle",
+            "type" : "string"
+          }
+        }
       }
     }
   },
