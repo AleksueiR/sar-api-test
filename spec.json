@@ -2085,13 +2085,33 @@
               "$ref" : "#/components/schemas/PermitPurpose"
             }
           },
-          "permitTitle" : {
-            "description" : "permitTitle",
-            "type" : "string"
-          },
           "typeId" : {
             "description" : "typeId",
             "type" : "integer"
+          },
+          "permitTitleEn" : {
+            "description" : "permitTitleEn",
+            "type" : "string"
+          },
+          "permitTitleFr" : {
+            "description" : "permitTitleEn",
+            "type" : "string"
+          },
+          "issueYear" : {
+            "description" : "issueYear",
+            "type" : "integer"
+          },
+          "issueMonth" : {
+            "description" : "issueMonth",
+            "type" : "integer"
+          },
+          "permitStatus" : {
+            "description" : "permitStatus",
+            "type" : "integer"
+          },
+          "authorityNameEn" : {
+            "description" : "authorityNameEn",
+            "type" : "string"
           }
         }
       },
