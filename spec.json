@@ -1274,14 +1274,6 @@
             "description" : "Contact person ID",
             "type" : "integer"
           },
-          "firstName" : {
-            "description" : "Contact person First Name",
-            "type" : "string"
-          },
-          "lastName" : {
-            "description" : "Contact person Last Name",
-            "type" : "string"
-          },
           "address" : {
             "description" : "Contact person address",
             "type" : "string"
@@ -1330,10 +1322,6 @@
       },
       "PermitAuthority" : {
         "properties" : {
-          "authorityId" : {
-            "description" : "Permit authority ID",
-            "type" : "integer"
-          },
           "authorityName" : {
             "description" : "Permit authority name",
             "type" : "string"
@@ -1974,139 +1962,6 @@
           }
         }
       },
-      "Permits" : {
-        "title" : "Root Type for PermitDetails",
-        "description" : "The root of the PermitDetails type's schema.",
-        "required" : [ ],
-        "type" : "object",
-        "properties" : {
-          "permitId" : {
-            "description" : "Permit ID",
-            "type" : "integer"
-          },
-          "explanationId" : {
-            "description" : "Explanation ID",
-            "type" : "integer"
-          },
-          "explanationName" : {
-            "description" : "Explanation Name",
-            "type" : "string"
-          },
-          "localNumber" : {
-            "description" : "Local Number",
-            "type" : "string"
-          },
-          "startDate" : {
-            "format" : "date",
-            "description" : "Permit Start Date",
-            "type" : "string"
-          },
-          "endDate" : {
-            "format" : "date",
-            "description" : "Permit End Date",
-            "type" : "string"
-          },
-          "description" : {
-            "description" : "Permit Description",
-            "type" : "string"
-          },
-          "issuerId" : {
-            "description" : "Issuer ID",
-            "type" : "integer"
-          },
-          "issuerName" : {
-            "description" : "Issuer Name",
-            "type" : "string"
-          },
-          "authorityId" : {
-            "description" : "Authority ID",
-            "type" : "integer"
-          },
-          "purposeId" : {
-            "description" : "Purpose ID",
-            "type" : "integer"
-          },
-          "purposeName" : {
-            "description" : "Purpose Name",
-            "type" : "string"
-          },
-          "preConditions" : {
-            "description" : "Pre Conditions",
-            "type" : "string"
-          },
-          "terms" : {
-            "description" : "Permit Terms",
-            "type" : "string"
-          },
-          "relevant" : {
-            "description" : "Relevant information about the Permit",
-            "type" : "string"
-          },
-          "relatedSpecies" : {
-            "description" : "List of species related to the permit",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/PermitRelatedSpecies"
-            }
-          },
-          "authorities" : {
-            "description" : "List of Permit authorities",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/PermitAuthority"
-            }
-          },
-          "contactPersons" : {
-            "description" : "List of Contact Persons",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/PermitContactPerson"
-            }
-          },
-          "locations" : {
-            "description" : "Locations",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/PermitLocation"
-            }
-          },
-          "purposes" : {
-            "description" : "List of purposes related to permit",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/PermitPurpose"
-            }
-          },
-          "typeId" : {
-            "description" : "typeId",
-            "type" : "integer"
-          },
-          "permitTitleEn" : {
-            "description" : "permitTitleEn",
-            "type" : "string"
-          },
-          "permitTitleFr" : {
-            "description" : "permitTitleEn",
-            "type" : "string"
-          },
-          "issueYear" : {
-            "description" : "issueYear",
-            "type" : "integer"
-          },
-          "issueMonth" : {
-            "description" : "issueMonth",
-            "type" : "integer"
-          },
-          "permitStatus" : {
-            "description" : "permitStatus",
-            "type" : "integer"
-          },
-          "authorityNameEn" : {
-            "description" : "authorityNameEn",
-            "type" : "string"
-          }
-        }
-      },
       "DocumentCollectionResponse" : {
         "description" : "Returns the database representation of documents.",
         "properties" : {
@@ -2200,6 +2055,141 @@
           }
         },
         "example" : "{\n    \"documentId\": 96.27,\n    \"documentTitle\": \"some text\",\n    \"documentCreateDate\": \"2018-02-10T09:30Z\",\n    \"documentDescription\": \"some text\",\n    \"documentTypeId\": 61.83,\n    \"recoveryDocumentStatusId\": 8.37,\n    \"consultationStartDate\": \"2018-02-10T09:30Z\",\n    \"consultationEndDate\": \"2018-02-10T09:30Z\",\n    \"consultationStatusId\": 99.14,\n    \"attachments\": [\n        {\n            \"attachmentId\": 43.49,\n            \"attachmentLanguage\": \"some text\",\n            \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n            \"attachmentTitle\": \"some text\",\n            \"html\": \"some text\",\n            \"pdf\": \"some text\"\n        },\n        {\n            \"attachmentId\": 31.35,\n            \"attachmentLanguage\": \"some text\",\n            \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n            \"attachmentTitle\": \"some text\",\n            \"html\": \"some text\",\n            \"pdf\": \"some text\"\n        }\n    ],\n    \"contacts\": [\n        {\n            \"contactId\": 7.83,\n            \"salutation\": \"some text\",\n            \"firstName\": \"some text\",\n            \"lastName\": \"some text\",\n            \"address\": \"some text\",\n            \"city\": \"some text\",\n            \"provinceState\": \"some text\",\n            \"postalCode\": \"some text\",\n            \"email\": \"some text\",\n            \"phone\": \"some text\",\n            \"fax\": \"some text\",\n            \"title\": \"some text\",\n            \"organization\": \"some text\"\n        },\n        {\n            \"contactId\": 21.52,\n            \"salutation\": \"some text\",\n            \"firstName\": \"some text\",\n            \"lastName\": \"some text\",\n            \"address\": \"some text\",\n            \"city\": \"some text\",\n            \"provinceState\": \"some text\",\n            \"postalCode\": \"some text\",\n            \"email\": \"some text\",\n            \"phone\": \"some text\",\n            \"fax\": \"some text\",\n            \"title\": \"some text\",\n            \"organization\": \"some text\"\n        }\n    ],\n    \"links\": [\n        {\n            \"linkId\": 15.15,\n            \"url\": \"some text\",\n            \"description\": \"some text\"\n        },\n        {\n            \"linkId\": 78.9,\n            \"url\": \"some text\",\n            \"description\": \"some text\"\n        }\n    ],\n    \"ranges\": [\n        55.03,\n        85.73\n    ],\n    \"species\": [\n        63.84,\n        72.71\n    ],\n    \"taxonomies\": [\n        21.74,\n        60.66\n    ],\n    \"consultationYears\": [\n        0.47,\n        22.98\n    ]\n}"
+      },
+      "Permits" : {
+        "title" : "Root Type for PermitDetails",
+        "description" : "The root of the PermitDetails type's schema.",
+        "required" : [ ],
+        "type" : "object",
+        "properties" : {
+          "permitId" : {
+            "description" : "Permit ID",
+            "type" : "integer"
+          },
+          "explanationName" : {
+            "description" : "Explanation Name",
+            "type" : "string"
+          },
+          "localNumber" : {
+            "description" : "Local Number",
+            "type" : "string"
+          },
+          "terms" : {
+            "description" : "Permit Terms",
+            "type" : "string"
+          },
+          "relatedSpecies" : {
+            "description" : "List of species related to the permit",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitRelatedSpecies"
+            }
+          },
+          "contactPersons" : {
+            "description" : "List of Contact Persons",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitContactPerson"
+            }
+          },
+          "purposes" : {
+            "description" : "List of purposes related to permit",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitPurpose"
+            }
+          },
+          "permitTitleEn" : {
+            "description" : "Permit Title",
+            "type" : "string"
+          },
+          "permitTitleFr" : {
+            "description" : "Permit Title",
+            "type" : "string"
+          },
+          "typeId" : {
+            "description" : "typeId",
+            "type" : "integer"
+          },
+          "issuingAuthorityId" : {
+            "description" : "issuingAuthorityId",
+            "type" : "integer"
+          },
+          "issueDate" : {
+            "description" : "Issue Date",
+            "type" : "string"
+          },
+          "issueMonth" : {
+            "description" : "Issue Month",
+            "type" : "integer"
+          },
+          "issueYear" : {
+            "description" : "Issue Year",
+            "type" : "integer"
+          },
+          "permitStatus" : {
+            "description" : "Permit Status",
+            "type" : "integer"
+          },
+          "descriptionEn" : {
+            "description" : "Description",
+            "type" : "string"
+          },
+          "descriptionFr" : {
+            "description" : "description",
+            "type" : "string"
+          },
+          "noticeEn" : {
+            "description" : "Notice Explanation",
+            "type" : "string"
+          },
+          "noticeFr" : {
+            "description" : "Notice Explanation",
+            "type" : "string"
+          },
+          "issuingAuthorityEn" : {
+            "description" : "Issuing Authority Name",
+            "type" : "string"
+          },
+          "issuingAuthorityFr" : {
+            "description" : "Issuing Authority Name",
+            "type" : "string"
+          },
+          "expiryDate" : {
+            "format" : "date",
+            "description" : "Expiry Date",
+            "type" : "string"
+          },
+          "preConditionsEn" : {
+            "description" : "PreConditions",
+            "type" : "string"
+          },
+          "preConditionsFr" : {
+            "description" : "PreConditions",
+            "type" : "string"
+          },
+          "authorityNameEn" : {
+            "description" : "Authority Name",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitAuthority"
+            }
+          },
+          "authorityNameFr" : {
+            "description" : "Authority Name",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitAuthority"
+            }
+          },
+          "activityLocation" : {
+            "description" : "Activity Location",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitLocation"
+            }
+          }
+        }
       }
     }
   },
