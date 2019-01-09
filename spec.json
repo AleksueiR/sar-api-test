@@ -237,7 +237,7 @@
     "/api/consultations/searchFilters" : {
       "summary" : "Public Consultation filter endpoint",
       "get" : {
-        "tags" : [ "consultations" ],
+        "tags" : [ ],
         "summary" : "Get Public Consultation Filters",
         "description" : "Returns the list of values for the filters of Public Consultations.",
         "responses" : {
@@ -272,7 +272,7 @@
     "/api/consultations/searchResults" : {
       "summary" : "Public Consultation results endpoint",
       "get" : {
-        "tags" : [ "consultations" ],
+        "tags" : [ ],
         "summary" : "Get all Public Consultations",
         "description" : "Returns the list of all public consultations.",
         "responses" : {
@@ -340,7 +340,7 @@
     "/api/documents/{id}" : {
       "summary" : "Document details endpoint.",
       "get" : {
-        "tags" : [ "documents" ],
+        "tags" : [ ],
         "summary" : "Get Document by id",
         "description" : "Returns the detailed document information.",
         "responses" : {
@@ -394,7 +394,7 @@
     "/api/documents/searchResults" : {
       "summary" : "Document result endpoint.",
       "get" : {
-        "tags" : [ "documents" ],
+        "tags" : [ ],
         "summary" : "Get all Documents",
         "description" : "Returns the list of all documents.",
         "responses" : {
