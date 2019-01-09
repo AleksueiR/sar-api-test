@@ -582,19 +582,19 @@
         }
       } ]
     },
-    "/DocumentCollection" : {
+    "/DocumentIndex" : {
       "summary" : "Database representation of documents",
       "get" : {
         "tags" : [ "documents", "consultations" ],
-        "summary" : "Database Document Collection",
-        "description" : "Database representation of documents.",
+        "summary" : "Document Index",
+        "description" : "Azure Index representation of documents and public consultations.",
         "responses" : {
           "200" : {
             "description" : "Successful operation.",
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/DocumentCollectionResponse"
+                  "$ref" : "#/components/schemas/DocumentIndexResponse"
                 }
               }
             }
@@ -1690,8 +1690,8 @@
             "description" : "HTML link to attachment.",
             "type" : "string"
           },
-          "pdf" : {
-            "description" : "PDF link to attachment.",
+          "file" : {
+            "description" : "File link to the attachment.",
             "type" : "string"
           }
         }
@@ -1958,100 +1958,6 @@
           }
         }
       },
-      "DocumentCollectionResponse" : {
-        "description" : "Returns the database representation of documents.",
-        "properties" : {
-          "documentId" : {
-            "description" : "Document ID.",
-            "type" : "number"
-          },
-          "documentTitle" : {
-            "description" : "Document Title.",
-            "type" : "string"
-          },
-          "documentCreateDate" : {
-            "format" : "date-time",
-            "description" : "Document creation date.",
-            "type" : "string"
-          },
-          "documentDescription" : {
-            "description" : "Document description.",
-            "type" : "string"
-          },
-          "documentTypeId" : {
-            "description" : "Document Type ID.",
-            "type" : "number"
-          },
-          "recoveryDocumentStatusId" : {
-            "description" : "Recovery document status ID.",
-            "type" : "number"
-          },
-          "consultationStartDate" : {
-            "format" : "date-time",
-            "description" : "Consultation start date.",
-            "type" : "string"
-          },
-          "consultationEndDate" : {
-            "format" : "date-time",
-            "description" : "Consultation end date.",
-            "type" : "string"
-          },
-          "consultationStatusId" : {
-            "description" : "Consultation Status ID.",
-            "type" : "number"
-          },
-          "attachments" : {
-            "description" : "Document attachments.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/DocumentAttachment"
-            }
-          },
-          "contacts" : {
-            "description" : "Document contacts.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/DocumentContact"
-            }
-          },
-          "links" : {
-            "description" : "Document links.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/DocumentLink"
-            }
-          },
-          "ranges" : {
-            "description" : "List of ranges.",
-            "type" : "array",
-            "items" : {
-              "type" : "number"
-            }
-          },
-          "species" : {
-            "description" : "List of species.",
-            "type" : "array",
-            "items" : {
-              "type" : "number"
-            }
-          },
-          "taxonomies" : {
-            "description" : "List of taxonomies.",
-            "type" : "array",
-            "items" : {
-              "type" : "number"
-            }
-          },
-          "consultationYears" : {
-            "description" : "List of consultation years.",
-            "type" : "array",
-            "items" : {
-              "type" : "number"
-            }
-          }
-        },
-        "example" : "{\n    \"documentId\": 66.39,\n    \"documentTitle\": \"some text\",\n    \"documentCreateDate\": \"2018-02-10T09:30Z\",\n    \"documentDescription\": \"some text\",\n    \"documentTypeId\": 50.11,\n    \"recoveryDocumentStatusId\": 24.9,\n    \"consultationStartDate\": \"2018-02-10T09:30Z\",\n    \"consultationEndDate\": \"2018-02-10T09:30Z\",\n    \"consultationStatusId\": 35.59,\n    \"attachments\": [\n        {\n            \"attachmentId\": 67.51,\n            \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n            \"attachmentTitle\": \"some text\",\n            \"html\": \"some text\",\n            \"pdf\": \"some text\"\n        },\n        {\n            \"attachmentId\": 28.44,\n            \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n            \"attachmentTitle\": \"some text\",\n            \"html\": \"some text\",\n            \"pdf\": \"some text\"\n        }\n    ],\n    \"contacts\": [\n        {\n            \"contactId\": 24.6,\n            \"salutation\": \"some text\",\n            \"firstName\": \"some text\",\n            \"lastName\": \"some text\",\n            \"address\": \"some text\",\n            \"city\": \"some text\",\n            \"provinceState\": \"some text\",\n            \"postalCode\": \"some text\",\n            \"email\": \"some text\",\n            \"phone\": \"some text\",\n            \"fax\": \"some text\",\n            \"title\": \"some text\",\n            \"organization\": \"some text\"\n        },\n        {\n            \"contactId\": 1.32,\n            \"salutation\": \"some text\",\n            \"firstName\": \"some text\",\n            \"lastName\": \"some text\",\n            \"address\": \"some text\",\n            \"city\": \"some text\",\n            \"provinceState\": \"some text\",\n            \"postalCode\": \"some text\",\n            \"email\": \"some text\",\n            \"phone\": \"some text\",\n            \"fax\": \"some text\",\n            \"title\": \"some text\",\n            \"organization\": \"some text\"\n        }\n    ],\n    \"links\": [\n        {\n            \"linkId\": 91.58,\n            \"url\": \"some text\",\n            \"description\": \"some text\"\n        },\n        {\n            \"linkId\": 14.49,\n            \"url\": \"some text\",\n            \"description\": \"some text\"\n        }\n    ],\n    \"ranges\": [\n        32.08,\n        19.61\n    ],\n    \"species\": [\n        57.06,\n        77.89\n    ],\n    \"taxonomies\": [\n        11.87,\n        23.91\n    ],\n    \"consultationYears\": [\n        32.14,\n        88.57\n    ]\n}"
-      },
       "Permits" : {
         "title" : "Root Type for PermitDetails",
         "description" : "The root of the PermitDetails type's schema.",
@@ -2186,6 +2092,100 @@
             }
           }
         }
+      },
+      "DocumentIndexResponse" : {
+        "description" : "Returns the database representation of documents.",
+        "properties" : {
+          "documentTitle" : {
+            "description" : "Document Title.",
+            "type" : "string"
+          },
+          "documentCreateDate" : {
+            "format" : "date-time",
+            "description" : "Document creation date.",
+            "type" : "string"
+          },
+          "documentDescription" : {
+            "description" : "Document description.",
+            "type" : "string"
+          },
+          "documentTypeId" : {
+            "description" : "Document Type ID.",
+            "type" : "number"
+          },
+          "recoveryDocumentStatusId" : {
+            "description" : "Recovery document status ID.",
+            "type" : "number"
+          },
+          "consultationStartDate" : {
+            "format" : "date-time",
+            "description" : "Consultation start date.",
+            "type" : "string"
+          },
+          "consultationEndDate" : {
+            "format" : "date-time",
+            "description" : "Consultation end date.",
+            "type" : "string"
+          },
+          "consultationStatusId" : {
+            "description" : "Consultation Status ID.",
+            "type" : "number"
+          },
+          "attachments" : {
+            "description" : "Document attachments.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/DocumentAttachment"
+            }
+          },
+          "contacts" : {
+            "description" : "Document contacts.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/DocumentContact"
+            }
+          },
+          "links" : {
+            "description" : "Document links.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/DocumentLink"
+            }
+          },
+          "ranges" : {
+            "description" : "List of ranges.",
+            "type" : "array",
+            "items" : {
+              "type" : "number"
+            }
+          },
+          "species" : {
+            "description" : "List of species.",
+            "type" : "array",
+            "items" : {
+              "type" : "number"
+            }
+          },
+          "taxonomies" : {
+            "description" : "List of taxonomies.",
+            "type" : "array",
+            "items" : {
+              "type" : "number"
+            }
+          },
+          "consultationYears" : {
+            "description" : "List of consultation years.",
+            "type" : "array",
+            "items" : {
+              "type" : "number"
+            }
+          },
+          "id" : {
+            "description" : "Document ID.",
+            "type" : "number"
+          }
+        },
+        "example" : "{\n    \"documentTitle\": \"some text\",\n    \"documentCreateDate\": \"2018-02-10T09:30Z\",\n    \"documentDescription\": \"some text\",\n    \"documentTypeId\": 96.68,\n    \"recoveryDocumentStatusId\": 7.95,\n    \"consultationStartDate\": \"2018-02-10T09:30Z\",\n    \"consultationEndDate\": \"2018-02-10T09:30Z\",\n    \"consultationStatusId\": 45.26,\n    \"attachments\": [\n        {\n            \"attachmentId\": 39.16,\n            \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n            \"attachmentTitle\": \"some text\",\n            \"html\": \"some text\",\n            \"file\": \"some text\"\n        },\n        {\n            \"attachmentId\": 6.9,\n            \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n            \"attachmentTitle\": \"some text\",\n            \"html\": \"some text\",\n            \"file\": \"some text\"\n        }\n    ],\n    \"contacts\": [\n        {\n            \"contactId\": 45.79,\n            \"salutation\": \"some text\",\n            \"firstName\": \"some text\",\n            \"lastName\": \"some text\",\n            \"address\": \"some text\",\n            \"city\": \"some text\",\n            \"provinceState\": \"some text\",\n            \"postalCode\": \"some text\",\n            \"email\": \"some text\",\n            \"phone\": \"some text\",\n            \"fax\": \"some text\",\n            \"title\": \"some text\",\n            \"organization\": \"some text\"\n        },\n        {\n            \"contactId\": 27.66,\n            \"salutation\": \"some text\",\n            \"firstName\": \"some text\",\n            \"lastName\": \"some text\",\n            \"address\": \"some text\",\n            \"city\": \"some text\",\n            \"provinceState\": \"some text\",\n            \"postalCode\": \"some text\",\n            \"email\": \"some text\",\n            \"phone\": \"some text\",\n            \"fax\": \"some text\",\n            \"title\": \"some text\",\n            \"organization\": \"some text\"\n        }\n    ],\n    \"links\": [\n        {\n            \"linkId\": 89.02,\n            \"url\": \"some text\",\n            \"description\": \"some text\"\n        },\n        {\n            \"linkId\": 42.2,\n            \"url\": \"some text\",\n            \"description\": \"some text\"\n        }\n    ],\n    \"ranges\": [\n        73.43,\n        59.87\n    ],\n    \"species\": [\n        8.6,\n        68.17\n    ],\n    \"taxonomies\": [\n        77.99,\n        18.87\n    ],\n    \"consultationYears\": [\n        88.53,\n        17.87\n    ],\n    \"id\": 93.99\n}"
       }
     }
   },
