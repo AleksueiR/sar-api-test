@@ -389,23 +389,7 @@
         }
       }
     },
-    "/ConsultationFilter/" : {
-      "summary" : "JSON design of consultation filters",
-      "get" : {
-        "tags" : [ "consultations" ],
-        "summary" : "Consultation Filter",
-        "description" : "JSON design of document filters",
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation.",
-            "content" : {
-              "application/json" : { }
-            }
-          }
-        }
-      }
-    },
-    "/DocumentConfig" : {
+    "/sar-config.json/documents" : {
       "summary" : "JSON design of document config",
       "get" : {
         "tags" : [ "documents" ],
@@ -418,6 +402,26 @@
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/DocumentConfig"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sar-config.json/consultations" : {
+      "summary" : "JSON design of consultation config",
+      "get" : {
+        "tags" : [ "consultations" ],
+        "summary" : "Consultation Config",
+        "description" : "JSON design of consultation config\n",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ConsultationConfig"
                 }
               }
             }
@@ -1330,28 +1334,6 @@
           }
         }
       },
-      "ConsultationsFiltersResponse" : {
-        "description" : "The collection of Public Consultation Search Filter groups used to filter search results.",
-        "required" : [ "filters", "order", "returnStatus" ],
-        "properties" : {
-          "filters" : {
-            "$ref" : "#/components/schemas/ConsultationsFilters",
-            "description" : "A collection of Public Consultation filter groups."
-          },
-          "order" : {
-            "description" : "A list of filter group names specifying the UI rendering order.",
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          },
-          "returnStatus" : {
-            "description" : "Status of the request.",
-            "type" : "string"
-          }
-        },
-        "example" : "{\n    \"filters\": {\n        \"consultationStatus\": [\n            {\n                \"id\": 1,\n                \"name\": \"Current\",\n                \"itemCount\": 0\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Completed\",\n                \"itemCount\": 744\n            }\n        ],\n        \"consultationYear\": [\n            {\n                \"id\":2003,\n                \"name\":\"2003\",\n                \"itemCount\":1\n                \n            },\n            {\n                \"id\":2004,\n                \"name\":\"2004\",\n                \"itemCount\":23\n                \n            },\n            {\n                \"id\":2005,\n                \"name\":\"2005\",\n                \"itemCount\":31\n            },\n            {\n                \"id\":2006,\n                \"name\":\"2006\",\n                \"itemCount\":66\n            },\n            {\n                \"id\":2007,\n                \"name\":\"2007\",\n                \"itemCount\":51\n            },\n            {\n                \"id\":2008,\n                \"name\":\"2008\",\n                \"itemCount\":17\n            },\n            {\n                \"id\":2009,\n                \"name\":\"2009\",\n                \"itemCount\":30\n            },\n            {\n                \"id\":2010,\n                \"name\":\"2010\",\n                \"itemCount\":57\n            },\n            {\n                \"id\":2011,\n                \"name\":\"2011\",\n                \"itemCount\":78\n            },\n            {\n                \"id\":2012,\n                \"name\":\"2012\",\n                \"itemCount\":75\n            },\n            {\n                \"id\":2013,\n                \"name\":\"2013\",\n                \"itemCount\":60\n            },\n            {\n                \"id\":2014,\n                \"name\":\"2014\",\n                \"itemCount\":79\n            },\n            {\n                \"id\":2015,\n                \"name\":\"2015\",\n                \"itemCount\":92\n            },\n            {\n                \"id\":2016,\n                \"name\":\"2016\",\n                \"itemCount\":82\n            },\n            {\n                \"id\":2017,\n                \"name\":\"2017\",\n                \"itemCount\":1\n            },\n            {\n                \"id\":2018,\n                \"name\":\"2018\",\n                \"itemCount\":1\n            }\n        ]\n    },\n    \"order\": [\n        \"Current\",\n        \"Completed\"\n    ],\n    \"returnStatus\": \"OK\"\n}"
-      },
       "MigratoryBirdsRecord" : {
         "title" : "Root Type for SpeciesMigratoryBirdsRecord",
         "type" : "object",
@@ -1401,98 +1383,6 @@
         },
         "example" : "{\r\n    \"returnStatus\": \"OK\",\r\n    \"recordCount\": 47,\r\n    \"records\": [\r\n        {\r\n            \"legalId\": 17,\r\n            \"legalCommonName\": \"Acadian Flycatcher\",\r\n            \"cosewicScientificName\": \"<i>Empidonax</i>\",\r\n            \"legalScientificName\": \"Vpdocens emiresnax\",\r\n            \"legalPopulation\": \"Prairie population\"\r\n        }\r\n    ]\r\n}"
       },
-      "ConsultationsFilters" : {
-        "description" : "A collection of Public Consultation filter groups.",
-        "required" : [ "consultationStatus", "consultationYear" ],
-        "properties" : {
-          "consultationStatus" : {
-            "description" : "Filter group of \"Current\" or \"Completed\".",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/CommonFilterOption"
-            }
-          },
-          "consultationYear" : {
-            "description" : "Filter group of Public Consultation years, where id is year.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/CommonFilterOption"
-            }
-          }
-        }
-      },
-      "ConsultationsSearchGetResponse" : {
-        "description" : "Returns the default public consultation results with default filter settings.",
-        "properties" : {
-          "recordCount" : {
-            "description" : "The total number of records returned by the search.",
-            "type" : "number"
-          },
-          "returnStatus" : {
-            "description" : "Status of the request.",
-            "type" : "string"
-          },
-          "records" : {
-            "description" : "A list of public consultation records.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/ConsultationRecord"
-            }
-          }
-        },
-        "example" : "{\n    \"recordCount\": 774,\n    \"returnStatus\": \"OK\",\n    \"records\": [\n        {\n            \"attachments\": [\n                {\n                    \"attachmentId\": 157,\n                    \"attachmentPublicationDate\": \"2003-05-03T00:00:00\",\n                    \"attachmentTitle\": \"Order Extending The Time for the Assessment of the Status of Wildlife Species, Vol. 137, No. 18\",\n                    \"html\": null,\n                    \"pdf\": \"g1-13718_o1_e.pdf\"\n                },\n                {\n                    \"attachmentId\": 158,\n                    \"attachmentPublicationDate\": \"2003-05-03T00:00:00\",\n                    \"attachmentTitle\": \"D&eacute;cret de prorogation du d&eacute;lai d'&eacute;valuation de la situation d'esp&egrave;ces sauvages, Vol. 137, n<sup>o</sup> 18\",\n                    \"html\": null,\n                    \"pdf\": \"g1-13718_o1_f.pdf\"\n                }\n            ],\n            \"consultationEndDate\": \"2003-05-18T00:00:00\",\n            \"consultationStartDate\": \"2003-05-03T00:00:00\",\n            \"consultationStatusId\": 2,\n            \"consultationYear\": 2003,\n            \"documentCreateDate\": \"2003-05-05T10:26:57\",\n            \"documentId\": 43,\n            \"documentTitle\": \"Order Extending the Time for the Assessment of the Status of Wildlife Species\",\n            \"documentType\": \"Orders\",\n            \"recoveryDocumentStatusId\": null\n        }\n    ]\n}"
-      },
-      "ConsultationRecord" : {
-        "description" : "A record of a public consultation.",
-        "properties" : {
-          "attachments" : {
-            "description" : "List of document attachments.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/DocumentAttachment"
-            }
-          },
-          "consultationEndDate" : {
-            "format" : "date-time",
-            "description" : "Public consultation end date.",
-            "type" : "string"
-          },
-          "consultationStartDate" : {
-            "format" : "date-time",
-            "description" : "Public consultation start date.",
-            "type" : "string"
-          },
-          "consultationYear" : {
-            "description" : "Public consultation year.",
-            "type" : "number"
-          },
-          "documentCreateDate" : {
-            "format" : "date-time",
-            "description" : "Document creation date.",
-            "type" : "string"
-          },
-          "documentId" : {
-            "description" : "Document ID.",
-            "type" : "number"
-          },
-          "documentTitle" : {
-            "description" : "Document title.",
-            "type" : "string"
-          },
-          "documentType" : {
-            "description" : "Document type.",
-            "type" : "string"
-          },
-          "consultationStatusId" : {
-            "description" : "Public consultation status ID.",
-            "type" : "number"
-          },
-          "recoveryDocumentStatusId" : {
-            "description" : "Recovery document status (document version) ID.",
-            "type" : "number"
-          }
-        }
-      },
       "DocumentAttachment" : {
         "description" : "A document file attachment.",
         "properties" : {
@@ -1518,44 +1408,6 @@
             "type" : "string"
           }
         }
-      },
-      "ConsultationsSearchPostResponse" : {
-        "description" : "Return the filtered public consultation results.",
-        "properties" : {
-          "recordCount" : {
-            "description" : "The total number of records returned by the search.",
-            "type" : "number"
-          },
-          "records" : {
-            "description" : "A list of public consultation records.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/ConsultationRecord"
-            }
-          },
-          "returnStatus" : {
-            "description" : "Status of the request.",
-            "type" : "string"
-          }
-        },
-        "example" : "{\n    \"recordCount\": 774,\n    \"returnStatus\": \"OK\",\n    \"records\": [\n        {\n            \"attachments\": [\n                {\n                    \"attachmentId\": 157,\n                    \"attachmentPublicationDate\": \"2003-05-03T00:00:00\",\n                    \"attachmentTitle\": \"Order Extending The Time for the Assessment of the Status of Wildlife Species, Vol. 137, No. 18\",\n                    \"html\": null,\n                    \"pdf\": \"g1-13718_o1_e.pdf\"\n                },\n                {\n                    \"attachmentId\": 158,\n                    \"attachmentPublicationDate\": \"2003-05-03T00:00:00\",\n                    \"attachmentTitle\": \"D&eacute;cret de prorogation du d&eacute;lai d'&eacute;valuation de la situation d'esp&egrave;ces sauvages, Vol. 137, n<sup>o</sup> 18\",\n                    \"html\": null,\n                    \"pdf\": \"g1-13718_o1_f.pdf\"\n                }\n            ],\n            \"consultationEndDate\": \"2003-05-18T00:00:00\",\n            \"consultationStartDate\": \"2003-05-03T00:00:00\",\n            \"consultationStatusId\": 2,\n            \"consultationYear\": 2003,\n            \"documentCreateDate\": \"2003-05-05T10:26:57\",\n            \"documentId\": 43,\n            \"documentTitle\": \"Order Extending the Time for the Assessment of the Status of Wildlife Species\",\n            \"documentType\": \"Orders\",\n            \"recoveryDocumentStatusId\": null\n        }\n    ]\n}"
-      },
-      "ConsultationsSearchRequest" : {
-        "description" : "The request body to a POST request for Public Consultation filtering.",
-        "properties" : {
-          "years" : {
-            "description" : "List of years of Public Consultations.",
-            "type" : "array",
-            "items" : {
-              "type" : "number"
-            }
-          },
-          "consultationStatusId" : {
-            "description" : "Public consultation status id.",
-            "type" : "number"
-          }
-        },
-        "example" : "{\n    \"consultationStatusId\": 2,\n    \"years\": [\n        2003,\n        2018\n    ]\n}"
       },
       "DocumentContact" : {
         "description" : "A document contact.",
@@ -2166,6 +2018,25 @@
             }
           }
         }
+      },
+      "ConsultationConfig" : {
+        "description" : "Return JSON representation of consultation config\n",
+        "type" : "object",
+        "properties" : {
+          "en" : {
+            "$ref" : "#/components/schemas/ConfigEnFr",
+            "description" : "English portion of consultation config schema."
+          },
+          "fr" : {
+            "$ref" : "#/components/schemas/ConfigEnFr",
+            "description" : "French portion of consultation config schema."
+          },
+          "apiKey" : {
+            "description" : "API KEY",
+            "type" : "string"
+          }
+        },
+        "example" : "{\n    \"en\": {\n        \"endpoint\": \"some text\",\n        \"filters\": [\n            \"some text\",\n            \"some text\"\n        ],\n        \"sortColumns\": [\n            \"some text\",\n            \"some text\"\n        ],\n        \"sortSequence\": [\n            \"some text\",\n            \"some text\"\n        ],\n        \"defaultSort\": \"some text\",\n        \"exportColumns\": [\n            \"some text\",\n            \"some text\"\n        ],\n        \"columns\": [\n            {\n                \"name\": \"some text\",\n                \"label\": \"some text\",\n                \"type\": \"some text\",\n                \"options\": [\n                    {\n                        \"id\": 47,\n                        \"label\": \"some text\"\n                    },\n                    {\n                        \"id\": 57,\n                        \"label\": \"some text\"\n                    }\n                ]\n            },\n            {\n                \"name\": \"some text\",\n                \"label\": \"some text\",\n                \"type\": \"some text\",\n                \"options\": [\n                    {\n                        \"id\": 20,\n                        \"label\": \"some text\"\n                    },\n                    {\n                        \"id\": 22,\n                        \"label\": \"some text\"\n                    }\n                ]\n            }\n        ]\n    },\n    \"fr\": {\n        \"endpoint\": \"some text\",\n        \"filters\": [\n            \"some text\",\n            \"some text\"\n        ],\n        \"sortColumns\": [\n            \"some text\",\n            \"some text\"\n        ],\n        \"sortSequence\": [\n            \"some text\",\n            \"some text\"\n        ],\n        \"defaultSort\": \"some text\",\n        \"exportColumns\": [\n            \"some text\",\n            \"some text\"\n        ],\n        \"columns\": [\n            {\n                \"name\": \"some text\",\n                \"label\": \"some text\",\n                \"type\": \"some text\",\n                \"options\": [\n                    {\n                        \"id\": 30,\n                        \"label\": \"some text\"\n                    },\n                    {\n                        \"id\": 3,\n                        \"label\": \"some text\"\n                    }\n                ]\n            },\n            {\n                \"name\": \"some text\",\n                \"label\": \"some text\",\n                \"type\": \"some text\",\n                \"options\": [\n                    {\n                        \"id\": 91,\n                        \"label\": \"some text\"\n                    },\n                    {\n                        \"id\": 28,\n                        \"label\": \"some text\"\n                    }\n                ]\n            }\n        ]\n    },\n    \"apiKey\": \"some text\"\n}"
       }
     }
   },
