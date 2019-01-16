@@ -368,7 +368,8 @@
         }
       } ]
     },
-    "/DocumentIndex" : {
+    "/SpeciesIndex" : { },
+    "/indexes/docblobidx[en/fr]/docs?api-version=2017-11-11&search=*" : {
       "summary" : "Database representation of documents",
       "get" : {
         "tags" : [ "documents", "consultations" ],
@@ -381,6 +382,42 @@
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/DocumentIndexResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ConsultationFilter/" : {
+      "summary" : "JSON design of consultation filters",
+      "get" : {
+        "tags" : [ "consultations" ],
+        "summary" : "Consultation Filter",
+        "description" : "JSON design of document filters",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : { }
+            }
+          }
+        }
+      }
+    },
+    "/DocumentConfig" : {
+      "summary" : "JSON design of document config",
+      "get" : {
+        "tags" : [ "documents" ],
+        "summary" : "Document Config",
+        "description" : "JSON design of document config\n",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/DocumentConfig"
                 }
               }
             }
@@ -1520,156 +1557,6 @@
         },
         "example" : "{\n    \"consultationStatusId\": 2,\n    \"years\": [\n        2003,\n        2018\n    ]\n}"
       },
-      "DocumentsSearchGetResponse" : {
-        "description" : "Returns the default document results with default filter settings.",
-        "properties" : {
-          "recordCount" : {
-            "description" : "The total number of records returned by the search.",
-            "type" : "number"
-          },
-          "records" : {
-            "description" : "A list of document records.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/DocumentRecord"
-            }
-          },
-          "returnStatus" : {
-            "description" : "Status of the request.",
-            "type" : "string"
-          }
-        },
-        "example" : "{\n    \"recordCount\": 29.65,\n    \"records\": [\n        {\n            \"documentId\": 56.56,\n            \"documentTitle\": \"some text\",\n            \"documentCreateDate\": \"2018-02-10T09:30Z\",\n            \"documentDescription\": \"some text\",\n            \"consultationStartDate\": \"2018-02-10T09:30Z\",\n            \"consultationEndDate\": \"2018-02-10T09:30Z\",\n            \"attachments\": [\n                {\n                    \"attachmentId\": 89.69,\n                    \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n                    \"attachmentTitle\": \"some text\",\n                    \"html\": \"some text\",\n                    \"pdf\": \"some text\"\n                },\n                {\n                    \"attachmentId\": 27.48,\n                    \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n                    \"attachmentTitle\": \"some text\",\n                    \"html\": \"some text\",\n                    \"pdf\": \"some text\"\n                }\n            ],\n            \"ranges\": [\n                93.06,\n                74.57\n            ],\n            \"taxonomies\": [\n                61.41,\n                10.54\n            ],\n            \"documentTypeId\": 67.31,\n            \"consultationStatusId\": 77.47,\n            \"recoveryDocumentStatusId\": 96.62\n        },\n        {\n            \"documentId\": 36.29,\n            \"documentTitle\": \"some text\",\n            \"documentCreateDate\": \"2018-02-10T09:30Z\",\n            \"documentDescription\": \"some text\",\n            \"consultationStartDate\": \"2018-02-10T09:30Z\",\n            \"consultationEndDate\": \"2018-02-10T09:30Z\",\n            \"attachments\": [\n                {\n                    \"attachmentId\": 12.38,\n                    \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n                    \"attachmentTitle\": \"some text\",\n                    \"html\": \"some text\",\n                    \"pdf\": \"some text\"\n                },\n                {\n                    \"attachmentId\": 28.28,\n                    \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n                    \"attachmentTitle\": \"some text\",\n                    \"html\": \"some text\",\n                    \"pdf\": \"some text\"\n                }\n            ],\n            \"ranges\": [\n                95.04,\n                49.91\n            ],\n            \"taxonomies\": [\n                35.96,\n                8.45\n            ],\n            \"documentTypeId\": 41.18,\n            \"consultationStatusId\": 56.4,\n            \"recoveryDocumentStatusId\": 91.6\n        }\n    ],\n    \"returnStatus\": \"some text\"\n}"
-      },
-      "DocumentRecord" : {
-        "description" : "A record of a document.",
-        "properties" : {
-          "documentId" : {
-            "description" : "Document ID.",
-            "type" : "number"
-          },
-          "documentTitle" : {
-            "description" : "Document Title.",
-            "type" : "string"
-          },
-          "documentCreateDate" : {
-            "format" : "date-time",
-            "description" : "Document creation date.",
-            "type" : "string"
-          },
-          "documentDescription" : {
-            "description" : "Document description.",
-            "type" : "string"
-          },
-          "consultationStartDate" : {
-            "format" : "date-time",
-            "description" : "Consultation start date.",
-            "type" : "string"
-          },
-          "consultationEndDate" : {
-            "format" : "date-time",
-            "description" : "Consultation end date.",
-            "type" : "string"
-          },
-          "attachments" : {
-            "description" : "Document attachments.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/DocumentAttachment"
-            }
-          },
-          "ranges" : {
-            "description" : "Ranges.",
-            "type" : "array",
-            "items" : {
-              "type" : "number"
-            }
-          },
-          "taxonomies" : {
-            "description" : "Taxonomies.",
-            "type" : "array",
-            "items" : {
-              "type" : "number"
-            }
-          },
-          "documentTypeId" : {
-            "description" : "Document type ID.",
-            "type" : "number"
-          },
-          "consultationStatusId" : {
-            "description" : "Consultation status ID.",
-            "type" : "number"
-          },
-          "recoveryDocumentStatusId" : {
-            "description" : "Recovery document status (Document version) ID.",
-            "type" : "number"
-          }
-        }
-      },
-      "DocumentDetailsResponse" : {
-        "description" : "Returns the document detail.",
-        "properties" : {
-          "documentId" : {
-            "description" : "Document ID.",
-            "type" : "number"
-          },
-          "documentTitle" : {
-            "description" : "Document title.",
-            "type" : "string"
-          },
-          "documentDescription" : {
-            "description" : "Document description.",
-            "type" : "string"
-          },
-          "documentType" : {
-            "description" : "Document type.",
-            "type" : "string"
-          },
-          "consultationStartDate" : {
-            "format" : "date-time",
-            "description" : "Consultation start date.",
-            "type" : "string"
-          },
-          "consultationEndDate" : {
-            "format" : "date-time",
-            "description" : "Consultation end date.",
-            "type" : "string"
-          },
-          "attachments" : {
-            "description" : "Document attachments.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/DocumentAttachment"
-            }
-          },
-          "contacts" : {
-            "description" : "Document contacts.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/DocumentContact"
-            }
-          },
-          "links" : {
-            "description" : "Document links.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/DocumentLink"
-            }
-          },
-          "species" : {
-            "description" : "List of related species.",
-            "type" : "array",
-            "items" : {
-              "type" : "number"
-            }
-          },
-          "consultationStatusId" : {
-            "description" : "Consultation status ID.",
-            "type" : "number"
-          }
-        },
-        "example" : "{\n    \"documentId\": 0,\n    \"documentTitle\": \"some text\",\n    \"documentDescription\": \"some text\",\n    \"documentType\": \"some text\",\n    \"consultationStartDate\": \"2018-02-10T09:30Z\",\n    \"consultationEndDate\": \"2018-02-10T09:30Z\",\n    \"attachments\": [\n        {\n            \"attachmentId\": 43.79,\n            \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n            \"attachmentTitle\": \"some text\",\n            \"html\": \"some text\",\n            \"pdf\": \"some text\"\n        },\n        {\n            \"attachmentId\": 78.83,\n            \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n            \"attachmentTitle\": \"some text\",\n            \"html\": \"some text\",\n            \"pdf\": \"some text\"\n        }\n    ],\n    \"contacts\": [\n        {\n            \"contactId\": 93.62,\n            \"salutation\": \"some text\",\n            \"firstName\": \"some text\",\n            \"lastName\": \"some text\",\n            \"address\": \"some text\",\n            \"city\": \"some text\",\n            \"provinceState\": \"some text\",\n            \"postalCode\": \"some text\",\n            \"email\": \"some text\",\n            \"phone\": \"some text\",\n            \"fax\": \"some text\",\n            \"title\": \"some text\",\n            \"organization\": \"some text\"\n        },\n        {\n            \"contactId\": 74.98,\n            \"salutation\": \"some text\",\n            \"firstName\": \"some text\",\n            \"lastName\": \"some text\",\n            \"address\": \"some text\",\n            \"city\": \"some text\",\n            \"provinceState\": \"some text\",\n            \"postalCode\": \"some text\",\n            \"email\": \"some text\",\n            \"phone\": \"some text\",\n            \"fax\": \"some text\",\n            \"title\": \"some text\",\n            \"organization\": \"some text\"\n        }\n    ],\n    \"links\": [\n        {\n            \"linkId\": 21.17,\n            \"url\": \"some text\",\n            \"description\": \"some text\"\n        },\n        {\n            \"linkId\": 79.64,\n            \"url\": \"some text\",\n            \"description\": \"some text\"\n        }\n    ],\n    \"species\": [\n        46.77,\n        72.71\n    ],\n    \"consultationStatusId\": 82.23\n}"
-      },
       "DocumentContact" : {
         "description" : "A document contact.",
         "properties" : {
@@ -1880,7 +1767,7 @@
         }
       },
       "DocumentIndexResponse" : {
-        "description" : "Returns the database representation of documents.",
+        "description" : "Returns the index representation of documents.",
         "properties" : {
           "documentTitle" : {
             "description" : "Document Title.",
@@ -1972,6 +1859,313 @@
           }
         },
         "example" : "{\n    \"documentTitle\": \"some text\",\n    \"documentCreateDate\": \"2018-02-10T09:30Z\",\n    \"documentDescription\": \"some text\",\n    \"documentTypeId\": 96.68,\n    \"recoveryDocumentStatusId\": 7.95,\n    \"consultationStartDate\": \"2018-02-10T09:30Z\",\n    \"consultationEndDate\": \"2018-02-10T09:30Z\",\n    \"consultationStatusId\": 45.26,\n    \"attachments\": [\n        {\n            \"attachmentId\": 39.16,\n            \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n            \"attachmentTitle\": \"some text\",\n            \"html\": \"some text\",\n            \"file\": \"some text\"\n        },\n        {\n            \"attachmentId\": 6.9,\n            \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n            \"attachmentTitle\": \"some text\",\n            \"html\": \"some text\",\n            \"file\": \"some text\"\n        }\n    ],\n    \"contacts\": [\n        {\n            \"contactId\": 45.79,\n            \"salutation\": \"some text\",\n            \"firstName\": \"some text\",\n            \"lastName\": \"some text\",\n            \"address\": \"some text\",\n            \"city\": \"some text\",\n            \"provinceState\": \"some text\",\n            \"postalCode\": \"some text\",\n            \"email\": \"some text\",\n            \"phone\": \"some text\",\n            \"fax\": \"some text\",\n            \"title\": \"some text\",\n            \"organization\": \"some text\"\n        },\n        {\n            \"contactId\": 27.66,\n            \"salutation\": \"some text\",\n            \"firstName\": \"some text\",\n            \"lastName\": \"some text\",\n            \"address\": \"some text\",\n            \"city\": \"some text\",\n            \"provinceState\": \"some text\",\n            \"postalCode\": \"some text\",\n            \"email\": \"some text\",\n            \"phone\": \"some text\",\n            \"fax\": \"some text\",\n            \"title\": \"some text\",\n            \"organization\": \"some text\"\n        }\n    ],\n    \"links\": [\n        {\n            \"linkId\": 89.02,\n            \"url\": \"some text\",\n            \"description\": \"some text\"\n        },\n        {\n            \"linkId\": 42.2,\n            \"url\": \"some text\",\n            \"description\": \"some text\"\n        }\n    ],\n    \"ranges\": [\n        73.43,\n        59.87\n    ],\n    \"species\": [\n        8.6,\n        68.17\n    ],\n    \"taxonomies\": [\n        77.99,\n        18.87\n    ],\n    \"consultationYears\": [\n        88.53,\n        17.87\n    ],\n    \"id\": 93.99\n}"
+      },
+      "_testSpeciesSync" : {
+        "title" : "Root Type for _testSpeciesSync",
+        "description" : "The root of the _testSpeciesSync type's schema.",
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string"
+          },
+          "commonNameEn" : {
+            "type" : "string"
+          },
+          "commonNameFr" : {
+            "type" : "string"
+          },
+          "taxonomyId" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "cosewicId" : {
+            "type" : "string"
+          },
+          "cosewicCommonNameEn" : {
+            "type" : "string"
+          },
+          "cosewicCommonNameFr" : {
+            "type" : "string"
+          },
+          "cosewicScientificName" : {
+            "type" : "string"
+          },
+          "prevCosewicScientificName" : {
+            "type" : "object"
+          },
+          "cosewicStatusCriteriaEn" : {
+            "type" : "object"
+          },
+          "cosewicStatusCriteriaFr" : {
+            "type" : "object"
+          },
+          "cosewicReasonDesEn" : {
+            "type" : "object"
+          },
+          "cosewicReasonDesFr" : {
+            "type" : "object"
+          },
+          "cosewicStatusHisEn" : {
+            "type" : "string"
+          },
+          "cosewicStatusHisFr" : {
+            "type" : "string"
+          },
+          "cosewicPopulationEn" : {
+            "type" : "object"
+          },
+          "cosewicPopulationFr" : {
+            "type" : "object"
+          },
+          "cosewicLastAssessmentDate" : {
+            "format" : "date",
+            "type" : "string"
+          },
+          "cosewicStatusId" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "legalId" : {
+            "type" : "string"
+          },
+          "legalCommonNameEn" : {
+            "type" : "string"
+          },
+          "legalCommonNameFr" : {
+            "type" : "string"
+          },
+          "legalScientificName" : {
+            "type" : "string"
+          },
+          "legalStatusHistoryEn" : {
+            "type" : "string"
+          },
+          "legalStatusHistoryFr" : {
+            "type" : "string"
+          },
+          "legalPopulationEn" : {
+            "type" : "object"
+          },
+          "legalPopulationFr" : {
+            "type" : "object"
+          },
+          "legalDateListing" : {
+            "type" : "string"
+          },
+          "legalStatusId" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "legalScheduleId" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "underConsiderationId" : {
+            "type" : "boolean"
+          },
+          "imageFileName" : {
+            "type" : "string"
+          },
+          "legalNameComma" : {
+            "type" : "string"
+          },
+          "taxonomySortId" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "fedId" : {
+            "type" : "object"
+          },
+          "profileEn" : {
+            "type" : "array",
+            "items" : { }
+          },
+          "ranges" : {
+            "type" : "array",
+            "items" : { }
+          },
+          "commonEn" : {
+            "type" : "array",
+            "items" : { }
+          },
+          "commonFr" : {
+            "type" : "array",
+            "items" : { }
+          },
+          "relatedEn" : {
+            "type" : "object"
+          },
+          "relatedFr" : {
+            "type" : "object"
+          },
+          "teamEn" : {
+            "type" : "array",
+            "items" : { }
+          },
+          "teamFr" : {
+            "type" : "array",
+            "items" : { }
+          },
+          "strategyEn" : {
+            "type" : "array",
+            "items" : { }
+          },
+          "strategyFr" : {
+            "type" : "array",
+            "items" : { }
+          }
+        },
+        "example" : "{\n    \"id\": \"100-410\",\n    \"commonNameEn\": \"Kiyi\",\n    \"commonNameFr\": \"Kiyi\",\n    \"taxonomyId\": 3,\n    \"cosewicId\": \"100\",\n    \"cosewicCommonNameEn\": \"Kiyi\",\n    \"cosewicCommonNameFr\": \"Kiyi\",\n    \"cosewicScientificName\": \"<i>Coregonus</i> <i>kiyi</i> note: needs to be embeded within a <u></ul) html tag or use css to customize the list\",\n    \"prevCosewicScientificName\": null,\n    \"cosewicStatusCriteriaEn\": null,\n    \"cosewicStatusCriteriaFr\": null,\n    \"cosewicReasonDesEn\": null,\n    \"cosewicReasonDesFr\": null,\n    \"cosewicStatusHisEn\": \"The species was designated Special Concern in April 1988. Split into two subspecies (Upper Great Lakes Kiyi and Lake Ontario Kiyi) in May 2005. The original designation was de-activated.\\r\\n\",\n    \"cosewicStatusHisFr\": \"L'esp&#232;ce &#233;tait &#171;&#160;pr&#233;occupante &#187; en avril 1988. L'esp&#232;ce a &#233;t&#233; divis&#233;e en deux sous-esp&#232;ces (Kiyi du secteur sup&#233;rieur des Grands Lacs et Kiyi du lac Ontario) en mai 2005. La d&#233;signation initiale a &#233;t&#233; d&#233;sactiv&#233;e.\\r\\n\",\n    \"cosewicPopulationEn\": null,\n    \"cosewicPopulationFr\": null,\n    \"cosewicLastAssessmentDate\": \"2005-05-05\",\n    \"cosewicStatusId\": 8,\n    \"legalId\": \"410\",\n    \"legalCommonNameEn\": \"Kiyi\",\n    \"legalCommonNameFr\": \"Kiyi\",\n    \"legalScientificName\": \"\",\n    \"legalStatusHistoryEn\": \"\",\n    \"legalStatusHistoryFr\": \"\",\n    \"legalPopulationEn\": null,\n    \"legalPopulationFr\": null,\n    \"legalDateListing\": \"\",\n    \"legalStatusId\": 5,\n    \"legalScheduleId\": 3,\n    \"underConsiderationId\": false,\n    \"imageFileName\": \"spp100p1.jpg\",\n    \"legalNameComma\": \"Kiyi\",\n    \"taxonomySortId\": 6,\n    \"fedId\": null,\n    \"profileEn\": [\n        \"array of Profile Objects, format eng/fre\"\n    ],\n    \"ranges\": [\n        \"5\"\n    ],\n    \"commonEn\": [],\n    \"commonFr\": [],\n    \"relatedEn\": null,\n    \"relatedFr\": null,\n    \"teamEn\": [],\n    \"teamFr\": [],\n    \"strategyEn\": [],\n    \"strategyFr\": []\n}"
+      },
+      "_testProfile" : {
+        "title" : "Root Type for _testProfile",
+        "description" : "The root of the _testProfile type's schema.",
+        "type" : "object",
+        "properties" : {
+          "cosewicId" : {
+            "type" : "string"
+          },
+          "taxonomy" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "population" : {
+            "type" : "string"
+          },
+          "habitat" : {
+            "type" : "string"
+          },
+          "biology" : {
+            "type" : "string"
+          },
+          "threats" : {
+            "type" : "string"
+          },
+          "federalProtection" : {
+            "type" : "string"
+          },
+          "otherProtection" : {
+            "type" : "string"
+          }
+        },
+        "example" : "{\n    \"cosewicId\": \"100\",\n    \"taxonomy\": \"\",\n    \"description\": \"The Kiyi is a thin fish with a large eye, a terminal mouth and a forked caudal fin. The back is dark grey, while the sides are silvery and the under parts are white. Kiyis measure about 254 mm. \",\n    \"population\": \"The Kiyi is an inhabitant of the Great Lakes Basin. It was never found in Lake Erie; a commercial fishery led to its extirpation from Lake Ontario; and it is now very rare, or has been extirpated, from Lakes Huron and Michigan. It is still found in abundant numbers in Lake Superior. \",\n    \"habitat\": \"The Kiyi is found in the deep waters of large, freshwater lakes. \",\n    \"biology\": \"Kiyi reach sexual maturity at 2 or 3 years of age. Spawning occurs in the fall. Females can live for 10 years, while males live to a maximum of about 7 years. Spawning sites are not known. \",\n    \"threats\": \"Commercial over-exploitation is the main factor in the decline of Kiyi in Lakes Ontario and Michigan, and possibly in Lake Huron as well. Since the habitat preferences of this fish are not known, it is difficult to determine if changes in habitat have been limiting Kiyi populations. \",\n    \"federalProtection\": \"The Federal <EM>Fisheries Act</EM> prohibits destruction of fish habitat. \",\n    \"otherProtection\": \"\"\n}"
+      },
+      "DocumentConfig" : {
+        "description" : "Return JSON representation of document config\n",
+        "type" : "object",
+        "properties" : {
+          "en" : {
+            "$ref" : "#/components/schemas/ConfigEnFr",
+            "description" : "English portion of document config schema."
+          },
+          "fr" : {
+            "$ref" : "#/components/schemas/ConfigEnFr",
+            "description" : "French portion of document config schema."
+          },
+          "apiKey" : {
+            "description" : "API KEY",
+            "type" : "string"
+          },
+          "filePath" : {
+            "description" : "URL to document attachment files",
+            "type" : "string"
+          },
+          "htmlPath" : {
+            "description" : "URL to document attachment HTML",
+            "type" : "string"
+          }
+        },
+        "example" : "{\n    \"en\": {\n        \"endpoint\": \"some text\",\n        \"filters\": [\n            \"some text\",\n            \"some text\"\n        ],\n        \"sortColumns\": [\n            \"some text\",\n            \"some text\"\n        ],\n        \"sortSequence\": [\n            \"some text\",\n            \"some text\"\n        ],\n        \"defaultSort\": \"some text\",\n        \"exportColumns\": [\n            \"some text\",\n            \"some text\"\n        ],\n        \"columns\": [\n            {\n                \"name\": \"some text\",\n                \"label\": \"some text\",\n                \"type\": \"some text\",\n                \"options\": [\n                    {\n                        \"id\": 76,\n                        \"label\": \"some text\"\n                    },\n                    {\n                        \"id\": 25,\n                        \"label\": \"some text\"\n                    }\n                ]\n            },\n            {\n                \"name\": \"some text\",\n                \"label\": \"some text\",\n                \"type\": \"some text\",\n                \"options\": [\n                    {\n                        \"id\": 21,\n                        \"label\": \"some text\"\n                    },\n                    {\n                        \"id\": 41,\n                        \"label\": \"some text\"\n                    }\n                ]\n            }\n        ]\n    },\n    \"fr\": {\n        \"endpoint\": \"some text\",\n        \"filters\": [\n            \"some text\",\n            \"some text\"\n        ],\n        \"sortColumns\": [\n            \"some text\",\n            \"some text\"\n        ],\n        \"sortSequence\": [\n            \"some text\",\n            \"some text\"\n        ],\n        \"defaultSort\": \"some text\",\n        \"exportColumns\": [\n            \"some text\",\n            \"some text\"\n        ],\n        \"columns\": [\n            {\n                \"name\": \"some text\",\n                \"label\": \"some text\",\n                \"type\": \"some text\",\n                \"options\": [\n                    {\n                        \"id\": 59,\n                        \"label\": \"some text\"\n                    },\n                    {\n                        \"id\": 58,\n                        \"label\": \"some text\"\n                    }\n                ]\n            },\n            {\n                \"name\": \"some text\",\n                \"label\": \"some text\",\n                \"type\": \"some text\",\n                \"options\": [\n                    {\n                        \"id\": 24,\n                        \"label\": \"some text\"\n                    },\n                    {\n                        \"id\": 3,\n                        \"label\": \"some text\"\n                    }\n                ]\n            }\n        ]\n    },\n    \"apiKey\": \"some text\",\n    \"filePath\": \"some text\",\n    \"htmlPath\": \"some text\"\n}"
+      },
+      "ConfigColumn" : {
+        "description" : "A filterable object",
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "description" : "Name",
+            "type" : "string"
+          },
+          "label" : {
+            "description" : "Label",
+            "type" : "string"
+          },
+          "type" : {
+            "description" : "Data type",
+            "type" : "string"
+          },
+          "options" : {
+            "description" : "Filterable options",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ConfigColumnOptions"
+            }
+          }
+        }
+      },
+      "ConfigColumnOptions" : {
+        "description" : "Filterable option",
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "description" : "ID",
+            "type" : "integer"
+          },
+          "label" : {
+            "description" : "Label",
+            "type" : "string"
+          }
+        }
+      },
+      "ConfigEnFr" : {
+        "description" : "English portion of an entity config schema.",
+        "type" : "object",
+        "properties" : {
+          "endpoint" : {
+            "description" : "Endpoint URL",
+            "type" : "string"
+          },
+          "filters" : {
+            "description" : "List of filter options",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "sortColumns" : {
+            "description" : "List of options to sort",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "sortSequence" : {
+            "description" : "List of options to sort by",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "defaultSort" : {
+            "description" : "Default sort option",
+            "type" : "string"
+          },
+          "exportColumns" : {
+            "description" : "List of options to export",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "columns" : {
+            "description" : "List of filterable objects",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ConfigColumn"
+            }
+          }
+        }
       }
     }
   },
