@@ -428,6 +428,9 @@
           }
         }
       }
+    },
+    "/indexers/docblobonce[en/fr]?api-version=2017-11-11" : {
+      "get" : { }
     }
   },
   "components" : {
@@ -1872,6 +1875,7 @@
       "_testProfile" : {
         "title" : "Root Type for _testProfile",
         "description" : "The root of the _testProfile type's schema.",
+        "required" : [ "biology", "cosewicId" ],
         "type" : "object",
         "properties" : {
           "cosewicId" : {
@@ -2037,6 +2041,34 @@
           }
         },
         "example" : "{\n    \"en\": {\n        \"endpoint\": \"some text\",\n        \"filters\": [\n            \"some text\",\n            \"some text\"\n        ],\n        \"sortColumns\": [\n            \"some text\",\n            \"some text\"\n        ],\n        \"sortSequence\": [\n            \"some text\",\n            \"some text\"\n        ],\n        \"defaultSort\": \"some text\",\n        \"exportColumns\": [\n            \"some text\",\n            \"some text\"\n        ],\n        \"columns\": [\n            {\n                \"name\": \"some text\",\n                \"label\": \"some text\",\n                \"type\": \"some text\",\n                \"options\": [\n                    {\n                        \"id\": 47,\n                        \"label\": \"some text\"\n                    },\n                    {\n                        \"id\": 57,\n                        \"label\": \"some text\"\n                    }\n                ]\n            },\n            {\n                \"name\": \"some text\",\n                \"label\": \"some text\",\n                \"type\": \"some text\",\n                \"options\": [\n                    {\n                        \"id\": 20,\n                        \"label\": \"some text\"\n                    },\n                    {\n                        \"id\": 22,\n                        \"label\": \"some text\"\n                    }\n                ]\n            }\n        ]\n    },\n    \"fr\": {\n        \"endpoint\": \"some text\",\n        \"filters\": [\n            \"some text\",\n            \"some text\"\n        ],\n        \"sortColumns\": [\n            \"some text\",\n            \"some text\"\n        ],\n        \"sortSequence\": [\n            \"some text\",\n            \"some text\"\n        ],\n        \"defaultSort\": \"some text\",\n        \"exportColumns\": [\n            \"some text\",\n            \"some text\"\n        ],\n        \"columns\": [\n            {\n                \"name\": \"some text\",\n                \"label\": \"some text\",\n                \"type\": \"some text\",\n                \"options\": [\n                    {\n                        \"id\": 30,\n                        \"label\": \"some text\"\n                    },\n                    {\n                        \"id\": 3,\n                        \"label\": \"some text\"\n                    }\n                ]\n            },\n            {\n                \"name\": \"some text\",\n                \"label\": \"some text\",\n                \"type\": \"some text\",\n                \"options\": [\n                    {\n                        \"id\": 91,\n                        \"label\": \"some text\"\n                    },\n                    {\n                        \"id\": 28,\n                        \"label\": \"some text\"\n                    }\n                ]\n            }\n        ]\n    },\n    \"apiKey\": \"some text\"\n}"
+      },
+      "CommonIndexerFieldMappingResponse" : {
+        "description" : "Represents indexer field mappings.",
+        "type" : "object",
+        "properties" : {
+          "fieldMappings" : {
+            "description" : "List of field mappings.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonIndexerFieldMapping"
+            }
+          }
+        },
+        "example" : "{\n  \"fieldMappings\": [\n    {\n      \"sourceFieldName\": \"documentTitleEn\",\n      \"targetFieldName\": \"documentTitle\"\n    },\n    {\n      \"sourceFieldName\": \"documentDescriptionEn\",\n      \"targetFieldName\": \"documentDescription\"\n    },\n    {\n      \"sourceFieldName\": \"documentTypeEn\",\n      \"targetFieldName\": \"documentType\"\n    },\n    {\n      \"sourceFieldName\": \"attachmentsEn\",\n      \"targetFieldName\": \"attachments\"\n    },\n    {\n      \"sourceFieldName\": \"contactsEn\",\n      \"targetFieldName\": \"contacts\"\n    },\n    {\n      \"sourceFieldName\": \"linksEn\",\n      \"targetFieldName\": \"links\"\n    },\n    {\n      \"sourceFieldName\": \"speciesNamesEn\",\n      \"targetFieldName\": \"speciesNames\"\n    },\n    {\n      \"sourceFieldName\": \"earliestPublicationDateEn\",\n      \"targetFieldName\": \"earliestPublicationDate\"\n    },\n    {\n      \"sourceFieldName\": \"latestPublicationDateEn\",\n      \"targetFieldName\": \"latestPublicationDate\"\n    },\n    {\n      \"sourceFieldName\": \"sortDateEn\",\n      \"targetFieldName\": \"sortDate\"\n    }\n  ]\n}"
+      },
+      "CommonIndexerFieldMapping" : {
+        "description" : "An indexer field mapping.",
+        "type" : "object",
+        "properties" : {
+          "sourceFieldName" : {
+            "description" : "Field name from original source.",
+            "type" : "string"
+          },
+          "targetFieldName" : {
+            "description" : "Field name to be mapped to.",
+            "type" : "string"
+          }
+        }
       }
     }
   },
