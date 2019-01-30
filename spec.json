@@ -441,7 +441,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/DocumentIndexResponse"
+                  "$ref" : "#/components/schemas/CommonIndexerFieldMappingResponse"
                 }
               }
             }
