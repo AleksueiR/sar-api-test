@@ -1503,141 +1503,6 @@
           }
         }
       },
-      "Permits" : {
-        "title" : "Root Type for PermitDetails",
-        "description" : "The root of the PermitDetails type's schema.",
-        "required" : [ ],
-        "type" : "object",
-        "properties" : {
-          "permitId" : {
-            "description" : "Permit ID",
-            "type" : "integer"
-          },
-          "explanationName" : {
-            "description" : "Explanation Name",
-            "type" : "string"
-          },
-          "localNumber" : {
-            "description" : "Local Number",
-            "type" : "string"
-          },
-          "terms" : {
-            "description" : "Permit Terms",
-            "type" : "string"
-          },
-          "relatedSpecies" : {
-            "description" : "List of species related to the permit",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/PermitRelatedSpecies"
-            }
-          },
-          "contactPersons" : {
-            "description" : "List of Contact Persons",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/PermitContactPerson"
-            }
-          },
-          "purposes" : {
-            "description" : "List of purposes related to permit",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/PermitPurpose"
-            }
-          },
-          "permitTitleEn" : {
-            "description" : "Permit Title",
-            "type" : "string"
-          },
-          "permitTitleFr" : {
-            "description" : "Permit Title",
-            "type" : "string"
-          },
-          "typeId" : {
-            "description" : "typeId",
-            "type" : "integer"
-          },
-          "issuingAuthorityId" : {
-            "description" : "issuingAuthorityId",
-            "type" : "integer"
-          },
-          "issueDate" : {
-            "description" : "Issue Date",
-            "type" : "string"
-          },
-          "issueMonth" : {
-            "description" : "Issue Month",
-            "type" : "integer"
-          },
-          "issueYear" : {
-            "description" : "Issue Year",
-            "type" : "integer"
-          },
-          "permitStatus" : {
-            "description" : "Permit Status",
-            "type" : "integer"
-          },
-          "descriptionEn" : {
-            "description" : "Description",
-            "type" : "string"
-          },
-          "descriptionFr" : {
-            "description" : "description",
-            "type" : "string"
-          },
-          "noticeEn" : {
-            "description" : "Notice Explanation",
-            "type" : "string"
-          },
-          "noticeFr" : {
-            "description" : "Notice Explanation",
-            "type" : "string"
-          },
-          "issuingAuthorityEn" : {
-            "description" : "Issuing Authority Name",
-            "type" : "string"
-          },
-          "issuingAuthorityFr" : {
-            "description" : "Issuing Authority Name",
-            "type" : "string"
-          },
-          "expiryDate" : {
-            "format" : "date",
-            "description" : "Expiry Date",
-            "type" : "string"
-          },
-          "preConditionsEn" : {
-            "description" : "PreConditions",
-            "type" : "string"
-          },
-          "preConditionsFr" : {
-            "description" : "PreConditions",
-            "type" : "string"
-          },
-          "authorityNameEn" : {
-            "description" : "Authority Name",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/PermitAuthority"
-            }
-          },
-          "authorityNameFr" : {
-            "description" : "Authority Name",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/PermitAuthority"
-            }
-          },
-          "activityLocation" : {
-            "description" : "Activity Location",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/PermitLocation"
-            }
-          }
-        }
-      },
       "DocumentIndexResponse" : {
         "description" : "Returns the index representation of documents.",
         "properties" : {
@@ -2084,6 +1949,126 @@
           "targetFieldName" : {
             "description" : "Field name to be mapped to.",
             "type" : "string"
+          }
+        }
+      },
+      "PermitsIndexResponse" : {
+        "title" : "Root Type for PermitDetails",
+        "description" : "The root of the PermitDetails type's schema.",
+        "required" : [ "permitTitle", "notice", "authorityName" ],
+        "type" : "object",
+        "properties" : {
+          "permitId" : {
+            "description" : "Permit ID",
+            "type" : "integer"
+          },
+          "explanationName" : {
+            "description" : "Explanation Name",
+            "type" : "string"
+          },
+          "localNumber" : {
+            "description" : "Local Number",
+            "type" : "string"
+          },
+          "terms" : {
+            "description" : "Permit Terms",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "relatedSpecies" : {
+            "description" : "List of species related to the permit",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitRelatedSpecies"
+            }
+          },
+          "contactPersons" : {
+            "description" : "List of Contact Persons",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitContactPerson"
+            }
+          },
+          "purposes" : {
+            "description" : "List of purposes related to permit",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitPurpose"
+            }
+          },
+          "typeId" : {
+            "description" : "typeId",
+            "type" : "integer"
+          },
+          "issuingAuthorityId" : {
+            "description" : "issuingAuthorityId",
+            "type" : "integer"
+          },
+          "issueDate" : {
+            "description" : "Issue Date",
+            "type" : "string"
+          },
+          "issueMonth" : {
+            "description" : "Issue Month",
+            "type" : "integer"
+          },
+          "issueYear" : {
+            "description" : "Issue Year",
+            "type" : "integer"
+          },
+          "permitStatus" : {
+            "description" : "Permit Status",
+            "type" : "integer"
+          },
+          "expiryDate" : {
+            "format" : "date",
+            "description" : "Expiry Date",
+            "type" : "string"
+          },
+          "activityLocation" : {
+            "description" : "Activity Location",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitLocation"
+            }
+          },
+          "permitTitle" : {
+            "description" : "Permit Title",
+            "type" : "string"
+          },
+          "notice" : {
+            "description" : "Permit Notice",
+            "type" : "string"
+          },
+          "relevant" : {
+            "description" : "Relevant Permit Info",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "protected" : {
+            "description" : "Protected Permit Info",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "description" : {
+            "description" : "Permit Description",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "authorityName" : {
+            "description" : "Authority used",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
           }
         }
       }
