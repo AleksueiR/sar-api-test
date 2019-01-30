@@ -1984,13 +1984,6 @@
               "$ref" : "#/components/schemas/PermitRelatedSpecies"
             }
           },
-          "contactPersons" : {
-            "description" : "List of Contact Persons",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/PermitContactPerson"
-            }
-          },
           "purposes" : {
             "description" : "List of purposes related to permit",
             "type" : "array",
@@ -2068,6 +2061,27 @@
             "type" : "array",
             "items" : {
               "type" : "string"
+            }
+          },
+          "affectedSpecies" : {
+            "description" : "List of species ",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitRelatedSpecies"
+            }
+          },
+          "preConditions" : {
+            "description" : "Permit Preconditions",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "contacts" : {
+            "description" : "List of permit contacts",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PermitContactPerson"
             }
           }
         }
