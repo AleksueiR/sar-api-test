@@ -409,7 +409,7 @@
         }
       }
     },
-    "/indexes/docblobidx[en/fr]/docs?api-version=2017-11-11&search=" : {
+    "/indexes/docblobidx(en/fr)/docs?api-version=2017-11-11&search=" : {
       "summary" : "Index representation of documents and consultations",
       "get" : {
         "tags" : [ "documents", "consultations" ],
@@ -429,7 +429,7 @@
         }
       }
     },
-    "/indexers/docblobonce[en/fr]?api-version=2017-11-11" : {
+    " /indexers/docblobonce(en/fr)?api-version=2017-11-11" : {
       "summary" : "Indexer field mappings of documents and consultations",
       "get" : {
         "tags" : [ "documents", "consultations" ],
