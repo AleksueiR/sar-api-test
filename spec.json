@@ -1743,7 +1743,7 @@
             }
           }
         },
-        "example" : "{\n  \"fieldMappings\": [\n    {\n      \"sourceFieldName\": \"documentTitleEn\",\n      \"targetFieldName\": \"documentTitle\"\n    },\n    {\n      \"sourceFieldName\": \"documentDescriptionEn\",\n      \"targetFieldName\": \"documentDescription\"\n    },\n    {\n      \"sourceFieldName\": \"documentTypeEn\",\n      \"targetFieldName\": \"documentType\"\n    },\n    {\n      \"sourceFieldName\": \"attachmentsEn\",\n      \"targetFieldName\": \"attachments\"\n    },\n    {\n      \"sourceFieldName\": \"contactsEn\",\n      \"targetFieldName\": \"contacts\"\n    },\n    {\n      \"sourceFieldName\": \"linksEn\",\n      \"targetFieldName\": \"links\"\n    },\n    {\n      \"sourceFieldName\": \"speciesNamesEn\",\n      \"targetFieldName\": \"speciesNames\"\n    },\n    {\n      \"sourceFieldName\": \"earliestPublicationDateEn\",\n      \"targetFieldName\": \"earliestPublicationDate\"\n    },\n    {\n      \"sourceFieldName\": \"latestPublicationDateEn\",\n      \"targetFieldName\": \"latestPublicationDate\"\n    },\n    {\n      \"sourceFieldName\": \"sortDateEn\",\n      \"targetFieldName\": \"sortDate\"\n    }\n  ]\n}"
+        "example" : "{\r\n  \"fieldMappings\": [\r\n    {\r\n      \"sourceFieldName\": \"documentTitleEn\",\r\n      \"targetFieldName\": \"documentTitle\"\r\n    },\r\n    {\r\n      \"sourceFieldName\": \"documentDescriptionEn\",\r\n      \"targetFieldName\": \"documentDescription\"\r\n    },\r\n    {\r\n      \"sourceFieldName\": \"documentTypeEn\",\r\n      \"targetFieldName\": \"documentType\"\r\n    },\r\n    {\r\n      \"sourceFieldName\": \"attachmentsEn\",\r\n      \"targetFieldName\": \"attachments\"\r\n    },\r\n    {\r\n      \"sourceFieldName\": \"contactsEn\",\r\n      \"targetFieldName\": \"contacts\"\r\n    },\r\n    {\r\n      \"sourceFieldName\": \"linksEn\",\r\n      \"targetFieldName\": \"links\"\r\n    },\r\n    {\r\n      \"sourceFieldName\": \"speciesNamesEn\",\r\n      \"targetFieldName\": \"speciesNames\"\r\n    },\r\n    {\r\n      \"sourceFieldName\": \"earliestPublicationDateEn\",\r\n      \"targetFieldName\": \"earliestPublicationDate\"\r\n    },\r\n    {\r\n      \"sourceFieldName\": \"latestPublicationDateEn\",\r\n      \"targetFieldName\": \"latestPublicationDate\"\r\n    },\r\n    {\r\n      \"sourceFieldName\": \"sortDateEn\",\r\n      \"targetFieldName\": \"sortDate\"\r\n    }\r\n  ]\r\n}"
       },
       "CommonIndexerFieldMapping" : {
         "description" : "An indexer field mapping.",
@@ -1892,6 +1892,20 @@
             }
           }
         }
+      },
+      "PermitIndexerFieldMappingResponse" : {
+        "description" : "Represents indexer field mappings.",
+        "type" : "object",
+        "properties" : {
+          "fieldMappings" : {
+            "description" : "List of field mappings.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonIndexerFieldMapping"
+            }
+          }
+        },
+        "example" : "\"fieldMappings\": [{\r\n\t\t\"sourceFieldName\": \"permitTitleFr\",\r\n\t\t\"targetFieldName\": \"permitTitle\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"noticeFr\",\r\n\t\t\"targetFieldName\": \"notice\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"purposeFr\",\r\n\t\t\"targetFieldName\": \"purpose\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"descriptionFr\",\r\n\t\t\"targetFieldName\": \"description\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"authorityNameFr\",\r\n\t\t\"targetFieldName\": \"authorityName\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"affectedSpeciesFr\",\r\n\t\t\"targetFieldName\": \"affectedSpecies\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"contactsFr\",\r\n\t\t\"targetFieldName\": \"contacts\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"preConditionsFr\",\r\n\t\t\"targetFieldName\": \"preConditions\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"termsFr\",\r\n\t\t\"targetFieldName\": \"terms\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"protectedFr\",\r\n\t\t\"targetFieldName\": \"protected\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"relevantFr\",\r\n\t\t\"targetFieldName\": \"relevant\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"activityLocationFr\",\r\n\t\t\"targetFieldName\": \"activityLocation\"\r\n\t}\r\n]"
       }
     }
   },
