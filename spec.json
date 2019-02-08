@@ -376,7 +376,21 @@
         }
       }
     },
-    "/api/permits/GetIndex" : { }
+    "/api/permits/GetIndex" : {
+      "get" : {
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PermitsIndexResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   },
   "components" : {
     "schemas" : {
