@@ -146,62 +146,7 @@
     },
     "/api/permits/searchResults" : {
       "summary" : "Permits search results endpoint.",
-      "get" : {
-        "tags" : [ "permits" ],
-        "summary" : "Get all Permits by Default",
-        "description" : "Returns the list of all available Permits.",
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation.",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/PermitsSearchGetResponse"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request / client error."
-          },
-          "500" : {
-            "description" : "Server error."
-          }
-        }
-      },
-      "post" : {
-        "tags" : [ "permits" ],
-        "summary" : "Get Permits by Filters",
-        "description" : "Returns the lists of the results for Permits Search page.",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/PermitsSearchRequest"
-              }
-            }
-          },
-          "required" : true
-        },
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation.",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/PermitsSearchPostResponse"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request / client error."
-          },
-          "500" : {
-            "description" : "Server error."
-          }
-        }
-      },
+      "get" : { },
       "parameters" : [ {
         "name" : "Accept-Language",
         "in" : "header",
@@ -215,26 +160,8 @@
     "/api/permits/{id}" : {
       "summary" : "Permit Details endpoint",
       "get" : {
-        "tags" : [ "permits" ],
-        "summary" : "Get Permit by Id",
-        "description" : "Returns the detailed permit information.",
         "responses" : {
-          "200" : {
-            "description" : "Successful operation.",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/PermitDetailsResponse"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request / client error."
-          },
-          "500" : {
-            "description" : "Server error."
-          }
+          "200" : { }
         }
       },
       "parameters" : [ {
@@ -448,7 +375,8 @@
           }
         }
       }
-    }
+    },
+    "/api/permits/GetIndex" : { }
   },
   "components" : {
     "schemas" : {
