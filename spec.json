@@ -1893,7 +1893,7 @@
           }
         }
       },
-      "PermitsFieldMappingResponseEn" : {
+      "PermitsFieldMappingEn" : {
         "description" : "Represents indexer field mappings.",
         "type" : "object",
         "properties" : {
@@ -1907,7 +1907,7 @@
         },
         "example" : "\"fieldMappings\": [{\r\n\t\t\"sourceFieldName\": \"permitTitleEn\",\r\n\t\t\"targetFieldName\": \"permitTitle\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"noticeEn\",\r\n\t\t\"targetFieldName\": \"notice\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"purposeEn\",\r\n\t\t\"targetFieldName\": \"purpose\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"descriptionEn\",\r\n\t\t\"targetFieldName\": \"description\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"authorityNameEn\",\r\n\t\t\"targetFieldName\": \"authorityName\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"affectedSpeciesEn\",\r\n\t\t\"targetFieldName\": \"affectedSpecies\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"contactsEn\",\r\n\t\t\"targetFieldName\": \"contacts\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"preConditionsEn\",\r\n\t\t\"targetFieldName\": \"preConditions\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"termsEn\",\r\n\t\t\"targetFieldName\": \"terms\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"protectedEn\",\r\n\t\t\"targetFieldName\": \"protected\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"relevantEn\",\r\n\t\t\"targetFieldName\": \"relevant\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"activityLocationEn\",\r\n\t\t\"targetFieldName\": \"activityLocation\"\r\n\t}\r\n]"
       },
-      "PermitsFieldMappingResponseFr" : {
+      "PermitsFieldMappingFr" : {
         "description" : "Represents indexer field mappings.",
         "type" : "object",
         "properties" : {
