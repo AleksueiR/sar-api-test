@@ -302,23 +302,6 @@
           }
         }
       }
-    },
-    "/api/permits/GetIndex" : {
-      "summary" : "Get permits index",
-      "get" : {
-        "summary" : "It gets all the fields of permit index",
-        "responses" : {
-          "200" : {
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/PermitsIndexResponse"
-                }
-              }
-            }
-          }
-        }
-      }
     }
   },
   "components" : {
