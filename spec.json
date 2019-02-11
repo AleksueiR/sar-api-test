@@ -304,10 +304,10 @@
       }
     },
     "/permits/getIndex" : {
-      "summary" : "Get Index",
       "get" : {
         "tags" : [ "permits" ],
         "summary" : "Azure Index representation of permits",
+        "description" : "Azure Index representation of permits",
         "responses" : {
           "200" : {
             "content" : {
