@@ -307,7 +307,7 @@
       "get" : {
         "tags" : [ "permits" ],
         "summary" : "Get Index",
-        "description" : "Azure Index representation of permits",
+        "description" : "",
         "responses" : {
           "200" : {
             "content" : {
