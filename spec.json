@@ -306,6 +306,7 @@
     "/permits/getIndex" : {
       "summary" : "Get Index",
       "get" : {
+        "tags" : [ "permits" ],
         "responses" : {
           "200" : {
             "content" : {
