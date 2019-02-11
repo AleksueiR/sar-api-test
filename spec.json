@@ -354,6 +354,7 @@
     "/api/permits" : {
       "summary" : "Get permits index",
       "get" : {
+        "summary" : "It gets all the fields of permit index",
         "responses" : {
           "200" : {
             "content" : {
