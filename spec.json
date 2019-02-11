@@ -6,41 +6,6 @@
     "version" : "1.0.0"
   },
   "paths" : {
-    "/api/permits/searchFilters" : {
-      "summary" : "Permits search filters endpoint.",
-      "get" : {
-        "tags" : [ "permits" ],
-        "summary" : "Get Permits Filters",
-        "description" : "Returns the lists of values for the filters of permits Search page.",
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation.",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/PermitsFiltersResponse"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request / client error."
-          },
-          "500" : {
-            "description" : "Server error."
-          }
-        }
-      },
-      "parameters" : [ {
-        "name" : "Accept-Language",
-        "in" : "header",
-        "description" : "Current page language. Example: `en`",
-        "required" : true,
-        "schema" : {
-          "type" : "string"
-        }
-      } ]
-    },
     "/api/species/searchFilters" : {
       "summary" : "Species search filters endpoint.",
       "get" : {
@@ -134,19 +99,6 @@
           }
         }
       },
-      "parameters" : [ {
-        "name" : "Accept-Language",
-        "in" : "header",
-        "description" : "Current page language. Example: `en`",
-        "required" : true,
-        "schema" : {
-          "type" : "string"
-        }
-      } ]
-    },
-    "/api/permits/searchResults" : {
-      "summary" : "Permits search results endpoint.",
-      "get" : { },
       "parameters" : [ {
         "name" : "Accept-Language",
         "in" : "header",
@@ -351,7 +303,7 @@
         }
       }
     },
-    "/api/permits" : {
+    "/api/permits/GetIndex" : {
       "summary" : "Get permits index",
       "get" : {
         "summary" : "It gets all the fields of permit index",
@@ -367,6 +319,41 @@
           }
         }
       }
+    },
+    "/api/permits/GetIndex/searchFilters" : {
+      "summary" : "Permits search filters endpoint.",
+      "get" : {
+        "tags" : [ "permits" ],
+        "summary" : "Get Permits Filters",
+        "description" : "Returns the lists of values for the filters of permits Search page.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PermitsFiltersResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request / client error."
+          },
+          "500" : {
+            "description" : "Server error."
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "Accept-Language",
+        "in" : "header",
+        "description" : "Current page language. Example: `en`",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
     }
   },
   "components" : {
