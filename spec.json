@@ -227,7 +227,7 @@
       "summary" : "JSON design of document config",
       "get" : {
         "tags" : [ "documents" ],
-        "summary" : "Document Config",
+        "summary" : "Get Index",
         "description" : "JSON design of document config\n",
         "responses" : {
           "200" : {
@@ -307,6 +307,7 @@
       "summary" : "Get Index",
       "get" : {
         "tags" : [ "permits" ],
+        "summary" : "Azure Index representation of permits",
         "responses" : {
           "200" : {
             "content" : {
@@ -316,7 +317,9 @@
                 }
               }
             }
-          }
+          },
+          "400" : { },
+          "500" : { }
         }
       }
     }
