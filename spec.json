@@ -157,31 +157,6 @@
         }
       } ]
     },
-    "/api/permits/{id}" : {
-      "summary" : "Permit Details endpoint",
-      "get" : {
-        "responses" : {
-          "200" : { }
-        }
-      },
-      "parameters" : [ {
-        "name" : "Accept-Language",
-        "in" : "header",
-        "description" : "Current page language. Example: `en`",
-        "required" : true,
-        "schema" : {
-          "type" : "string"
-        }
-      }, {
-        "name" : "id",
-        "in" : "path",
-        "description" : "Permit id.",
-        "required" : true,
-        "schema" : {
-          "type" : "number"
-        }
-      } ]
-    },
     "/api/schedule1/speciesList" : {
       "summary" : "Schedule-1 results endpoint.",
       "get" : {
@@ -376,7 +351,8 @@
         }
       }
     },
-    "/api/permits/GetIndex" : {
+    "/api/permits" : {
+      "summary" : "Get permits index",
       "get" : {
         "responses" : {
           "200" : {
