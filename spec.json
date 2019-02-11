@@ -307,7 +307,7 @@
       "get" : {
         "tags" : [ "permits" ],
         "summary" : "Get Index",
-        "description" : "",
+        "description" : "Azure Index representation of permits",
         "responses" : {
           "200" : {
             "content" : {
@@ -321,6 +321,13 @@
           "400" : { },
           "500" : { }
         }
+      }
+    },
+    "/permits/getMappingFields" : {
+      "get" : {
+        "tags" : [ "permits" ],
+        "summary" : "Get Mapping",
+        "description" : "It gets the mapping fields of permits"
       }
     }
   },
