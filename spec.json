@@ -209,7 +209,7 @@
     "/permits/getMappingFieldsFr" : {
       "get" : {
         "tags" : [ "permits" ],
-        "summary" : "Get MappingEn",
+        "summary" : "Get MappingFr",
         "description" : "It gets the mapping fields of permits",
         "responses" : {
           "200" : {
