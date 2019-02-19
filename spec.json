@@ -6,109 +6,6 @@
     "version" : "1.0.0"
   },
   "paths" : {
-    "/api/species/searchFilters" : {
-      "summary" : "Species search filters endpoint.",
-      "get" : {
-        "tags" : [ "species" ],
-        "summary" : "Get Species filters",
-        "description" : "Returns the lists of values for the filters of Species Search page.",
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation.",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/SpeciesFiltersResponse"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request / client error."
-          },
-          "500" : {
-            "description" : "Server error."
-          }
-        }
-      },
-      "parameters" : [ {
-        "name" : "Accept-Language",
-        "in" : "header",
-        "description" : "Current page language. Example: `en`",
-        "required" : true,
-        "schema" : {
-          "type" : "string"
-        }
-      } ]
-    },
-    "/api/species/searchResults" : {
-      "summary" : "Search results endpoint.",
-      "get" : {
-        "tags" : [ "species" ],
-        "summary" : "Get initial Species list",
-        "description" : "Returns a list of the first 2000 Species with default ordering and filter counts for all options. Used when the search page is loaded for the first time. Can be cached.",
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation.",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/SpeciesSearchResponse"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request / client error."
-          },
-          "500" : {
-            "description" : "Server error."
-          }
-        }
-      },
-      "post" : {
-        "tags" : [ "species" ],
-        "summary" : "Get Species search results",
-        "description" : "Returns a list of Species search results in pages based on the current filter states and user-entered keywords.",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/SpeciesSearchRequest"
-              }
-            }
-          },
-          "required" : true
-        },
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation.",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/SpeciesSearchResponse"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request / client error."
-          },
-          "500" : {
-            "description" : "Server error."
-          }
-        }
-      },
-      "parameters" : [ {
-        "name" : "Accept-Language",
-        "in" : "header",
-        "description" : "Current page language. Example: `en`",
-        "required" : true,
-        "schema" : {
-          "type" : "string"
-        }
-      } ]
-    },
     "/api/schedule1/speciesList" : {
       "summary" : "Schedule-1 results endpoint.",
       "get" : {
@@ -179,50 +76,6 @@
         }
       } ]
     },
-    "/api/species/{id}" : {
-      "summary" : "Species profile endpoint.",
-      "get" : {
-        "tags" : [ "species" ],
-        "summary" : "Get Species Profile by Id",
-        "description" : "Returns the profile of the selection species.",
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation.",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/SpeciesProfileResponse"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request / client error."
-          },
-          "500" : {
-            "description" : "Server error."
-          }
-        }
-      },
-      "parameters" : [ {
-        "name" : "id",
-        "in" : "path",
-        "description" : "Species id.",
-        "required" : true,
-        "schema" : {
-          "type" : "number"
-        }
-      }, {
-        "name" : "Accept-Language",
-        "in" : "header",
-        "description" : "Current page language. Example: `en`",
-        "required" : true,
-        "schema" : {
-          "type" : "string"
-        }
-      } ]
-    },
-    "/SpeciesIndex" : { },
     "/sar-config.json/documents" : {
       "summary" : "JSON design of document config",
       "get" : {
@@ -371,6 +224,31 @@
           },
           "400" : {
             "description" : "Invalid request / client error"
+          },
+          "500" : {
+            "description" : "Server error"
+          }
+        }
+      }
+    },
+    "/species/getIndex" : {
+      "get" : {
+        "tags" : [ "species" ],
+        "summary" : "Get Index",
+        "description" : "Azure Index representation of permits",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SpeciesIndexResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request / Client error"
           },
           "500" : {
             "description" : "Server error"
@@ -1849,6 +1727,101 @@
           }
         },
         "example" : "\"fieldMappings\": [{\r\n\t\t\"sourceFieldName\": \"permitTitleFr\",\r\n\t\t\"targetFieldName\": \"permitTitle\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"noticeFr\",\r\n\t\t\"targetFieldName\": \"notice\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"purposeFr\",\r\n\t\t\"targetFieldName\": \"purpose\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"descriptionFr\",\r\n\t\t\"targetFieldName\": \"description\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"authorityNameFr\",\r\n\t\t\"targetFieldName\": \"authorityName\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"affectedSpeciesFr\",\r\n\t\t\"targetFieldName\": \"affectedSpecies\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"contactsFr\",\r\n\t\t\"targetFieldName\": \"contacts\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"preConditionsFr\",\r\n\t\t\"targetFieldName\": \"preConditions\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"termsFr\",\r\n\t\t\"targetFieldName\": \"terms\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"protectedFr\",\r\n\t\t\"targetFieldName\": \"protected\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"relevantFr\",\r\n\t\t\"targetFieldName\": \"relevant\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"activityLocationFr\",\r\n\t\t\"targetFieldName\": \"activityLocation\"\r\n\t}\r\n]"
+      },
+      "SpeciesIndexResponse" : {
+        "required" : [ ],
+        "type" : "object",
+        "properties" : {
+          "cosewicId" : {
+            "description" : "COSEWIC Id.",
+            "type" : "number"
+          },
+          "cosewicCommonName" : {
+            "description" : "COSEWIC common name.",
+            "type" : "string"
+          },
+          "cosewicScientificName" : {
+            "description" : "COSEWIC scientific name.",
+            "type" : "string"
+          },
+          "cosewicPopulation" : {
+            "description" : "COSEWIC population name.",
+            "type" : "string"
+          },
+          "cosewicTaxonomyId" : {
+            "description" : "COSEWIC taxonomy Id.",
+            "type" : "number"
+          },
+          "cosewicStatusId" : {
+            "description" : "COSEWIC status Id.",
+            "type" : "number"
+          },
+          "legalId" : {
+            "description" : "Legal / SARA Id",
+            "type" : "number"
+          },
+          "legalCommonName" : {
+            "description" : "Legal / SARA common name.",
+            "type" : "string"
+          },
+          "legalPopulation" : {
+            "description" : "Legal / SARA population.",
+            "type" : "string"
+          },
+          "legalDateListing" : {
+            "description" : "Legal / SARA listing date, pre-formatted on the server.",
+            "type" : "string"
+          },
+          "legalStatusId" : {
+            "description" : "Legal / SARA status Id.",
+            "type" : "number"
+          },
+          "legalScheduleId" : {
+            "description" : "Legal / SARA schedule Id.",
+            "type" : "number"
+          },
+          "imageFileName" : {
+            "description" : "A species' image file name.",
+            "type" : "string"
+          },
+          "underConsiderationId" : {
+            "description" : "Under-consideration Id.",
+            "type" : "number"
+          },
+          "legalScientificName" : {
+            "description" : "Legal / SARA scientific name.",
+            "type" : "string"
+          },
+          "id" : {
+            "description" : "Comp spe id",
+            "type" : "number"
+          },
+          "previousCosewicScientificName" : {
+            "description" : "Previous Cosewic Scientific Name",
+            "type" : "string"
+          },
+          "cosewicStatusCriteria" : {
+            "description" : "Cosewic Status Criteria",
+            "type" : "string"
+          },
+          "cosewicReasonDes" : {
+            "description" : "Cosewic Reason Description",
+            "type" : "string"
+          },
+          "cosewicStatusHis" : {
+            "description" : "Cosewic Status His",
+            "type" : "string"
+          },
+          "cosewicLastAssessmentDate" : {
+            "format" : "date",
+            "description" : "Cosewic Last Assessment Date",
+            "type" : "string"
+          },
+          "legalStatusHistroy" : {
+            "description" : "Legal Status Histroy",
+            "type" : "string"
+          }
+        }
       }
     }
   },
