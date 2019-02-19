@@ -328,14 +328,46 @@
         }
       }
     },
-    "/permits/getMappingFields" : {
+    "/permits/getMappingFieldsEn" : {
       "get" : {
         "tags" : [ "permits" ],
-        "summary" : "Get Mapping",
+        "summary" : "Get MappingEn",
         "description" : "It gets the mapping fields of permits",
         "responses" : {
           "200" : {
-            "description" : " Successful operation"
+            "description" : " Successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PermitsFieldMappingEn"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request / client error"
+          },
+          "500" : {
+            "description" : "Server error"
+          }
+        }
+      }
+    },
+    "/permits/getMappingFieldsFr" : {
+      "get" : {
+        "tags" : [ "permits" ],
+        "summary" : "Get MappingEn",
+        "description" : "It gets the mapping fields of permits",
+        "responses" : {
+          "200" : {
+            "description" : " Successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PermitsFieldMappingFr"
+                }
+              }
+            }
           },
           "400" : {
             "description" : "Invalid request / client error"
