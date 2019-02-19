@@ -267,7 +267,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/PermitsFieldMappingFr"
+                  "$ref" : "#/components/schemas/PermitsFieldMappingEn"
                 }
               }
             }
@@ -292,7 +292,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/SpeciesFieldMappingEn"
+                  "$ref" : "#/components/schemas/SpeciesFieldMappingFr"
                 }
               }
             }
