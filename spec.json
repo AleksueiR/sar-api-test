@@ -310,6 +310,7 @@
         "description" : "Azure Index representation of permits",
         "responses" : {
           "200" : {
+            "description" : "Successful operation",
             "content" : {
               "application/json" : {
                 "schema" : {
@@ -318,8 +319,12 @@
               }
             }
           },
-          "400" : { },
-          "500" : { }
+          "400" : {
+            "description" : "Invalid request / Client error"
+          },
+          "500" : {
+            "description" : "Server error"
+          }
         }
       }
     },
