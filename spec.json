@@ -255,6 +255,31 @@
           }
         }
       }
+    },
+    "/species/getMappingFieldsEn" : {
+      "get" : {
+        "tags" : [ "permits" ],
+        "summary" : "Get MappingEn",
+        "description" : "It gets the mapping fields of species",
+        "responses" : {
+          "200" : {
+            "description" : " Successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SpeciesFieldMappingEn"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request / client error"
+          },
+          "500" : {
+            "description" : "Server error"
+          }
+        }
+      }
     }
   },
   "components" : {
@@ -1822,6 +1847,34 @@
             "type" : "string"
           }
         }
+      },
+      "SpeciesFieldMappingEn" : {
+        "description" : "Represents indexer field mappings.",
+        "type" : "object",
+        "properties" : {
+          "fieldMappings" : {
+            "description" : "List of field mappings.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonIndexerFieldMapping"
+            }
+          }
+        },
+        "example" : "\"fieldMappings\":[  \r\n   {  \r\n      \"sourceFieldName\":\"commonNameEn\",\r\n      \"targetFieldName\":\"commonName\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicCommonNameEn\",\r\n      \"targetFieldName\":\"cosewicCommonName\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicStatusCriteriaEn\",\r\n      \"targetFieldName\":\"cosewicStatusCriteria\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicReasonDesEn\",\r\n      \"targetFieldName\":\"cosewicReasonDes\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicStatusHisEn\",\r\n      \"targetFieldName\":\"cosewicStatusHis\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicPopulationEn\",\r\n      \"targetFieldName\":\"cosewicPopulation\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"legalCommonNameEn\",\r\n      \"targetFieldName\":\"legalCommonName\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"legalStatusHistoryEn\",\r\n      \"targetFieldName\":\"legalStatusHistory\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"legalPopulationEn\",\r\n      \"targetFieldName\":\"legalPopulation\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"profileEn\",\r\n      \"targetFieldName\":\"profiles\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"strategyEn\",\r\n      \"targetFieldName\":\"strategies\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"teamEn\",\r\n      \"targetFieldName\":\"teams\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"commonEn\",\r\n      \"targetFieldName\":\"commons\"\r\n   }\r\n]"
+      },
+      "SpeciesFieldMappingFr" : {
+        "description" : "Represents indexer field mappings.",
+        "type" : "object",
+        "properties" : {
+          "fieldMappings" : {
+            "description" : "List of field mappings.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonIndexerFieldMapping"
+            }
+          }
+        },
+        "example" : "\"fieldMappings\":[  \r\n   {  \r\n      \"sourceFieldName\":\"commonNameFr\",\r\n      \"targetFieldName\":\"commonName\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicCommonNameFr\",\r\n      \"targetFieldName\":\"cosewicCommonName\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicStatusCriteriaFr\",\r\n      \"targetFieldName\":\"cosewicStatusCriteria\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicReasonDesFr\",\r\n      \"targetFieldName\":\"cosewicReasonDes\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicStatusHisFr\",\r\n      \"targetFieldName\":\"cosewicStatusHis\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicPopulationFr\",\r\n      \"targetFieldName\":\"cosewicPopulation\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"legalCommonNameFr\",\r\n      \"targetFieldName\":\"legalCommonName\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"legalStatusHistoryFr\",\r\n      \"targetFieldName\":\"legalStatusHistory\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"legalPopulationFr\",\r\n      \"targetFieldName\":\"legalPopulation\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"profileFr\",\r\n      \"targetFieldName\":\"profiles\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"strategyFr\",\r\n      \"targetFieldName\":\"strategies\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"teamFr\",\r\n      \"targetFieldName\":\"teams\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"commonFr\",\r\n      \"targetFieldName\":\"commons\"\r\n   }\r\n]"
       }
     }
   },
