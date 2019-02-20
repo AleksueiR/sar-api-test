@@ -46,31 +46,6 @@
         }
       }
     },
-    "/permits/getIndex" : {
-      "get" : {
-        "tags" : [ "permits" ],
-        "summary" : "Get Index",
-        "description" : "Azure Index representation of permits",
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/PermitsIndexResponse"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request / Client error"
-          },
-          "500" : {
-            "description" : "Server error"
-          }
-        }
-      }
-    },
     "/permits/getMappingFieldsEn" : {
       "get" : {
         "tags" : [ "permits" ],
@@ -121,31 +96,6 @@
         }
       }
     },
-    "/species/getIndex" : {
-      "get" : {
-        "tags" : [ "species" ],
-        "summary" : "Get Index",
-        "description" : "Azure Index representation of permits",
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/SpeciesIndexResponse"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request / Client error"
-          },
-          "500" : {
-            "description" : "Server error"
-          }
-        }
-      }
-    },
     "/species/getMappingFieldsEn" : {
       "get" : {
         "tags" : [ "species" ],
@@ -189,6 +139,56 @@
           },
           "400" : {
             "description" : "Invalid request / client error"
+          },
+          "500" : {
+            "description" : "Server error"
+          }
+        }
+      }
+    },
+    "/indexes/perblobidx(en/fr)" : {
+      "get" : {
+        "tags" : [ "permits" ],
+        "summary" : "Get Index",
+        "description" : "Azure Index representation of permits",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PermitsIndexResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request / Client error"
+          },
+          "500" : {
+            "description" : "Server error"
+          }
+        }
+      }
+    },
+    "/indexes/speblobidx(en/fr)" : {
+      "get" : {
+        "tags" : [ "species" ],
+        "summary" : "Get Index",
+        "description" : "Azure Index representation of permits",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SpeciesIndexResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request / Client error"
           },
           "500" : {
             "description" : "Server error"
