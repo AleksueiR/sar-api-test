@@ -239,44 +239,6 @@
   },
   "components" : {
     "schemas" : {
-      "SpeciesProfileAdditionalInformation" : {
-        "type" : "object",
-        "properties" : {
-          "cosewicPreviousCommonNames" : {
-            "description" : "COSEWIC previous common names.",
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          },
-          "cosewicPreviousScientificNames" : {
-            "description" : "COSEWIC previous scientific names.",
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          },
-          "cosewicStatusCriteria" : {
-            "description" : "COSEWIC status criteria.",
-            "type" : "string"
-          },
-          "cosewicDesignationHistory" : {
-            "description" : "COSEWIC status history.",
-            "type" : "string"
-          },
-          "cosewicDesignationReasons" : {
-            "description" : "COSEWIC reasons for designation.",
-            "type" : "string"
-          },
-          "legalPreviousName" : {
-            "description" : "Legal / SARA previous names.",
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          }
-        }
-      },
       "SpeciesProfileDetails" : {
         "type" : "object",
         "properties" : {
@@ -419,81 +381,6 @@
           }
         }
       },
-      "SpeciesSearchRequest" : {
-        "required" : [ ],
-        "type" : "object",
-        "properties" : {
-          "keywordText" : {
-            "description" : "User-entered search keywords",
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          },
-          "searchAll" : {
-            "description" : "A flag indicating if all the keywords should be present in each of the search results.",
-            "type" : "boolean"
-          },
-          "rangeId" : {
-            "description" : "A list of range Ids as strings.",
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          },
-          "taxonomyId" : {
-            "description" : "A list of taxonomy Ids as strings.",
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          },
-          "cosewicStatusId" : {
-            "description" : "A list of COSEWIC status Ids as strings.",
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          },
-          "saraStatusId" : {
-            "description" : "A list of SARA status Ids as strings.",
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          },
-          "scheduleId" : {
-            "description" : "A list of SARA schedule Ids as strings.",
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          },
-          "considerationId" : {
-            "description" : "A list of under-consideration Ids as strings.",
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          },
-          "pagingSize" : {
-            "description" : "The number of records in server paging. Defaults to 2000.",
-            "type" : "number"
-          },
-          "orderBy" : {
-            "description" : "A field name to order the results by. The second order criterion is is by species name.",
-            "type" : "string"
-          },
-          "orderDirection" : {
-            "description" : "A sort direction. \"A\" - ascending; \"D\" - descending. Defaults to \"A\".",
-            "type" : "string"
-          },
-          "pageNo" : {
-            "description" : "The server paging number. Default to 1.",
-            "type" : "number"
-          }
-        }
-      },
       "PermitPurpose" : {
         "properties" : {
           "purposeId" : {
@@ -578,9 +465,6 @@
             "type" : "string"
           }
         }
-      },
-      "SpeciesSearchResponse" : {
-        "type" : "object"
       },
       "DocumentAttachment" : {
         "description" : "A document file attachment.",
@@ -775,20 +659,6 @@
           }
         },
         "example" : "{\n    \"documentTitle\": \"some text\",\n    \"documentCreateDate\": \"2018-02-10T09:30Z\",\n    \"documentDescription\": \"some text\",\n    \"documentTypeId\": 82.97,\n    \"consultationStartDate\": \"2018-02-10T09:30Z\",\n    \"consultationEndDate\": \"2018-02-10T09:30Z\",\n    \"attachments\": [\n        {\n            \"attachmentId\": 72.6,\n            \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n            \"attachmentTitle\": \"some text\",\n            \"html\": \"some text\",\n            \"file\": \"some text\"\n        },\n        {\n            \"attachmentId\": 70.97,\n            \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n            \"attachmentTitle\": \"some text\",\n            \"html\": \"some text\",\n            \"file\": \"some text\"\n        }\n    ],\n    \"contacts\": [\n        {\n            \"contactId\": 54.67,\n            \"salutation\": \"some text\",\n            \"firstName\": \"some text\",\n            \"lastName\": \"some text\",\n            \"address\": \"some text\",\n            \"city\": \"some text\",\n            \"provinceState\": \"some text\",\n            \"postalCode\": \"some text\",\n            \"email\": \"some text\",\n            \"phone\": \"some text\",\n            \"fax\": \"some text\",\n            \"title\": \"some text\",\n            \"organization\": \"some text\"\n        },\n        {\n            \"contactId\": 3.29,\n            \"salutation\": \"some text\",\n            \"firstName\": \"some text\",\n            \"lastName\": \"some text\",\n            \"address\": \"some text\",\n            \"city\": \"some text\",\n            \"provinceState\": \"some text\",\n            \"postalCode\": \"some text\",\n            \"email\": \"some text\",\n            \"phone\": \"some text\",\n            \"fax\": \"some text\",\n            \"title\": \"some text\",\n            \"organization\": \"some text\"\n        }\n    ],\n    \"links\": [\n        {\n            \"linkId\": 30.88,\n            \"url\": \"some text\",\n            \"description\": \"some text\"\n        },\n        {\n            \"linkId\": 58.38,\n            \"url\": \"some text\",\n            \"description\": \"some text\"\n        }\n    ],\n    \"ranges\": [\n        55.13,\n        28.38\n    ],\n    \"species\": [\n        42.99,\n        43.47\n    ],\n    \"taxonomies\": [\n        81.58,\n        40.24\n    ],\n    \"consultationYears\": [\n        33.37,\n        38.08\n    ],\n    \"id\": 58.23,\n    \"consultationActivationStatusId\": 41.06,\n    \"finalOrDelayed\": 85.54\n}"
-      },
-      "ConfigColumnOptions" : {
-        "description" : "Filterable option",
-        "type" : "object",
-        "properties" : {
-          "id" : {
-            "description" : "ID",
-            "type" : "integer"
-          },
-          "label" : {
-            "description" : "Label",
-            "type" : "string"
-          }
-        }
       },
       "CommonIndexerFieldMappingResponse" : {
         "description" : "Represents indexer field mappings.",
