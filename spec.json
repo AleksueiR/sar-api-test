@@ -942,12 +942,6 @@
     "name" : "permits",
     "description" : "Everything about permits."
   }, {
-    "name" : "schedule-1",
-    "description" : "Everything about schedule-1 documents."
-  }, {
-    "name" : "migratory-birds",
-    "description" : "Everything about migratory birds."
-  }, {
     "name" : "documents",
     "description" : "Everything about documents."
   }, {
