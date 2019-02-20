@@ -6,46 +6,6 @@
     "version" : "1.0.0"
   },
   "paths" : {
-    "/sar-config.json/documents" : {
-      "summary" : "JSON design of document config",
-      "get" : {
-        "tags" : [ "documents" ],
-        "summary" : "Get Index",
-        "description" : "JSON design of document config\n",
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation.",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/DocumentConfig"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/sar-config.json/consultations" : {
-      "summary" : "JSON design of consultation config",
-      "get" : {
-        "tags" : [ "consultations" ],
-        "summary" : "Consultation Config",
-        "description" : "JSON design of consultation config\n",
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation.",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/ConsultationConfig"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/indexes/docblobidx(en/fr)/docs?api-version=2017-11-11&search=" : {
       "summary" : "Index representation of documents and consultations",
       "get" : {
