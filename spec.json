@@ -366,6 +366,10 @@
           "file" : {
             "description" : "File link to the attachment.",
             "type" : "string"
+          },
+          "fileSize" : {
+            "description" : "Size of the file in MB",
+            "type" : "number"
           }
         }
       },
@@ -533,9 +537,43 @@
           "finalOrDelayed" : {
             "description" : "Document recovery status of final or delayed",
             "type" : "number"
+          },
+          "documentStatusId" : {
+            "description" : "Document status of proposed or current. Used to calculate recovery status. NOT RETRIEVABLE",
+            "type" : "number"
+          },
+          "documentType" : {
+            "description" : "Document type in En or Fr. Used for sorting. NOT RETRIEVABLE",
+            "type" : "string"
+          },
+          "speciesNames" : {
+            "description" : "Related species names of cosewic and legal in En and Fr. Used for searching. NOT RETRIEVABLE",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "earliestPublicationDate" : {
+            "format" : "date-time",
+            "description" : "Earliest publication date of a document's attachment (if none, then creation date). NOT RETRIEVABLE",
+            "type" : "string"
+          },
+          "latestPublicationDate" : {
+            "format" : "date-time",
+            "description" : "Latest publication date of a document's attachment (if none, then creation date). NOT RETRIEVABLE",
+            "type" : "string"
+          },
+          "sortDate" : {
+            "format" : "date-time",
+            "description" : "Either latestPublicationDate or documentCreationDate. Used for sorting. NOT RETRIEVABLE",
+            "type" : "string"
+          },
+          "hasRecoveryStatus" : {
+            "description" : "If this document has a recovery status or not. Used to sort. NOT RETRIEVABLE",
+            "type" : "boolean"
           }
         },
-        "example" : "{\n    \"documentTitle\": \"some text\",\n    \"documentCreateDate\": \"2018-02-10T09:30Z\",\n    \"documentDescription\": \"some text\",\n    \"documentTypeId\": 82.97,\n    \"consultationStartDate\": \"2018-02-10T09:30Z\",\n    \"consultationEndDate\": \"2018-02-10T09:30Z\",\n    \"attachments\": [\n        {\n            \"attachmentId\": 72.6,\n            \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n            \"attachmentTitle\": \"some text\",\n            \"html\": \"some text\",\n            \"file\": \"some text\"\n        },\n        {\n            \"attachmentId\": 70.97,\n            \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n            \"attachmentTitle\": \"some text\",\n            \"html\": \"some text\",\n            \"file\": \"some text\"\n        }\n    ],\n    \"contacts\": [\n        {\n            \"contactId\": 54.67,\n            \"salutation\": \"some text\",\n            \"firstName\": \"some text\",\n            \"lastName\": \"some text\",\n            \"address\": \"some text\",\n            \"city\": \"some text\",\n            \"provinceState\": \"some text\",\n            \"postalCode\": \"some text\",\n            \"email\": \"some text\",\n            \"phone\": \"some text\",\n            \"fax\": \"some text\",\n            \"title\": \"some text\",\n            \"organization\": \"some text\"\n        },\n        {\n            \"contactId\": 3.29,\n            \"salutation\": \"some text\",\n            \"firstName\": \"some text\",\n            \"lastName\": \"some text\",\n            \"address\": \"some text\",\n            \"city\": \"some text\",\n            \"provinceState\": \"some text\",\n            \"postalCode\": \"some text\",\n            \"email\": \"some text\",\n            \"phone\": \"some text\",\n            \"fax\": \"some text\",\n            \"title\": \"some text\",\n            \"organization\": \"some text\"\n        }\n    ],\n    \"links\": [\n        {\n            \"linkId\": 30.88,\n            \"url\": \"some text\",\n            \"description\": \"some text\"\n        },\n        {\n            \"linkId\": 58.38,\n            \"url\": \"some text\",\n            \"description\": \"some text\"\n        }\n    ],\n    \"ranges\": [\n        55.13,\n        28.38\n    ],\n    \"species\": [\n        42.99,\n        43.47\n    ],\n    \"taxonomies\": [\n        81.58,\n        40.24\n    ],\n    \"consultationYears\": [\n        33.37,\n        38.08\n    ],\n    \"id\": 58.23,\n    \"consultationActivationStatusId\": 41.06,\n    \"finalOrDelayed\": 85.54\n}"
+        "example" : "{\n    \"documentTitle\": \"some text\",\n    \"documentCreateDate\": \"2018-02-10T09:30Z\",\n    \"documentDescription\": \"some text\",\n    \"documentTypeId\": 50.13,\n    \"consultationStartDate\": \"2018-02-10T09:30Z\",\n    \"consultationEndDate\": \"2018-02-10T09:30Z\",\n    \"attachments\": [\n        {\n            \"attachmentId\": 89.12,\n            \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n            \"attachmentTitle\": \"some text\",\n            \"html\": \"some text\",\n            \"file\": \"some text\",\n            \"fileSize\": 87.93\n        },\n        {\n            \"attachmentId\": 69.06,\n            \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n            \"attachmentTitle\": \"some text\",\n            \"html\": \"some text\",\n            \"file\": \"some text\",\n            \"fileSize\": 41.15\n        }\n    ],\n    \"contacts\": [\n        {\n            \"contactId\": 11.39,\n            \"salutation\": \"some text\",\n            \"firstName\": \"some text\",\n            \"lastName\": \"some text\",\n            \"address\": \"some text\",\n            \"city\": \"some text\",\n            \"provinceState\": \"some text\",\n            \"postalCode\": \"some text\",\n            \"email\": \"some text\",\n            \"phone\": \"some text\",\n            \"fax\": \"some text\",\n            \"title\": \"some text\",\n            \"organization\": \"some text\"\n        },\n        {\n            \"contactId\": 14.57,\n            \"salutation\": \"some text\",\n            \"firstName\": \"some text\",\n            \"lastName\": \"some text\",\n            \"address\": \"some text\",\n            \"city\": \"some text\",\n            \"provinceState\": \"some text\",\n            \"postalCode\": \"some text\",\n            \"email\": \"some text\",\n            \"phone\": \"some text\",\n            \"fax\": \"some text\",\n            \"title\": \"some text\",\n            \"organization\": \"some text\"\n        }\n    ],\n    \"links\": [\n        {\n            \"linkId\": 60.24,\n            \"url\": \"some text\",\n            \"description\": \"some text\"\n        },\n        {\n            \"linkId\": 16.84,\n            \"url\": \"some text\",\n            \"description\": \"some text\"\n        }\n    ],\n    \"ranges\": [\n        49.73,\n        70.64\n    ],\n    \"species\": [\n        99.45,\n        65.92\n    ],\n    \"taxonomies\": [\n        17.11,\n        43.12\n    ],\n    \"consultationYears\": [\n        59.1,\n        18.04\n    ],\n    \"id\": 7.05,\n    \"consultationActivationStatusId\": 60.01,\n    \"finalOrDelayed\": 43.38,\n    \"documentStatusId\": 25.75,\n    \"documentType\": \"some text\",\n    \"speciesNames\": [\n        \"some text\",\n        \"some text\"\n    ],\n    \"earliestPublicationDate\": \"2018-02-10T09:30Z\",\n    \"latestPublicationDate\": \"2018-02-10T09:30Z\",\n    \"sortDate\": \"2018-02-10T09:30Z\",\n    \"hasRecoveryStatus\": true\n}"
       },
       "CommonIndexerFieldMappingResponse" : {
         "description" : "Represents indexer field mappings.",
