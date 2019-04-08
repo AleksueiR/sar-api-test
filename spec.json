@@ -252,9 +252,12 @@
             "description" : "Species ID",
             "type" : "integer"
           },
-          "cosewicName" : {
-            "description" : "COSEWIC Name",
-            "type" : "string"
+          "species" : {
+            "description" : "Species Names",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
           }
         }
       },
@@ -531,23 +534,23 @@
             "type" : "number"
           },
           "consultationActivationStatusId" : {
-            "description" : "Activation status of a consultation",
+            "description" : "Activation status of a consultation. Used to calculate consultation status id.",
             "type" : "number"
           },
           "finalOrDelayed" : {
-            "description" : "Document recovery status of final or delayed",
+            "description" : "Document recovery status of final or delayed. (Final=5, Delayed=4, otherwise null). Used to filtering.",
             "type" : "number"
           },
           "documentStatusId" : {
-            "description" : "Document status of proposed or current. Used to calculate recovery status. NOT RETRIEVABLE",
+            "description" : "Document status of proposed or current. Used to calculate recovery status and its sorting. NOT RETRIEVABLE",
             "type" : "number"
           },
           "documentType" : {
-            "description" : "Document type in En or Fr. Used for sorting. NOT RETRIEVABLE",
+            "description" : "Document type in En or Fr. Used for sorting alphabetically. NOT RETRIEVABLE",
             "type" : "string"
           },
           "speciesNames" : {
-            "description" : "Related species names of cosewic and legal in En and Fr. Used for searching. NOT RETRIEVABLE",
+            "description" : "Related species names of cosewic and legal in En and Fr. Used for keyword searching. NOT RETRIEVABLE",
             "type" : "array",
             "items" : {
               "type" : "string"
@@ -555,21 +558,21 @@
           },
           "earliestPublicationDate" : {
             "format" : "date-time",
-            "description" : "Earliest publication date of a document's attachment (if none, then creation date). NOT RETRIEVABLE",
+            "description" : "Earliest publication date of a document's attachment (if none, then creation date). Used for filtering. NOT RETRIEVABLE",
             "type" : "string"
           },
           "latestPublicationDate" : {
             "format" : "date-time",
-            "description" : "Latest publication date of a document's attachment (if none, then creation date). NOT RETRIEVABLE",
+            "description" : "Latest publication date of a document's attachment (if none, then creation date). Used for filtering. NOT RETRIEVABLE",
             "type" : "string"
           },
           "sortDate" : {
             "format" : "date-time",
-            "description" : "Either latestPublicationDate or documentCreationDate. Used for sorting. NOT RETRIEVABLE",
+            "description" : "Either latestPublicationDate or documentCreationDate. Used for date sorting. NOT RETRIEVABLE",
             "type" : "string"
           },
           "hasRecoveryStatus" : {
-            "description" : "If this document has a recovery status or not. Used to sort. NOT RETRIEVABLE",
+            "description" : "If this document has a recovery status or not. Used to sort (by pushing all non-recovery status documents to the end). NOT RETRIEVABLE",
             "type" : "boolean"
           }
         },
@@ -720,6 +723,10 @@
             "items" : {
               "$ref" : "#/components/schemas/PermitPurpose"
             }
+          },
+          "issuingAuthorityName" : {
+            "description" : "issuingAuthorityName",
+            "type" : "string"
           }
         }
       },
@@ -735,7 +742,7 @@
             }
           }
         },
-        "example" : "\"fieldMappings\": [{\r\n\t\t\"sourceFieldName\": \"permitTitleEn\",\r\n\t\t\"targetFieldName\": \"permitTitle\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"noticeEn\",\r\n\t\t\"targetFieldName\": \"notice\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"purposeEn\",\r\n\t\t\"targetFieldName\": \"purpose\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"descriptionEn\",\r\n\t\t\"targetFieldName\": \"description\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"authorityNameEn\",\r\n\t\t\"targetFieldName\": \"authorityName\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"affectedSpeciesEn\",\r\n\t\t\"targetFieldName\": \"affectedSpecies\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"contactsEn\",\r\n\t\t\"targetFieldName\": \"contacts\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"preConditionsEn\",\r\n\t\t\"targetFieldName\": \"preConditions\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"termsEn\",\r\n\t\t\"targetFieldName\": \"terms\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"protectedEn\",\r\n\t\t\"targetFieldName\": \"protected\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"relevantEn\",\r\n\t\t\"targetFieldName\": \"relevant\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"activityLocationEn\",\r\n\t\t\"targetFieldName\": \"activityLocation\"\r\n\t}\r\n]"
+        "example" : "\"fieldMappings\": [{\r\n\t\t\"sourceFieldName\": \"permitTitleEn\",\r\n\t\t\"targetFieldName\": \"permitTitle\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"noticeEn\",\r\n\t\t\"targetFieldName\": \"notice\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"purposeEn\",\r\n\t\t\"targetFieldName\": \"purpose\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"descriptionEn\",\r\n\t\t\"targetFieldName\": \"description\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"issuingAuthorityNameEn\",\r\n\t\t\"targetFieldName\": \"issuingAuthorityName\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"authorityNameEn\",\r\n\t\t\"targetFieldName\": \"authorityName\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"affectedSpeciesEn\",\r\n\t\t\"targetFieldName\": \"affectedSpecies\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"contactsEn\",\r\n\t\t\"targetFieldName\": \"contacts\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"preConditionsEn\",\r\n\t\t\"targetFieldName\": \"preConditions\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"termsEn\",\r\n\t\t\"targetFieldName\": \"terms\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"protectedEn\",\r\n\t\t\"targetFieldName\": \"protected\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"relevantEn\",\r\n\t\t\"targetFieldName\": \"relevant\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"activityLocationEn\",\r\n\t\t\"targetFieldName\": \"activityLocation\"\r\n\t}\r\n]"
       },
       "PermitsFieldMappingFr" : {
         "description" : "Represents indexer field mappings.",
@@ -749,7 +756,7 @@
             }
           }
         },
-        "example" : "\"fieldMappings\": [{\r\n\t\t\"sourceFieldName\": \"permitTitleFr\",\r\n\t\t\"targetFieldName\": \"permitTitle\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"noticeFr\",\r\n\t\t\"targetFieldName\": \"notice\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"purposeFr\",\r\n\t\t\"targetFieldName\": \"purpose\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"descriptionFr\",\r\n\t\t\"targetFieldName\": \"description\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"authorityNameFr\",\r\n\t\t\"targetFieldName\": \"authorityName\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"affectedSpeciesFr\",\r\n\t\t\"targetFieldName\": \"affectedSpecies\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"contactsFr\",\r\n\t\t\"targetFieldName\": \"contacts\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"preConditionsFr\",\r\n\t\t\"targetFieldName\": \"preConditions\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"termsFr\",\r\n\t\t\"targetFieldName\": \"terms\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"protectedFr\",\r\n\t\t\"targetFieldName\": \"protected\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"relevantFr\",\r\n\t\t\"targetFieldName\": \"relevant\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"activityLocationFr\",\r\n\t\t\"targetFieldName\": \"activityLocation\"\r\n\t}\r\n]"
+        "example" : "\"fieldMappings\": [{\r\n\t\t\"sourceFieldName\": \"permitTitleFr\",\r\n\t\t\"targetFieldName\": \"permitTitle\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"noticeFr\",\r\n\t\t\"targetFieldName\": \"notice\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"purposeFr\",\r\n\t\t\"targetFieldName\": \"purpose\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"descriptionFr\",\r\n\t\t\"targetFieldName\": \"description\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"authorityNameFr\",\r\n\t\t\"targetFieldName\": \"authorityName\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"issuingAuthorityNameFr\",\r\n\t\t\"targetFieldName\": \"issuingAuthorityName\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"affectedSpeciesFr\",\r\n\t\t\"targetFieldName\": \"affectedSpecies\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"contactsFr\",\r\n\t\t\"targetFieldName\": \"contacts\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"preConditionsFr\",\r\n\t\t\"targetFieldName\": \"preConditions\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"termsFr\",\r\n\t\t\"targetFieldName\": \"terms\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"protectedFr\",\r\n\t\t\"targetFieldName\": \"protected\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"relevantFr\",\r\n\t\t\"targetFieldName\": \"relevant\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"activityLocationFr\",\r\n\t\t\"targetFieldName\": \"activityLocation\"\r\n\t}\r\n]"
       },
       "SpeciesFieldMappingEn" : {
         "description" : "Represents indexer field mappings.",
