@@ -925,6 +925,10 @@
             "items" : {
               "$ref" : "#/components/schemas/RecoveryTeam"
             }
+          },
+          "ministerRecieptDate" : {
+            "description" : "Minister receipt date.",
+            "type" : "string"
           }
         }
       },
