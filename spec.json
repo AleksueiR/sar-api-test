@@ -545,10 +545,6 @@
             "description" : "Document status of proposed or current. Used to calculate recovery status and its sorting. NOT RETRIEVABLE",
             "type" : "number"
           },
-          "documentType" : {
-            "description" : "Document type in En or Fr. Used for sorting alphabetically. NOT RETRIEVABLE",
-            "type" : "string"
-          },
           "speciesNames" : {
             "description" : "Related species names of cosewic and legal in En and Fr. Used for keyword searching. NOT RETRIEVABLE",
             "type" : "array",
@@ -574,6 +570,14 @@
           "hasRecoveryStatus" : {
             "description" : "If this document has a recovery status or not. Used to sort (by pushing all non-recovery status documents to the end). NOT RETRIEVABLE",
             "type" : "boolean"
+          },
+          "documentTitleSort" : {
+            "description" : "Document title that is void of accents and all upper-cased. Not retrievable, used for sorting.",
+            "type" : "string"
+          },
+          "documentTypeSort" : {
+            "description" : "Document type in En or Fr. Used for sorting alphabetically. NOT RETRIEVABLE",
+            "type" : "string"
           }
         },
         "example" : "{\n    \"documentTitle\": \"some text\",\n    \"documentCreateDate\": \"2018-02-10T09:30Z\",\n    \"documentDescription\": \"some text\",\n    \"documentTypeId\": 50.13,\n    \"consultationStartDate\": \"2018-02-10T09:30Z\",\n    \"consultationEndDate\": \"2018-02-10T09:30Z\",\n    \"attachments\": [\n        {\n            \"attachmentId\": 89.12,\n            \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n            \"attachmentTitle\": \"some text\",\n            \"html\": \"some text\",\n            \"file\": \"some text\",\n            \"fileSize\": 87.93\n        },\n        {\n            \"attachmentId\": 69.06,\n            \"attachmentPublicationDate\": \"2018-02-10T09:30Z\",\n            \"attachmentTitle\": \"some text\",\n            \"html\": \"some text\",\n            \"file\": \"some text\",\n            \"fileSize\": 41.15\n        }\n    ],\n    \"contacts\": [\n        {\n            \"contactId\": 11.39,\n            \"salutation\": \"some text\",\n            \"firstName\": \"some text\",\n            \"lastName\": \"some text\",\n            \"address\": \"some text\",\n            \"city\": \"some text\",\n            \"provinceState\": \"some text\",\n            \"postalCode\": \"some text\",\n            \"email\": \"some text\",\n            \"phone\": \"some text\",\n            \"fax\": \"some text\",\n            \"title\": \"some text\",\n            \"organization\": \"some text\"\n        },\n        {\n            \"contactId\": 14.57,\n            \"salutation\": \"some text\",\n            \"firstName\": \"some text\",\n            \"lastName\": \"some text\",\n            \"address\": \"some text\",\n            \"city\": \"some text\",\n            \"provinceState\": \"some text\",\n            \"postalCode\": \"some text\",\n            \"email\": \"some text\",\n            \"phone\": \"some text\",\n            \"fax\": \"some text\",\n            \"title\": \"some text\",\n            \"organization\": \"some text\"\n        }\n    ],\n    \"links\": [\n        {\n            \"linkId\": 60.24,\n            \"url\": \"some text\",\n            \"description\": \"some text\"\n        },\n        {\n            \"linkId\": 16.84,\n            \"url\": \"some text\",\n            \"description\": \"some text\"\n        }\n    ],\n    \"ranges\": [\n        49.73,\n        70.64\n    ],\n    \"species\": [\n        99.45,\n        65.92\n    ],\n    \"taxonomies\": [\n        17.11,\n        43.12\n    ],\n    \"consultationYears\": [\n        59.1,\n        18.04\n    ],\n    \"id\": 7.05,\n    \"consultationActivationStatusId\": 60.01,\n    \"finalOrDelayed\": 43.38,\n    \"documentStatusId\": 25.75,\n    \"documentType\": \"some text\",\n    \"speciesNames\": [\n        \"some text\",\n        \"some text\"\n    ],\n    \"earliestPublicationDate\": \"2018-02-10T09:30Z\",\n    \"latestPublicationDate\": \"2018-02-10T09:30Z\",\n    \"sortDate\": \"2018-02-10T09:30Z\",\n    \"hasRecoveryStatus\": true\n}"
@@ -981,7 +985,42 @@
             }
           }
         },
-        "example" : "{\r\n  \"fieldMappings\": [\r\n    {\r\n      \"sourceFieldName\": \"documentTitleEn\",\r\n      \"targetFieldName\": \"documentTitle\"\r\n    },\r\n    {\r\n      \"sourceFieldName\": \"documentDescriptionEn\",\r\n      \"targetFieldName\": \"documentDescription\"\r\n    },\r\n    {\r\n      \"sourceFieldName\": \"documentTypeEn\",\r\n      \"targetFieldName\": \"documentType\"\r\n    },\r\n    {\r\n      \"sourceFieldName\": \"attachmentsEn\",\r\n      \"targetFieldName\": \"attachments\"\r\n    },\r\n    {\r\n      \"sourceFieldName\": \"contactsEn\",\r\n      \"targetFieldName\": \"contacts\"\r\n    },\r\n    {\r\n      \"sourceFieldName\": \"linksEn\",\r\n      \"targetFieldName\": \"links\"\r\n    },\r\n    {\r\n      \"sourceFieldName\": \"speciesNamesEn\",\r\n      \"targetFieldName\": \"speciesNames\"\r\n    },\r\n    {\r\n      \"sourceFieldName\": \"earliestPublicationDateEn\",\r\n      \"targetFieldName\": \"earliestPublicationDate\"\r\n    },\r\n    {\r\n      \"sourceFieldName\": \"latestPublicationDateEn\",\r\n      \"targetFieldName\": \"latestPublicationDate\"\r\n    },\r\n    {\r\n      \"sourceFieldName\": \"sortDateEn\",\r\n      \"targetFieldName\": \"sortDate\"\r\n    }\r\n  ]\r\n}"
+        "example" : {
+          "fieldMappings" : [ {
+            "sourceFieldName" : "documentTitle(En/Fr)",
+            "targetFieldName" : "documentTitle"
+          }, {
+            "sourceFieldName" : "documentTitleSort(En/Fr)",
+            "targetFieldName" : "documentTitleSort"
+          }, {
+            "sourceFieldName" : "documentDescription(En/Fr)",
+            "targetFieldName" : "documentDescription"
+          }, {
+            "sourceFieldName" : "documentTypeSort(En/Fr)",
+            "targetFieldName" : "documentTypeSort"
+          }, {
+            "sourceFieldName" : "attachments(En/Fr)",
+            "targetFieldName" : "attachments"
+          }, {
+            "sourceFieldName" : "contacts(En/Fr)",
+            "targetFieldName" : "contacts"
+          }, {
+            "sourceFieldName" : "links(En/Fr)",
+            "targetFieldName" : "links"
+          }, {
+            "sourceFieldName" : "speciesNames(En/Fr)",
+            "targetFieldName" : "speciesNames"
+          }, {
+            "sourceFieldName" : "earliestPublicationDate(En/Fr)",
+            "targetFieldName" : "earliestPublicationDate"
+          }, {
+            "sourceFieldName" : "latestPublicationDate(En/Fr)",
+            "targetFieldName" : "latestPublicationDate"
+          }, {
+            "sourceFieldName" : "sortDate(En/Fr)",
+            "targetFieldName" : "sortDate"
+          } ]
+        }
       }
     }
   },
