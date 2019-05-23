@@ -1,0 +1,32 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "SAR-DMTS",
+    "description" : "SAR DMTS API documentation.",
+    "version" : "1.0.0"
+  },
+  "paths" : {
+    "/api/DocumentsApi/Save/{id}" : {
+      "summary" : "Saves the JSON data to the Azure Blob.",
+      "put" : {
+        "responses" : {
+          "202" : {
+            "description" : "Success."
+          },
+          "400" : {
+            "description" : "Error."
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "description" : "documentId",
+        "required" : true,
+        "schema" : {
+          "type" : "integer"
+        }
+      } ]
+    }
+  }
+}
