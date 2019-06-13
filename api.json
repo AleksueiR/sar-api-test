@@ -6,25 +6,48 @@
     "version" : "1.0.0"
   },
   "paths" : {
-    "/api/DocumentsApi/Save/{id}" : {
-      "summary" : "Saves the JSON data to the Azure Blob.",
-      "put" : {
+    "/api/document/{id}" : {
+      "summary" : "Work with Documents.",
+      "get" : {
+        "summary" : "Retrieve a Document.",
         "responses" : {
-          "202" : {
-            "description" : "Success."
-          },
-          "400" : {
-            "description" : "Error."
+          "200" : {
+            "content" : {
+              "application/json" : { }
+            }
           }
+        }
+      },
+      "put" : {
+        "summary" : "Update a Document.",
+        "requestBody" : {
+          "description" : "JSON Object representing the Document.",
+          "required" : true
+        },
+        "responses" : {
+          "200" : { }
+        }
+      },
+      "delete" : {
+        "summary" : "Delete a Document.",
+        "responses" : {
+          "200" : { }
         }
       },
       "parameters" : [ {
         "name" : "id",
         "in" : "path",
-        "description" : "documentId",
+        "description" : "Document Id",
         "required" : true,
         "schema" : {
           "type" : "integer"
+        }
+      }, {
+        "name" : "Authorization",
+        "in" : "header",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
         }
       } ]
     }
