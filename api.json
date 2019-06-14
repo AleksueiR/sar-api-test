@@ -15,15 +15,23 @@
             "content" : {
               "application/json" : { }
             }
-          }
+          },
+          "404" : { }
         }
       },
       "put" : {
-        "summary" : "Update a Document.",
+        "summary" : "Replace an existing Document.",
         "requestBody" : {
           "description" : "JSON Object representing the Document.",
           "required" : true
         },
+        "responses" : {
+          "200" : { },
+          "304" : { }
+        }
+      },
+      "post" : {
+        "summary" : "Create a new Document.",
         "responses" : {
           "200" : { }
         }
