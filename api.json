@@ -28,7 +28,8 @@
         },
         "responses" : {
           "200" : { },
-          "304" : { }
+          "304" : { },
+          "404" : { }
         }
       },
       "delete" : {
@@ -64,6 +65,9 @@
             "application/json" : { }
           },
           "required" : true
+        },
+        "responses" : {
+          "201" : { }
         }
       }
     }
