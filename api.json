@@ -1,75 +1,455 @@
 {
-  "openapi" : "3.0.2",
-  "info" : {
-    "title" : "SAR-DMTS",
-    "description" : "SAR DMTS API documentation.",
-    "version" : "1.0.0"
-  },
-  "paths" : {
-    "/api/document/{id}" : {
-      "summary" : "Work with a Document.",
-      "get" : {
-        "summary" : "Retrieve a Document.",
-        "responses" : {
-          "200" : {
-            "description" : "Document entity as JSON.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "404" : { }
-        }
-      },
-      "put" : {
-        "summary" : "Replace an existing Document.",
-        "requestBody" : {
-          "description" : "JSON Object representing the Document.",
-          "required" : true
-        },
-        "responses" : {
-          "200" : { },
-          "304" : { },
-          "404" : { }
-        }
-      },
-      "delete" : {
-        "summary" : "Delete a Document.",
-        "responses" : {
-          "200" : { }
-        }
-      },
-      "parameters" : [ {
-        "name" : "id",
-        "in" : "path",
-        "description" : "Document Id",
-        "required" : true,
-        "schema" : {
-          "type" : "integer"
-        }
-      }, {
-        "name" : "Authorization",
-        "in" : "header",
-        "required" : true,
-        "schema" : {
-          "type" : "string"
-        }
-      } ]
+    "openapi": "3.0.2",
+    "info": {
+        "title": "SAR-DMTS",
+        "version": "1.0.0",
+        "description": "SAR DMTS API documentation."
     },
-    "/api/document" : {
-      "summary" : "Work with Documents.",
-      "post" : {
-        "summary" : "Create a new Document.",
-        "requestBody" : {
-          "description" : "Document entity as JSON.",
-          "content" : {
-            "application/json" : { }
-          },
-          "required" : true
+    "paths": {
+        "/api/document/{id}": {
+            "summary": "Managing the Document entities.",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+
+                            }
+                        },
+                        "description": "Document entity returned as json."
+                    },
+                    "404": {
+                        "description": "Document not found."
+                    }
+                },
+                "summary": "Retrieve a Document."
+            },
+            "put": {
+                "requestBody": {
+                    "description": "JSON Object representing the Document.",
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Document updated."
+                    },
+                    "201": {
+                        "description": "Document created."
+                    },
+                    "304": {
+                        "description": "No changes."
+                    },
+                    "404": {
+                        "description": "Document not found."
+                    }
+                },
+                "summary": "Create or replace an existing Document."
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Document deleted."
+                    },
+                    "404": {
+                        "description": "Document not found."
+                    }
+                },
+                "summary": "Delete a Document."
+            },
+            "parameters": [
+                {
+                    "name": "id",
+                    "description": "Document Id",
+                    "schema": {
+                        "type": "integer"
+                    },
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "name": "Authorization",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "in": "header",
+                    "required": true
+                }
+            ]
         },
-        "responses" : {
-          "201" : { }
+        "/api/file": {
+            "summary": "Managing blob files.",
+            "put": {
+                "requestBody": {
+                    "description": "JSON object containing properties: FileName, ContentType and Data. See the example.\r\n}\r\n",
+                    "content": {
+                        "application/json": {
+                            "examples": {
+                                "Example JSON to PUT.": {
+                                    "value": "{\r\n    FileName: \"TestFile.jpg\",\r\n    ContentType:\"image/jpeg\",\r\n    Data: \"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==\"\r\n}"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "File created."
+                    }
+                },
+                "summary": "Create or replace an existing file."
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "File deleted."
+                    },
+                    "404": {
+                        "description": "File not found."
+                    }
+                },
+                "summary": "Delete a file."
+            },
+            "parameters": [
+                {
+                    "name": "filename",
+                    "description": "Name of the file, including extension.",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "in": "query",
+                    "required": true
+                },
+                {
+                    "name": "Authorization",
+                    "description": "",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "in": "header",
+                    "required": true
+                }
+            ]
+        },
+        "/api/htmlattachment": {
+            "description": "The english and french html attachments may have been individually Created, Updated, or Not Modified. See the response status within the \"fr\" and \"en\" objects for the response specific to that object.",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "example response": {
+                                        "value": {
+                                            "results": {
+                                                "en": {
+                                                    "Message": "",
+                                                    "Data": "html content english",
+                                                    "ApiResults": "Success",
+                                                    "StatusCode": "OK"
+                                                },
+                                                "fr": {
+                                                    "Message": "",
+                                                    "Data": "html content french",
+                                                    "ApiResults": "Success",
+                                                    "StatusCode": "OK"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "description": "Get the french and english html content."
+                    }
+                },
+                "summary": "Get both french and english versions of html attachment."
+            },
+            "put": {
+                "requestBody": {
+                    "description": "The combined english and french html content, see example for formatting.",
+                    "content": {
+                        "text/html": {
+                            "schema": {
+                                "type": "string"
+                            },
+                            "examples": {
+                                "Example html attachment PUT content.": {
+                                    "value": "<en>\n    english html content here\n</en>\n<fr>\n    french html content here\n</fr>"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Html attachment updated."
+                    },
+                    "201": {
+                        "description": "Html attachment created."
+                    },
+                    "304": {
+                        "description": "Html attachment not modified."
+                    }
+                },
+                "summary": "Create or replace an html attachment."
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Html attachment deleted."
+                    },
+                    "404": {
+                        "description": "Html attachment not found."
+                    }
+                },
+                "summary": "Delete an html attachment."
+            },
+            "parameters": [
+                {
+                    "name": "Authentication",
+                    "description": "",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "in": "header",
+                    "required": true
+                },
+                {
+                    "name": "filename",
+                    "description": "The base attachment filename/id, eg: filename.html (without a language prefix).",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "in": "query",
+                    "required": true
+                }
+            ]
+        },
+        "/api/species/{id}": {
+            "summary": "Managing the Species entities.",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+
+                            }
+                        },
+                        "description": "Entity returned as json."
+                    },
+                    "404": {
+                        "description": "Entity not found."
+                    }
+                },
+                "summary": "Retrieve an entity."
+            },
+            "put": {
+                "requestBody": {
+                    "description": "JSON Object representing the Document.",
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Document updated."
+                    },
+                    "201": {
+                        "description": "Document created."
+                    },
+                    "304": {
+                        "description": "No changes."
+                    },
+                    "404": {
+                        "description": "Document not found."
+                    }
+                },
+                "summary": "Create or replace an existing entity."
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Species deleted."
+                    },
+                    "404": {
+                        "description": "Species not found."
+                    }
+                },
+                "summary": "Delete an entity."
+            },
+            "parameters": [
+                {
+                    "name": "id",
+                    "description": "Entity Id",
+                    "schema": {
+                        "type": "integer"
+                    },
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "name": "Authorization",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "in": "header",
+                    "required": true
+                }
+            ]
+        },
+        "/api/permit/{id}": {
+            "summary": "Managing the Permit entities.",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+
+                            }
+                        },
+                        "description": "Entity returned as json."
+                    },
+                    "404": {
+                        "description": "Entity not found."
+                    }
+                },
+                "summary": "Retrieve an entity."
+            },
+            "put": {
+                "requestBody": {
+                    "description": "JSON Object representing the Document.",
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Document updated."
+                    },
+                    "201": {
+                        "description": "Document created."
+                    },
+                    "304": {
+                        "description": "No changes."
+                    },
+                    "404": {
+                        "description": "Document not found."
+                    }
+                },
+                "summary": "Create or replace an existing entity."
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Permit deleted."
+                    },
+                    "404": {
+                        "description": "Permit not found."
+                    }
+                },
+                "summary": "Delete an entity."
+            },
+            "parameters": [
+                {
+                    "name": "id",
+                    "description": "Entity Id",
+                    "schema": {
+                        "type": "integer"
+                    },
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "name": "Authorization",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "in": "header",
+                    "required": true
+                }
+            ]
+        },
+        "/api/log": {
+            "summary": "Get records from the app logs.",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Get the log records."
+                    }
+                },
+                "summary": "Get log records."
+            },
+            "parameters": [
+                {
+                    "name": "Authorization",
+                    "description": "",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "in": "header",
+                    "required": true
+                }
+            ]
+        },
+        "/api/image/": {
+            "summary": "Managing blob image files.",
+            "put": {
+                "requestBody": {
+                    "description": "JSON object containing properties: FileName, ContentType and Data. See the example.\r\n}\r\n",
+                    "content": {
+                        "application/json": {
+                            "examples": {
+                                "Example JSON to PUT.": {
+                                    "value": "{\r\n    FileName: \"TestFile.jpg\",\r\n    ContentType:\"image/jpeg\",\r\n    Data: \"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==\"\r\n}"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "File created."
+                    }
+                },
+                "summary": "Create or replace an existing image file."
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Image deleted."
+                    },
+                    "404": {
+                        "description": "Image not found."
+                    }
+                },
+                "summary": "Delete an image file."
+            },
+            "parameters": [
+                {
+                    "name": "filename",
+                    "description": "Name of the image file, including extension.",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "in": "query",
+                    "required": true
+                },
+                {
+                    "name": "Authorization",
+                    "description": "",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "in": "header",
+                    "required": true
+                }
+            ]
         }
-      }
     }
-  }
 }
