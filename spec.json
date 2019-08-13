@@ -1,1122 +1,1056 @@
 {
-  "openapi" : "3.0.2",
-  "info" : {
-    "title" : "SAR-CWS",
-    "description" : "[ Description goes here ]\n\n# Introduction\n\nThis API is documented in OpenAPI format and represent SAR-CWS API.\n\n[ More introduction text goes here ]\n\n### Notes\n\nUse plurals for `Species/Documents/Permits/Consultations` filter names. For example, `Permits` use the following filter names: `issuingAuthorities`, `issuingYears`, and `issuingMonths`.\n```json\n// /api/permits/searchFilters\n{\n    \"returnStatus\": \"ok\",\n    \"order\": [\"issuingAuthorities\", \"issuingYears\", \"issuingMonths\"],\n    \"filters\": {\n        \"issuingAuthorities\": [\n            { \"id\": 2, \"name\": \"Environment Canada\" },\n            { \"id\": 3, \"name\": \"Department of Fisheries and Oceans\" },\n            { \"id\": 4, \"name\": \"Parks Canada Agency\" }\n        ],\n        \"issuingYears\": [\n            { \"id\": 2000, \"name\": \"2000\" },\n            { \"id\": 2001, \"name\": \"2001\" },\n            { \"id\": 2002, \"name\": \"2002\" }\n        ],\n        \"issuingMonths\": [\n            { \"id\": 0, \"name\": \"0\" },\n            { \"id\": 1, \"name\": \"1\" },\n            { \"id\": 2, \"name\": \"2\" }            \n        ]\n    }\n}\n```",
-    "version" : "1.0.0"
-  },
-  "paths" : {
-    "/permits/getMappingFieldsEn" : {
-      "get" : {
-        "tags" : [ "permits" ],
-        "summary" : "Get MappingEn",
-        "description" : "It gets the mapping fields of permits",
-        "responses" : {
-          "200" : {
-            "description" : " Successful operation",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/PermitsFieldMappingEn"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request / client error"
-          },
-          "500" : {
-            "description" : "Server error"
-          }
-        }
-      }
+    "openapi": "3.0.2",
+    "info": {
+        "title": "SAR-CWS",
+        "version": "1.0.0",
+        "description": "[ Description goes here ]\n\n# Introduction\n\nThis API is documented in OpenAPI format and represent SAR-CWS API.\n\n[ More introduction text goes here ]\n\n### Notes\n\nUse plurals for `Species/Documents/Permits/Consultations` filter names. For example, `Permits` use the following filter names: `issuingAuthorities`, `issuingYears`, and `issuingMonths`.\n```json\n// /api/permits/searchFilters\n{\n    \"returnStatus\": \"ok\",\n    \"order\": [\"issuingAuthorities\", \"issuingYears\", \"issuingMonths\"],\n    \"filters\": {\n        \"issuingAuthorities\": [\n            { \"id\": 2, \"name\": \"Environment Canada\" },\n            { \"id\": 3, \"name\": \"Department of Fisheries and Oceans\" },\n            { \"id\": 4, \"name\": \"Parks Canada Agency\" }\n        ],\n        \"issuingYears\": [\n            { \"id\": 2000, \"name\": \"2000\" },\n            { \"id\": 2001, \"name\": \"2001\" },\n            { \"id\": 2002, \"name\": \"2002\" }\n        ],\n        \"issuingMonths\": [\n            { \"id\": 0, \"name\": \"0\" },\n            { \"id\": 1, \"name\": \"1\" },\n            { \"id\": 2, \"name\": \"2\" }            \n        ]\n    }\n}\n```"
     },
-    "/permits/getMappingFieldsFr" : {
-      "get" : {
-        "tags" : [ "permits" ],
-        "summary" : "Get MappingFr",
-        "description" : "It gets the mapping fields of permits",
-        "responses" : {
-          "200" : {
-            "description" : " Successful operation",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/PermitsFieldMappingFr"
-                }
-              }
+    "paths": {
+        "/indexes/perblobidx(en/fr)": {
+            "get": {
+                "tags": [
+                    "permits"
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PermitsIndexResponse"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid request / Client error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "summary": "Get Index",
+                "description": "Azure Index representation of permits"
             }
-          },
-          "400" : {
-            "description" : "Invalid request / client error"
-          },
-          "500" : {
-            "description" : "Server error"
-          }
-        }
-      }
-    },
-    "/species/getMappingFieldsEn" : {
-      "get" : {
-        "tags" : [ "species" ],
-        "summary" : "Get MappingEn",
-        "description" : "It gets the mapping fields of species",
-        "responses" : {
-          "200" : {
-            "description" : " Successful operation",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/PermitsFieldMappingEn"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request / client error"
-          },
-          "500" : {
-            "description" : "Server error"
-          }
-        }
-      }
-    },
-    "/species/getMappingFieldsFr" : {
-      "get" : {
-        "tags" : [ "species" ],
-        "summary" : "Get MappingFr",
-        "description" : "It gets the mapping fields of species",
-        "responses" : {
-          "200" : {
-            "description" : " Successful operation",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/SpeciesFieldMappingFr"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request / client error"
-          },
-          "500" : {
-            "description" : "Server error"
-          }
-        }
-      }
-    },
-    "/indexes/perblobidx(en/fr)" : {
-      "get" : {
-        "tags" : [ "permits" ],
-        "summary" : "Get Index",
-        "description" : "Azure Index representation of permits",
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/PermitsIndexResponse"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request / Client error"
-          },
-          "500" : {
-            "description" : "Server error"
-          }
-        }
-      }
-    },
-    "/indexes/speblobidx(en/fr)" : {
-      "get" : {
-        "tags" : [ "species" ],
-        "summary" : "Get Index",
-        "description" : "Azure Index representation of permits",
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/SpeciesIndexResponse"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request / Client error"
-          },
-          "500" : {
-            "description" : "Server error"
-          }
-        }
-      }
-    },
-    "/indexers/docblobonce(en/fr)" : {
-      "summary" : "Indexer field mappings of documents and consultations",
-      "get" : {
-        "tags" : [ "documents", "consultations" ],
-        "summary" : "Document Indexer Field Mappings",
-        "description" : "Indexer field mappings of documents and consultations",
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation.",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/DocumentFieldMappingResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/indexes/docblobidx(en/fr)" : {
-      "summary" : "Index representation of documents and consultations",
-      "get" : {
-        "tags" : [ "documents", "consultations" ],
-        "summary" : "Document Index",
-        "description" : "Azure Index representation of documents and public consultations.",
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation.",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/DocumentIndexResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "components" : {
-    "schemas" : {
-      "RecoveryTeam" : {
-        "required" : [ "users", "name" ],
-        "type" : "object",
-        "properties" : {
-          "name" : {
-            "description" : "Recovery team name.",
-            "type" : "string"
-          },
-          "users" : {
-            "description" : "A list of recovery team users.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/RecoveryTeamUser"
-            }
-          }
-        }
-      },
-      "RecoveryTeamUser" : {
-        "required" : [ "firstName", "lastName", "position" ],
-        "type" : "object",
-        "properties" : {
-          "firstName" : {
-            "description" : "User first name.",
-            "type" : "string"
-          },
-          "lastName" : {
-            "description" : "User last name.",
-            "type" : "string"
-          },
-          "phone" : {
-            "description" : "User position.",
-            "type" : "string"
-          },
-          "email" : {
-            "description" : "User email.",
-            "type" : "string"
-          },
-          "position" : {
-            "description" : "User phone number.",
-            "type" : "string"
-          },
-          "affiliation" : {
-            "description" : "User affiliations.",
-            "type" : "string"
-          }
-        }
-      },
-      "PermitRelatedSpecies" : {
-        "properties" : {
-          "speciesId" : {
-            "description" : "Species ID",
-            "type" : "integer"
-          },
-          "species" : {
-            "description" : "Species Names",
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          }
-        }
-      },
-      "PermitPurpose" : {
-        "properties" : {
-          "purposeId" : {
-            "description" : "Purpose ID",
-            "type" : "integer"
-          },
-          "purposeName" : {
-            "description" : "Purpose Name",
-            "type" : "string"
-          }
-        }
-      },
-      "PermitLocation" : {
-        "description" : "Permit Location",
-        "properties" : {
-          "rangeId" : {
-            "description" : "Locaion Range ID",
-            "type" : "integer"
-          },
-          "locationName" : {
-            "description" : "Permit Location Name",
-            "type" : "string"
-          }
-        }
-      },
-      "PermitContactPerson" : {
-        "properties" : {
-          "personId" : {
-            "description" : "Contact person ID",
-            "type" : "integer"
-          },
-          "address" : {
-            "description" : "Contact person address",
-            "type" : "string"
-          },
-          "city" : {
-            "description" : "Contact person city",
-            "type" : "string"
-          },
-          "provinceState" : {
-            "description" : "Province or State",
-            "type" : "string"
-          },
-          "postalCode" : {
-            "description" : "Postal Code",
-            "type" : "string"
-          },
-          "email" : {
-            "description" : "Contact person email",
-            "type" : "string"
-          },
-          "phone" : {
-            "description" : "Phone number",
-            "type" : "string"
-          },
-          "fax" : {
-            "description" : "Contact person fax",
-            "type" : "string"
-          },
-          "salutationId" : {
-            "description" : "Salutation ID",
-            "type" : "string"
-          },
-          "salutation" : {
-            "description" : "Contact person salutation",
-            "type" : "string"
-          },
-          "title" : {
-            "description" : "Contact person Title",
-            "type" : "string"
-          },
-          "organization" : {
-            "description" : "Contact Person Organization",
-            "type" : "string"
-          }
-        }
-      },
-      "PermitAuthority" : {
-        "properties" : {
-          "authorityName" : {
-            "description" : "Permit authority name",
-            "type" : "string"
-          },
-          "authorityId" : {
-            "description" : "authority Id",
-            "type" : "array",
-            "items" : {
-              "type" : "integer"
-            }
-          }
-        }
-      },
-      "DocumentAttachment" : {
-        "description" : "A document file attachment.",
-        "properties" : {
-          "attachmentId" : {
-            "description" : "Attachment ID.",
-            "type" : "number"
-          },
-          "attachmentPublicationDate" : {
-            "format" : "date-time",
-            "description" : "Attachment publication date.",
-            "type" : "string"
-          },
-          "attachmentTitle" : {
-            "description" : "Attachment title.",
-            "type" : "string"
-          },
-          "html" : {
-            "description" : "HTML link to attachment.",
-            "type" : "string"
-          },
-          "file" : {
-            "description" : "File link to the attachment.",
-            "type" : "string"
-          },
-          "fileSize" : {
-            "description" : "Size of the file in MB",
-            "type" : "number"
-          }
-        }
-      },
-      "DocumentContact" : {
-        "description" : "A document contact.",
-        "properties" : {
-          "contactId" : {
-            "description" : "Contact ID.",
-            "type" : "number"
-          },
-          "salutation" : {
-            "description" : "Contact Salutation.",
-            "type" : "string"
-          },
-          "firstName" : {
-            "description" : "Contact first name.",
-            "type" : "string"
-          },
-          "lastName" : {
-            "description" : "Contact last name.",
-            "type" : "string"
-          },
-          "address" : {
-            "description" : "Contact address.",
-            "type" : "string"
-          },
-          "city" : {
-            "description" : "Contact city.",
-            "type" : "string"
-          },
-          "provinceState" : {
-            "description" : "Contact province/state.",
-            "type" : "string"
-          },
-          "postalCode" : {
-            "description" : "Contact postal code.",
-            "type" : "string"
-          },
-          "email" : {
-            "description" : "Contact email.",
-            "type" : "string"
-          },
-          "phone" : {
-            "description" : "Contact phone number.",
-            "type" : "string"
-          },
-          "fax" : {
-            "description" : "Contact fax number.",
-            "type" : "string"
-          },
-          "title" : {
-            "description" : "Contact title.",
-            "type" : "string"
-          },
-          "organization" : {
-            "description" : "Contact organization.",
-            "type" : "string"
-          }
-        }
-      },
-      "DocumentLink" : {
-        "description" : "A document link.",
-        "properties" : {
-          "linkId" : {
-            "description" : "Link ID.",
-            "type" : "number"
-          },
-          "url" : {
-            "description" : "Link URL.",
-            "type" : "string"
-          },
-          "description" : {
-            "description" : "Link description.",
-            "type" : "string"
-          }
-        }
-      },
-      "DocumentIndexResponse" : {
-        "description" : "Returns the index representation of documents.",
-        "properties" : {
-          "documentTitle" : {
-            "description" : "Document Title.",
-            "type" : "string"
-          },
-          "documentCreateDate" : {
-            "format" : "date-time",
-            "description" : "Document creation date.",
-            "type" : "string"
-          },
-          "documentDescription" : {
-            "description" : "Document description.",
-            "type" : "string"
-          },
-          "documentTypeId" : {
-            "description" : "Document Type ID.",
-            "type" : "number"
-          },
-          "consultationStartDate" : {
-            "format" : "date-time",
-            "description" : "Consultation start date.",
-            "type" : "string"
-          },
-          "consultationEndDate" : {
-            "format" : "date-time",
-            "description" : "Consultation end date.",
-            "type" : "string"
-          },
-          "attachments" : {
-            "description" : "Document attachments.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/DocumentAttachment"
-            }
-          },
-          "contacts" : {
-            "description" : "Document contacts.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/DocumentContact"
-            }
-          },
-          "links" : {
-            "description" : "Document links.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/DocumentLink"
-            }
-          },
-          "ranges" : {
-            "description" : "List of ranges.",
-            "type" : "array",
-            "items" : {
-              "type" : "number"
-            }
-          },
-          "species" : {
-            "description" : "List of species.",
-            "type" : "array",
-            "items" : {
-              "type" : "number"
-            }
-          },
-          "taxonomies" : {
-            "description" : "List of taxonomies.",
-            "type" : "array",
-            "items" : {
-              "type" : "number"
-            }
-          },
-          "consultationYears" : {
-            "description" : "List of consultation years.",
-            "type" : "array",
-            "items" : {
-              "type" : "number"
-            }
-          },
-          "id" : {
-            "description" : "Document ID.",
-            "type" : "number"
-          },
-          "consultationActivationStatusId" : {
-            "description" : "Activation status of a consultation. Used to calculate consultation status id.",
-            "type" : "number"
-          },
-          "finalOrDelayed" : {
-            "description" : "Document recovery status of final or delayed. (Final=5, Delayed=4, otherwise null). Used to filtering.",
-            "type" : "number"
-          },
-          "documentStatusId" : {
-            "description" : "Document status of proposed or current. Used to calculate recovery status and its sorting. NOT RETRIEVABLE",
-            "type" : "number"
-          },
-          "speciesNames" : {
-            "description" : "Related species names of cosewic and legal in En and Fr. Used for keyword searching. NOT RETRIEVABLE",
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          },
-          "earliestPublicationDate" : {
-            "format" : "date-time",
-            "description" : "Earliest publication date of a document's attachment (if none, then creation date). Used for filtering. NOT RETRIEVABLE",
-            "type" : "string"
-          },
-          "latestPublicationDate" : {
-            "format" : "date-time",
-            "description" : "Latest publication date of a document's attachment (if none, then creation date). Used for filtering. NOT RETRIEVABLE",
-            "type" : "string"
-          },
-          "sortDate" : {
-            "format" : "date-time",
-            "description" : "Either latestPublicationDate or documentCreationDate. Used for date sorting. NOT RETRIEVABLE",
-            "type" : "string"
-          },
-          "hasRecoveryStatus" : {
-            "description" : "If this document has a recovery status or not. Used to sort (by pushing all non-recovery status documents to the end). NOT RETRIEVABLE",
-            "type" : "boolean"
-          },
-          "documentTitleSort" : {
-            "description" : "Document title that is void of accents and all upper-cased. Not retrievable, used for sorting.",
-            "type" : "string"
-          },
-          "documentTypeSort" : {
-            "description" : "Document type in En or Fr. Used for sorting alphabetically. NOT RETRIEVABLE",
-            "type" : "string"
-          }
         },
-        "example" : {
-          "documentTitle" : "some text",
-          "documentCreateDate" : "2018-02-10T09:30Z",
-          "documentDescription" : "some text",
-          "documentTypeId" : 34.69,
-          "consultationStartDate" : "2018-02-10T09:30Z",
-          "consultationEndDate" : "2018-02-10T09:30Z",
-          "attachments" : [ {
-            "attachmentId" : 67.37,
-            "attachmentPublicationDate" : "2018-02-10T09:30Z",
-            "attachmentTitle" : "some text",
-            "html" : "some text",
-            "file" : "some text",
-            "fileSize" : 38.64
-          }, {
-            "attachmentId" : 97.6,
-            "attachmentPublicationDate" : "2018-02-10T09:30Z",
-            "attachmentTitle" : "some text",
-            "html" : "some text",
-            "file" : "some text",
-            "fileSize" : 41.23
-          } ],
-          "contacts" : [ {
-            "contactId" : 98.7,
-            "salutation" : "some text",
-            "firstName" : "some text",
-            "lastName" : "some text",
-            "address" : "some text",
-            "city" : "some text",
-            "provinceState" : "some text",
-            "postalCode" : "some text",
-            "email" : "some text",
-            "phone" : "some text",
-            "fax" : "some text",
-            "title" : "some text",
-            "organization" : "some text"
-          }, {
-            "contactId" : 72.58,
-            "salutation" : "some text",
-            "firstName" : "some text",
-            "lastName" : "some text",
-            "address" : "some text",
-            "city" : "some text",
-            "provinceState" : "some text",
-            "postalCode" : "some text",
-            "email" : "some text",
-            "phone" : "some text",
-            "fax" : "some text",
-            "title" : "some text",
-            "organization" : "some text"
-          } ],
-          "links" : [ {
-            "linkId" : 66.51,
-            "url" : "some text",
-            "description" : "some text"
-          }, {
-            "linkId" : 84.92,
-            "url" : "some text",
-            "description" : "some text"
-          } ],
-          "ranges" : [ 14.68, 97.11 ],
-          "species" : [ 50.77, 98.24 ],
-          "taxonomies" : [ 93.34, 54 ],
-          "consultationYears" : [ 23.53, 82.42 ],
-          "id" : 97.96,
-          "consultationActivationStatusId" : 32.84,
-          "finalOrDelayed" : 39.57,
-          "documentStatusId" : 7.18,
-          "speciesNames" : [ "some text", "some text" ],
-          "earliestPublicationDate" : "2018-02-10T09:30Z",
-          "latestPublicationDate" : "2018-02-10T09:30Z",
-          "sortDate" : "2018-02-10T09:30Z",
-          "hasRecoveryStatus" : true,
-          "documentTitleSort" : "some text",
-          "documentTypeSort" : "some text"
-        }
-      },
-      "CommonIndexerFieldMapping" : {
-        "description" : "An indexer field mapping.",
-        "type" : "object",
-        "properties" : {
-          "sourceFieldName" : {
-            "description" : "Field name from original source.",
-            "type" : "string"
-          },
-          "targetFieldName" : {
-            "description" : "Field name to be mapped to.",
-            "type" : "string"
-          }
-        }
-      },
-      "PermitsIndexResponse" : {
-        "title" : "Root Type for PermitDetails",
-        "description" : "The root of the PermitDetails type's schema.",
-        "required" : [ "permitTitle", "notice", "authorityName" ],
-        "type" : "object",
-        "properties" : {
-          "permitId" : {
-            "description" : "Permit ID",
-            "type" : "integer"
-          },
-          "explanationName" : {
-            "description" : "Explanation Name",
-            "type" : "string"
-          },
-          "localNumber" : {
-            "description" : "Local Number",
-            "type" : "string"
-          },
-          "terms" : {
-            "description" : "Permit Terms",
-            "type" : "array",
-            "items" : {
-              "type" : "string"
+        "/indexes/speblobidx(en/fr)": {
+            "get": {
+                "tags": [
+                    "species"
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SpeciesIndexResponse"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid request / Client error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "summary": "Get Index",
+                "description": "Azure Index representation of permits"
             }
-          },
-          "relatedSpecies" : {
-            "description" : "List of species related to the permit",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/PermitRelatedSpecies"
-            }
-          },
-          "typeId" : {
-            "description" : "typeId",
-            "type" : "integer"
-          },
-          "issuingAuthorityId" : {
-            "description" : "issuingAuthorityId",
-            "type" : "integer"
-          },
-          "issueDate" : {
-            "description" : "Issue Date",
-            "type" : "string"
-          },
-          "issueMonth" : {
-            "description" : "Issue Month",
-            "type" : "integer"
-          },
-          "issueYear" : {
-            "description" : "Issue Year",
-            "type" : "integer"
-          },
-          "permitStatus" : {
-            "description" : "Permit Status",
-            "type" : "integer"
-          },
-          "expiryDate" : {
-            "format" : "date",
-            "description" : "Expiry Date",
-            "type" : "string"
-          },
-          "activityLocation" : {
-            "description" : "Activity Location",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/PermitLocation"
-            }
-          },
-          "permitTitle" : {
-            "description" : "Permit Title",
-            "type" : "string"
-          },
-          "notice" : {
-            "description" : "Permit Notice",
-            "type" : "string"
-          },
-          "relevant" : {
-            "description" : "Relevant Permit Info",
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          },
-          "protected" : {
-            "description" : "Protected Permit Info",
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          },
-          "description" : {
-            "description" : "Permit Description",
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          },
-          "authorityName" : {
-            "description" : "Authority used",
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          },
-          "affectedSpecies" : {
-            "description" : "List of species ",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/PermitRelatedSpecies"
-            }
-          },
-          "preConditions" : {
-            "description" : "Permit Preconditions",
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          },
-          "contacts" : {
-            "description" : "List of permit contacts",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/PermitContactPerson"
-            }
-          },
-          "purpose" : {
-            "description" : "List of Permit Purpose",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/PermitPurpose"
-            }
-          },
-          "issuingAuthorityName" : {
-            "description" : "issuingAuthorityName",
-            "type" : "string"
-          }
-        }
-      },
-      "PermitsFieldMappingEn" : {
-        "description" : "Represents indexer field mappings.",
-        "type" : "object",
-        "properties" : {
-          "fieldMappings" : {
-            "description" : "List of field mappings.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/CommonIndexerFieldMapping"
-            }
-          }
         },
-        "example" : "\"fieldMappings\": [{\r\n\t\t\"sourceFieldName\": \"permitTitleEn\",\r\n\t\t\"targetFieldName\": \"permitTitle\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"noticeEn\",\r\n\t\t\"targetFieldName\": \"notice\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"purposeEn\",\r\n\t\t\"targetFieldName\": \"purpose\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"descriptionEn\",\r\n\t\t\"targetFieldName\": \"description\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"issuingAuthorityNameEn\",\r\n\t\t\"targetFieldName\": \"issuingAuthorityName\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"authorityNameEn\",\r\n\t\t\"targetFieldName\": \"authorityName\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"affectedSpeciesEn\",\r\n\t\t\"targetFieldName\": \"affectedSpecies\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"contactsEn\",\r\n\t\t\"targetFieldName\": \"contacts\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"preConditionsEn\",\r\n\t\t\"targetFieldName\": \"preConditions\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"termsEn\",\r\n\t\t\"targetFieldName\": \"terms\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"protectedEn\",\r\n\t\t\"targetFieldName\": \"protected\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"relevantEn\",\r\n\t\t\"targetFieldName\": \"relevant\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"activityLocationEn\",\r\n\t\t\"targetFieldName\": \"activityLocation\"\r\n\t}\r\n]"
-      },
-      "PermitsFieldMappingFr" : {
-        "description" : "Represents indexer field mappings.",
-        "type" : "object",
-        "properties" : {
-          "fieldMappings" : {
-            "description" : "List of field mappings.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/CommonIndexerFieldMapping"
+        "/indexes/docblobidx(en/fr)": {
+            "summary": "Index representation of documents and consultations",
+            "get": {
+                "tags": [
+                    "documents",
+                    "consultations"
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentIndexResponse"
+                                }
+                            }
+                        },
+                        "description": "Successful operation."
+                    }
+                },
+                "summary": "Document Index",
+                "description": "Azure Index representation of documents and public consultations."
             }
-          }
-        },
-        "example" : "\"fieldMappings\": [{\r\n\t\t\"sourceFieldName\": \"permitTitleFr\",\r\n\t\t\"targetFieldName\": \"permitTitle\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"noticeFr\",\r\n\t\t\"targetFieldName\": \"notice\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"purposeFr\",\r\n\t\t\"targetFieldName\": \"purpose\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"descriptionFr\",\r\n\t\t\"targetFieldName\": \"description\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"authorityNameFr\",\r\n\t\t\"targetFieldName\": \"authorityName\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"issuingAuthorityNameFr\",\r\n\t\t\"targetFieldName\": \"issuingAuthorityName\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"affectedSpeciesFr\",\r\n\t\t\"targetFieldName\": \"affectedSpecies\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"contactsFr\",\r\n\t\t\"targetFieldName\": \"contacts\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"preConditionsFr\",\r\n\t\t\"targetFieldName\": \"preConditions\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"termsFr\",\r\n\t\t\"targetFieldName\": \"terms\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"protectedFr\",\r\n\t\t\"targetFieldName\": \"protected\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"relevantFr\",\r\n\t\t\"targetFieldName\": \"relevant\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"activityLocationFr\",\r\n\t\t\"targetFieldName\": \"activityLocation\"\r\n\t}\r\n]"
-      },
-      "SpeciesFieldMappingEn" : {
-        "description" : "Represents indexer field mappings.",
-        "type" : "object",
-        "properties" : {
-          "fieldMappings" : {
-            "description" : "List of field mappings.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/CommonIndexerFieldMapping"
-            }
-          }
-        },
-        "example" : "\"fieldMappings\":[  \r\n   {  \r\n      \"sourceFieldName\":\"commonNameEn\",\r\n      \"targetFieldName\":\"commonName\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicCommonNameEn\",\r\n      \"targetFieldName\":\"cosewicCommonName\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicStatusCriteriaEn\",\r\n      \"targetFieldName\":\"cosewicStatusCriteria\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicReasonDesEn\",\r\n      \"targetFieldName\":\"cosewicReasonDes\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicStatusHisEn\",\r\n      \"targetFieldName\":\"cosewicStatusHis\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicPopulationEn\",\r\n      \"targetFieldName\":\"cosewicPopulation\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"legalCommonNameEn\",\r\n      \"targetFieldName\":\"legalCommonName\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"legalStatusHistoryEn\",\r\n      \"targetFieldName\":\"legalStatusHistory\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"legalPopulationEn\",\r\n      \"targetFieldName\":\"legalPopulation\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"profileEn\",\r\n      \"targetFieldName\":\"profiles\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"strategyEn\",\r\n      \"targetFieldName\":\"strategies\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"teamEn\",\r\n      \"targetFieldName\":\"teams\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"commonEn\",\r\n      \"targetFieldName\":\"commons\"\r\n   }\r\n]"
-      },
-      "SpeciesFieldMappingFr" : {
-        "description" : "Represents indexer field mappings.",
-        "type" : "object",
-        "properties" : {
-          "fieldMappings" : {
-            "description" : "List of field mappings.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/CommonIndexerFieldMapping"
-            }
-          }
-        },
-        "example" : "\"fieldMappings\":[  \r\n   {  \r\n      \"sourceFieldName\":\"commonNameFr\",\r\n      \"targetFieldName\":\"commonName\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicCommonNameFr\",\r\n      \"targetFieldName\":\"cosewicCommonName\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicStatusCriteriaFr\",\r\n      \"targetFieldName\":\"cosewicStatusCriteria\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicReasonDesFr\",\r\n      \"targetFieldName\":\"cosewicReasonDes\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicStatusHisFr\",\r\n      \"targetFieldName\":\"cosewicStatusHis\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicPopulationFr\",\r\n      \"targetFieldName\":\"cosewicPopulation\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"legalCommonNameFr\",\r\n      \"targetFieldName\":\"legalCommonName\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"legalStatusHistoryFr\",\r\n      \"targetFieldName\":\"legalStatusHistory\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"legalPopulationFr\",\r\n      \"targetFieldName\":\"legalPopulation\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"profileFr\",\r\n      \"targetFieldName\":\"profiles\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"strategyFr\",\r\n      \"targetFieldName\":\"strategies\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"teamFr\",\r\n      \"targetFieldName\":\"teams\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"commonFr\",\r\n      \"targetFieldName\":\"commons\"\r\n   }\r\n]"
-      },
-      "SpeciesIndexResponse" : {
-        "required" : [ ],
-        "type" : "object",
-        "properties" : {
-          "cosewicId" : {
-            "description" : "COSEWIC Id.",
-            "type" : "number"
-          },
-          "cosewicCommonName" : {
-            "description" : "COSEWIC common name.",
-            "type" : "string"
-          },
-          "cosewicScientificName" : {
-            "description" : "COSEWIC scientific name.",
-            "type" : "string"
-          },
-          "cosewicPopulation" : {
-            "description" : "COSEWIC population name.",
-            "type" : "string"
-          },
-          "cosewicTaxonomyId" : {
-            "description" : "COSEWIC taxonomy Id.",
-            "type" : "number"
-          },
-          "cosewicStatusId" : {
-            "description" : "COSEWIC status Id.",
-            "type" : "number"
-          },
-          "legalId" : {
-            "description" : "Legal / SARA Id",
-            "type" : "number"
-          },
-          "legalCommonName" : {
-            "description" : "Legal / SARA common name.",
-            "type" : "string"
-          },
-          "legalPopulation" : {
-            "description" : "Legal / SARA population.",
-            "type" : "string"
-          },
-          "legalDateListing" : {
-            "description" : "Legal / SARA listing date, pre-formatted on the server.",
-            "type" : "string"
-          },
-          "legalStatusId" : {
-            "description" : "Legal / SARA status Id.",
-            "type" : "number"
-          },
-          "legalScheduleId" : {
-            "description" : "Legal / SARA schedule Id.",
-            "type" : "number"
-          },
-          "imageFileName" : {
-            "description" : "A species image file name.",
-            "type" : "string"
-          },
-          "underConsiderationId" : {
-            "description" : "Under-consideration Id.",
-            "type" : "number"
-          },
-          "legalScientificName" : {
-            "description" : "Legal / SARA scientific name.",
-            "type" : "string"
-          },
-          "id" : {
-            "description" : "Comp spe id",
-            "type" : "number"
-          },
-          "previousCosewicScientificName" : {
-            "description" : "Previous Cosewic Scientific Name",
-            "type" : "string"
-          },
-          "cosewicStatusCriteria" : {
-            "description" : "Cosewic Status Criteria",
-            "type" : "string"
-          },
-          "cosewicReasonDes" : {
-            "description" : "Cosewic Reason Description",
-            "type" : "string"
-          },
-          "cosewicStatusHis" : {
-            "description" : "Cosewic Status His",
-            "type" : "string"
-          },
-          "cosewicLastAssessmentDate" : {
-            "format" : "date",
-            "description" : "Cosewic Last Assessment Date",
-            "type" : "string"
-          },
-          "legalStatusHistroy" : {
-            "description" : "Legal Status Histroy",
-            "type" : "string"
-          },
-          "legalNameComma" : {
-            "description" : "Legal Name Comma",
-            "type" : "string"
-          },
-          "taxonomySortId" : {
-            "description" : "Taxonomy Sort Id",
-            "type" : "number"
-          },
-          "fedId" : {
-            "description" : "Fed Id",
-            "type" : "number"
-          },
-          "profile" : {
-            "description" : "Profile",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/SpeciesProfile"
-            }
-          },
-          "ranges" : {
-            "description" : "Ranges",
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          },
-          "commonName" : {
-            "description" : "Common Name ",
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          },
-          "related" : {
-            "description" : "Related Species",
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          },
-          "team" : {
-            "description" : "Teams",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/RecoveryTeam"
-            }
-          },
-          "ministerRecieptDate" : {
-            "description" : "Minister receipt date.",
-            "type" : "string"
-          }
         }
-      },
-      "SpeciesProfile" : {
-        "type" : "object",
-        "properties" : {
-          "description" : {
-            "description" : "Species description",
-            "type" : "string"
-          },
-          "distributionAndPopulation" : {
-            "description" : "Species distribution and population information.",
-            "type" : "string"
-          },
-          "habitat" : {
-            "description" : "Species habitat.",
-            "type" : "string"
-          },
-          "biology" : {
-            "description" : "Species biology.",
-            "type" : "string"
-          },
-          "threats" : {
-            "description" : "Species threats.",
-            "type" : "string"
-          },
-          "federalProtection" : {
-            "description" : "Species federal protection.",
-            "type" : "string"
-          },
-          "otherProtection" : {
-            "description" : "Species other protection.",
-            "type" : "string"
-          },
-          "taxonomy" : {
-            "description" : "Taxonomy",
-            "type" : "string"
-          }
-        }
-      },
-      "DocumentFieldMappingResponse" : {
-        "description" : "Represents indexer field mappings.",
-        "type" : "object",
-        "properties" : {
-          "fieldMappings" : {
-            "description" : "List of field mappings.",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/CommonIndexerFieldMapping"
+    },
+    "components": {
+        "schemas": {
+            "RecoveryTeam": {
+                "required": [
+                    "users",
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "Recovery team name.",
+                        "type": "string"
+                    },
+                    "users": {
+                        "description": "A list of recovery team users.",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/RecoveryTeamUser"
+                        }
+                    }
+                }
+            },
+            "RecoveryTeamUser": {
+                "required": [
+                    "firstName",
+                    "lastName",
+                    "position"
+                ],
+                "type": "object",
+                "properties": {
+                    "firstName": {
+                        "description": "User first name.",
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "description": "User last name.",
+                        "type": "string"
+                    },
+                    "phone": {
+                        "description": "User position.",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "User email.",
+                        "type": "string"
+                    },
+                    "position": {
+                        "description": "User phone number.",
+                        "type": "string"
+                    },
+                    "affiliation": {
+                        "description": "User affiliations.",
+                        "type": "string"
+                    }
+                }
+            },
+            "PermitRelatedSpecies": {
+                "properties": {
+                    "speciesId": {
+                        "description": "Species ID",
+                        "type": "integer"
+                    },
+                    "species": {
+                        "description": "Species Names",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "PermitPurpose": {
+                "properties": {
+                    "purposeId": {
+                        "description": "Purpose ID",
+                        "type": "integer"
+                    },
+                    "purposeName": {
+                        "description": "Purpose Name",
+                        "type": "string"
+                    }
+                }
+            },
+            "PermitLocation": {
+                "description": "Permit Location",
+                "properties": {
+                    "rangeId": {
+                        "description": "Locaion Range ID",
+                        "type": "integer"
+                    },
+                    "locationName": {
+                        "description": "Permit Location Name",
+                        "type": "string"
+                    }
+                }
+            },
+            "PermitContactPerson": {
+                "properties": {
+                    "personId": {
+                        "description": "Contact person ID",
+                        "type": "integer"
+                    },
+                    "address": {
+                        "description": "Contact person address",
+                        "type": "string"
+                    },
+                    "city": {
+                        "description": "Contact person city",
+                        "type": "string"
+                    },
+                    "provinceState": {
+                        "description": "Province or State",
+                        "type": "string"
+                    },
+                    "postalCode": {
+                        "description": "Postal Code",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "Contact person email",
+                        "type": "string"
+                    },
+                    "phone": {
+                        "description": "Phone number",
+                        "type": "string"
+                    },
+                    "fax": {
+                        "description": "Contact person fax",
+                        "type": "string"
+                    },
+                    "salutationId": {
+                        "description": "Salutation ID",
+                        "type": "string"
+                    },
+                    "salutation": {
+                        "description": "Contact person salutation",
+                        "type": "string"
+                    },
+                    "title": {
+                        "description": "Contact person Title",
+                        "type": "string"
+                    },
+                    "organization": {
+                        "description": "Contact Person Organization",
+                        "type": "string"
+                    }
+                }
+            },
+            "PermitAuthority": {
+                "properties": {
+                    "authorityName": {
+                        "description": "Permit authority name",
+                        "type": "string"
+                    },
+                    "authorityId": {
+                        "description": "authority Id",
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    }
+                }
+            },
+            "DocumentAttachment": {
+                "description": "A document file attachment.",
+                "properties": {
+                    "attachmentId": {
+                        "description": "Attachment ID.",
+                        "type": "string"
+                    },
+                    "attachmentPublicationDate": {
+                        "format": "date-time",
+                        "description": "Attachment publication date.",
+                        "type": "string"
+                    },
+                    "attachmentTitle": {
+                        "description": "Attachment title.",
+                        "type": "string"
+                    },
+                    "html": {
+                        "description": "HTML link to attachment.",
+                        "type": "string"
+                    },
+                    "file": {
+                        "description": "File link to the attachment.",
+                        "type": "string"
+                    }
+                }
+            },
+            "DocumentContact": {
+                "description": "A document contact.",
+                "properties": {
+                    "salutation": {
+                        "description": "Contact Salutation.",
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "description": "Contact first name.",
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "description": "Contact last name.",
+                        "type": "string"
+                    },
+                    "address": {
+                        "description": "Contact address.",
+                        "type": "string"
+                    },
+                    "city": {
+                        "description": "Contact city.",
+                        "type": "string"
+                    },
+                    "postalCode": {
+                        "description": "Contact postal code.",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "Contact email.",
+                        "type": "string"
+                    },
+                    "phone": {
+                        "description": "Contact phone number.",
+                        "type": "string"
+                    },
+                    "fax": {
+                        "description": "Contact fax number.",
+                        "type": "string"
+                    },
+                    "title": {
+                        "description": "Contact title.",
+                        "type": "string"
+                    },
+                    "organization": {
+                        "description": "Contact organization.",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Contact ID.",
+                        "type": "number"
+                    },
+                    "province": {
+                        "description": "Contact province/state.",
+                        "type": "string"
+                    }
+                }
+            },
+            "DocumentLink": {
+                "description": "A document link.",
+                "properties": {
+                    "linkId": {
+                        "description": "Link ID.",
+                        "type": "number"
+                    },
+                    "url": {
+                        "description": "Link URL.",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Link description.",
+                        "type": "string"
+                    }
+                }
+            },
+            "DocumentIndexResponse": {
+                "description": "Returns the index representation of documents.",
+                "properties": {
+                    "documentTitle": {
+                        "description": "Document Title.",
+                        "type": "string"
+                    },
+                    "documentCreateDate": {
+                        "format": "date-time",
+                        "description": "Document creation date.",
+                        "type": "string"
+                    },
+                    "documentDescription": {
+                        "description": "Document description.",
+                        "type": "string"
+                    },
+                    "documentTypeId": {
+                        "description": "Document Type ID.",
+                        "type": "number"
+                    },
+                    "consultationStartDate": {
+                        "format": "date-time",
+                        "description": "Consultation start date.",
+                        "type": "string"
+                    },
+                    "consultationEndDate": {
+                        "format": "date-time",
+                        "description": "Consultation end date.",
+                        "type": "string"
+                    },
+                    "attachments": {
+                        "description": "Document attachments.",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/DocumentAttachment"
+                        }
+                    },
+                    "contacts": {
+                        "description": "Document contacts.",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/DocumentContact"
+                        }
+                    },
+                    "links": {
+                        "description": "Document links.",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/DocumentLink"
+                        }
+                    },
+                    "ranges": {
+                        "description": "List of ranges.",
+                        "type": "array",
+                        "items": {
+                            "type": "number"
+                        }
+                    },
+                    "species": {
+                        "description": "List of species.",
+                        "type": "array",
+                        "items": {
+                            "type": "number"
+                        }
+                    },
+                    "taxonomies": {
+                        "description": "List of taxonomies.",
+                        "type": "array",
+                        "items": {
+                            "type": "number"
+                        }
+                    },
+                    "consultationYears": {
+                        "description": "List of consultation years.",
+                        "type": "array",
+                        "items": {
+                            "type": "number"
+                        }
+                    },
+                    "id": {
+                        "description": "Document ID.",
+                        "type": "number"
+                    },
+                    "consultationActivationStatusId": {
+                        "description": "Activation status of a consultation. Used to calculate consultation status id.",
+                        "type": "number"
+                    },
+                    "finalOrDelayed": {
+                        "description": "Document recovery status of final or delayed. (Final=5, Delayed=4, otherwise null). Used to filtering.",
+                        "type": "number"
+                    },
+                    "documentStatusId": {
+                        "description": "Document status of proposed or current. Used to calculate recovery status and its sorting. NOT RETRIEVABLE",
+                        "type": "number"
+                    },
+                    "speciesNames": {
+                        "description": "Related species names of cosewic and legal in En and Fr. Used for keyword searching. NOT RETRIEVABLE",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "earliestPublicationDate": {
+                        "format": "date-time",
+                        "description": "Earliest publication date of a document's attachment (if none, then creation date). Used for filtering. NOT RETRIEVABLE",
+                        "type": "string"
+                    },
+                    "latestPublicationDate": {
+                        "format": "date-time",
+                        "description": "Latest publication date of a document's attachment (if none, then creation date). Used for filtering. NOT RETRIEVABLE",
+                        "type": "string"
+                    },
+                    "sortDate": {
+                        "format": "date-time",
+                        "description": "Either latestPublicationDate or documentCreationDate. Used for date sorting. NOT RETRIEVABLE",
+                        "type": "string"
+                    },
+                    "hasRecoveryStatus": {
+                        "description": "If this document has a recovery status or not. Used to sort (by pushing all non-recovery status documents to the end). NOT RETRIEVABLE",
+                        "type": "boolean"
+                    },
+                    "documentTitleSort": {
+                        "description": "Document title that is void of accents and all upper-cased. Not retrievable, used for sorting.",
+                        "type": "string"
+                    },
+                    "documentTypeSort": {
+                        "description": "Document type in En or Fr. Used for sorting alphabetically. NOT RETRIEVABLE",
+                        "type": "string"
+                    }
+                },
+                "example": {
+                    "documentTitle": "some text",
+                    "documentCreateDate": "2018-02-10T09:30Z",
+                    "documentDescription": "some text",
+                    "documentTypeId": 78.43,
+                    "consultationStartDate": "2018-02-10T09:30Z",
+                    "consultationEndDate": "2018-02-10T09:30Z",
+                    "attachments": [
+                        {
+                            "attachmentId": "some text",
+                            "attachmentPublicationDate": "2018-02-10T09:30Z",
+                            "attachmentTitle": "some text",
+                            "html": "some text",
+                            "file": "some text"
+                        },
+                        {
+                            "attachmentId": "some text",
+                            "attachmentPublicationDate": "2018-02-10T09:30Z",
+                            "attachmentTitle": "some text",
+                            "html": "some text",
+                            "file": "some text"
+                        }
+                    ],
+                    "contacts": [
+                        {
+                            "salutation": "some text",
+                            "firstName": "some text",
+                            "lastName": "some text",
+                            "address": "some text",
+                            "city": "some text",
+                            "postalCode": "some text",
+                            "email": "some text",
+                            "phone": "some text",
+                            "fax": "some text",
+                            "title": "some text",
+                            "organization": "some text",
+                            "id": 21.41,
+                            "province": "some text"
+                        },
+                        {
+                            "salutation": "some text",
+                            "firstName": "some text",
+                            "lastName": "some text",
+                            "address": "some text",
+                            "city": "some text",
+                            "postalCode": "some text",
+                            "email": "some text",
+                            "phone": "some text",
+                            "fax": "some text",
+                            "title": "some text",
+                            "organization": "some text",
+                            "id": 49.39,
+                            "province": "some text"
+                        }
+                    ],
+                    "links": [
+                        {
+                            "linkId": 30.54,
+                            "url": "some text",
+                            "description": "some text"
+                        },
+                        {
+                            "linkId": 87.06,
+                            "url": "some text",
+                            "description": "some text"
+                        }
+                    ],
+                    "ranges": [
+                        8.98,
+                        42.25
+                    ],
+                    "species": [
+                        19.47,
+                        75.98
+                    ],
+                    "taxonomies": [
+                        12.32,
+                        88.94
+                    ],
+                    "consultationYears": [
+                        89.39,
+                        55.03
+                    ],
+                    "id": 42.96,
+                    "consultationActivationStatusId": 79.14,
+                    "finalOrDelayed": 80.84,
+                    "documentStatusId": 3.85,
+                    "speciesNames": [
+                        "some text",
+                        "some text"
+                    ],
+                    "earliestPublicationDate": "2018-02-10T09:30Z",
+                    "latestPublicationDate": "2018-02-10T09:30Z",
+                    "sortDate": "2018-02-10T09:30Z",
+                    "hasRecoveryStatus": true,
+                    "documentTitleSort": "some text",
+                    "documentTypeSort": "some text"
+                }
+            },
+            "CommonIndexerFieldMapping": {
+                "description": "An indexer field mapping.",
+                "type": "object",
+                "properties": {
+                    "sourceFieldName": {
+                        "description": "Field name from original source.",
+                        "type": "string"
+                    },
+                    "targetFieldName": {
+                        "description": "Field name to be mapped to.",
+                        "type": "string"
+                    }
+                }
+            },
+            "PermitsIndexResponse": {
+                "title": "Root Type for PermitDetails",
+                "description": "The root of the PermitDetails type's schema.",
+                "required": [
+                    "permitTitle",
+                    "notice",
+                    "authorityName"
+                ],
+                "type": "object",
+                "properties": {
+                    "permitId": {
+                        "description": "Permit ID",
+                        "type": "integer"
+                    },
+                    "explanationName": {
+                        "description": "Explanation Name",
+                        "type": "string"
+                    },
+                    "localNumber": {
+                        "description": "Local Number",
+                        "type": "string"
+                    },
+                    "terms": {
+                        "description": "Permit Terms",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "relatedSpecies": {
+                        "description": "List of species related to the permit",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PermitRelatedSpecies"
+                        }
+                    },
+                    "typeId": {
+                        "description": "typeId",
+                        "type": "integer"
+                    },
+                    "issuingAuthorityId": {
+                        "description": "issuingAuthorityId",
+                        "type": "integer"
+                    },
+                    "issueDate": {
+                        "description": "Issue Date",
+                        "type": "string"
+                    },
+                    "issueMonth": {
+                        "description": "Issue Month",
+                        "type": "integer"
+                    },
+                    "issueYear": {
+                        "description": "Issue Year",
+                        "type": "integer"
+                    },
+                    "permitStatus": {
+                        "description": "Permit Status",
+                        "type": "integer"
+                    },
+                    "expiryDate": {
+                        "format": "date",
+                        "description": "Expiry Date",
+                        "type": "string"
+                    },
+                    "activityLocation": {
+                        "description": "Activity Location",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PermitLocation"
+                        }
+                    },
+                    "permitTitle": {
+                        "description": "Permit Title",
+                        "type": "string"
+                    },
+                    "notice": {
+                        "description": "Permit Notice",
+                        "type": "string"
+                    },
+                    "relevant": {
+                        "description": "Relevant Permit Info",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "protected": {
+                        "description": "Protected Permit Info",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "description": {
+                        "description": "Permit Description",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "authorityName": {
+                        "description": "Authority used",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "affectedSpecies": {
+                        "description": "List of species ",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PermitRelatedSpecies"
+                        }
+                    },
+                    "preConditions": {
+                        "description": "Permit Preconditions",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "contacts": {
+                        "description": "List of permit contacts",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PermitContactPerson"
+                        }
+                    },
+                    "purpose": {
+                        "description": "List of Permit Purpose",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PermitPurpose"
+                        }
+                    },
+                    "issuingAuthorityName": {
+                        "description": "issuingAuthorityName",
+                        "type": "string"
+                    }
+                }
+            },
+            "PermitsFieldMappingEn": {
+                "description": "Represents indexer field mappings.",
+                "type": "object",
+                "properties": {
+                    "fieldMappings": {
+                        "description": "List of field mappings.",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CommonIndexerFieldMapping"
+                        }
+                    }
+                },
+                "example": "\"fieldMappings\": [{\r\n\t\t\"sourceFieldName\": \"permitTitleEn\",\r\n\t\t\"targetFieldName\": \"permitTitle\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"noticeEn\",\r\n\t\t\"targetFieldName\": \"notice\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"purposeEn\",\r\n\t\t\"targetFieldName\": \"purpose\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"descriptionEn\",\r\n\t\t\"targetFieldName\": \"description\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"issuingAuthorityNameEn\",\r\n\t\t\"targetFieldName\": \"issuingAuthorityName\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"authorityNameEn\",\r\n\t\t\"targetFieldName\": \"authorityName\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"affectedSpeciesEn\",\r\n\t\t\"targetFieldName\": \"affectedSpecies\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"contactsEn\",\r\n\t\t\"targetFieldName\": \"contacts\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"preConditionsEn\",\r\n\t\t\"targetFieldName\": \"preConditions\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"termsEn\",\r\n\t\t\"targetFieldName\": \"terms\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"protectedEn\",\r\n\t\t\"targetFieldName\": \"protected\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"relevantEn\",\r\n\t\t\"targetFieldName\": \"relevant\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"activityLocationEn\",\r\n\t\t\"targetFieldName\": \"activityLocation\"\r\n\t}\r\n]"
+            },
+            "PermitsFieldMappingFr": {
+                "description": "Represents indexer field mappings.",
+                "type": "object",
+                "properties": {
+                    "fieldMappings": {
+                        "description": "List of field mappings.",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CommonIndexerFieldMapping"
+                        }
+                    }
+                },
+                "example": "\"fieldMappings\": [{\r\n\t\t\"sourceFieldName\": \"permitTitleFr\",\r\n\t\t\"targetFieldName\": \"permitTitle\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"noticeFr\",\r\n\t\t\"targetFieldName\": \"notice\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"purposeFr\",\r\n\t\t\"targetFieldName\": \"purpose\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"descriptionFr\",\r\n\t\t\"targetFieldName\": \"description\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"authorityNameFr\",\r\n\t\t\"targetFieldName\": \"authorityName\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"issuingAuthorityNameFr\",\r\n\t\t\"targetFieldName\": \"issuingAuthorityName\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"affectedSpeciesFr\",\r\n\t\t\"targetFieldName\": \"affectedSpecies\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"contactsFr\",\r\n\t\t\"targetFieldName\": \"contacts\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"preConditionsFr\",\r\n\t\t\"targetFieldName\": \"preConditions\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"termsFr\",\r\n\t\t\"targetFieldName\": \"terms\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"protectedFr\",\r\n\t\t\"targetFieldName\": \"protected\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"relevantFr\",\r\n\t\t\"targetFieldName\": \"relevant\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFieldName\": \"activityLocationFr\",\r\n\t\t\"targetFieldName\": \"activityLocation\"\r\n\t}\r\n]"
+            },
+            "SpeciesFieldMappingEn": {
+                "description": "Represents indexer field mappings.",
+                "type": "object",
+                "properties": {
+                    "fieldMappings": {
+                        "description": "List of field mappings.",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CommonIndexerFieldMapping"
+                        }
+                    }
+                },
+                "example": "\"fieldMappings\":[  \r\n   {  \r\n      \"sourceFieldName\":\"commonNameEn\",\r\n      \"targetFieldName\":\"commonName\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicCommonNameEn\",\r\n      \"targetFieldName\":\"cosewicCommonName\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicStatusCriteriaEn\",\r\n      \"targetFieldName\":\"cosewicStatusCriteria\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicReasonDesEn\",\r\n      \"targetFieldName\":\"cosewicReasonDes\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicStatusHisEn\",\r\n      \"targetFieldName\":\"cosewicStatusHis\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicPopulationEn\",\r\n      \"targetFieldName\":\"cosewicPopulation\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"legalCommonNameEn\",\r\n      \"targetFieldName\":\"legalCommonName\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"legalStatusHistoryEn\",\r\n      \"targetFieldName\":\"legalStatusHistory\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"legalPopulationEn\",\r\n      \"targetFieldName\":\"legalPopulation\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"profileEn\",\r\n      \"targetFieldName\":\"profiles\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"strategyEn\",\r\n      \"targetFieldName\":\"strategies\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"teamEn\",\r\n      \"targetFieldName\":\"teams\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"commonEn\",\r\n      \"targetFieldName\":\"commons\"\r\n   }\r\n]"
+            },
+            "SpeciesFieldMappingFr": {
+                "description": "Represents indexer field mappings.",
+                "type": "object",
+                "properties": {
+                    "fieldMappings": {
+                        "description": "List of field mappings.",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CommonIndexerFieldMapping"
+                        }
+                    }
+                },
+                "example": "\"fieldMappings\":[  \r\n   {  \r\n      \"sourceFieldName\":\"commonNameFr\",\r\n      \"targetFieldName\":\"commonName\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicCommonNameFr\",\r\n      \"targetFieldName\":\"cosewicCommonName\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicStatusCriteriaFr\",\r\n      \"targetFieldName\":\"cosewicStatusCriteria\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicReasonDesFr\",\r\n      \"targetFieldName\":\"cosewicReasonDes\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicStatusHisFr\",\r\n      \"targetFieldName\":\"cosewicStatusHis\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"cosewicPopulationFr\",\r\n      \"targetFieldName\":\"cosewicPopulation\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"legalCommonNameFr\",\r\n      \"targetFieldName\":\"legalCommonName\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"legalStatusHistoryFr\",\r\n      \"targetFieldName\":\"legalStatusHistory\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"legalPopulationFr\",\r\n      \"targetFieldName\":\"legalPopulation\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"profileFr\",\r\n      \"targetFieldName\":\"profiles\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"strategyFr\",\r\n      \"targetFieldName\":\"strategies\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"teamFr\",\r\n      \"targetFieldName\":\"teams\"\r\n   },\r\n   {  \r\n      \"sourceFieldName\":\"commonFr\",\r\n      \"targetFieldName\":\"commons\"\r\n   }\r\n]"
+            },
+            "SpeciesIndexResponse": {
+                "required": [
+                ],
+                "type": "object",
+                "properties": {
+                    "cosewicId": {
+                        "description": "COSEWIC Id.",
+                        "type": "number"
+                    },
+                    "cosewicCommonName": {
+                        "description": "COSEWIC common name.",
+                        "type": "string"
+                    },
+                    "cosewicScientificName": {
+                        "description": "COSEWIC scientific name.",
+                        "type": "string"
+                    },
+                    "cosewicPopulation": {
+                        "description": "COSEWIC population name.",
+                        "type": "string"
+                    },
+                    "cosewicTaxonomyId": {
+                        "description": "COSEWIC taxonomy Id.",
+                        "type": "number"
+                    },
+                    "cosewicStatusId": {
+                        "description": "COSEWIC status Id.",
+                        "type": "number"
+                    },
+                    "legalId": {
+                        "description": "Legal / SARA Id",
+                        "type": "number"
+                    },
+                    "legalCommonName": {
+                        "description": "Legal / SARA common name.",
+                        "type": "string"
+                    },
+                    "legalPopulation": {
+                        "description": "Legal / SARA population.",
+                        "type": "string"
+                    },
+                    "legalDateListing": {
+                        "description": "Legal / SARA listing date, pre-formatted on the server.",
+                        "type": "string"
+                    },
+                    "legalStatusId": {
+                        "description": "Legal / SARA status Id.",
+                        "type": "number"
+                    },
+                    "legalScheduleId": {
+                        "description": "Legal / SARA schedule Id.",
+                        "type": "number"
+                    },
+                    "imageFileName": {
+                        "description": "A species image file name.",
+                        "type": "string"
+                    },
+                    "underConsiderationId": {
+                        "description": "Under-consideration Id.",
+                        "type": "number"
+                    },
+                    "legalScientificName": {
+                        "description": "Legal / SARA scientific name.",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Comp spe id",
+                        "type": "number"
+                    },
+                    "previousCosewicScientificName": {
+                        "description": "Previous Cosewic Scientific Name",
+                        "type": "string"
+                    },
+                    "cosewicStatusCriteria": {
+                        "description": "Cosewic Status Criteria",
+                        "type": "string"
+                    },
+                    "cosewicReasonDes": {
+                        "description": "Cosewic Reason Description",
+                        "type": "string"
+                    },
+                    "cosewicStatusHis": {
+                        "description": "Cosewic Status His",
+                        "type": "string"
+                    },
+                    "cosewicLastAssessmentDate": {
+                        "format": "date",
+                        "description": "Cosewic Last Assessment Date",
+                        "type": "string"
+                    },
+                    "legalStatusHistroy": {
+                        "description": "Legal Status Histroy",
+                        "type": "string"
+                    },
+                    "legalNameComma": {
+                        "description": "Legal Name Comma",
+                        "type": "string"
+                    },
+                    "taxonomySortId": {
+                        "description": "Taxonomy Sort Id",
+                        "type": "number"
+                    },
+                    "fedId": {
+                        "description": "Fed Id",
+                        "type": "number"
+                    },
+                    "profile": {
+                        "description": "Profile",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SpeciesProfile"
+                        }
+                    },
+                    "ranges": {
+                        "description": "Ranges",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "commonName": {
+                        "description": "Common Name ",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "related": {
+                        "description": "Related Species",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "team": {
+                        "description": "Teams",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/RecoveryTeam"
+                        }
+                    },
+                    "ministerRecieptDate": {
+                        "description": "Minister receipt date.",
+                        "type": "string"
+                    }
+                }
+            },
+            "SpeciesProfile": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "description": "Species description",
+                        "type": "string"
+                    },
+                    "distributionAndPopulation": {
+                        "description": "Species distribution and population information.",
+                        "type": "string"
+                    },
+                    "habitat": {
+                        "description": "Species habitat.",
+                        "type": "string"
+                    },
+                    "biology": {
+                        "description": "Species biology.",
+                        "type": "string"
+                    },
+                    "threats": {
+                        "description": "Species threats.",
+                        "type": "string"
+                    },
+                    "federalProtection": {
+                        "description": "Species federal protection.",
+                        "type": "string"
+                    },
+                    "otherProtection": {
+                        "description": "Species other protection.",
+                        "type": "string"
+                    },
+                    "taxonomy": {
+                        "description": "Taxonomy",
+                        "type": "string"
+                    }
+                }
+            },
+            "DocumentFieldMappingResponse": {
+                "description": "Represents indexer field mappings.",
+                "type": "object",
+                "properties": {
+                    "fieldMappings": {
+                        "description": "List of field mappings.",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CommonIndexerFieldMapping"
+                        }
+                    }
+                },
+                "example": {
+                    "fieldMappings": [
+                        {
+                            "sourceFieldName": "documentTitle(En/Fr)",
+                            "targetFieldName": "documentTitle"
+                        },
+                        {
+                            "sourceFieldName": "documentTitleSort(En/Fr)",
+                            "targetFieldName": "documentTitleSort"
+                        },
+                        {
+                            "sourceFieldName": "documentDescription(En/Fr)",
+                            "targetFieldName": "documentDescription"
+                        },
+                        {
+                            "sourceFieldName": "documentTypeSort(En/Fr)",
+                            "targetFieldName": "documentTypeSort"
+                        },
+                        {
+                            "sourceFieldName": "attachments(En/Fr)",
+                            "targetFieldName": "attachments"
+                        },
+                        {
+                            "sourceFieldName": "contacts(En/Fr)",
+                            "targetFieldName": "contacts"
+                        },
+                        {
+                            "sourceFieldName": "links(En/Fr)",
+                            "targetFieldName": "links"
+                        },
+                        {
+                            "sourceFieldName": "speciesNames(En/Fr)",
+                            "targetFieldName": "speciesNames"
+                        },
+                        {
+                            "sourceFieldName": "earliestPublicationDate(En/Fr)",
+                            "targetFieldName": "earliestPublicationDate"
+                        },
+                        {
+                            "sourceFieldName": "latestPublicationDate(En/Fr)",
+                            "targetFieldName": "latestPublicationDate"
+                        },
+                        {
+                            "sourceFieldName": "sortDate(En/Fr)",
+                            "targetFieldName": "sortDate"
+                        }
+                    ]
+                }
             }
-          }
-        },
-        "example" : {
-          "fieldMappings" : [ {
-            "sourceFieldName" : "documentTitle(En/Fr)",
-            "targetFieldName" : "documentTitle"
-          }, {
-            "sourceFieldName" : "documentTitleSort(En/Fr)",
-            "targetFieldName" : "documentTitleSort"
-          }, {
-            "sourceFieldName" : "documentDescription(En/Fr)",
-            "targetFieldName" : "documentDescription"
-          }, {
-            "sourceFieldName" : "documentTypeSort(En/Fr)",
-            "targetFieldName" : "documentTypeSort"
-          }, {
-            "sourceFieldName" : "attachments(En/Fr)",
-            "targetFieldName" : "attachments"
-          }, {
-            "sourceFieldName" : "contacts(En/Fr)",
-            "targetFieldName" : "contacts"
-          }, {
-            "sourceFieldName" : "links(En/Fr)",
-            "targetFieldName" : "links"
-          }, {
-            "sourceFieldName" : "speciesNames(En/Fr)",
-            "targetFieldName" : "speciesNames"
-          }, {
-            "sourceFieldName" : "earliestPublicationDate(En/Fr)",
-            "targetFieldName" : "earliestPublicationDate"
-          }, {
-            "sourceFieldName" : "latestPublicationDate(En/Fr)",
-            "targetFieldName" : "latestPublicationDate"
-          }, {
-            "sourceFieldName" : "sortDate(En/Fr)",
-            "targetFieldName" : "sortDate"
-          } ]
         }
-      }
-    }
-  },
-  "tags" : [ {
-    "name" : "species",
-    "description" : "Everything about species."
-  }, {
-    "name" : "permits",
-    "description" : "Everything about permits."
-  }, {
-    "name" : "documents",
-    "description" : "Everything about documents."
-  }, {
-    "name" : "consultations",
-    "description" : "Everything about public consultations."
-  } ]
+    },
+    "tags": [
+        {
+            "name": "species",
+            "description": "Everything about species."
+        },
+        {
+            "name": "permits",
+            "description": "Everything about permits."
+        },
+        {
+            "name": "documents",
+            "description": "Everything about documents."
+        },
+        {
+            "name": "consultations",
+            "description": "Everything about public consultations."
+        }
+    ]
 }
