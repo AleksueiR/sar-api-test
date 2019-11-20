@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2019-11-20T16:40:33.871Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36" etag="bJbqvBRVe-hheADyUSaH" version="12.2.7" type="github" pages="1">
+<mxfile host="www.draw.io" modified="2019-11-20T16:43:15.797Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36" etag="LQzTvg5faDbac3R3HY8w" version="12.2.7" type="github" pages="1">
   <diagram name="Page-1" id="c7558073-3199-34d8-9f00-42111426c3f3">
     <mxGraphModel dx="2782" dy="732" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="#ffffff" math="0" shadow="0">
       <root>
@@ -11,10 +11,10 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="VTh4LOK5k53mG7-g33eP-4" value="Make Draft Species Permanent" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="380" y="70" width="100" height="100" as="geometry"/>
+          <mxGeometry x="560" y="60" width="100" height="100" as="geometry"/>
         </mxCell>
         <mxCell id="VTh4LOK5k53mG7-g33eP-5" value="Save&amp;nbsp; Draft Species&amp;nbsp;" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="560" y="80" width="80" height="80" as="geometry"/>
+          <mxGeometry x="390" y="70" width="80" height="80" as="geometry"/>
         </mxCell>
         <mxCell id="y1naxwlrMf5Ro_gKelW1-3" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
