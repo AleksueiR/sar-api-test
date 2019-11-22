@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2019-11-22T21:04:22.727Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36" etag="1AAdc4M9YM4d-_G1Z8Kz" version="12.2.9" type="github" pages="1">
+<mxfile host="www.draw.io" modified="2019-11-22T21:06:13.776Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36" etag="1l-l3pZTBOhXyDgARqu9" version="12.2.9" type="github" pages="1">
   <diagram name="Page-1" id="c7558073-3199-34d8-9f00-42111426c3f3">
     <mxGraphModel dx="3022" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="#ffffff" math="0" shadow="0">
       <root>
@@ -136,15 +136,6 @@
         </mxCell>
         <mxCell id="K9Jv4syfFlTt1CtUerWt-13" value="Discard draft species" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="40" y="678" width="90" height="90" as="geometry"/>
-        </mxCell>
-        <mxCell id="K9Jv4syfFlTt1CtUerWt-15" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="K9Jv4syfFlTt1CtUerWt-13">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="-80" y="700" as="sourcePoint"/>
-            <mxPoint x="-70" y="620" as="targetPoint"/>
-            <Array as="points">
-              <mxPoint x="-70" y="723"/>
-            </Array>
-          </mxGeometry>
         </mxCell>
         <mxCell id="K9Jv4syfFlTt1CtUerWt-17" value="Discard draft Assessment" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="180" y="678" width="90" height="90" as="geometry"/>
