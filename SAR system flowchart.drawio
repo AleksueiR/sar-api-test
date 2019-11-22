@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2019-11-22T20:41:59.837Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36" etag="ttE854x6F2IMI-9PsF8L" version="12.2.9" type="github" pages="1">
+<mxfile host="www.draw.io" modified="2019-11-22T20:44:19.945Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36" etag="m0OgAayIG0pXOstvwUE6" version="12.2.9" type="github" pages="1">
   <diagram name="Page-1" id="c7558073-3199-34d8-9f00-42111426c3f3">
     <mxGraphModel dx="3022" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="#ffffff" math="0" shadow="0">
       <root>
@@ -120,6 +120,15 @@
         </mxCell>
         <mxCell id="K9Jv4syfFlTt1CtUerWt-3" value="Create Draft Species" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="40" y="540" width="90" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="K9Jv4syfFlTt1CtUerWt-6" value="Start new draft Assessment" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="180" y="545" width="90" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="K9Jv4syfFlTt1CtUerWt-7" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="130" y="590" as="sourcePoint"/>
+            <mxPoint x="180" y="590" as="targetPoint"/>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
