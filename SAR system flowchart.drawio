@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2019-11-25T18:54:45.225Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="G43LG3B8r2CZmrpOcO56" version="12.3.0" type="github" pages="2">
+<mxfile host="www.draw.io" modified="2019-11-25T18:55:29.404Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="AkiaBqU3n8wxImO-2WGj" version="12.3.0" type="github" pages="2">
   <diagram name="COSEWIC" id="c7558073-3199-34d8-9f00-42111426c3f3">
     <mxGraphModel dx="3273" dy="2134" grid="1" gridSize="12" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
@@ -463,12 +463,12 @@
         <mxCell id="WwuJ3jNGOPKnRlUZL0jA-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WwuJ3jNGOPKnRlUZL0jA-18" target="WwuJ3jNGOPKnRlUZL0jA-31">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="WwuJ3jNGOPKnRlUZL0jA-60" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="WwuJ3jNGOPKnRlUZL0jA-18" target="WwuJ3jNGOPKnRlUZL0jA-54">
+        <mxCell id="WwuJ3jNGOPKnRlUZL0jA-60" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1" source="WwuJ3jNGOPKnRlUZL0jA-18" target="WwuJ3jNGOPKnRlUZL0jA-54">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="-607" y="1939.5" as="targetPoint"/>
             <Array as="points">
-              <mxPoint x="-552" y="1859"/>
-              <mxPoint x="-552" y="1994"/>
+              <mxPoint x="-504" y="1845"/>
+              <mxPoint x="-504" y="1994"/>
             </Array>
           </mxGeometry>
         </mxCell>
