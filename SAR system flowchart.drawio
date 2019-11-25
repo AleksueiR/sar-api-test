@@ -1,6 +1,6 @@
-<mxfile host="www.draw.io" modified="2019-11-25T13:44:56.962Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="7V9u1HzCGkmv5tGssRLy" version="12.3.0" type="github" pages="1">
+<mxfile host="www.draw.io" modified="2019-11-25T14:12:04.470Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="MOUoDuHUXapaK7RxDZnm" version="12.3.0" type="github" pages="1">
   <diagram name="Page-1" id="c7558073-3199-34d8-9f00-42111426c3f3">
-    <mxGraphModel dx="3022" dy="794" grid="1" gridSize="12" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
+    <mxGraphModel dx="3273" dy="934" grid="1" gridSize="12" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
@@ -27,7 +27,7 @@
             <mxPoint x="-995" y="165" as="sourcePoint"/>
             <mxPoint x="-870" y="340" as="targetPoint"/>
             <Array as="points">
-              <mxPoint x="-855" y="340"/>
+              <mxPoint x="-1070" y="266"/>
             </Array>
           </mxGeometry>
         </mxCell>
@@ -54,6 +54,9 @@
         </mxCell>
         <mxCell id="K9Jv4syfFlTt1CtUerWt-3" value="Create Draft Species" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="-1270" y="516" width="90" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="oUv9hOqSSbvM03PiOSUv-5" value="yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="K9Jv4syfFlTt1CtUerWt-6" target="K9Jv4syfFlTt1CtUerWt-9">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
         <mxCell id="K9Jv4syfFlTt1CtUerWt-6" value="Start new draft Assessment" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="-1130" y="514" width="90" height="90" as="geometry"/>
@@ -291,7 +294,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="wUc7WX4bhzahjaM9EL9A-1" value="Is it Friday?" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="-1140" y="290" width="100" height="100" as="geometry"/>
+          <mxGeometry x="-1355" y="216" width="100" height="100" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
