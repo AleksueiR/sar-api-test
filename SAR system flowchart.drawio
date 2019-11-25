@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2019-11-25T20:37:00.065Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="R-Jsm-sTZq1uGniSmdTE" version="12.3.0" type="github" pages="3">
+<mxfile host="www.draw.io" modified="2019-11-25T20:38:21.608Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="Ih90w9qpZkMfTALJ3ylu" version="12.3.0" type="github" pages="3">
   <diagram name="COSEWIC" id="c7558073-3199-34d8-9f00-42111426c3f3">
     <mxGraphModel dx="3631" dy="1134" grid="1" gridSize="12" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
@@ -258,7 +258,7 @@
           <mxGeometry x="-226" y="411" width="120" height="84" as="geometry"/>
         </mxCell>
         <mxCell id="bXLVbo697JFJodXMGoPI-39" value="Inactivate this Species" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="-63" y="332" width="120" height="60" as="geometry"/>
+          <mxGeometry x="-64" y="332" width="120" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="ZXBc8UasPS0uCbpXYorS-1" value="COSEWIC User" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;html=1;" vertex="1" parent="1">
           <mxGeometry x="-1488" y="984" width="30" height="60" as="geometry"/>
