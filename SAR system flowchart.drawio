@@ -1,6 +1,6 @@
-<mxfile host="www.draw.io" modified="2019-11-25T19:58:04.756Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="0_6e7FJxqqCD8q5klncy" version="12.3.0" type="github" pages="3">
+<mxfile host="www.draw.io" modified="2019-11-25T19:59:27.695Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="1dLWIrzGcFiNaKsddYB8" version="12.3.0" type="github" pages="3">
   <diagram name="COSEWIC" id="c7558073-3199-34d8-9f00-42111426c3f3">
-    <mxGraphModel dx="3273" dy="2134" grid="1" gridSize="12" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
+    <mxGraphModel dx="3631" dy="2334" grid="1" gridSize="12" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
@@ -652,12 +652,11 @@
             <mxPoint x="187" y="1456.0000000000005" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="bXLVbo697JFJodXMGoPI-28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="bXLVbo697JFJodXMGoPI-5">
+        <mxCell id="bXLVbo697JFJodXMGoPI-47" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="bXLVbo697JFJodXMGoPI-5">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-168" y="1500" as="targetPoint"/>
+            <mxPoint x="-157" y="1524" as="targetPoint"/>
             <Array as="points">
-              <mxPoint x="39" y="1525"/>
-              <mxPoint x="-161" y="1525"/>
+              <mxPoint x="39" y="1524"/>
             </Array>
           </mxGeometry>
         </mxCell>
@@ -742,6 +741,12 @@
         </mxCell>
         <mxCell id="bXLVbo697JFJodXMGoPI-39" value="Inactivate this Species" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="553" y="1426" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="bXLVbo697JFJodXMGoPI-48" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="bXLVbo697JFJodXMGoPI-10" target="bXLVbo697JFJodXMGoPI-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-108" y="1442" as="sourcePoint"/>
+            <mxPoint x="-58" y="1392" as="targetPoint"/>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
