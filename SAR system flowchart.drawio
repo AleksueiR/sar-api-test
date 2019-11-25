@@ -1,6 +1,6 @@
-<mxfile host="www.draw.io" modified="2019-11-25T20:54:23.045Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="uGOiy-42eSbBl5uXhQf2" version="12.3.0" type="github" pages="3">
+<mxfile host="www.draw.io" modified="2019-11-25T20:54:53.476Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="Uf1d8tpIli96sdSukVaI" version="12.3.0" type="github" pages="3">
   <diagram name="COSEWIC" id="c7558073-3199-34d8-9f00-42111426c3f3">
-    <mxGraphModel dx="3631" dy="1134" grid="1" gridSize="12" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
+    <mxGraphModel dx="3273" dy="934" grid="1" gridSize="12" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
@@ -47,8 +47,10 @@
             <mxPoint x="-69.16666666666652" y="1043.5" as="sourcePoint"/>
             <mxPoint x="146" y="1332" as="targetPoint"/>
             <Array as="points">
+              <mxPoint x="-37" y="1225"/>
               <mxPoint x="-35" y="1225"/>
-              <mxPoint x="140" y="1225"/>
+              <mxPoint x="-35" y="1248"/>
+              <mxPoint x="141" y="1248"/>
             </Array>
           </mxGeometry>
         </mxCell>
@@ -127,8 +129,8 @@
             <mxPoint x="432" y="1253" as="sourcePoint"/>
             <mxPoint x="60" y="1067" as="targetPoint"/>
             <Array as="points">
-              <mxPoint x="476" y="1200"/>
-              <mxPoint x="60" y="1200"/>
+              <mxPoint x="476" y="1237"/>
+              <mxPoint x="60" y="1237"/>
             </Array>
           </mxGeometry>
         </mxCell>
