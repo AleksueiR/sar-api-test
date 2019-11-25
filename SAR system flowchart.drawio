@@ -1,12 +1,9 @@
-<mxfile host="www.draw.io" modified="2019-11-25T20:04:17.597Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="sfBOLJkVAA76TYobVqzl" version="12.3.0" type="github" pages="3">
+<mxfile host="www.draw.io" modified="2019-11-25T20:05:12.054Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="3Am-jzylQBJCF_1tuhRk" version="12.3.0" type="github" pages="3">
   <diagram name="COSEWIC" id="c7558073-3199-34d8-9f00-42111426c3f3">
-    <mxGraphModel dx="3022" dy="794" grid="1" gridSize="12" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
+    <mxGraphModel dx="3970" dy="1323" grid="1" gridSize="12" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
-        <mxCell id="WwuJ3jNGOPKnRlUZL0jA-3" value="Cosewic User" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-1368" y="983.5" width="120" height="60" as="geometry"/>
-        </mxCell>
         <mxCell id="WwuJ3jNGOPKnRlUZL0jA-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="-1248" y="1013.5" as="sourcePoint"/>
@@ -313,6 +310,9 @@
             <mxPoint x="66" y="576" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
+        <mxCell id="ZXBc8UasPS0uCbpXYorS-1" value="COSEWIC User" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1284" y="984" width="30" height="60" as="geometry"/>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
@@ -409,7 +409,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="acxWV6VYzEaFI3lThUTg" name="Draft_Flow">
-    <mxGraphModel dx="3970" dy="2523" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="2413" dy="1654" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="eDMDReFZTY4oZH7QNW2Y-0"/>
         <mxCell id="eDMDReFZTY4oZH7QNW2Y-1" parent="eDMDReFZTY4oZH7QNW2Y-0"/>
