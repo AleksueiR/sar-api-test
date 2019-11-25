@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2019-11-25T18:19:29.551Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="FaMRFGHwTU97yIJ7SuyW" version="12.3.0" type="github" pages="2">
+<mxfile host="www.draw.io" modified="2019-11-25T18:26:24.933Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="SnE9KQtDcc4x8BMX1VKq" version="12.3.0" type="github" pages="2">
   <diagram name="Page-1" id="c7558073-3199-34d8-9f00-42111426c3f3">
     <mxGraphModel dx="3273" dy="2134" grid="1" gridSize="12" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
@@ -524,34 +524,48 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="WwuJ3jNGOPKnRlUZL0jA-3" value="Cosewic User" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-1494" y="1440" width="120" height="60" as="geometry"/>
+          <mxGeometry x="-1388.5" y="1476" width="120" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="WwuJ3jNGOPKnRlUZL0jA-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-1374" y="1470" as="sourcePoint"/>
-            <mxPoint x="-1294" y="1470" as="targetPoint"/>
+            <mxPoint x="-1268.5" y="1506" as="sourcePoint"/>
+            <mxPoint x="-1188.5" y="1506" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="WwuJ3jNGOPKnRlUZL0jA-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WwuJ3jNGOPKnRlUZL0jA-14" target="WwuJ3jNGOPKnRlUZL0jA-16">
+        <mxCell id="WwuJ3jNGOPKnRlUZL0jA-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WwuJ3jNGOPKnRlUZL0jA-14" target="WwuJ3jNGOPKnRlUZL0jA-25">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
         <mxCell id="WwuJ3jNGOPKnRlUZL0jA-14" value="Create Draft Species" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="-1292.5" y="1440" width="120" height="60" as="geometry"/>
+          <mxGeometry x="-1187" y="1476" width="120" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="WwuJ3jNGOPKnRlUZL0jA-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WwuJ3jNGOPKnRlUZL0jA-16" target="WwuJ3jNGOPKnRlUZL0jA-18">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="WwuJ3jNGOPKnRlUZL0jA-16" value="Start new Draft Assessment" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="-1092.5" y="1440" width="120" height="60" as="geometry"/>
+        <mxCell id="WwuJ3jNGOPKnRlUZL0jA-16" value="Add new Draft Assessment" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="-799" y="1476" width="120" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="WwuJ3jNGOPKnRlUZL0jA-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WwuJ3jNGOPKnRlUZL0jA-18" target="WwuJ3jNGOPKnRlUZL0jA-23">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
         <mxCell id="WwuJ3jNGOPKnRlUZL0jA-18" value="Make Species and Assessment Permanent" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="-892.5" y="1440" width="120" height="60" as="geometry"/>
+          <mxGeometry x="-594.5" y="1476" width="120" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="WwuJ3jNGOPKnRlUZL0jA-23" value="Publish COSEWIC Info" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="-692.5" y="1440" width="120" height="60" as="geometry"/>
+          <mxGeometry x="-394.5" y="1476" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="WwuJ3jNGOPKnRlUZL0jA-27" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WwuJ3jNGOPKnRlUZL0jA-25" target="WwuJ3jNGOPKnRlUZL0jA-16">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="WwuJ3jNGOPKnRlUZL0jA-29" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WwuJ3jNGOPKnRlUZL0jA-25">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-933" y="1366" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WwuJ3jNGOPKnRlUZL0jA-25" value="Is there an Open meeting?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-995.5" y="1446" width="125" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="WwuJ3jNGOPKnRlUZL0jA-30" value="Add new Assessment Meeting" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="-985.5" y="1308" width="120" height="60" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
