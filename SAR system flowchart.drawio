@@ -1,6 +1,6 @@
-<mxfile host="www.draw.io" modified="2019-11-25T18:53:28.291Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="eRGZBocRN13vvJ8oloaA" version="12.3.0" type="github" pages="2">
+<mxfile host="www.draw.io" modified="2019-11-25T18:53:40.504Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="AKyw70nvNCuQXbw8UoW6" version="12.3.0" type="github" pages="2">
   <diagram name="COSEWIC" id="c7558073-3199-34d8-9f00-42111426c3f3">
-    <mxGraphModel dx="3970" dy="2523" grid="1" gridSize="12" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
+    <mxGraphModel dx="5663" dy="3469" grid="1" gridSize="12" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
@@ -586,9 +586,6 @@
         </mxCell>
         <mxCell id="WwuJ3jNGOPKnRlUZL0jA-71" value="Update Common Info" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="-679.5" y="2112" width="120" height="60" as="geometry"/>
-        </mxCell>
-        <mxCell id="Ky0k_D-DSjNHOhs5hOgf-5" value="Diagram #6" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];;autosize=1;horizontal=1;fontStyle=0;fontSize=40;" vertex="1" parent="1">
-          <mxGeometry x="689.5" y="1236" width="228" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="WwuJ3jNGOPKnRlUZL0jA-75" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WwuJ3jNGOPKnRlUZL0jA-72">
           <mxGeometry relative="1" as="geometry">
