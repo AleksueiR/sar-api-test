@@ -1,6 +1,6 @@
-<mxfile host="www.draw.io" modified="2019-11-25T20:59:50.666Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="vQrmfk4sO0Oymas6Nyo_" version="12.3.0" type="github" pages="3">
+<mxfile host="www.draw.io" modified="2019-11-25T21:07:28.700Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="CO3lAXwQz74dzBS3ExGk" version="12.3.0" type="github" pages="3">
   <diagram name="COSEWIC" id="c7558073-3199-34d8-9f00-42111426c3f3">
-    <mxGraphModel dx="3970" dy="1323" grid="1" gridSize="12" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
+    <mxGraphModel dx="3273" dy="934" grid="1" gridSize="12" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
@@ -47,10 +47,12 @@
             <mxPoint x="-69.16666666666652" y="1043.5" as="sourcePoint"/>
             <mxPoint x="146" y="1332" as="targetPoint"/>
             <Array as="points">
-              <mxPoint x="-37" y="1225"/>
-              <mxPoint x="-35" y="1225"/>
-              <mxPoint x="-35" y="1248"/>
-              <mxPoint x="141" y="1248"/>
+              <mxPoint x="-36" y="1226"/>
+              <mxPoint x="-34" y="1226"/>
+              <mxPoint x="-34" y="1248"/>
+              <mxPoint x="142" y="1248"/>
+              <mxPoint x="142" y="1332"/>
+              <mxPoint x="456" y="1332"/>
             </Array>
           </mxGeometry>
         </mxCell>
@@ -171,11 +173,11 @@
         </mxCell>
         <mxCell id="ZXBc8UasPS0uCbpXYorS-96" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WwuJ3jNGOPKnRlUZL0jA-71">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="459.5" y="1371" as="targetPoint"/>
+            <mxPoint x="456" y="1368" as="targetPoint"/>
             <Array as="points">
-              <mxPoint x="602.5" y="1598"/>
-              <mxPoint x="386.5" y="1598"/>
-              <mxPoint x="386.5" y="1371"/>
+              <mxPoint x="602" y="1598"/>
+              <mxPoint x="386" y="1598"/>
+              <mxPoint x="386" y="1368"/>
             </Array>
           </mxGeometry>
         </mxCell>
@@ -593,7 +595,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="acxWV6VYzEaFI3lThUTg" name="Draft_Flow">
-    <mxGraphModel dx="2413" dy="1654" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="3970" dy="2523" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="eDMDReFZTY4oZH7QNW2Y-0"/>
         <mxCell id="eDMDReFZTY4oZH7QNW2Y-1" parent="eDMDReFZTY4oZH7QNW2Y-0"/>
