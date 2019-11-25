@@ -1,6 +1,6 @@
-<mxfile host="www.draw.io" modified="2019-11-25T13:19:14.588Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="X7TZ0TosnF4pwT5CT17L" version="12.3.0" type="github" pages="1">
+<mxfile host="www.draw.io" modified="2019-11-25T13:42:27.192Z" agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36 OPR/64.0.3417.92" etag="O_Rkz22dLQnJleIA8Wc1" version="12.3.0" type="github" pages="1">
   <diagram name="Page-1" id="c7558073-3199-34d8-9f00-42111426c3f3">
-    <mxGraphModel dx="3022" dy="794" grid="1" gridSize="12" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
+    <mxGraphModel dx="2581" dy="548" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
@@ -22,25 +22,19 @@
             <mxPoint x="-1245" y="170" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="jn9xSUYISPLA68ydeZet-104" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="E1cjcMC4RDlBIDP7sY1C-116" target="E1cjcMC4RDlBIDP7sY1C-115" edge="1">
+        <mxCell id="jn9xSUYISPLA68ydeZet-104" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="E1cjcMC4RDlBIDP7sY1C-116" target="wUc7WX4bhzahjaM9EL9A-1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="-995" y="165" as="sourcePoint"/>
-            <mxPoint x="-1285" y="350" as="targetPoint"/>
+            <mxPoint x="-870" y="340" as="targetPoint"/>
             <Array as="points">
-              <mxPoint x="-855" y="280"/>
-              <mxPoint x="-1025" y="280"/>
-              <mxPoint x="-1315" y="280"/>
+              <mxPoint x="-855" y="340"/>
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="tL9PczSeXtMjVQ5EPy2s-7" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="tL9PczSeXtMjVQ5EPy2s-1" target="E1cjcMC4RDlBIDP7sY1C-117" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-1185" y="250" as="targetPoint"/>
-            <Array as="points">
-              <mxPoint x="-1005" y="240"/>
-              <mxPoint x="-1185" y="240"/>
-              <mxPoint x="-1185" y="200"/>
-            </Array>
+        <mxCell id="tL9PczSeXtMjVQ5EPy2s-7" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="tL9PczSeXtMjVQ5EPy2s-1" target="E1cjcMC4RDlBIDP7sY1C-117" edge="1">
+          <mxGeometry x="-0.1056" relative="1" as="geometry">
+            <mxPoint x="-1110" y="250" as="targetPoint"/>
+            <mxPoint as="offset"/>
           </mxGeometry>
         </mxCell>
         <mxCell id="tL9PczSeXtMjVQ5EPy2s-10" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="tL9PczSeXtMjVQ5EPy2s-1" target="E1cjcMC4RDlBIDP7sY1C-116" edge="1">
@@ -280,6 +274,15 @@
               <mxPoint x="-1300" y="607"/>
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="wUc7WX4bhzahjaM9EL9A-4" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="wUc7WX4bhzahjaM9EL9A-1" target="E1cjcMC4RDlBIDP7sY1C-115">
+          <mxGeometry x="-0.1859" relative="1" as="geometry">
+            <mxPoint x="-1220" y="340" as="targetPoint"/>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wUc7WX4bhzahjaM9EL9A-1" value="Is it Friday?" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-1140" y="290" width="100" height="100" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
