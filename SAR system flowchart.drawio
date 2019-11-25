@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2019-11-25T18:55:29.404Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="AkiaBqU3n8wxImO-2WGj" version="12.3.0" type="github" pages="2">
+<mxfile host="www.draw.io" modified="2019-11-25T18:56:28.606Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="OW8KMMW_w1gSWepxfLq_" version="12.3.0" type="github" pages="2">
   <diagram name="COSEWIC" id="c7558073-3199-34d8-9f00-42111426c3f3">
     <mxGraphModel dx="3273" dy="2134" grid="1" gridSize="12" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
@@ -536,7 +536,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="WwuJ3jNGOPKnRlUZL0jA-42" value="Make Revision Permanent" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="-477.5" y="1526.5" width="120" height="60" as="geometry"/>
+          <mxGeometry x="-476.5" y="1526.5" width="120" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="WwuJ3jNGOPKnRlUZL0jA-48" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WwuJ3jNGOPKnRlUZL0jA-45" target="WwuJ3jNGOPKnRlUZL0jA-47">
           <mxGeometry relative="1" as="geometry"/>
@@ -615,6 +615,9 @@
         </mxCell>
         <mxCell id="WwuJ3jNGOPKnRlUZL0jA-76" value="Publish Common Info" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="-676.5" y="2412" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="bXLVbo697JFJodXMGoPI-3" value="Want to add &lt;br&gt;Common details?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-684.5" y="1620" width="125" height="120" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
