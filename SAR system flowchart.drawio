@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2019-11-26T14:00:48.263Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="ezoIWnPbfZdHLkILRObI" version="12.3.1" type="github" pages="4">
+<mxfile host="www.draw.io" modified="2019-11-26T14:03:10.771Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="fiXd-oesHoDIn29IvIy4" version="12.3.1" type="github" pages="4">
   <diagram name="COSEWIC" id="c7558073-3199-34d8-9f00-42111426c3f3">
     <mxGraphModel dx="5663" dy="2269" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
@@ -500,8 +500,8 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram name="Copy of COSEWIC" id="4BSIFsbffMMIe3hzINM1">
-    <mxGraphModel dx="3022" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
+  <diagram name="COSEWIC v2" id="4BSIFsbffMMIe3hzINM1">
+    <mxGraphModel dx="3631" dy="1134" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
         <mxCell id="agf4B4eiEqbqFX-ImhHm-0"/>
         <mxCell id="agf4B4eiEqbqFX-ImhHm-1" parent="agf4B4eiEqbqFX-ImhHm-0"/>
@@ -695,7 +695,7 @@
             <mxPoint x="-88" y="1013.5" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="agf4B4eiEqbqFX-ImhHm-47" value="Make Species Permanent" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
+        <mxCell id="agf4B4eiEqbqFX-ImhHm-47" value="Make COSEWIC Info Permanent" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
           <mxGeometry x="-288" y="983.5" width="120" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="agf4B4eiEqbqFX-ImhHm-48" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" target="agf4B4eiEqbqFX-ImhHm-51">
@@ -758,7 +758,7 @@
         </mxCell>
         <mxCell id="agf4B4eiEqbqFX-ImhHm-63" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="agf4B4eiEqbqFX-ImhHm-64">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-840" y="1008" as="targetPoint"/>
+            <mxPoint x="-840" y="1020" as="targetPoint"/>
             <Array as="points">
               <mxPoint x="-880" y="1157"/>
               <mxPoint x="-840" y="1157"/>
@@ -779,14 +779,13 @@
         <mxCell id="agf4B4eiEqbqFX-ImhHm-67" value="Is COSEWIC Info&lt;br&gt;ready to be made &lt;br&gt;Permanent?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
           <mxGeometry x="-456" y="953" width="125" height="120" as="geometry"/>
         </mxCell>
-        <mxCell id="agf4B4eiEqbqFX-ImhHm-68" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="agf4B4eiEqbqFX-ImhHm-69" target="agf4B4eiEqbqFX-ImhHm-67">
+        <mxCell id="agf4B4eiEqbqFX-ImhHm-68" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="agf4B4eiEqbqFX-ImhHm-69">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="-470" y="1272" as="sourcePoint"/>
-            <mxPoint x="-469" y="1040" as="targetPoint"/>
+            <mxPoint x="-470" y="1020" as="targetPoint"/>
             <Array as="points">
               <mxPoint x="-507" y="1157"/>
               <mxPoint x="-470" y="1157"/>
-              <mxPoint x="-470" y="1013"/>
             </Array>
           </mxGeometry>
         </mxCell>
