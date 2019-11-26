@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2019-11-26T14:16:23.686Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="__mmRI4gSTFF7u8lx68c" version="12.3.1" type="github" pages="4">
+<mxfile host="www.draw.io" modified="2019-11-26T14:21:21.948Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="FB4UPdSzMBu_3XI7CG-a" version="12.3.1" type="github" pages="4">
   <diagram name="COSEWIC" id="c7558073-3199-34d8-9f00-42111426c3f3">
     <mxGraphModel dx="5663" dy="2269" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
@@ -501,7 +501,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="COSEWIC v2" id="4BSIFsbffMMIe3hzINM1">
-    <mxGraphModel dx="3631" dy="1134" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
+    <mxGraphModel dx="3273" dy="934" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
         <mxCell id="agf4B4eiEqbqFX-ImhHm-0"/>
         <mxCell id="agf4B4eiEqbqFX-ImhHm-1" parent="agf4B4eiEqbqFX-ImhHm-0"/>
@@ -669,20 +669,6 @@
         <mxCell id="agf4B4eiEqbqFX-ImhHm-38" value="Publish Common Info" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
           <mxGeometry x="931.5" y="987.5" width="120" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="agf4B4eiEqbqFX-ImhHm-39" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="agf4B4eiEqbqFX-ImhHm-40" target="agf4B4eiEqbqFX-ImhHm-54">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-        <mxCell id="agf4B4eiEqbqFX-ImhHm-40" value="Want to &lt;br&gt;Merge &lt;br&gt;this Species?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
-          <mxGeometry x="1521" y="664" width="125" height="120" as="geometry"/>
-        </mxCell>
-        <mxCell id="agf4B4eiEqbqFX-ImhHm-41" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="agf4B4eiEqbqFX-ImhHm-42">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1747.5" y="589" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="agf4B4eiEqbqFX-ImhHm-42" value="Want to &lt;br&gt;Split &lt;br&gt;this species?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
-          <mxGeometry x="1684" y="664" width="125" height="120" as="geometry"/>
-        </mxCell>
         <mxCell id="Pm8aq453HTPMfpRMcCzi-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="agf4B4eiEqbqFX-ImhHm-45" target="agf4B4eiEqbqFX-ImhHm-81">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1589.5" y="1132" as="targetPoint"/>
@@ -699,52 +685,8 @@
         <mxCell id="agf4B4eiEqbqFX-ImhHm-47" value="Make COSEWIC Info Permanent" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
           <mxGeometry x="-288" y="983.5" width="120" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="agf4B4eiEqbqFX-ImhHm-48" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" target="agf4B4eiEqbqFX-ImhHm-51">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1789" y="480" as="targetPoint"/>
-            <Array as="points">
-              <mxPoint x="1747" y="484"/>
-            </Array>
-            <mxPoint x="1747.5" y="509" as="sourcePoint"/>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="agf4B4eiEqbqFX-ImhHm-49" value="Create two or more New Species (the result of the Split)&amp;nbsp;" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
-          <mxGeometry x="1687" y="505" width="120" height="80" as="geometry"/>
-        </mxCell>
-        <mxCell id="agf4B4eiEqbqFX-ImhHm-50" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="agf4B4eiEqbqFX-ImhHm-51" target="agf4B4eiEqbqFX-ImhHm-57">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-        <mxCell id="agf4B4eiEqbqFX-ImhHm-51" value="Add Child Links from this Species to the new Species" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
-          <mxGeometry x="1685.5" y="399" width="120" height="60" as="geometry"/>
-        </mxCell>
-        <mxCell id="agf4B4eiEqbqFX-ImhHm-52" value="Inactivate the (two or more) parent Species" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
-          <mxGeometry x="1523.5" y="260" width="120" height="60" as="geometry"/>
-        </mxCell>
-        <mxCell id="agf4B4eiEqbqFX-ImhHm-53" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="agf4B4eiEqbqFX-ImhHm-54" target="agf4B4eiEqbqFX-ImhHm-56">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-        <mxCell id="agf4B4eiEqbqFX-ImhHm-54" value="Create one New Species (the result of the Merge)&amp;nbsp;" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
-          <mxGeometry x="1523.5" y="500" width="120" height="80" as="geometry"/>
-        </mxCell>
-        <mxCell id="agf4B4eiEqbqFX-ImhHm-55" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="agf4B4eiEqbqFX-ImhHm-56" target="agf4B4eiEqbqFX-ImhHm-52">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1582.9999999999995" y="299" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="agf4B4eiEqbqFX-ImhHm-56" value="Add a Child Link from these (parent) Species to the new Species, or, add a parent link to this species from the new species." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
-          <mxGeometry x="1523" y="350" width="120" height="110" as="geometry"/>
-        </mxCell>
-        <mxCell id="agf4B4eiEqbqFX-ImhHm-57" value="Inactivate the (one) parent Species" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
-          <mxGeometry x="1686" y="292" width="120" height="60" as="geometry"/>
-        </mxCell>
         <mxCell id="agf4B4eiEqbqFX-ImhHm-58" value="COSEWIC User" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;html=1;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
           <mxGeometry x="-1488" y="984" width="30" height="60" as="geometry"/>
-        </mxCell>
-        <mxCell id="agf4B4eiEqbqFX-ImhHm-59" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="agf4B4eiEqbqFX-ImhHm-45" target="agf4B4eiEqbqFX-ImhHm-40">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="1474.5" y="966" as="sourcePoint"/>
-            <mxPoint x="1497.5" y="914" as="targetPoint"/>
-          </mxGeometry>
         </mxCell>
         <mxCell id="agf4B4eiEqbqFX-ImhHm-60" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="agf4B4eiEqbqFX-ImhHm-62" target="agf4B4eiEqbqFX-ImhHm-11">
           <mxGeometry relative="1" as="geometry"/>
@@ -859,29 +801,6 @@
         <mxCell id="agf4B4eiEqbqFX-ImhHm-82" value="Close Assessment Meeting" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
           <mxGeometry x="1538.5" y="1310" width="120" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="agf4B4eiEqbqFX-ImhHm-83" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="agf4B4eiEqbqFX-ImhHm-84">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1432.4999999999995" y="584" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="agf4B4eiEqbqFX-ImhHm-84" value="Is this Species the&lt;br&gt;result of a Split?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
-          <mxGeometry x="1370" y="664" width="125" height="120" as="geometry"/>
-        </mxCell>
-        <mxCell id="agf4B4eiEqbqFX-ImhHm-85" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="agf4B4eiEqbqFX-ImhHm-45" target="agf4B4eiEqbqFX-ImhHm-84">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="1453.5" y="974" as="sourcePoint"/>
-            <mxPoint x="1378" y="866" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="agf4B4eiEqbqFX-ImhHm-86" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="agf4B4eiEqbqFX-ImhHm-45" target="agf4B4eiEqbqFX-ImhHm-42">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="1486.54" y="986" as="sourcePoint"/>
-            <mxPoint x="1432" y="826" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="agf4B4eiEqbqFX-ImhHm-87" value="Add Horizontal links from this Species to related &lt;br&gt;Sibling species." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
-          <mxGeometry x="1377" y="523" width="120" height="60" as="geometry"/>
-        </mxCell>
         <mxCell id="agf4B4eiEqbqFX-ImhHm-88" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="agf4B4eiEqbqFX-ImhHm-90">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="282.5" y="695.5" as="targetPoint"/>
@@ -938,6 +857,15 @@
             <mxPoint x="1491.5" y="1018" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="agf4B4eiEqbqFX-ImhHm-101" target="65viCuWW6u9hBaeKhkRy-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1351.500000000001" y="1128" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="1353" y="1500"/>
+              <mxPoint x="-1147" y="1500"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="agf4B4eiEqbqFX-ImhHm-101" value="Publish Registry Profile" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
           <mxGeometry x="1291.5" y="988" width="120" height="60" as="geometry"/>
         </mxCell>
@@ -990,6 +918,123 @@
         </mxCell>
         <mxCell id="hJa5vQ0YMWpHOZavpWDN-19" value="Discard Revision" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
           <mxGeometry x="410" y="650" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-0" value="COSEWIC User" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;html=1;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
+          <mxGeometry x="-1345.5" y="2262" width="30" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-2" value="" style="endArrow=classic;html=1;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-1287.5" y="2291.5" as="sourcePoint"/>
+            <mxPoint x="-1207.5" y="2291.5" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="65viCuWW6u9hBaeKhkRy-3" target="65viCuWW6u9hBaeKhkRy-4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-3" value="Search Species" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
+          <mxGeometry x="-1207.5" y="2262" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="65viCuWW6u9hBaeKhkRy-4" target="65viCuWW6u9hBaeKhkRy-10">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-4" value="Select Species" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
+          <mxGeometry x="-1007.5" y="2262" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-6" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="65viCuWW6u9hBaeKhkRy-7" target="65viCuWW6u9hBaeKhkRy-17">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-7" value="Want to &lt;br&gt;Merge &lt;br&gt;this Species?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
+          <mxGeometry x="-822.5" y="1944" width="125" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-8" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="65viCuWW6u9hBaeKhkRy-9">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-596" y="1869" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-9" value="Want to &lt;br&gt;Split &lt;br&gt;this species?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
+          <mxGeometry x="-659.5" y="1944" width="125" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-10" value="Choose an Action" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
+          <mxGeometry x="-814" y="2252" width="120" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" target="65viCuWW6u9hBaeKhkRy-14">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-554.5" y="1760" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="-596.5" y="1764"/>
+            </Array>
+            <mxPoint x="-596" y="1790" as="sourcePoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-12" value="Create two or more New Species (the result of the Split)&amp;nbsp;" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
+          <mxGeometry x="-656.5" y="1785" width="120" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="65viCuWW6u9hBaeKhkRy-14" target="65viCuWW6u9hBaeKhkRy-20">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-14" value="Add Child Links from this Species to the new Species" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
+          <mxGeometry x="-658" y="1679" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-15" value="Inactivate the (two or more) parent Species" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
+          <mxGeometry x="-820" y="1540" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="65viCuWW6u9hBaeKhkRy-17" target="65viCuWW6u9hBaeKhkRy-19">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-17" value="Create one New Species (the result of the Merge)&amp;nbsp;" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
+          <mxGeometry x="-820" y="1780" width="120" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="65viCuWW6u9hBaeKhkRy-19" target="65viCuWW6u9hBaeKhkRy-15">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-760.5000000000005" y="1579" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-19" value="Add a Child Link from these (parent) Species to the new Species, or, add a parent link to this species from the new species." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
+          <mxGeometry x="-820.5" y="1630" width="120" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-20" value="Inactivate the (one) parent Species" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
+          <mxGeometry x="-657.5" y="1572" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-21" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="65viCuWW6u9hBaeKhkRy-10" target="65viCuWW6u9hBaeKhkRy-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-869" y="2246" as="sourcePoint"/>
+            <mxPoint x="-846" y="2194" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-22" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="65viCuWW6u9hBaeKhkRy-23">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-911" y="1864" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-23" value="Is this Species the&lt;br&gt;result of a Split?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
+          <mxGeometry x="-973.5" y="1944" width="125" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-24" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="65viCuWW6u9hBaeKhkRy-10" target="65viCuWW6u9hBaeKhkRy-23">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-890" y="2254" as="sourcePoint"/>
+            <mxPoint x="-965.5" y="2146" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-25" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="65viCuWW6u9hBaeKhkRy-10" target="65viCuWW6u9hBaeKhkRy-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-856.96" y="2266" as="sourcePoint"/>
+            <mxPoint x="-911.5" y="2106" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-26" value="Add Horizontal links from this Species to related &lt;br&gt;Sibling species." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
+          <mxGeometry x="-966.5" y="1803" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-34" value="COSEWIC User" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;html=1;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
+          <mxGeometry x="-1345.5" y="2480" width="30" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-35" value="" style="endArrow=classic;html=1;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-1287.5" y="2509.4999999999995" as="sourcePoint"/>
+            <mxPoint x="-1207.5" y="2509.4999999999995" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="65viCuWW6u9hBaeKhkRy-36" value="Search Species" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
+          <mxGeometry x="-1207.5" y="2480" width="120" height="60" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
