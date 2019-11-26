@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2019-11-26T11:56:20.457Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.93 Safari/537.36 Vivaldi/2.8.1664.40" etag="DeKq_6BR3yMr06T8oid1" version="12.3.0" type="github" pages="3">
+<mxfile host="www.draw.io" modified="2019-11-26T11:58:11.670Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.93 Safari/537.36 Vivaldi/2.8.1664.40" etag="v4qG_U5LZMW3CcPeBqGs" version="12.3.0" type="github" pages="3">
   <diagram name="COSEWIC" id="c7558073-3199-34d8-9f00-42111426c3f3">
     <mxGraphModel dx="2985" dy="643" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
@@ -98,8 +98,14 @@
             </Array>
           </mxGeometry>
         </mxCell>
+        <mxCell id="KGhs4hahsvAD4rvvswbJ-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WwuJ3jNGOPKnRlUZL0jA-31" target="KGhs4hahsvAD4rvvswbJ-3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
         <mxCell id="WwuJ3jNGOPKnRlUZL0jA-31" value="Is COSEWIC &lt;br&gt;Info&amp;nbsp;ready &lt;br&gt;to Publish?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="102" y="842" width="125" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="KGhs4hahsvAD4rvvswbJ-3" value="Is COSEWIC &lt;br&gt;Info&amp;nbsp;ready &lt;br&gt;to Publish?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-103" y="842" width="125" height="120" as="geometry"/>
         </mxCell>
         <mxCell id="ZXBc8UasPS0uCbpXYorS-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WwuJ3jNGOPKnRlUZL0jA-36">
           <mxGeometry relative="1" as="geometry">
@@ -109,11 +115,12 @@
         <mxCell id="WwuJ3jNGOPKnRlUZL0jA-36" value="Create COSEWIC Info Revision" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="296" y="810" width="120" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="ZXBc8UasPS0uCbpXYorS-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WwuJ3jNGOPKnRlUZL0jA-42">
+        <mxCell id="ZXBc8UasPS0uCbpXYorS-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="WwuJ3jNGOPKnRlUZL0jA-42" target="WwuJ3jNGOPKnRlUZL0jA-31">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="90" y="900" as="targetPoint"/>
             <Array as="points">
-              <mxPoint x="90" y="672"/>
+              <mxPoint x="80" y="672"/>
+              <mxPoint x="80" y="902"/>
             </Array>
           </mxGeometry>
         </mxCell>
@@ -238,12 +245,11 @@
         <mxCell id="bXLVbo697JFJodXMGoPI-17" value="Make Species Permanent" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="-288" y="983.5" width="120" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="bXLVbo697JFJodXMGoPI-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="bXLVbo697JFJodXMGoPI-21">
+        <mxCell id="bXLVbo697JFJodXMGoPI-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="bXLVbo697JFJodXMGoPI-21" target="bXLVbo697JFJodXMGoPI-29">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-2" y="500" as="targetPoint"/>
+            <mxPoint x="40" y="520" as="targetPoint"/>
             <Array as="points">
               <mxPoint x="-2" y="524"/>
-              <mxPoint x="-3" y="524"/>
             </Array>
           </mxGeometry>
         </mxCell>
@@ -274,7 +280,7 @@
           <mxGeometry x="-226" y="390" width="120" height="110" as="geometry"/>
         </mxCell>
         <mxCell id="bXLVbo697JFJodXMGoPI-39" value="Inactivate (one) parent Species" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="-64" y="332" width="120" height="60" as="geometry"/>
+          <mxGeometry x="-63" y="332" width="120" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="ZXBc8UasPS0uCbpXYorS-1" value="COSEWIC User" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;html=1;" vertex="1" parent="1">
           <mxGeometry x="-1488" y="984" width="30" height="60" as="geometry"/>
