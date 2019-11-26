@@ -1,6 +1,6 @@
-<mxfile host="www.draw.io" modified="2019-11-26T13:14:10.765Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="P7kxPaSNIfzvM61EGmKI" version="12.3.1" type="github" pages="3">
+<mxfile host="www.draw.io" modified="2019-11-26T13:21:13.603Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="VQy3uX0SzAjOQQxmcx5J" version="12.3.1" type="github" pages="3">
   <diagram name="COSEWIC" id="c7558073-3199-34d8-9f00-42111426c3f3">
-    <mxGraphModel dx="3273" dy="934" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
+    <mxGraphModel dx="3970" dy="1323" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
@@ -247,7 +247,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="bXLVbo697JFJodXMGoPI-21" value="Create two or more New Species (The result of the split)&amp;nbsp;" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+        <mxCell id="bXLVbo697JFJodXMGoPI-21" value="Create two or more New Species (the result of the Split)&amp;nbsp;" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="-62.5" y="549" width="120" height="80" as="geometry"/>
         </mxCell>
         <mxCell id="ZXBc8UasPS0uCbpXYorS-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="bXLVbo697JFJodXMGoPI-29" target="bXLVbo697JFJodXMGoPI-39" edge="1">
@@ -256,13 +256,13 @@
         <mxCell id="bXLVbo697JFJodXMGoPI-29" value="Add Child Links from this Species to the new Species" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="-63.5" y="439" width="120" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="bXLVbo697JFJodXMGoPI-32" value="Inactivate (two) parent Species" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="bXLVbo697JFJodXMGoPI-32" value="Inactivate the (two or more) parent Species" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="-225.5" y="300" width="120" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="ZXBc8UasPS0uCbpXYorS-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="bXLVbo697JFJodXMGoPI-34" target="bXLVbo697JFJodXMGoPI-37" edge="1">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="bXLVbo697JFJodXMGoPI-34" value="Create one New Species (The result of the Merge)&amp;nbsp;" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+        <mxCell id="bXLVbo697JFJodXMGoPI-34" value="Create one New Species (the result of the Merge)&amp;nbsp;" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="-225.5" y="540" width="120" height="80" as="geometry"/>
         </mxCell>
         <mxCell id="ZXBc8UasPS0uCbpXYorS-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="bXLVbo697JFJodXMGoPI-37" target="bXLVbo697JFJodXMGoPI-32" edge="1">
@@ -273,7 +273,7 @@
         <mxCell id="bXLVbo697JFJodXMGoPI-37" value="Add a Child Link from these (parent) Species to the new Species, or, add a parent link to this species from the new species." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="-226" y="390" width="120" height="110" as="geometry"/>
         </mxCell>
-        <mxCell id="bXLVbo697JFJodXMGoPI-39" value="Inactivate (one) parent Species" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="bXLVbo697JFJodXMGoPI-39" value="Inactivate the (one) parent Species" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="-63" y="332" width="120" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="ZXBc8UasPS0uCbpXYorS-1" value="COSEWIC User" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;html=1;" parent="1" vertex="1">
