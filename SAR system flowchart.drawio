@@ -1,6 +1,6 @@
-<mxfile host="www.draw.io" modified="2019-11-26T11:52:46.088Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.93 Safari/537.36 Vivaldi/2.8.1664.40" etag="A5YR7ObT8iHimhG1OsgH" version="12.3.0" type="github" pages="3">
+<mxfile host="www.draw.io" modified="2019-11-26T11:56:20.457Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.93 Safari/537.36 Vivaldi/2.8.1664.40" etag="DeKq_6BR3yMr06T8oid1" version="12.3.0" type="github" pages="3">
   <diagram name="COSEWIC" id="c7558073-3199-34d8-9f00-42111426c3f3">
-    <mxGraphModel dx="2746" dy="532" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
+    <mxGraphModel dx="2985" dy="643" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
@@ -80,8 +80,8 @@
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="-1191" y="1020" as="targetPoint"/>
             <Array as="points">
-              <mxPoint x="-1220" y="845"/>
-              <mxPoint x="-1220" y="1014"/>
+              <mxPoint x="-1191" y="846"/>
+              <mxPoint x="-1191" y="1014"/>
             </Array>
           </mxGeometry>
         </mxCell>
@@ -256,7 +256,7 @@
         <mxCell id="bXLVbo697JFJodXMGoPI-29" value="Add Child Links from this Species to the new Species" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="-63.5" y="439" width="120" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="bXLVbo697JFJodXMGoPI-32" value="Inactivate this Species" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="bXLVbo697JFJodXMGoPI-32" value="Inactivate (two) parent Species" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="-225.5" y="300" width="120" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="ZXBc8UasPS0uCbpXYorS-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="bXLVbo697JFJodXMGoPI-34" target="bXLVbo697JFJodXMGoPI-37">
@@ -270,10 +270,10 @@
             <mxPoint x="-166.00000000000045" y="339" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="bXLVbo697JFJodXMGoPI-37" value="Add a Child Link from this Species to the new Species, or, add a parent link to this species from the new species." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="-226" y="411" width="120" height="84" as="geometry"/>
+        <mxCell id="bXLVbo697JFJodXMGoPI-37" value="Add a Child Link from these (parent) Species to the new Species, or, add a parent link to this species from the new species." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="-226" y="390" width="120" height="110" as="geometry"/>
         </mxCell>
-        <mxCell id="bXLVbo697JFJodXMGoPI-39" value="Inactivate this Species" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="bXLVbo697JFJodXMGoPI-39" value="Inactivate (one) parent Species" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="-64" y="332" width="120" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="ZXBc8UasPS0uCbpXYorS-1" value="COSEWIC User" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;html=1;" vertex="1" parent="1">
@@ -311,21 +311,22 @@
         <mxCell id="ZXBc8UasPS0uCbpXYorS-35" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ZXBc8UasPS0uCbpXYorS-33" target="bXLVbo697JFJodXMGoPI-17">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="ZXBc8UasPS0uCbpXYorS-39" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ZXBc8UasPS0uCbpXYorS-33">
+        <mxCell id="ZXBc8UasPS0uCbpXYorS-39" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ZXBc8UasPS0uCbpXYorS-33" target="ZXBc8UasPS0uCbpXYorS-54">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-393" y="1128" as="targetPoint"/>
+            <mxPoint x="-380" y="1110" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
         <mxCell id="ZXBc8UasPS0uCbpXYorS-33" value="Is COSEWIC Info&lt;br&gt;ready to be made &lt;br&gt;Permanent?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="-456" y="953" width="125" height="120" as="geometry"/>
         </mxCell>
-        <mxCell id="ZXBc8UasPS0uCbpXYorS-44" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="ZXBc8UasPS0uCbpXYorS-40">
+        <mxCell id="ZXBc8UasPS0uCbpXYorS-44" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ZXBc8UasPS0uCbpXYorS-40" target="ZXBc8UasPS0uCbpXYorS-33">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="-470" y="1272" as="sourcePoint"/>
-            <mxPoint x="-469" y="1008" as="targetPoint"/>
+            <mxPoint x="-469" y="1040" as="targetPoint"/>
             <Array as="points">
               <mxPoint x="-507" y="1157"/>
               <mxPoint x="-470" y="1157"/>
+              <mxPoint x="-470" y="1013"/>
             </Array>
           </mxGeometry>
         </mxCell>
