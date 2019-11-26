@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2019-11-26T15:16:07.451Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="_5KKt280qb8oKXHvwMv5" version="12.3.1" type="github" pages="4">
+<mxfile host="www.draw.io" modified="2019-11-26T15:21:10.491Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="n8q_af6xiqV74kIQufkn" version="12.3.1" type="github" pages="4">
   <diagram name="COSEWIC" id="c7558073-3199-34d8-9f00-42111426c3f3">
     <mxGraphModel dx="5155" dy="1985" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
@@ -501,7 +501,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="COSEWIC v2" id="4BSIFsbffMMIe3hzINM1">
-    <mxGraphModel dx="6755" dy="1985" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
+    <mxGraphModel dx="5231" dy="1134" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
         <mxCell id="agf4B4eiEqbqFX-ImhHm-0"/>
         <mxCell id="agf4B4eiEqbqFX-ImhHm-1" parent="agf4B4eiEqbqFX-ImhHm-0"/>
@@ -1259,6 +1259,26 @@
         </mxCell>
         <mxCell id="xqgrInUvKXfUuhmn9M7a-96" value="Publish Changes" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
           <mxGeometry x="264" y="1980" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="OAsp7MC-GxPwgPuj2An0-0" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="xqgrInUvKXfUuhmn9M7a-70">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-20.039999999999964" y="2020" as="sourcePoint"/>
+            <mxPoint x="40" y="2020" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OAsp7MC-GxPwgPuj2An0-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="agf4B4eiEqbqFX-ImhHm-1" source="OAsp7MC-GxPwgPuj2An0-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-200" y="2180" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="140" y="1840"/>
+              <mxPoint x="-289" y="1840"/>
+              <mxPoint x="-289" y="2040"/>
+              <mxPoint x="-200" y="2040"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OAsp7MC-GxPwgPuj2An0-1" value="Edit or Remove &lt;br&gt;Links" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="agf4B4eiEqbqFX-ImhHm-1">
+          <mxGeometry x="40" y="1990" width="120" height="60" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
