@@ -1,6 +1,6 @@
-<mxfile host="www.draw.io" modified="2019-11-27T20:14:02.059Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0" etag="B5-c7Leg-JUTLM9r0-uC" version="12.3.2" type="github" pages="2">
+<mxfile host="www.draw.io" modified="2019-11-27T20:20:15.980Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0" etag="gHhXtKXzRtFa41NYh6CU" version="12.3.2" type="github" pages="2">
   <diagram name="COSEWIC" id="4BSIFsbffMMIe3hzINM1">
-    <mxGraphModel dx="4622" dy="791" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
+    <mxGraphModel dx="6755" dy="1978" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
         <mxCell id="agf4B4eiEqbqFX-ImhHm-0"/>
         <mxCell id="agf4B4eiEqbqFX-ImhHm-1" parent="agf4B4eiEqbqFX-ImhHm-0"/>
@@ -817,7 +817,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Legal" id="i22tDceMhx7sURj444v1">
-    <mxGraphModel dx="5570" dy="1323" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
+    <mxGraphModel dx="3877" dy="377" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-0"/>
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-1" parent="IdWxt1GD36hkP3Ce9KiH-0"/>
@@ -841,9 +841,13 @@
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="IdWxt1GD36hkP3Ce9KiH-1" target="IdWxt1GD36hkP3Ce9KiH-49" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="-2180" y="691.166666666667" as="sourcePoint"/>
+            <Array as="points">
+              <mxPoint x="-2154" y="691"/>
+              <mxPoint x="-2154" y="691"/>
+            </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="7IrzONXMMAA0xLJHvDsm-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="IdWxt1GD36hkP3Ce9KiH-1" source="IdWxt1GD36hkP3Ce9KiH-10" target="IdWxt1GD36hkP3Ce9KiH-33">
+        <mxCell id="7IrzONXMMAA0xLJHvDsm-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="IdWxt1GD36hkP3Ce9KiH-1" source="IdWxt1GD36hkP3Ce9KiH-10" target="IdWxt1GD36hkP3Ce9KiH-33" edge="1">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-10" value="Publish Legal Info" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="IdWxt1GD36hkP3Ce9KiH-1" vertex="1">
@@ -913,7 +917,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="IdWxt1GD36hkP3Ce9KiH-37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="IdWxt1GD36hkP3Ce9KiH-1" source="IdWxt1GD36hkP3Ce9KiH-38" edge="1" target="IdWxt1GD36hkP3Ce9KiH-77">
+        <mxCell id="IdWxt1GD36hkP3Ce9KiH-37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="IdWxt1GD36hkP3Ce9KiH-1" source="IdWxt1GD36hkP3Ce9KiH-38" target="IdWxt1GD36hkP3Ce9KiH-77" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="-981" y="696.5" as="targetPoint"/>
           </mxGeometry>
@@ -946,10 +950,10 @@
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-50" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="IdWxt1GD36hkP3Ce9KiH-1" source="IdWxt1GD36hkP3Ce9KiH-51" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="-2143" y="949.5" as="sourcePoint"/>
-            <mxPoint x="-2143" y="697.5" as="targetPoint"/>
+            <mxPoint x="-2143" y="690" as="targetPoint"/>
             <Array as="points">
               <mxPoint x="-2180" y="835"/>
-              <mxPoint x="-2142" y="835"/>
+              <mxPoint x="-2143" y="835"/>
             </Array>
           </mxGeometry>
         </mxCell>
