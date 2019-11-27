@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2019-11-27T20:03:02.118Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0" etag="Xet85nhJTnaNljfBQuHz" version="12.3.2" type="github" pages="2">
+<mxfile host="www.draw.io" modified="2019-11-27T20:03:32.856Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0" etag="AUQGtF-zuaNibx6kaYKc" version="12.3.2" type="github" pages="2">
   <diagram name="COSEWIC" id="4BSIFsbffMMIe3hzINM1">
     <mxGraphModel dx="4385" dy="659" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
@@ -459,7 +459,7 @@
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
         <mxCell id="65viCuWW6u9hBaeKhkRy-64" value="Add Parent Links to the parent species from the new child species." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="agf4B4eiEqbqFX-ImhHm-1" vertex="1">
-          <mxGeometry x="-2307.5" y="1040.5" width="120" height="110" as="geometry"/>
+          <mxGeometry x="-2307" y="1060" width="120" height="71" as="geometry"/>
         </mxCell>
         <mxCell id="65viCuWW6u9hBaeKhkRy-66" value="Inactivate the (two or more) parent Species" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="agf4B4eiEqbqFX-ImhHm-1" vertex="1">
           <mxGeometry x="-2119" y="1065.5" width="120" height="60" as="geometry"/>
