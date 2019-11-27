@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2019-11-27T20:23:04.126Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0" etag="Hb-ZGQZoQUL3iN0NpfEA" version="12.3.2" type="github" pages="2">
+<mxfile host="www.draw.io" modified="2019-11-27T20:24:38.381Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0" etag="xCfxnJupSOHDmfk7fsJA" version="12.3.2" type="github" pages="2">
   <diagram name="COSEWIC" id="4BSIFsbffMMIe3hzINM1">
     <mxGraphModel dx="6755" dy="1978" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
@@ -1146,15 +1146,20 @@
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-128" value="Edit Listing Process" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="IdWxt1GD36hkP3Ce9KiH-1" vertex="1">
           <mxGeometry x="-2303" y="1700" width="120" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="IdWxt1GD36hkP3Ce9KiH-136" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="IdWxt1GD36hkP3Ce9KiH-1" source="IdWxt1GD36hkP3Ce9KiH-137" target="IdWxt1GD36hkP3Ce9KiH-142" edge="1">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="IdWxt1GD36hkP3Ce9KiH-136" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="IdWxt1GD36hkP3Ce9KiH-1" source="IdWxt1GD36hkP3Ce9KiH-137" target="IdWxt1GD36hkP3Ce9KiH-142" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-2426" y="1350" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="-2426" y="1365"/>
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-137" value="Add Legal Info Revision&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="IdWxt1GD36hkP3Ce9KiH-1" vertex="1">
           <mxGeometry x="-2486" y="1390" width="120" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-138" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="IdWxt1GD36hkP3Ce9KiH-1" source="IdWxt1GD36hkP3Ce9KiH-139" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-2146" y="1540" as="targetPoint"/>
+            <mxPoint x="-2146" y="1550" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-139" value="Make Revision Permanent" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="IdWxt1GD36hkP3Ce9KiH-1" vertex="1">
@@ -1187,7 +1192,7 @@
         </mxCell>
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-145" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="IdWxt1GD36hkP3Ce9KiH-1" source="IdWxt1GD36hkP3Ce9KiH-146" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-1933.5" y="1540" as="targetPoint"/>
+            <mxPoint x="-1934" y="1550" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-146" value="Edit Common Info" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="IdWxt1GD36hkP3Ce9KiH-1" vertex="1">
@@ -1195,7 +1200,7 @@
         </mxCell>
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-147" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="IdWxt1GD36hkP3Ce9KiH-1" source="IdWxt1GD36hkP3Ce9KiH-148" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-1741" y="1560" as="targetPoint"/>
+            <mxPoint x="-1741" y="1550" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-148" value="Edit Registry Profile" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="IdWxt1GD36hkP3Ce9KiH-1" vertex="1">
@@ -1216,7 +1221,7 @@
         </mxCell>
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-165" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="IdWxt1GD36hkP3Ce9KiH-1" source="IdWxt1GD36hkP3Ce9KiH-166" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-1524" y="1560" as="targetPoint"/>
+            <mxPoint x="-1524" y="1550" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-166" value="Strike From List" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="IdWxt1GD36hkP3Ce9KiH-1" vertex="1">
