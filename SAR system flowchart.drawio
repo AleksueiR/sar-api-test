@@ -1,6 +1,6 @@
-<mxfile host="www.draw.io" modified="2019-11-28T18:21:11.167Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0" etag="bXjiLD7I_DV5aOTGvhiS" version="12.3.3" type="github" pages="2">
+<mxfile host="www.draw.io" modified="2019-11-28T18:21:30.345Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0" etag="DWfzwDnoBX2l-ZNf_l00" version="12.3.3" type="github" pages="2">
   <diagram name="COSEWIC" id="4BSIFsbffMMIe3hzINM1">
-    <mxGraphModel dx="5231" dy="2330" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
+    <mxGraphModel dx="3391" dy="1306" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
         <mxCell id="agf4B4eiEqbqFX-ImhHm-0"/>
         <mxCell id="agf4B4eiEqbqFX-ImhHm-1" parent="agf4B4eiEqbqFX-ImhHm-0"/>
@@ -833,7 +833,12 @@
           <mxGeometry x="-1840" y="1029" width="120" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="QYEEub3RCXGKD_CGOi6J-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="agf4B4eiEqbqFX-ImhHm-1" source="QYEEub3RCXGKD_CGOi6J-13" target="agf4B4eiEqbqFX-ImhHm-22" edge="1">
-          <mxGeometry relative="1" as="geometry"/>
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-1215" y="-737"/>
+              <mxPoint x="-1215" y="-737"/>
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="QYEEub3RCXGKD_CGOi6J-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="agf4B4eiEqbqFX-ImhHm-1" source="QYEEub3RCXGKD_CGOi6J-13" target="agf4B4eiEqbqFX-ImhHm-26" edge="1">
           <mxGeometry relative="1" as="geometry">
