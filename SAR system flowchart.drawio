@@ -1,6 +1,6 @@
-<mxfile host="www.draw.io" modified="2019-11-28T18:15:28.005Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0" etag="zqdNkiTX9Iv3vxixQBJP" version="12.3.3" type="github" pages="2">
+<mxfile host="www.draw.io" modified="2019-11-28T18:15:37.745Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0" etag="SDDE0jI9yXQvlgG4bT88" version="12.3.3" type="github" pages="2">
   <diagram name="COSEWIC" id="4BSIFsbffMMIe3hzINM1">
-    <mxGraphModel dx="3595" dy="1420" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
+    <mxGraphModel dx="4181" dy="1746" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
         <mxCell id="agf4B4eiEqbqFX-ImhHm-0"/>
         <mxCell id="agf4B4eiEqbqFX-ImhHm-1" parent="agf4B4eiEqbqFX-ImhHm-0"/>
@@ -509,6 +509,10 @@
         <mxCell id="xqgrInUvKXfUuhmn9M7a-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="agf4B4eiEqbqFX-ImhHm-1" source="xqgrInUvKXfUuhmn9M7a-27" target="xqgrInUvKXfUuhmn9M7a-31" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="-2000" y="1140" as="sourcePoint"/>
+            <Array as="points">
+              <mxPoint x="-2010" y="1088"/>
+              <mxPoint x="-2010" y="1088"/>
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="xqgrInUvKXfUuhmn9M7a-27" value="Add Revision for current Assessment" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="agf4B4eiEqbqFX-ImhHm-1" vertex="1">
