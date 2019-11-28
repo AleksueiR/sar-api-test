@@ -1,6 +1,6 @@
-<mxfile host="www.draw.io" modified="2019-11-28T18:15:37.745Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0" etag="SDDE0jI9yXQvlgG4bT88" version="12.3.3" type="github" pages="2">
+<mxfile host="www.draw.io" modified="2019-11-28T18:15:59.668Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0" etag="_I9U90-D5AohEqfwnAJK" version="12.3.3" type="github" pages="2">
   <diagram name="COSEWIC" id="4BSIFsbffMMIe3hzINM1">
-    <mxGraphModel dx="4181" dy="1746" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
+    <mxGraphModel dx="4385" dy="1859" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
         <mxCell id="agf4B4eiEqbqFX-ImhHm-0"/>
         <mxCell id="agf4B4eiEqbqFX-ImhHm-1" parent="agf4B4eiEqbqFX-ImhHm-0"/>
@@ -347,7 +347,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="65viCuWW6u9hBaeKhkRy-42" value="Revoke Assessment" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="agf4B4eiEqbqFX-ImhHm-1" vertex="1">
-          <mxGeometry x="-2311.5" y="1060" width="120" height="60" as="geometry"/>
+          <mxGeometry x="-2311.5" y="1058" width="120" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="65viCuWW6u9hBaeKhkRy-49" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="agf4B4eiEqbqFX-ImhHm-1" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -756,7 +756,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="1DGSvdMxOwKcoVlehXgz-0" value="Add new Assessment" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="agf4B4eiEqbqFX-ImhHm-1" vertex="1">
-          <mxGeometry x="-2421" y="990" width="120" height="60" as="geometry"/>
+          <mxGeometry x="-2420" y="980" width="120" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="56zbSsByih4b68HN1l-h-7" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.65;entryY=0.005;entryDx=0;entryDy=0;entryPerimeter=0;" parent="agf4B4eiEqbqFX-ImhHm-1" source="xqgrInUvKXfUuhmn9M7a-18" target="1DGSvdMxOwKcoVlehXgz-0" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
