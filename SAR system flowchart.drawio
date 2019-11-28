@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2019-11-28T19:08:35.298Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0" etag="V4vQ8xOaQsRxWkJdMcsH" version="12.3.3" type="github" pages="2">
+<mxfile host="www.draw.io" modified="2019-11-28T19:20:37.513Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0" etag="ObWWXOiMX-4PMwOh41g9" version="12.3.3" type="github" pages="2">
   <diagram name="COSEWIC" id="4BSIFsbffMMIe3hzINM1">
     <mxGraphModel dx="4622" dy="1991" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
@@ -897,7 +897,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Legal" id="i22tDceMhx7sURj444v1">
-    <mxGraphModel dx="5570" dy="1318" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
+    <mxGraphModel dx="4622" dy="791" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-0"/>
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-1" parent="IdWxt1GD36hkP3Ce9KiH-0"/>
@@ -1111,7 +1111,7 @@
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="-2830" y="996.5" as="targetPoint"/>
             <Array as="points">
-              <mxPoint x="-2800" y="1550"/>
+              <mxPoint x="-2810" y="1550"/>
             </Array>
           </mxGeometry>
         </mxCell>
