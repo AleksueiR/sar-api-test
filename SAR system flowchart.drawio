@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2019-11-28T19:03:27.011Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0" etag="CltnRr92SNx7dhadscnr" version="12.3.3" type="github" pages="2">
+<mxfile host="www.draw.io" modified="2019-11-28T19:07:15.935Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0" etag="ePHJ-julG4S-WZRg2HnK" version="12.3.3" type="github" pages="2">
   <diagram name="COSEWIC" id="4BSIFsbffMMIe3hzINM1">
     <mxGraphModel dx="4622" dy="1991" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
@@ -897,7 +897,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Legal" id="i22tDceMhx7sURj444v1">
-    <mxGraphModel dx="5231" dy="1130" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
+    <mxGraphModel dx="4385" dy="659" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-0"/>
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-1" parent="IdWxt1GD36hkP3Ce9KiH-0"/>
@@ -1268,7 +1268,7 @@
           <mxGeometry x="-1722" y="1490" width="125" height="120" as="geometry"/>
         </mxCell>
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-169" value="Publish Changes" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="IdWxt1GD36hkP3Ce9KiH-1" vertex="1">
-          <mxGeometry x="-1719.5" y="1644" width="120" height="60" as="geometry"/>
+          <mxGeometry x="-1719.5" y="1680" width="120" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="7Vm15WcCv_nU9t_RpjNF-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="IdWxt1GD36hkP3Ce9KiH-1" source="7Vm15WcCv_nU9t_RpjNF-4" edge="1">
           <mxGeometry relative="1" as="geometry">
