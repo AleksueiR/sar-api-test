@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2019-11-28T19:07:15.935Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0" etag="ePHJ-julG4S-WZRg2HnK" version="12.3.3" type="github" pages="2">
+<mxfile host="www.draw.io" modified="2019-11-28T19:07:51.147Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0" etag="Y-OIcoB9WhVtg28elt5J" version="12.3.3" type="github" pages="2">
   <diagram name="COSEWIC" id="4BSIFsbffMMIe3hzINM1">
     <mxGraphModel dx="4622" dy="1991" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
@@ -897,7 +897,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Legal" id="i22tDceMhx7sURj444v1">
-    <mxGraphModel dx="4385" dy="659" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
+    <mxGraphModel dx="6044" dy="1582" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-0"/>
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-1" parent="IdWxt1GD36hkP3Ce9KiH-0"/>
@@ -910,6 +910,9 @@
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="IdWxt1GD36hkP3Ce9KiH-1" source="IdWxt1GD36hkP3Ce9KiH-4" target="C3scsigQXLELNn7dAkGM-0" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="-2320" y="694" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="-2340" y="694"/>
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-4" value="Create Draft Species" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="IdWxt1GD36hkP3Ce9KiH-1" vertex="1">
@@ -990,6 +993,10 @@
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-39" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="IdWxt1GD36hkP3Ce9KiH-1" source="IdWxt1GD36hkP3Ce9KiH-40" target="IdWxt1GD36hkP3Ce9KiH-18" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="-1761" y="691" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="-1810" y="691"/>
+              <mxPoint x="-1810" y="691"/>
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-40" value="Make Legal Info Permanent" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="IdWxt1GD36hkP3Ce9KiH-1" vertex="1">
