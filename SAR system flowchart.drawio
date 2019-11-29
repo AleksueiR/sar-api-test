@@ -1,6 +1,6 @@
-<mxfile host="www.draw.io" modified="2019-11-28T19:20:37.513Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0" etag="ObWWXOiMX-4PMwOh41g9" version="12.3.3" type="github" pages="2">
+<mxfile host="www.draw.io" modified="2019-11-29T13:15:20.339Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="K0Kq5OGit9NOjltWmWBq" version="12.3.3" type="github" pages="2">
   <diagram name="COSEWIC" id="4BSIFsbffMMIe3hzINM1">
-    <mxGraphModel dx="4622" dy="1991" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
+    <mxGraphModel dx="4877" dy="2320" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
         <mxCell id="agf4B4eiEqbqFX-ImhHm-0"/>
         <mxCell id="agf4B4eiEqbqFX-ImhHm-1" parent="agf4B4eiEqbqFX-ImhHm-0"/>
@@ -44,9 +44,9 @@
         </mxCell>
         <mxCell id="agf4B4eiEqbqFX-ImhHm-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="agf4B4eiEqbqFX-ImhHm-1" source="agf4B4eiEqbqFX-ImhHm-17" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-2391" y="-480" as="targetPoint"/>
+            <mxPoint x="-2200" y="-490" as="targetPoint"/>
             <Array as="points">
-              <mxPoint x="-2391" y="-648"/>
+              <mxPoint x="-2200" y="-649"/>
             </Array>
           </mxGeometry>
         </mxCell>
@@ -132,7 +132,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="agf4B4eiEqbqFX-ImhHm-36" value="Update Common Info" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="agf4B4eiEqbqFX-ImhHm-1" vertex="1">
+        <mxCell id="agf4B4eiEqbqFX-ImhHm-36" value="Edit Common Info" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="agf4B4eiEqbqFX-ImhHm-1" vertex="1">
           <mxGeometry x="-873" y="-358" width="120" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="Pm8aq453HTPMfpRMcCzi-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="agf4B4eiEqbqFX-ImhHm-1" source="agf4B4eiEqbqFX-ImhHm-38" edge="1">
@@ -149,7 +149,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="agf4B4eiEqbqFX-ImhHm-47" value="Make COSEWIC Info Permanent" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="agf4B4eiEqbqFX-ImhHm-1" vertex="1">
-          <mxGeometry x="-1488" y="-511" width="120" height="60" as="geometry"/>
+          <mxGeometry x="-1479" y="-511" width="120" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="agf4B4eiEqbqFX-ImhHm-58" value="COSEWIC User" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;html=1;" parent="agf4B4eiEqbqFX-ImhHm-1" vertex="1">
           <mxGeometry x="-3090" y="-328" width="30" height="60" as="geometry"/>
@@ -725,13 +725,12 @@
         <mxCell id="xqgrInUvKXfUuhmn9M7a-92" value="Any changes to publish?" style="rhombus;whiteSpace=wrap;html=1;" parent="agf4B4eiEqbqFX-ImhHm-1" vertex="1">
           <mxGeometry x="-1439" y="623.5" width="125" height="120" as="geometry"/>
         </mxCell>
-        <mxCell id="P1kppotJ8QG6e2RVg72R-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=-0.021;exitY=0.497;exitDx=0;exitDy=0;exitPerimeter=0;" parent="agf4B4eiEqbqFX-ImhHm-1" edge="1">
+        <mxCell id="P1kppotJ8QG6e2RVg72R-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="agf4B4eiEqbqFX-ImhHm-1" edge="1" source="xqgrInUvKXfUuhmn9M7a-96">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-1451.5" y="685" as="targetPoint"/>
+            <mxPoint x="-1250" y="686" as="targetPoint"/>
             <mxPoint x="-1435" y="835.3333333333335" as="sourcePoint"/>
             <Array as="points">
-              <mxPoint x="-1452" y="835"/>
-              <mxPoint x="-1452" y="745"/>
+              <mxPoint x="-1250" y="836"/>
             </Array>
           </mxGeometry>
         </mxCell>
@@ -897,7 +896,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Legal" id="i22tDceMhx7sURj444v1">
-    <mxGraphModel dx="4622" dy="791" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
+    <mxGraphModel dx="5155" dy="934" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
       <root>
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-0"/>
         <mxCell id="IdWxt1GD36hkP3Ce9KiH-1" parent="IdWxt1GD36hkP3Ce9KiH-0"/>
